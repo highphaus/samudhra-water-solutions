@@ -1,0 +1,100 @@
+---
+// src/components/Navbar.astro
+
+// Define clean, unified corporate routes matching the premium architecture
+const navigationLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+   { label: 'Services', path: '/service' },
+   { label: 'Testimonials', path: '/testimonial' },
+  { label: 'Shop', path: '/shop' },
+  { label: 'Founder', path: '/founder' },
+  { label: 'Contact', path: '/contact' }
+];
+---
+
+<nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-6 border-b border-black/0">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+    
+    <!-- Sleek Typographic Branding (With Corporate Deep Sapphire Accent) -->
+    <a href="/" class="flex items-center group tracking-tighter select-none">
+      <div class="flex flex-col">
+        <span class="text-lg font-black tracking-[0.25em] text-[#024095] group-hover:text-[#07bee8] transition-colors duration-300">SAMUDHRA</span>
+        <span class="text-[9px] font-bold uppercase tracking-[0.35em] text-slate-400 -mt-0.5">WATER SOLUTIONS</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links (Switches cleanly to Deep Sapphire on hover) -->
+    <div class="hidden md:flex items-center gap-8 text-[10px] font-extrabold uppercase tracking-[0.3em]">
+      {navigationLinks.map((link) => (
+        <a href={link.path} class="text-slate-500 hover:text-[#024095] transition-colors duration-300 relative group py-2">
+          {link.label}
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-[#07bee8] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      ))}
+    </div>
+
+    <!-- Premium Action Button (Deep Sapphire Base with Electric Cyan Hover State) -->
+    <div class="hidden md:flex items-center">
+      <a href="https://wa.me/919447XXXXXX" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-[#024095] text-white text-[10px] font-black uppercase tracking-[0.25em] hover:bg-[#07bee8] hover:text-white shadow-md shadow-[#024095]/10 transition-all duration-400 rounded-sm">
+        Book Inspection
+      </a>
+    </div>
+
+    <!-- Mobile Button Toggle -->
+    <button id="menu-toggle" class="md:hidden p-2 text-slate-800 hover:text-[#024095] transition-colors duration-300 focus:outline-none">
+      <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 hidden"><line x1="18" x2="6" y1="6" y2="18"/><line x1="6" x2="18" y1="6" y2="18"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Overlay Menu (Luxury Pearl/Off-White Canvas Backdrop) -->
+  <div id="mobile-drawer" class="absolute top-full left-0 w-full bg-[#F9F9FB] border-b border-slate-200/80 p-8 flex flex-col gap-6 hidden md:hidden shadow-2xl">
+    <div class="flex flex-col gap-4">
+      {navigationLinks.map((link) => (
+        <a href={link.path} class="mobile-link text-xs font-black uppercase tracking-[0.3em] text-slate-500 hover:text-[#024095] py-2 border-b border-slate-200/40 transition-colors">
+          {link.label}
+        </a>
+      ))}
+    </div>
+    <a href="https://wa.me/919447XXXXXX" class="w-full text-center py-4 bg-[#024095] text-white text-[10px] font-black uppercase tracking-[0.25em] hover:bg-[#07bee8] transition-colors shadow-lg shadow-[#024095]/10 rounded-sm">
+      Book Inspection
+    </a>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileDrawer = document.getElementById('mobile-drawer');
+  const iconMenu = document.getElementById('icon-menu');
+  const iconClose = document.getElementById('icon-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  // Handle premium scroll transitions into Pearl Off-White glass panels
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 20) {
+      navbar?.classList.add('bg-[#F9F9FB]/95', 'backdrop-blur-md', 'border-slate-200/60', 'py-4', 'shadow-sm');
+      navbar?.classList.remove('bg-transparent', 'py-6', 'border-black/0');
+    } else {
+      navbar?.classList.add('bg-transparent', 'py-6', 'border-black/0');
+      navbar?.classList.remove('bg-[#F9F9FB]/95', 'backdrop-blur-md', 'border-slate-200/60', 'py-4', 'shadow-sm');
+    }
+  });
+
+  // Toggle mobile drawer layout
+  menuToggle?.addEventListener('click', () => {
+    mobileDrawer?.classList.toggle('hidden');
+    iconMenu?.classList.toggle('hidden');
+    iconClose?.classList.toggle('hidden');
+  });
+
+  // Collapse container when link is interacted with
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileDrawer?.classList.add('hidden');
+      iconMenu?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+    });
+  });
+</script>

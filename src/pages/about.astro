@@ -1,0 +1,44 @@
+---
+// src/pages/about.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Layout title="Brand Heritage Overview | Samudhra Water Solutions">
+  <script is:inline src="https://cdn.tailwindcss.com"></script>
+  <Navbar />
+
+  <section class="bg-[#F9F9FB] text-slate-900 pt-36 pb-24 border-b border-slate-200/60">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="h-[1px] w-12 bg-[#024095]"></span>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">CORPORATE PROFILE / HERITAGE</span>
+      </div>
+      <h1 class="text-5xl sm:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">We Re-Engineer <br /> Fluid Integrity.</h1>
+      <p class="text-lg sm:text-xl font-light text-slate-600 mt-8 leading-relaxed max-w-3xl">
+        Established in 2009 in Thiruvananthapuram, Samudhra challenged the generic retail purification marketplace by following a single baseline rule: <span class="text-[#024095] font-semibold">Water must be custom-architected to achieve uniform bio-safety.</span>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white text-slate-900 py-24">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-start">
+      <div class="md:col-span-4 space-y-2 border-l-4 border-[#07bee8] bg-[#F9F9FB] p-6 rounded-r">
+        <span class="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-widest">[ TIMELINE SPAN ]</span>
+        <p class="text-4xl font-black text-[#024095]">17+ YRS</p>
+        <p class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest">Active Kerala Network Operations</p>
+      </div>
+
+      <div class="md:col-span-8 space-y-12">
+        <div class="space-y-3">
+          <h3 class="text-xl font-bold tracking-tight text-[#024095] uppercase">// Ecological Responsibility</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">Every domestic module we commission dramatically minimizes reliance on single-use transport plastic. By treating internal fluid pipelines right at the source, we secure high environmental reduction margins across our region.</p>
+        </div>
+        <div class="space-y-3">
+          <h3 class="text-xl font-bold tracking-tight text-[#024095] uppercase">// Agnostic Engineering Customization</h3>
+          <p class="text-sm text-slate-500 font-light leading-relaxed">Unlike singular single-brand production channels, Samudhra integrates components agnostically from premium global tiers. This unlocks structural flexibility, allowing custom arrays to isolate severe calcium, iron, and brackish indices flawlessly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

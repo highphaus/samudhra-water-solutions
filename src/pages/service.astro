@@ -1,0 +1,62 @@
+---
+// src/pages/service.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+
+const services = [
+  {
+    num: "01",
+    title: "Custom Site Calibration",
+    description: "We bypass generic retail parameters. Our field technicians analyze your local water chemistry on-site to build customized component layouts that address exact mineral hard scale, iron, and structural anomalies.",
+    scope: "Domestic Wells // Municipal Lines // Commercial Complexes"
+  },
+  {
+    num: "02",
+    title: "Annual Maintenance Contracts (AMC)",
+    description: "Continuous pure fluid yield requires rigid tracking. Samudhra's preventive system maintenance cycles include high-pressure structural membrane flushing, precise chemical sanitization, and automated audit logs.",
+    scope: "Residential Filters // Industrial Plant Facilities"
+  },
+  {
+    num: "03",
+    title: "Turnkey Plant Overhauls",
+    description: "Complete engineering restoration programs for high-volume enterprise systems. We source, configure, and install elite multi-brand high-pressure reverse osmosis stacks, media filters, and automated softeners.",
+    scope: "Up to 100,000 LPH Setups // Medical STPs // Public Swimming Networks"
+  }
+];
+---
+
+<Layout title="Our Purification Services | Samudhra Water Solutions">
+  <script is:inline src="https://cdn.tailwindcss.com"></script>
+  <Navbar />
+
+  <section class="bg-[#F9F9FB] text-slate-900 pt-36 pb-16 border-b border-slate-200/60">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="h-[1px] w-12 bg-[#024095]"></span>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">OPERATIONS / LIFE CYCLE MATRIX</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tighter text-[#024095] leading-none uppercase">Our Purification Services.</h1>
+      <p class="text-sm text-slate-500 font-light max-w-xl mt-4 leading-relaxed">We provide absolute engineering lifecycle support for commercial and domestic water systems, ensuring uniform parameter execution across Kerala.</p>
+    </div>
+  </section>
+
+  <section class="bg-white text-slate-900 py-12">
+    <div class="max-w-5xl mx-auto px-6">
+      {services.map((item) => (
+        <div class="grid md:grid-cols-12 gap-8 items-start border-b border-slate-100 py-16 bg-[#F9F9FB] mb-4 hover:bg-white transition-all duration-300 px-6 rounded-md shadow-sm">
+          <div class="md:col-span-2">
+            <span class="text-xs font-mono font-bold text-[#07bee8]">[{item.num}]</span>
+          </div>
+          <div class="md:col-span-7 space-y-4">
+            <h3 class="text-2xl font-black tracking-tight text-[#024095] uppercase">{item.title}</h3>
+            <p class="text-sm text-slate-500 font-light leading-relaxed">{item.description}</p>
+            <p class="text-[10px] font-bold text-[#07bee8] uppercase tracking-widest pt-2">// Scope: {item.scope}</p>
+          </div>
+          <div class="md:col-span-3 md:text-right pt-4 md:pt-0">
+            <a href={`https://wa.me/919447XXXXXX?text=Hi, I would like to book a consultation for ${item.title}.`} target="_blank" class="inline-block px-6 py-3.5 bg-[#024095] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] hover:text-white transition-all w-full md:w-auto text-center rounded">Book Service</a>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

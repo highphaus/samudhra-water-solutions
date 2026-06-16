@@ -1,0 +1,94 @@
+---
+// src/pages/shop.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+
+const products = [
+  {
+    id: "pro-01",
+    tier: "Residential Purity",
+    name: "Samudhra Cleantech RO",
+    specs: "7-Stage Mineralization & Alkaline Buffer",
+    contaminants: "Isolates Lime Scale, Heavy Iron & Acidity",
+    suitability: "Trivandrum Municipal & Groundwater Tables",
+    availability: "In Stock - Poojappura Hub"
+  },
+  {
+    id: "pro-02",
+    tier: "Residential Purity",
+    name: "Active Copper Ultra",
+    specs: "Active UV + UF Intact Anti-Microbial Flow",
+    contaminants: "Neutralizes Pathogens & Silt Compounds",
+    suitability: "Low-Pressure Apartment Pipe Systems",
+    availability: "In Stock - Thirumala Hub"
+  },
+  {
+    id: "pro-03",
+    tier: "Commercial Tier",
+    name: "Compact Plant 500 LPH",
+    specs: "Stainless High-Pressure Multi-Stage Booster",
+    contaminants: "Total Dissolved Solids (TDS) Reduction",
+    suitability: "Hospitals, Corporate Offices & Restaurants",
+    availability: "Built to Order - 3 Days"
+  },
+  {
+    id: "pro-04",
+    tier: "Infrastructure Tier",
+    name: "Automatic Brine Softener",
+    specs: "Ion-Exchange Smart Regenerative Matrix",
+    contaminants: "Eliminates White Scale & Pipe Clogging",
+    suitability: "Full-House Mainline Tank Attachments",
+    availability: "In Stock - Distribution Center"
+  }
+];
+---
+
+<Layout title="Advanced Product Portfolio | Samudhra Water Solutions">
+  <script is:inline src="https://cdn.tailwindcss.com"></script>
+  <Navbar />
+
+  <section class="bg-[#F9F9FB] text-slate-900 pt-36 pb-16 border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="h-[1px] w-12 bg-[#024095]"></span>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">COLLECTIONS / ALL PORTFOLIO</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tighter text-[#024095] leading-none uppercase">Advanced Product Portfolio.</h1>
+      <p class="text-sm text-slate-500 font-light max-w-xl mt-4 leading-relaxed">A meticulously calibrated ecosystem of high-end multi-brand water purification architectures. Select a configuration tier below to initiate structural integration.</p>
+    </div>
+  </section>
+
+  <section class="bg-white text-slate-900 py-20">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-0 border border-slate-200 shadow-sm rounded-lg overflow-hidden">
+        {products.map((product) => (
+          <div class="p-8 sm:p-12 border-b md:odd:border-r border-slate-200/60 bg-[#F9F9FB] flex flex-col justify-between hover:bg-white transition-all duration-300 group">
+            <div class="space-y-6">
+              <div class="flex justify-between items-center">
+                <span class="text-[10px] font-mono text-[#07bee8] uppercase tracking-widest">[ {product.tier} ]</span>
+                <span class="text-[9px] font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 uppercase tracking-wider rounded">{product.availability}</span>
+              </div>
+              <div>
+                <h3 class="text-2xl font-black tracking-tight text-[#024095] group-hover:text-[#07bee8] transition-colors uppercase">{product.name}</h3>
+                <p class="text-xs font-bold text-slate-600 mt-1 tracking-wide">{product.specs}</p>
+              </div>
+              <div class="space-y-3 pt-4 border-t border-slate-200/40">
+                <div>
+                  <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Target Mitigation</p>
+                  <p class="text-xs font-medium text-slate-700 mt-0.5">{product.contaminants}</p>
+                </div>
+                <div>
+                  <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Hydrological Calibration</p>
+                  <p class="text-xs font-medium text-slate-700 mt-0.5">{product.suitability}</p>
+                </div>
+              </div>
+            </div>
+            <div class="pt-10">
+              <a href={`https://wa.me/919447XXXXXX?text=Hi, I am interested in checking stock specs for the ${product.name}.`} target="_blank" class="w-full block text-center py-4 bg-[#024095] text-white text-[10px] font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] hover:text-white transition-all rounded-md shadow-md shadow-[#024095]/10">Request Configuration Audit</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
