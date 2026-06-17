@@ -1,1 +1,202 @@
-@import "tailwindcss";
+/* ============================================================
+   SAMUDHRA WATER SOLUTIONS — GLOBAL RESPONSIVE CSS
+   Mobile-first. Fluid. Enterprise-grade.
+   ============================================================ */
+
+/* ── Reset & Box Sizing ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Fluid Typography Scale (clamp) ── */
+:root {
+  --text-xs:    clamp(0.7rem,  1.5vw, 0.75rem);
+  --text-sm:    clamp(0.8rem,  1.8vw, 0.875rem);
+  --text-base:  clamp(0.9rem,  2vw,   1rem);
+  --text-lg:    clamp(1rem,    2.2vw, 1.125rem);
+  --text-xl:    clamp(1.1rem,  2.5vw, 1.25rem);
+  --text-2xl:   clamp(1.2rem,  3vw,   1.5rem);
+  --text-3xl:   clamp(1.4rem,  3.5vw, 1.875rem);
+  --text-4xl:   clamp(1.6rem,  4vw,   2.25rem);
+  --text-5xl:   clamp(1.8rem,  5vw,   3rem);
+  --text-6xl:   clamp(2rem,    6vw,   3.75rem);
+  --text-7xl:   clamp(2.2rem,  7vw,   4.5rem);
+  --text-8xl:   clamp(2.5rem,  8.5vw, 6rem);
+
+  /* Brand colours */
+  --brand-blue:  #024095;
+  --brand-cyan:  #07bee8;
+  --brand-light: #F9F9FB;
+
+  /* Spacing scale */
+  --space-section: clamp(3rem, 8vw, 6rem);
+  --space-container-px: clamp(1rem, 5vw, 1.5rem);
+}
+
+/* ── Responsive Images ── */
+img, video, iframe, embed, object {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img {
+  object-fit: cover;
+}
+
+/* ── Responsive Container ── */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--space-container-px);
+}
+
+/* ── Section Spacing ── */
+.section-pad {
+  padding-block: var(--space-section);
+}
+
+/* ── Minimum 48px Touch Targets ── */
+a, button, [role="button"] {
+  min-height: 44px;
+}
+
+button, [type="button"], [type="submit"] {
+  cursor: pointer;
+}
+
+/* ── CTA / Action Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0.75rem 1.5rem;
+  font-weight: 800;
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+}
+
+@media (min-width: 480px) {
+  .btn { width: auto; }
+}
+
+/* ── Prevent text overflow anywhere ── */
+h1, h2, h3, h4, h5, h6, p, span, a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── Scrollbar Hide Utility ── */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Reveal Animation ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Hero blob pulse ── */
+@keyframes pulse-blob {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: .6; }
+  50%       { transform: scale(1.15) translate(20px, -10px); opacity: .9; }
+}
+.hero-blob { animation: pulse-blob 8s ease-in-out infinite; }
+
+/* ── Count-up ── */
+@keyframes count-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.stat-num { animation: count-up .6s ease-out both; }
+
+/* ── Mobile Drawer Animation ── */
+#mobile-drawer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              padding 0.3s ease;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#mobile-drawer.open {
+  max-height: 600px;
+  opacity: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+/* ── Hamburger Icon Animate ── */
+.hamburger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.is-open .bar-top    { transform: translateY(6px) rotate(45deg); }
+.hamburger.is-open .bar-mid    { opacity: 0; transform: scaleX(0); }
+.hamburger.is-open .bar-bottom { transform: translateY(-6px) rotate(-45deg); }
+
+/* ── Availability Badges ── */
+.badge-stock { background: #ecfdf5; color: #059669; }
+.badge-order { background: #fff7ed; color: #d97706; }
+
+/* ── Responsive grid helpers ── */
+.grid-auto-fill-sm {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+}
+
+.grid-auto-fill-md {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 1.5rem;
+}
+
+/* ── Responsive table wrapper ── */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}

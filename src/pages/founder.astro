@@ -8,36 +8,85 @@ import Navbar from '../components/Navbar.astro';
   <script is:inline src="https://cdn.tailwindcss.com"></script>
   <Navbar />
 
-  <section class="bg-[#F9F9FB] text-slate-900 pt-36 pb-24 border-b border-slate-200/60">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="flex items-center gap-3 mb-6">
-        <span class="h-[1px] w-12 bg-[#024095]"></span>
-        <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">LEADERSHIP PROFILE / MD STATEMENT</span>
+  <!-- HERO HEADER -->
+  <section class="bg-[#F9F9FB] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-slate-200/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-3 mb-5 sm:mb-6">
+        <span class="h-[1px] w-10 sm:w-12 bg-[#024095]"></span>
+        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">LEADERSHIP PROFILE / MD STATEMENT</span>
       </div>
-      <h1 class="text-5xl sm:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">Engineering <br /> Trust By Volume.</h1>
-      <p class="text-lg sm:text-xl font-light text-slate-600 mt-8 leading-relaxed max-w-3xl">
+      <h1 class="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">
+        Engineering <br /> Trust By Volume.
+      </h1>
+      <p class="text-base sm:text-lg lg:text-xl font-light text-black mt-6 sm:mt-8 leading-relaxed max-w-3xl">
         "Pure water is an uncompromised structural baseline. At Samudhra, we built our reputation over 17 years by refusing to deploy stock pre-packaged shortcuts, configuring every system to the actual water chemistry parameters of Kerala."
       </p>
     </div>
   </section>
 
-  <section class="bg-white text-slate-900 py-24">
-    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-start">
-      <div class="md:col-span-4 space-y-6 border-l-4 border-[#024095] bg-[#F9F9FB] p-6 rounded-r">
-        <div>
-          <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ EXECUTIVE CHAIR ]</span>
-          <p class="text-2xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
-          <p class="text-xs font-bold text-slate-500 tracking-wider uppercase mt-0.5">Founder & Managing Director</p>
-        </div>
-      </div>
+  <!-- FOUNDER PROFILE -->
+  <section class="bg-white text-slate-900 py-16 sm:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-12 gap-8 sm:gap-12 items-start">
 
-      <div class="md:col-span-8 space-y-12">
-        <div class="space-y-3">
-          <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// STRATEGIC VISION</span>
-          <h3 class="text-2xl font-black tracking-tight text-[#024095] uppercase">The Architecture of Performance</h3>
-          <p class="text-sm text-slate-500 font-light leading-relaxed">When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that layout model entirely. By committing our engineering teams to meticulous pre-assembly site analysis, we ensured that residential and commercial clients receive long-lasting operational certainty.</p>
+        <!-- Profile Card -->
+        <div class="md:col-span-4 space-y-5 sm:space-y-6 border-l-4 border-[#024095] bg-[#F9F9FB] p-5 sm:p-6 rounded-r">
+          <div>
+            <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ EXECUTIVE CHAIR ]</span>
+            <p class="text-2xl sm:text-3xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
+            <p class="text-xs font-bold text-black tracking-wider uppercase mt-0.5">Founder &amp; Managing Director</p>
+          </div>
+          <div class="space-y-2 pt-4 border-t border-slate-200/60">
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
+              <span class="text-xs font-bold text-black">Est. 2009, Thiruvananthapuram</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#024095]"></span>
+              <span class="text-xs font-bold text-black">17+ Years in Water Solutions</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
+              <span class="text-xs font-bold text-black">ISO 9001 Certified Operations</span>
+            </div>
+          </div>
         </div>
+
+        <!-- Content -->
+        <div class="md:col-span-8 space-y-8 sm:space-y-10">
+          <div class="space-y-3">
+            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// STRATEGIC VISION</span>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#024095] uppercase">The Architecture of Performance</h3>
+            <p class="text-sm text-black font-light leading-relaxed">
+              When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that layout model entirely. By committing our engineering teams to meticulous pre-assembly site analysis, we ensured that residential and commercial clients receive long-lasting operational certainty.
+            </p>
+          </div>
+
+          <div class="space-y-3 pt-4 sm:pt-6 border-t border-slate-100">
+            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// OUR COMMITMENT</span>
+            <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#024095] uppercase">Quality Without Compromise</h3>
+            <p class="text-sm text-black font-light leading-relaxed">
+              Every system we deploy is tested, calibrated and certified before it reaches your property. Our after-sales maintenance contracts ensure that the water quality you experienced on Day 1 remains consistent for years.
+            </p>
+          </div>
+
+          <div class="pt-4 sm:pt-6">
+            <a href="/contact"
+               class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-[#024095] text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
+              Get In Touch &rarr;
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#F9F9FB] text-black py-10 sm:py-12 border-t border-slate-200/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-[10px] font-bold uppercase tracking-[0.25em] text-center">
+      <p>&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</p>
+      <p class="text-[#024095] font-black">Trivandrum, Kerala</p>
+    </div>
+  </footer>
 </Layout>

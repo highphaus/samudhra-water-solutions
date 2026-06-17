@@ -8,109 +8,109 @@ import Navbar from '../components/Navbar.astro';
   <script is:inline src="https://cdn.tailwindcss.com"></script>
   <Navbar />
 
-  <!-- 1. IMMERSIVE PAGE HEADER -->
-  <section class="bg-[#F9F9FB] text-slate-900 pt-36 pb-24 border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="flex items-center gap-3 mb-6">
-        <span class="h-[1px] w-12 bg-[#024095]"></span>
-        <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">CONNECT WITH US</span>
+  <!-- PAGE HEADER -->
+  <section class="bg-[#F9F9FB] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-3 mb-5 sm:mb-6">
+        <span class="h-[1px] w-10 sm:w-12 bg-[#024095]"></span>
+        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">CONNECT WITH US</span>
       </div>
-      <h1 class="text-5xl sm:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">
+      <h1 class="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">
         Get In Touch.
       </h1>
-      <p class="text-lg sm:text-xl font-light text-slate-600 mt-8 leading-relaxed max-w-3xl">
+      <p class="text-base sm:text-lg lg:text-xl font-light text-black mt-6 sm:mt-8 leading-relaxed max-w-3xl">
         Call now or write a message to us. Get in touch with us everytime. Our 24x7 service unit will help you to process your needs at anytime.
       </p>
     </div>
   </section>
 
-  <!-- 2. MAIN HUB DETAIL GRID -->
-  <section class="bg-white text-slate-900 py-24">
-    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
-      
-      <!-- Left Side: Complete Contact Directory Card -->
-      <div class="lg:col-span-7 bg-[#F9F9FB] border-t-4 border-[#024095] p-8 sm:p-10 rounded-b-md shadow-sm space-y-8">
+  <!-- CONTACT GRID -->
+  <section class="bg-white text-slate-900 py-14 sm:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-8 sm:gap-12 items-start">
+
+      <!-- Left: Contact Card -->
+      <div class="lg:col-span-7 bg-[#F9F9FB] border-t-4 border-[#024095] p-6 sm:p-8 lg:p-10 rounded-b-md shadow-sm space-y-6 sm:space-y-8">
         <div>
-          <h2 class="text-2xl font-black text-[#024095] uppercase tracking-tight">Contact Information</h2>
-          <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5">Central Showroom Registry</p>
+          <h2 class="text-xl sm:text-2xl font-black text-[#024095] uppercase tracking-tight">Contact Information</h2>
+          <p class="text-xs text-black font-bold uppercase tracking-widest mt-0.5">Central Showroom Registry</p>
         </div>
 
-        <!-- Location Node -->
+        <!-- Location -->
         <div class="space-y-2 pt-4 border-t border-slate-200/60">
           <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Our Location</p>
-          <p class="text-sm font-medium text-slate-700 leading-relaxed">
+          <p class="text-sm font-medium text-black leading-relaxed">
             Soorya nidhi, TC 42/1231, main road, near canara bank, Poojapura, Thiruvananthapuram, Kerala 695012
           </p>
         </div>
 
-        <!-- Communication Nodes Grid -->
-        <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-slate-200/60">
+        <!-- Phone & Email -->
+        <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 pt-4 border-t border-slate-200/60">
           <div class="space-y-1">
             <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Phone Number</p>
-            <a href="tel:+919645830994" class="text-base font-bold text-[#024095] hover:text-[#07bee8] transition-colors">
+            <a href="tel:+919645830994" class="text-base sm:text-lg font-bold text-[#024095] hover:text-[#07bee8] transition-colors min-h-[44px] flex items-center">
               9645830994
             </a>
           </div>
           <div class="space-y-1">
             <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Email Address</p>
-            <a href="mailto:mail@samudhra.co.in" class="text-sm font-medium text-slate-600 hover:text-[#024095] transition-colors break-all">
+            <a href="mailto:mail@samudhra.co.in" class="text-sm font-medium text-black hover:text-[#024095] transition-colors break-all min-h-[44px] flex items-center">
               mail@samudhra.co.in
             </a>
           </div>
         </div>
 
-        <!-- Instant WhatsApp Action Anchor -->
-        <div class="pt-6">
-          <a href="https://wa.me/919645830994?text=Hi, I want to get in touch with your water filtration service team." target="_blank" class="w-full inline-block text-center px-8 py-4 bg-[#024095] text-white font-black text-xs uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md shadow-[#024095]/10">
+        <!-- WhatsApp CTA -->
+        <div class="pt-2">
+          <a href="https://wa.me/919645830994?text=Hi, I want to get in touch with your water filtration service team."
+             target="_blank"
+             class="w-full inline-flex items-center justify-center min-h-[52px] px-8 py-4 bg-[#024095] text-white font-black text-xs uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
             SEND MESSAGE NOW
           </a>
         </div>
       </div>
 
-      <!-- Right Side: Schedule and Emergency Panel -->
-      <div class="lg:col-span-5 space-y-6">
-        
-        <!-- Schedule Hours Box -->
-        <div class="bg-[#F9F9FB] border-t-4 border-[#07bee8] p-8 rounded-b-md shadow-sm space-y-4">
-          <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">TIMELINE COMPLIANCE</p>
-          <h3 class="text-xl font-black text-[#024095] uppercase tracking-tight">Schedule Hours</h3>
-          
-          <div class="space-y-3 pt-2 text-sm text-slate-600 font-medium">
+      <!-- Right: Schedule & Emergency -->
+      <div class="lg:col-span-5 space-y-4 sm:space-y-6">
+
+        <!-- Schedule Hours -->
+        <div class="bg-[#F9F9FB] border-t-4 border-[#07bee8] p-6 sm:p-8 rounded-b-md shadow-sm space-y-4">
+          <p class="text-[10px] font-black text-black uppercase tracking-widest">TIMELINE COMPLIANCE</p>
+          <h3 class="text-lg sm:text-xl font-black text-[#024095] uppercase tracking-tight">Schedule Hours</h3>
+          <div class="space-y-3 pt-2 text-sm text-black font-medium">
             <div class="flex justify-between pb-2 border-b border-slate-200/40">
-              <span class="text-slate-500 font-light">Monday – Saturday</span>
-              <span class="text-[#024095]">08:00 AM - 08:00 PM</span>
+              <span class="font-light">Monday – Saturday</span>
+              <span class="text-[#024095] font-semibold">08:00 AM – 08:00 PM</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-slate-500 font-light">Sunday</span>
-              <span class="text-slate-400">Closed *</span>
+              <span class="font-light">Sunday</span>
+              <span class="text-black font-medium">Closed *</span>
             </div>
           </div>
         </div>
 
-        <!-- Emergency Urgent Hotkey Container -->
-        <div class="bg-red-50 border-l-4 border-red-600 p-8 rounded-r-md shadow-sm space-y-2">
+        <!-- Emergency -->
+        <div class="bg-red-50 border-l-4 border-red-600 p-6 sm:p-8 rounded-r-md shadow-sm space-y-2">
           <p class="text-[9px] font-black text-red-600 uppercase tracking-widest">CRITICAL SUPPORT</p>
-          <h4 class="text-lg font-black text-[#024095] uppercase tracking-tight">Emergency Cases</h4>
-          <p class="text-xs text-slate-500 font-light leading-relaxed">
+          <h4 class="text-base sm:text-lg font-black text-[#024095] uppercase tracking-tight">Emergency Cases</h4>
+          <p class="text-xs text-black font-light leading-relaxed">
             For urgent pipe leaks, mainline plant shutdowns, or sudden filtration breakdowns, call our field line instantly.
           </p>
           <div class="pt-2">
-            <a href="tel:+919645830994" class="inline-flex items-center gap-2 text-lg font-black text-red-600 hover:text-red-700 transition-colors">
-              <span>&;</span> 9645830994
+            <a href="tel:+919645830994" class="inline-flex items-center gap-2 text-lg sm:text-xl font-black text-red-600 hover:text-red-700 transition-colors min-h-[48px]">
+              &#9742; 9645830994
             </a>
           </div>
         </div>
-
       </div>
 
     </div>
   </section>
 
-  <!-- COMPACT FOOTER BASELINE -->
-  <footer class="bg-[#F9F9FB] text-slate-400 py-12 border-t border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] font-bold uppercase tracking-[0.25em]">
-      <p class="text-slate-400">&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</p>
-      <div class="flex items-center gap-4 text-[#024095]">
+  <!-- FOOTER -->
+  <footer class="bg-[#F9F9FB] text-black py-10 sm:py-12 border-t border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-[10px] font-bold uppercase tracking-[0.25em] text-center">
+      <p>&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</p>
+      <div class="flex items-center gap-3 sm:gap-4 text-[#024095]">
         <span>24X7 SUPPORT UNIT</span>
         <span class="font-black">TRIVANDRUM, KERALA</span>
       </div>
