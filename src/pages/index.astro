@@ -329,6 +329,73 @@ const products = [
   </section>
 
   <!-- ======================================================== -->
+  <!-- 4.5 HOW WE WORK -->
+  <!-- ======================================================== -->
+  <section id="how-we-work" class="bg-[#F9F9FB] text-slate-900 border-t border-slate-100 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4 reveal">
+        <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8]">Process Integrity</p>
+        <h2 class="text-4xl sm:text-5xl font-black tracking-tighter text-[#024095] uppercase">How We Work.</h2>
+        <p class="text-sm text-black font-semibold leading-relaxed">
+          From first water testing chemical reviews to precision component selection and ongoing maintenance audit loops.
+        </p>
+      </div>
+
+      <!-- Steps Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        {[
+          {
+            step: "01",
+            title: "Water Analysis",
+            desc: "Our on-site field technicians chemically audit your source water to measure heavy iron, mineral scales, acidity, and TDS.",
+            highlight: "Chemical Profiling"
+          },
+          {
+            step: "02",
+            title: "Custom Design",
+            desc: "We configure components matching multi-brand membranes, sand media filters, softeners, and stabilizers for your target needs.",
+            highlight: "Layout Optimization"
+          },
+          {
+            step: "03",
+            title: "Expert Setup",
+            desc: "Certified squads install structural lines, mount valves, adjust booster flows, and run initial calibration testing.",
+            highlight: "Precision Fitting"
+          },
+          {
+            step: "04",
+            title: "AMC Maintenance",
+            desc: "We perform AMC flushes, sanitization routines, and keep automated audit records to secure long term water yield.",
+            highlight: "Lifecycle Support"
+          }
+        ].map((item, idx) => (
+          <div class="bg-white border border-slate-100 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:border-[#07bee8]/40 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 group relative overflow-hidden">
+            <!-- Accent gradient line on hover -->
+            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#024095] to-[#07bee8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-4xl font-black font-mono text-[#024095]/15 group-hover:text-[#07bee8] transition-colors duration-500">{item.step}</span>
+                <span class="text-[8px] font-mono font-bold text-[#07bee8] uppercase bg-[#07bee8]/10 px-2 py-0.5 rounded-full">{item.highlight}</span>
+              </div>
+              <h3 class="text-lg font-black uppercase tracking-tight text-[#024095] mt-2">{item.title}</h3>
+              <p class="text-xs text-black font-semibold leading-relaxed">{item.desc}</p>
+            </div>
+            
+            <div class="pt-6 mt-6 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-[#024095] transition-colors">
+              <span>STEP {item.step} INTACT</span>
+              <span class="text-[#024095] group-hover:translate-x-1 transition-transform">&rarr;</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
   <!-- 5. TESTIMONIALS -->
   <!-- ======================================================== -->
   <section id="testimonials-summary" class="bg-[#024095] text-white border-t border-[#024095]/10 py-24">
