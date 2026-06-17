@@ -47,12 +47,12 @@ const products = [
   <style>
     /* Hide scrollbar for Chrome, Safari and Opera */
     .scrollbar-none::-webkit-scrollbar {
-      display: none;
+      display: none !important;
     }
     /* Hide scrollbar for IE, Edge and Firefox */
     .scrollbar-none {
-      -ms-overflow-style: none;  /* IE and Edge */
-      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none !important;  /* IE and Edge */
+      scrollbar-width: none !important;  /* Firefox */
     }
 
     /* ── Hero gradient pulse ── */
@@ -159,19 +159,9 @@ const products = [
           <h2 class="text-4xl sm:text-6xl font-black tracking-tighter uppercase leading-none">Our Services.</h2>
           <p class="text-sm text-white/60 font-light mt-3 max-w-md leading-relaxed">10 specialised water treatment and maintenance services engineered for every scale.</p>
         </div>
-        <div class="flex items-center gap-3">
-          <button id="services-prev" class="w-12 h-12 rounded-full border border-white/20 hover:border-[#07bee8] hover:bg-[#07bee8]/10 flex items-center justify-center text-white transition-all focus:outline-none" aria-label="Previous service">
-            <svg class="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-          <button id="services-next" class="w-12 h-12 rounded-full border border-white/20 hover:border-[#07bee8] hover:bg-[#07bee8]/10 flex items-center justify-center text-white transition-all focus:outline-none" aria-label="Next service">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-          <a href="/service" class="hidden sm:inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white hover:text-[#024095] transition-all rounded whitespace-nowrap ml-2">
-            See All &rarr;
+        <div class="flex items-center">
+          <a href="/service" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white hover:text-[#024095] transition-all rounded whitespace-nowrap">
+            See All Services &rarr;
           </a>
         </div>
       </div>
@@ -235,18 +225,8 @@ const products = [
           <h2 class="text-4xl sm:text-6xl font-black tracking-tighter uppercase text-[#024095] leading-none">Our Products.</h2>
           <p class="text-sm text-slate-500 font-light mt-3 max-w-md leading-relaxed">20 curated water purification systems — from compact home purifiers to 100,000 LPH industrial plants.</p>
         </div>
-        <div class="flex items-center gap-3">
-          <button id="products-prev" class="w-12 h-12 rounded-full border border-slate-200 hover:border-[#024095] hover:bg-slate-100 flex items-center justify-center text-[#024095] transition-all focus:outline-none" aria-label="Previous product">
-            <svg class="w-5 h-5 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-          <button id="products-next" class="w-12 h-12 rounded-full border border-slate-200 hover:border-[#024095] hover:bg-slate-100 flex items-center justify-center text-[#024095] transition-all focus:outline-none" aria-label="Next product">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
-            </svg>
-          </button>
-          <a href="/shop" class="hidden sm:inline-flex items-center gap-2 px-6 py-3 border-2 border-[#024095] text-[#024095] text-xs font-black uppercase tracking-[0.2em] hover:bg-[#024095] hover:text-white transition-all rounded whitespace-nowrap ml-2">
+        <div class="flex items-center">
+          <a href="/shop" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#024095] text-[#024095] text-xs font-black uppercase tracking-[0.2em] hover:bg-[#024095] hover:text-white transition-all rounded whitespace-nowrap">
             Open Shop &rarr;
           </a>
         </div>
@@ -497,8 +477,6 @@ const products = [
 
     // 2. Services Slider Setup
     const servicesSlider = document.getElementById('services-slider');
-    const servicesPrev = document.getElementById('services-prev');
-    const servicesNext = document.getElementById('services-next');
     const servicesCount = document.getElementById('services-count');
     const servicesDots = document.getElementById('services-dots')?.children;
 
@@ -508,23 +486,36 @@ const products = [
         return card ? card.clientWidth + 24 : 344;
       };
 
-      if (servicesPrev && servicesNext) {
-        servicesPrev.addEventListener('click', () => {
-          servicesSlider.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
-        });
-        servicesNext.addEventListener('click', () => {
-          servicesSlider.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
-        });
-      }
+      let servicesIndex = 0;
+      const totalServices = 10;
+
+      const scrollToIndex = (idx) => {
+        const cardWidth = getCardWidth();
+        servicesSlider.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+        servicesIndex = idx;
+      };
+
+      let servicesInterval = setInterval(() => {
+        let nextIdx = (servicesIndex + 1) % totalServices;
+        scrollToIndex(nextIdx);
+      }, 3000);
+
+      servicesSlider.addEventListener('mouseenter', () => clearInterval(servicesInterval));
+      servicesSlider.addEventListener('mouseleave', () => {
+        servicesInterval = setInterval(() => {
+          let nextIdx = (servicesIndex + 1) % totalServices;
+          scrollToIndex(nextIdx);
+        }, 3000);
+      });
 
       const updateServicesState = () => {
         const cardWidth = getCardWidth();
         const idx = Math.round(servicesSlider.scrollLeft / cardWidth);
-        const total = 10;
-        const displayIdx = Math.min(Math.max(idx + 1, 1), total);
+        servicesIndex = idx;
+        const displayIdx = Math.min(Math.max(idx + 1, 1), totalServices);
         
         if (servicesCount) {
-          servicesCount.textContent = `${displayIdx.toString().padStart(2, '0')} / ${total.toString().padStart(2, '0')}`;
+          servicesCount.textContent = `${displayIdx.toString().padStart(2, '0')} / ${totalServices.toString().padStart(2, '0')}`;
         }
         
         if (servicesDots) {
@@ -547,7 +538,7 @@ const products = [
       if (servicesDots) {
         Array.from(servicesDots).forEach((dot, dIdx) => {
           dot.addEventListener('click', () => {
-            servicesSlider.scrollTo({ left: dIdx * getCardWidth(), behavior: 'smooth' });
+            scrollToIndex(dIdx);
           });
         });
       }
@@ -555,8 +546,6 @@ const products = [
 
     // 3. Products Slider Setup
     const productsSlider = document.getElementById('products-slider');
-    const productsPrev = document.getElementById('products-prev');
-    const productsNext = document.getElementById('products-next');
     const productsCount = document.getElementById('products-count');
     const productsDots = document.getElementById('products-dots')?.children;
 
@@ -566,23 +555,36 @@ const products = [
         return card ? card.clientWidth + 24 : 312;
       };
 
-      if (productsPrev && productsNext) {
-        productsPrev.addEventListener('click', () => {
-          productsSlider.scrollBy({ left: -getCardWidth(), behavior: 'smooth' });
-        });
-        productsNext.addEventListener('click', () => {
-          productsSlider.scrollBy({ left: getCardWidth(), behavior: 'smooth' });
-        });
-      }
+      let productsIndex = 0;
+      const totalProducts = 20;
+
+      const scrollToIndex = (idx) => {
+        const cardWidth = getCardWidth();
+        productsSlider.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+        productsIndex = idx;
+      };
+
+      let productsInterval = setInterval(() => {
+        let nextIdx = (productsIndex + 1) % totalProducts;
+        scrollToIndex(nextIdx);
+      }, 3500);
+
+      productsSlider.addEventListener('mouseenter', () => clearInterval(productsInterval));
+      productsSlider.addEventListener('mouseleave', () => {
+        productsInterval = setInterval(() => {
+          let nextIdx = (productsIndex + 1) % totalProducts;
+          scrollToIndex(nextIdx);
+        }, 3500);
+      });
 
       const updateProductsState = () => {
         const cardWidth = getCardWidth();
         const idx = Math.round(productsSlider.scrollLeft / cardWidth);
-        const total = 20;
-        const displayIdx = Math.min(Math.max(idx + 1, 1), total);
+        productsIndex = idx;
+        const displayIdx = Math.min(Math.max(idx + 1, 1), totalProducts);
         
         if (productsCount) {
-          productsCount.textContent = `${displayIdx.toString().padStart(2, '0')} / ${total.toString().padStart(2, '0')}`;
+          productsCount.textContent = `${displayIdx.toString().padStart(2, '0')} / ${totalProducts.toString().padStart(2, '0')}`;
         }
         
         if (productsDots) {
@@ -605,7 +607,7 @@ const products = [
       if (productsDots) {
         Array.from(productsDots).forEach((dot, dIdx) => {
           dot.addEventListener('click', () => {
-            productsSlider.scrollTo({ left: dIdx * getCardWidth(), behavior: 'smooth' });
+            scrollToIndex(dIdx);
           });
         });
       }
