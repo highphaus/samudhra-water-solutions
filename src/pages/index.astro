@@ -287,13 +287,13 @@ const products = [
   <section id="about-summary" class="bg-white text-slate-900 border-t border-slate-100 py-24">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
-        <div class="lg:col-span-7 space-y-5">
+        <div class="lg:col-span-7 space-y-6">
           <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#07bee8]">About Our Company</p>
           <h2 class="text-4xl sm:text-6xl font-black tracking-tighter text-[#024095] uppercase leading-none">Who We Are.</h2>
           <p class="text-sm text-slate-500 font-light leading-relaxed max-w-xl">
             Started in 2009 in Thiruvananthapuram, Samudhra fixes local water problems. We don't sell generic filters — we test your water supply and engineer a custom solution that's always completely clean and safe.
           </p>
-          <div class="grid grid-cols-3 gap-4 pt-4">
+          <div class="grid grid-cols-3 gap-4 pt-2">
             {[
               { val:"17+", label:"Years Experience" },
               { val:"02",  label:"Showrooms TVM" },
@@ -305,11 +305,24 @@ const products = [
               </div>
             ))}
           </div>
+          <div class="pt-4">
+            <a href="/about" class="inline-block text-center px-8 py-4 bg-[#024095] text-white font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#07bee8] transition-all duration-300 shadow-md shadow-[#024095]/10">
+              Read Our Full History &rarr;
+            </a>
+          </div>
         </div>
-        <div class="lg:col-span-5 flex lg:justify-end">
-          <a href="/about" class="w-full lg:w-auto inline-block text-center px-8 py-4 bg-white border-2 border-[#024095] text-[#024095] font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#024095] hover:text-white transition-all duration-300">
-            Read Our Full History &rarr;
-          </a>
+        <div class="lg:col-span-5 relative group">
+          <div class="absolute inset-0 bg-gradient-to-tr from-[#024095]/10 to-[#07bee8]/10 rounded-2xl filter blur-xl transform translate-x-2 translate-y-2 opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative overflow-hidden rounded-2xl border border-slate-100 shadow-xl bg-white">
+            <img 
+              src="/images/office image/Samdhura Office.jpg" 
+              alt="Samudhra Water Solutions Corporate Office Interior" 
+              class="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
+            <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
+              <p class="text-[9px] font-mono font-black text-[#024095] uppercase tracking-wider">// POOJAPPURA HQ</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
