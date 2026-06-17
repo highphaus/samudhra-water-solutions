@@ -4,95 +4,116 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 ---
 
-<Layout title="Contact Hub & Operations | Samudhra Water Solutions">
+<Layout title="Contact Hub and Operations | Samudhra Water Solutions">
   <script is:inline src="https://cdn.tailwindcss.com"></script>
   <Navbar />
 
-  <!-- Immersive Page Header Canvas -->
+  <!-- 1. IMMERSIVE PAGE HEADER -->
   <section class="bg-[#F9F9FB] text-slate-900 pt-36 pb-24 border-b border-slate-200/60">
-    <div class="max-w-5xl mx-auto px-6">
+    <div class="max-w-6xl mx-auto px-6">
       <div class="flex items-center gap-3 mb-6">
         <span class="h-[1px] w-12 bg-[#024095]"></span>
-        <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">CONNECT / OFFICE REGISTRY</span>
+        <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">CONNECT WITH US</span>
       </div>
-      <h1 class="text-5xl sm:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">Initiate <br /> Consultation.</h1>
-      <p class="text-lg sm:text-xl font-light text-slate-600 mt-8 leading-relaxed max-w-3xl">Connect with our corporate advisors or distribution hubs directly. We ensure direct parameter reviews for home arrays and commercial turnkey layouts.</p>
-    </div>
-  </section>
-
-  <!-- Clean Scandinavian Showroom & Directory Contact Grid -->
-  <section class="bg-white text-slate-900 py-24">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-6">
-        
-        <!-- Poojappura Central Display Station -->
-        <div class="p-10 bg-[#F9F9FB] border-t-4 border-[#024095] shadow-sm rounded-b-md space-y-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// CENTRAL SITE DIVISION 01</span>
-            <h3 class="text-2xl font-black tracking-tight text-[#024095] uppercase">Poojappura Showroom</h3>
-            
-            <div class="space-y-1 text-sm text-slate-500 font-light leading-relaxed">
-              <p>Soorya Nidhi, TC 42/1231, Near Canara Bank,</p>
-              <p>Poojappura, Thiruvananthapuram, Kerala, India</p>
-            </div>
-
-            <!-- Direct Node Channels -->
-            <div class="pt-4 border-t border-slate-200/50 space-y-2 text-xs font-bold uppercase tracking-wider text-slate-600">
-              <div class="flex items-center gap-2">
-                <span class="text-slate-400 font-light">Phn:</span>
-                <a href="tel:+919645830994" class="hover:text-[#024095] transition-colors">+91 9645830994</a>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-slate-400 font-light">Mail:</span>
-                <a href="mailto:mail@samudhra.co.in" class="hover:text-[#024095] transition-colors lowercase font-medium text-sm tracking-normal">mail@samudhra.co.in</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-6"><a href="https://wa.me/919645830994?text=Hi, I want to arrange a consulting slot at your Poojappura facility." target="_blank" class="w-full sm:w-auto inline-block text-center px-6 py-3.5 bg-[#024095] text-white text-[10px] font-black uppercase tracking-wider hover:bg-[#07bee8] transition-all rounded shadow-md shadow-[#024095]/10">Schedule Site Visit</a></div>
-        </div>
-
-        <!-- Thirumala Logistics Distribution Node -->
-        <div class="p-10 bg-[#F9F9FB] border-t-4 border-[#07bee8] shadow-sm rounded-b-md space-y-6 flex flex-col justify-between">
-          <div class="space-y-4">
-            <span class="text-xs font-mono text-[#024095] font-bold uppercase tracking-widest">// LOGISTICS DIVISION 02</span>
-            <h3 class="text-2xl font-black tracking-tight text-[#024095] uppercase">Thirumala Showroom</h3>
-            
-            <div class="space-y-1 text-sm text-slate-500 font-light leading-relaxed">
-              <p>No.TC 40/147-1, Near MRA Restaurant,</p>
-              <p>Thirumala, Thiruvananthapuram, Kerala, India</p>
-            </div>
-
-            <!-- Direct Node Channels -->
-            <div class="pt-4 border-t border-slate-200/50 space-y-2 text-xs font-bold uppercase tracking-wider text-slate-600">
-              <div class="flex items-center gap-2">
-                <span class="text-slate-400 font-light">Phn:</span>
-                <a href="tel:+919645830994" class="hover:text-[#024095] transition-colors">+91 9645830994</a>
-              </div>
-              <div class="flex items-center gap-2">
-                <span class="text-slate-400 font-light">Mail:</span>
-                <a href="mailto:mail@samudhra.co.in" class="hover:text-[#024095] transition-colors lowercase font-medium text-sm tracking-normal">mail@samudhra.co.in</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-6"><a href="https://wa.me/919645830994?text=Hi, I am checking component tracking at the Thirumala distribution center." target="_blank" class="w-full sm:w-auto inline-block text-center px-6 py-3.5 bg-white border-2 border-[#024095] text-[#024095] text-[10px] font-black uppercase tracking-wider hover:bg-[#024095] hover:text-white transition-all rounded">Contact Logistics Desk</a></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Clean Corporate Footer Baseline -->
-  <footer class="bg-white text-slate-400 py-16 border-t border-slate-100">
-    <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-8">
-      <div class="space-y-1">
-        <p class="text-black font-black text-lg tracking-widest">SAMUDHRA</p>
-        <p class="text-[9px] font-bold uppercase tracking-[0.2em]">Purity Standards &copy; {new Date().getFullYear()}</p>
-      </div>
-      <p class="text-xs font-light max-w-sm text-center sm:text-right leading-relaxed text-slate-400">
-        Corporate operations engineered cleanly in Thiruvananthapuram. Multi-brand customized components and site maintenance compliance. All rights protected.
+      <h1 class="text-5xl sm:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">
+        Get In Touch.
+      </h1>
+      <p class="text-lg sm:text-xl font-light text-slate-600 mt-8 leading-relaxed max-w-3xl">
+        Call now or write a message to us. Get in touch with us everytime. Our 24x7 service unit will help you to process your needs at anytime.
       </p>
+    </div>
+  </section>
+
+  <!-- 2. MAIN HUB DETAIL GRID -->
+  <section class="bg-white text-slate-900 py-24">
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-start">
+      
+      <!-- Left Side: Complete Contact Directory Card -->
+      <div class="lg:col-span-7 bg-[#F9F9FB] border-t-4 border-[#024095] p-8 sm:p-10 rounded-b-md shadow-sm space-y-8">
+        <div>
+          <h2 class="text-2xl font-black text-[#024095] uppercase tracking-tight">Contact Information</h2>
+          <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-0.5">Central Showroom Registry</p>
+        </div>
+
+        <!-- Location Node -->
+        <div class="space-y-2 pt-4 border-t border-slate-200/60">
+          <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Our Location</p>
+          <p class="text-sm font-medium text-slate-700 leading-relaxed">
+            Soorya nidhi, TC 42/1231, main road, near canara bank, Poojapura, Thiruvananthapuram, Kerala 695012
+          </p>
+        </div>
+
+        <!-- Communication Nodes Grid -->
+        <div class="grid sm:grid-cols-2 gap-6 pt-4 border-t border-slate-200/60">
+          <div class="space-y-1">
+            <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Phone Number</p>
+            <a href="tel:+919645830994" class="text-base font-bold text-[#024095] hover:text-[#07bee8] transition-colors">
+              9645830994
+            </a>
+          </div>
+          <div class="space-y-1">
+            <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Email Address</p>
+            <a href="mailto:mail@samudhra.co.in" class="text-sm font-medium text-slate-600 hover:text-[#024095] transition-colors break-all">
+              mail@samudhra.co.in
+            </a>
+          </div>
+        </div>
+
+        <!-- Instant WhatsApp Action Anchor -->
+        <div class="pt-6">
+          <a href="https://wa.me/919645830994?text=Hi, I want to get in touch with your water filtration service team." target="_blank" class="w-full inline-block text-center px-8 py-4 bg-[#024095] text-white font-black text-xs uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md shadow-[#024095]/10">
+            SEND MESSAGE NOW
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Side: Schedule and Emergency Panel -->
+      <div class="lg:col-span-5 space-y-6">
+        
+        <!-- Schedule Hours Box -->
+        <div class="bg-[#F9F9FB] border-t-4 border-[#07bee8] p-8 rounded-b-md shadow-sm space-y-4">
+          <p class="text-[10px] font-black text-slate-400 uppercase tracking-widest">TIMELINE COMPLIANCE</p>
+          <h3 class="text-xl font-black text-[#024095] uppercase tracking-tight">Schedule Hours</h3>
+          
+          <div class="space-y-3 pt-2 text-sm text-slate-600 font-medium">
+            <div class="flex justify-between pb-2 border-b border-slate-200/40">
+              <span class="text-slate-500 font-light">Monday – Saturday</span>
+              <span class="text-[#024095]">08:00 AM - 08:00 PM</span>
+            </div>
+            <div class="flex justify-between">
+              <span class="text-slate-500 font-light">Sunday</span>
+              <span class="text-slate-400">Closed *</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Urgent Hotkey Container -->
+        <div class="bg-red-50 border-l-4 border-red-600 p-8 rounded-r-md shadow-sm space-y-2">
+          <p class="text-[9px] font-black text-red-600 uppercase tracking-widest">CRITICAL SUPPORT</p>
+          <h4 class="text-lg font-black text-[#024095] uppercase tracking-tight">Emergency Cases</h4>
+          <p class="text-xs text-slate-500 font-light leading-relaxed">
+            For urgent pipe leaks, mainline plant shutdowns, or sudden filtration breakdowns, call our field line instantly.
+          </p>
+          <div class="pt-2">
+            <a href="tel:+919645830994" class="inline-flex items-center gap-2 text-lg font-black text-red-600 hover:text-red-700 transition-colors">
+              <span>&;</span> 9645830994
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPACT FOOTER BASELINE -->
+  <footer class="bg-[#F9F9FB] text-slate-400 py-12 border-t border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6 text-[10px] font-bold uppercase tracking-[0.25em]">
+      <p class="text-slate-400">&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</p>
+      <div class="flex items-center gap-4 text-[#024095]">
+        <span>24X7 SUPPORT UNIT</span>
+        <span class="font-black">TRIVANDRUM, KERALA</span>
+      </div>
     </div>
   </footer>
 </Layout>

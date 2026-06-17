@@ -4,42 +4,26 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 
 const products = [
-  {
-    id: "pro-01",
-    tier: "Residential Purity",
-    name: "Samudhra Cleantech RO",
-    specs: "7-Stage Mineralization & Alkaline Buffer",
-    contaminants: "Isolates Lime Scale, Heavy Iron & Acidity",
-    suitability: "Trivandrum Municipal & Groundwater Tables",
-    availability: "In Stock - Poojappura Hub"
-  },
-  {
-    id: "pro-02",
-    tier: "Residential Purity",
-    name: "Active Copper Ultra",
-    specs: "Active UV + UF Intact Anti-Microbial Flow",
-    contaminants: "Neutralizes Pathogens & Silt Compounds",
-    suitability: "Low-Pressure Apartment Pipe Systems",
-    availability: "In Stock - Thirumala Hub"
-  },
-  {
-    id: "pro-03",
-    tier: "Commercial Tier",
-    name: "Compact Plant 500 LPH",
-    specs: "Stainless High-Pressure Multi-Stage Booster",
-    contaminants: "Total Dissolved Solids (TDS) Reduction",
-    suitability: "Hospitals, Corporate Offices & Restaurants",
-    availability: "Built to Order - 3 Days"
-  },
-  {
-    id: "pro-04",
-    tier: "Infrastructure Tier",
-    name: "Automatic Brine Softener",
-    specs: "Ion-Exchange Smart Regenerative Matrix",
-    contaminants: "Eliminates White Scale & Pipe Clogging",
-    suitability: "Full-House Mainline Tank Attachments",
-    availability: "In Stock - Distribution Center"
-  }
+  { name: "100000 LPH RO Plant", image: "/images/products/100000 LPH RO plant.jpg", tier: "Industrial Tier", specs: "High Capacity RO Filtration", contaminants: "Heavy TDS, Pathogens, Minerals", suitability: "Large Scale Industries, Factories", availability: "Built to Order" },
+  { name: "100LPH-10000LPH RO Plant", image: "/images/products/100LPH-10000LPH RO Plant.jpg", tier: "Commercial Tier", specs: "Customizable Output", contaminants: "TDS, Pathogens, Silt", suitability: "Hospitals, Offices, Institutions", availability: "Built to Order" },
+  { name: "AQUA C3", image: "/images/products/AQUA C3.jpg", tier: "Residential Purity", specs: "Advanced Purification", contaminants: "Pathogens, Hardness", suitability: "Home and Apartment use", availability: "In Stock" },
+  { name: "AQUA XZORA", image: "/images/products/AQUA XZORA.jpg", tier: "Residential Purity", specs: "Multi-Stage Filtration", contaminants: "TDS, Chemicals, Odor", suitability: "Home, Municipal Water", availability: "In Stock" },
+  { name: "AQUA9090", image: "/images/products/AQUA9090.jpg", tier: "Residential Purity", specs: "Premium Water Purifier", contaminants: "Pathogens, Heavy Metals", suitability: "Home use", availability: "In Stock" },
+  { name: "BELLA+ & AVA+", image: "/images/products/BELLA+ & AVA+.jpg", tier: "Residential Purity", specs: "Compact Modern Purifiers", contaminants: "Bacteria, Cysts, Silt", suitability: "Kitchen, Small Office", availability: "In Stock" },
+  { name: "DM Plant", image: "/images/products/DM plant.jpg", tier: "Industrial Tier", specs: "Demineralization System", contaminants: "Dissolved Mineral Salts", suitability: "Laboratories, Power Plants", availability: "Built to Order" },
+  { name: "Desalination Water Filtration", image: "/images/products/Desalination Water Filtration.jpg", tier: "Industrial Tier", specs: "Seawater Desalination", contaminants: "High Salt Content", suitability: "Coastal Resorts, Marine Applications", availability: "Built to Order" },
+  { name: "Effluent Treatment Plant", image: "/images/products/Effluent Treatment Plant.jpg", tier: "Infrastructure Tier", specs: "Industrial Wastewater Processing", contaminants: "Chemicals, Effluents", suitability: "Factories, Manufacturing Units", availability: "Built to Order" },
+  { name: "Hot and Cold Water Dispenser", image: "/images/products/HOT AND COLD Water Dispenser.jpg", tier: "Commercial Tier", specs: "Temperature Controlled Dispensing", contaminants: "Integrated Filtration Options", suitability: "Offices, Clinics, Waiting Areas", availability: "In Stock" },
+  { name: "Multibrand Water Purifiers", image: "/images/products/Multibrand Water Purifiers.jpg", tier: "Residential/Commercial", specs: "Various Top Brands", contaminants: "All Water Issues", suitability: "Homes, Shops, Offices", availability: "In Stock" },
+  { name: "PZONE BLACK Water Purifier", image: "/images/products/PZONE BLACK Water purifier.jpg", tier: "Residential Purity", specs: "Elegant Black Design, RO+UV", contaminants: "TDS, Bacteria", suitability: "Modern Kitchens", availability: "In Stock" },
+  { name: "SALVADOR RO Water Purifier", image: "/images/products/SALVADOR RO water purifier.jpg", tier: "Residential Purity", specs: "RO Technology", contaminants: "Hard Water, Chemicals", suitability: "Household Drinking Water", availability: "In Stock" },
+  { name: "Sewage Treatment Plant", image: "/images/products/Sewage Treatment Plant.jpg", tier: "Infrastructure Tier", specs: "Sewage and Wastewater Recycling", contaminants: "Organic Waste, Pathogens", suitability: "Apartments, Hotels, Municipalities", availability: "Built to Order" },
+  { name: "Stainless Steel Water Tanks", image: "/images/products/Stainless steel water tanks.jpg", tier: "Storage Solutions", specs: "Food Grade SS 304/316", contaminants: "Prevents Algae and Rust", suitability: "Residential, Commercial Storage", availability: "In Stock" },
+  { name: "Swimming Pool Filtration Plant", image: "/images/products/Swimming Pool Filtration Plant.jpeg", tier: "Commercial Tier", specs: "Sand and Cartridge Filtration", contaminants: "Debris, Algae, Bacteria", suitability: "Hotels, Resorts, Public Pools", availability: "Built to Order" },
+  { name: "UF Plant", image: "/images/products/Uf Plant.jpg", tier: "Commercial Tier", specs: "Ultrafiltration Technology", contaminants: "Suspended Solids, Bacteria", suitability: "Pre-treatment, Municipal Water", availability: "Built to Order" },
+  { name: "Water Softening Plant", image: "/images/products/Water softening plant.jpg", tier: "Infrastructure Tier", specs: "Ion-Exchange Process", contaminants: "Calcium, Magnesium (Hardness)", suitability: "Whole House, Laundries, Boilers", availability: "Built to Order" },
+  { name: "Water Treatment Plant", image: "/images/products/Water treatment plant.jpg", tier: "Infrastructure Tier", specs: "Comprehensive Water Treatment", contaminants: "Multiple Contaminants", suitability: "Large Scale Supply, Factories", availability: "Built to Order" },
+  { name: "ZEDERA Water Purifiers", image: "/images/products/ZEDERA WATER PURIFIERS.jpg", tier: "Residential Purity", specs: "Advanced Home Filtration", contaminants: "Common Impurities", suitability: "Home use", availability: "In Stock" }
 ];
 ---
 
@@ -67,6 +51,9 @@ const products = [
               <div class="flex justify-between items-center">
                 <span class="text-[10px] font-mono text-[#07bee8] uppercase tracking-widest">[ {product.tier} ]</span>
                 <span class="text-[9px] font-bold px-2.5 py-1 bg-emerald-50 text-emerald-700 uppercase tracking-wider rounded">{product.availability}</span>
+              </div>
+              <div class="h-48 w-full bg-white rounded-md flex items-center justify-center overflow-hidden p-2 shadow-inner border border-slate-100">
+                <img src={product.image} alt={product.name} class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500" />
               </div>
               <div>
                 <h3 class="text-2xl font-black tracking-tight text-[#024095] group-hover:text-[#07bee8] transition-colors uppercase">{product.name}</h3>
