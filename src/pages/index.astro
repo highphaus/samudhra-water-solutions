@@ -2,68 +2,149 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+
+const services = [
+  { num: "01", title: "UF Plant Installation & Maintenance", image: "/images/products/Uf Plant.jpg", tag: "Filtration" },
+  { num: "02", title: "Swimming Pool Filtration Plant", image: "/images/products/Swimming Pool Filtration Plant.jpeg", tag: "Commercial" },
+  { num: "03", title: "Sewage Treatment Plant (STP)", image: "/images/products/Sewage Treatment Plant.jpg", tag: "Infrastructure" },
+  { num: "04", title: "Effluent Treatment Plants (ETPs)", image: "/images/products/Effluent Treatment Plant.jpg", tag: "Industrial" },
+  { num: "05", title: "De-Mineralizing (DM) Plants", image: "/images/products/DM plant.jpg", tag: "Purification" },
+  { num: "06", title: "Desalination Water Filtration Plants", image: "/images/products/Desalination Water Filtration.jpg", tag: "Coastal" },
+  { num: "07", title: "100,000 LPH RO Plant", image: "/images/products/100000 LPH RO plant.jpg", tag: "Large Scale" },
+  { num: "08", title: "250 LPH RO Plant", image: "/images/products/100LPH-10000LPH RO Plant.jpg", tag: "Commercial" },
+  { num: "09", title: "MultiBrand Water Purifier Servicing", image: "/images/products/Multibrand Water Purifiers.jpg", tag: "Servicing" },
+  { num: "10", title: "Water Tank Cleaning", image: "/images/products/Stainless steel water tanks.jpg", tag: "Maintenance" },
+];
+
+const products = [
+  { name: "100000 LPH RO Plant", image: "/images/products/100000 LPH RO plant.jpg", tier: "Industrial Tier", availability: "Built to Order" },
+  { name: "100LPH–10000LPH RO Plant", image: "/images/products/100LPH-10000LPH RO Plant.jpg", tier: "Commercial Tier", availability: "Built to Order" },
+  { name: "AQUA C3", image: "/images/products/AQUA C3.jpg", tier: "Residential", availability: "In Stock" },
+  { name: "AQUA XZORA", image: "/images/products/AQUA XZORA.jpg", tier: "Residential", availability: "In Stock" },
+  { name: "AQUA 9090", image: "/images/products/AQUA9090.jpg", tier: "Residential", availability: "In Stock" },
+  { name: "BELLA+ & AVA+", image: "/images/products/BELLA+ & AVA+.jpg", tier: "Residential", availability: "In Stock" },
+  { name: "DM Plant", image: "/images/products/DM plant.jpg", tier: "Industrial Tier", availability: "Built to Order" },
+  { name: "Desalination Filtration", image: "/images/products/Desalination Water Filtration.jpg", tier: "Industrial Tier", availability: "Built to Order" },
+  { name: "Effluent Treatment Plant", image: "/images/products/Effluent Treatment Plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
+  { name: "Hot & Cold Dispenser", image: "/images/products/HOT AND COLD Water Dispenser.jpg", tier: "Commercial Tier", availability: "In Stock" },
+  { name: "Multibrand Purifiers", image: "/images/products/Multibrand Water Purifiers.jpg", tier: "Residential", availability: "In Stock" },
+  { name: "PZONE BLACK Purifier", image: "/images/products/PZONE BLACK Water purifier.jpg", tier: "Residential", availability: "In Stock" },
+  { name: "SALVADOR RO Purifier", image: "/images/products/SALVADOR RO water purifier.jpg", tier: "Residential", availability: "In Stock" },
+  { name: "Sewage Treatment Plant", image: "/images/products/Sewage Treatment Plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
+  { name: "Stainless Steel Water Tanks", image: "/images/products/Stainless steel water tanks.jpg", tier: "Storage", availability: "In Stock" },
+  { name: "Swimming Pool Filtration", image: "/images/products/Swimming Pool Filtration Plant.jpeg", tier: "Commercial Tier", availability: "Built to Order" },
+  { name: "UF Plant", image: "/images/products/Uf Plant.jpg", tier: "Commercial Tier", availability: "Built to Order" },
+  { name: "Water Softening Plant", image: "/images/products/Water softening plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
+  { name: "Water Treatment Plant", image: "/images/products/Water treatment plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
+  { name: "ZEDERA Water Purifiers", image: "/images/products/ZEDERA WATER PURIFIERS.jpg", tier: "Residential", availability: "In Stock" },
+];
 ---
 
 <Layout title="Samudhra Water Solutions | Pure Water Systems & Support">
-  
-  <!-- FORCES TAILWIND UTILITY MATRIX TO COMPUTE CUSTOM EMBED COLOR CODES -->
   <script is:inline src="https://cdn.tailwindcss.com"></script>
-
   <Navbar />
 
-  <!-- ========================================================================= -->
-  <!-- 1. HOME SECTION (Welcome Page Header) -->
-  <!-- ========================================================================= -->
-  <section id="home" class="relative min-h-screen flex items-center bg-[#F9F9FB] text-slate-900 pt-24 overflow-hidden">
-    <div class="absolute inset-y-0 right-0 w-[35%] bg-[#024095]/5 hidden lg:block skew-x-6 origin-top-right"></div>
-    <div class="absolute top-1/4 right-10 w-72 h-72 bg-[#07bee8]/10 rounded-full blur-3xl pointer-events-none"></div>
+  <style>
+    /* ── Ticker-style infinite scroll ── */
+    @keyframes scroll-left {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @keyframes scroll-right {
+      0%   { transform: translateX(-50%); }
+      100% { transform: translateX(0); }
+    }
+    .carousel-track-left  { animation: scroll-left  40s linear infinite; }
+    .carousel-track-right { animation: scroll-right 45s linear infinite; }
+    .carousel-wrap:hover .carousel-track-left,
+    .carousel-wrap:hover .carousel-track-right { animation-play-state: paused; }
 
-    <div class="max-w-7xl mx-auto px-6 w-full py-20 relative z-10">
+    /* ── Hero gradient pulse ── */
+    @keyframes pulse-blob {
+      0%, 100% { transform: scale(1) translate(0, 0); opacity: .6; }
+      50%       { transform: scale(1.15) translate(20px, -10px); opacity: .9; }
+    }
+    .hero-blob { animation: pulse-blob 8s ease-in-out infinite; }
+
+    /* ── Counter number animation ── */
+    @keyframes count-up {
+      from { opacity:0; transform: translateY(10px); }
+      to   { opacity:1; transform: translateY(0); }
+    }
+    .stat-num { animation: count-up .6s ease-out both; }
+
+    /* ── Section fade-in on scroll ── */
+    .reveal { opacity:0; transform:translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+
+    /* ── Availability badge ── */
+    .badge-stock   { background:#ecfdf5; color:#059669; }
+    .badge-order   { background:#fff7ed; color:#d97706; }
+  </style>
+
+  <!-- ======================================================== -->
+  <!-- 1. HERO -->
+  <!-- ======================================================== -->
+  <section id="home" class="relative min-h-screen flex items-center bg-[#F9F9FB] overflow-hidden pt-20">
+    <!-- Decorative blobs -->
+    <div class="hero-blob absolute top-[-80px] right-[-60px] w-[520px] h-[520px] rounded-full bg-gradient-to-br from-[#07bee8]/20 to-[#024095]/10 blur-3xl pointer-events-none"></div>
+    <div class="hero-blob absolute bottom-[-100px] left-[-80px] w-[420px] h-[420px] rounded-full bg-gradient-to-tr from-[#024095]/10 to-[#07bee8]/10 blur-3xl pointer-events-none" style="animation-delay:4s"></div>
+    <div class="absolute inset-y-0 right-0 w-[30%] bg-[#024095]/4 hidden lg:block" style="clip-path:polygon(10% 0,100% 0,100% 100%,0% 100%)"></div>
+
+    <div class="max-w-7xl mx-auto px-6 w-full py-24 relative z-10">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Left Side: Simple Welcome Message -->
-        <div class="lg:col-span-8 space-y-8 text-center lg:text-left">
+
+        <!-- Left copy -->
+        <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
           <div class="inline-flex items-center gap-3 px-4 py-2 bg-white border-l-4 border-[#07bee8] shadow-sm">
-            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#024095]">WATER SYSTEMS FOR HOME AND BUSINESS</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] animate-pulse"></span>
+            <span class="text-[10px] font-black uppercase tracking-[0.35em] text-[#024095]">Kerala's Premium Water Solutions Since 2009</span>
           </div>
-          
-          <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-[#024095] leading-[0.95] uppercase">
-            PURE WATER.<br />
-            WITHOUT THE<br />
+
+          <h1 class="text-5xl sm:text-7xl lg:text-8xl font-black tracking-tighter text-[#024095] leading-[0.92] uppercase">
+            PURE WATER.<br/>
+            WITHOUT THE<br/>
             <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#024095] via-[#07bee8] to-slate-400">PLASTIC WASTE.</span>
           </h1>
-          
+
           <p class="text-base sm:text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
-            We provide custom water purifiers for houses and high-capacity water plants for businesses. Get clean, pure, and healthy water across Trivandrum.
+            We provide custom water purifiers for houses and high-capacity water plants for businesses. Trusted clean water across Trivandrum.
           </p>
 
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-            <a href="/shop" class="w-full sm:w-auto px-8 py-4 bg-[#024095] text-white font-extrabold text-xs uppercase tracking-[0.2em] rounded-md shadow-lg hover:bg-[#07bee8] transition-all duration-400 text-center">
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a href="/shop" class="w-full sm:w-auto px-8 py-4 bg-[#024095] text-white font-extrabold text-xs uppercase tracking-[0.2em] rounded-md shadow-lg hover:bg-[#07bee8] transition-all duration-300 text-center">
               View Our Products
             </a>
-            <a href="/contact" class="w-full sm:w-auto px-8 py-4 bg-white border-2 border-[#024095] text-[#024095] font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#024095] hover:text-white transition-all duration-400 text-center">
+            <a href="/contact" class="w-full sm:w-auto px-8 py-4 bg-white border-2 border-[#024095] text-[#024095] font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#024095] hover:text-white transition-all duration-300 text-center">
               Contact Our Desk
             </a>
           </div>
         </div>
 
-        <!-- Right Side: Quick Highlights -->
-        <div class="lg:col-span-4 grid grid-cols-2 gap-4">
-          <div class="bg-white p-6 border-b-4 border-[#024095] shadow-md rounded-md space-y-2">
-            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Water Purity</p>
-            <p class="text-3xl font-black text-[#024095]">99.7%</p>
-          </div>
-          <div class="bg-white p-6 border-b-4 border-[#07bee8] shadow-md rounded-md space-y-2">
-            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Max Plant Size</p>
-            <p class="text-3xl font-black text-[#024095]">100k <span class="text-xs text-slate-400 font-mono">LPH</span></p>
-          </div>
-          <div class="bg-white p-6 border-b-4 border-[#07bee8] shadow-md rounded-md space-y-2">
-            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Showrooms</p>
-            <p class="text-3xl font-black text-[#024095]">02 <span class="text-xs text-slate-400 font-mono">TVM</span></p>
-          </div>
-          <div class="bg-white p-6 border-b-4 border-[#024095] shadow-md rounded-md space-y-2">
-            <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Quality Code</p>
-            <p class="text-xl font-black text-[#07bee8] uppercase pt-1">ISO 9001</p>
+        <!-- Right stats -->
+        <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+          {[
+            { label:"Water Purity",   val:"99.7%",    accent:"#024095" },
+            { label:"Max Plant Size", val:"100k LPH",  accent:"#07bee8" },
+            { label:"Years Active",   val:"17+",       accent:"#07bee8" },
+            { label:"Quality Code",   val:"ISO 9001",  accent:"#024095" },
+          ].map(s => (
+            <div class={`bg-white p-6 border-b-4 shadow-md rounded-md space-y-2 hover:shadow-xl transition-shadow`} style={`border-color:${s.accent}`}>
+              <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">{s.label}</p>
+              <p class="text-2xl font-black" style={`color:${s.accent}`}>{s.val}</p>
+            </div>
+          ))}
+
+          <!-- Quick links row -->
+          <div class="col-span-2 bg-white rounded-md shadow-md border border-slate-100 p-4 flex items-center justify-between gap-2 flex-wrap">
+            {[
+              {href:"/service", label:"Services"},
+              {href:"/shop",    label:"Products"},
+              {href:"/about",   label:"About Us"},
+              {href:"/contact", label:"Contact"},
+            ].map(l => (
+              <a href={l.href} class="text-[9px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-[#024095] transition-colors px-2 py-1">{l.label}</a>
+            ))}
           </div>
         </div>
 
@@ -71,220 +152,219 @@ import Navbar from '../components/Navbar.astro';
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- 2. ABOUT SECTION (About Us Summary) -->
-  <!-- ========================================================================= -->
-  <section id="about-summary" class="bg-white text-slate-900 border-t border-slate-100">
-    <div class="max-w-7xl mx-auto px-6 py-24">
-      <div class="grid lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-7 space-y-4">
-          <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#07bee8]">ABOUT OUR COMPANY</p>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#024095] uppercase">Who We Are.</h2>
-          <p class="text-sm text-slate-500 font-light leading-relaxed">
-            Started in 2009 in Thiruvananthapuram, Samudhra fixes local water problems. We don't sell general filters—we test your water supply and fix it according to your exact needs so it is always completely clean and safe.
+  <!-- ======================================================== -->
+  <!-- 2. SERVICES CAROUSEL -->
+  <!-- ======================================================== -->
+  <section id="services-carousel" class="bg-[#024095] text-white py-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-12 reveal">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8] mb-2">What We Do</p>
+          <h2 class="text-4xl sm:text-6xl font-black tracking-tighter uppercase leading-none">Our Services.</h2>
+          <p class="text-sm text-white/60 font-light mt-3 max-w-md leading-relaxed">10 specialised water treatment and maintenance services engineered for every scale.</p>
+        </div>
+        <a href="/service" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-white/30 text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white hover:text-[#024095] transition-all rounded whitespace-nowrap">
+          See All Services &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Carousel track -->
+    <div class="carousel-wrap overflow-hidden select-none cursor-grab">
+      <div class="carousel-track-left flex gap-5 w-max">
+        {/* Render services twice for seamless loop */}
+        {[...services, ...services].map((svc, i) => (
+          <a href="/service" class="group flex-shrink-0 w-72 bg-white/10 hover:bg-white/20 border border-white/10 hover:border-[#07bee8]/60 rounded-xl overflow-hidden transition-all duration-300 backdrop-blur-sm">
+            <div class="h-44 overflow-hidden bg-white/5 flex items-center justify-center">
+              <img src={svc.image} alt={svc.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[8px] font-black uppercase tracking-widest text-[#07bee8] bg-[#07bee8]/15 px-2 py-0.5 rounded-full">{svc.tag}</span>
+                <span class="text-[9px] font-mono text-white/40">#{svc.num}</span>
+              </div>
+              <h3 class="text-sm font-black uppercase tracking-tight text-white group-hover:text-[#07bee8] transition-colors leading-snug">{svc.title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 3. PRODUCTS CAROUSEL -->
+  <!-- ======================================================== -->
+  <section id="products-carousel" class="bg-[#F9F9FB] text-slate-900 py-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-12 reveal">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div>
+          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8] mb-2">Shop Products</p>
+          <h2 class="text-4xl sm:text-6xl font-black tracking-tighter uppercase text-[#024095] leading-none">Our Products.</h2>
+          <p class="text-sm text-slate-500 font-light mt-3 max-w-md leading-relaxed">20 curated water purification systems — from compact home purifiers to 100,000 LPH industrial plants.</p>
+        </div>
+        <a href="/shop" class="inline-flex items-center gap-2 px-6 py-3 border-2 border-[#024095] text-[#024095] text-xs font-black uppercase tracking-[0.2em] hover:bg-[#024095] hover:text-white transition-all rounded whitespace-nowrap">
+          Open Full Shop &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Carousel track — scrolls right to left, opposite direction for variety -->
+    <div class="carousel-wrap overflow-hidden select-none cursor-grab">
+      <div class="carousel-track-right flex gap-5 w-max">
+        {[...products, ...products].map((p, i) => (
+          <a href="/shop" class="group flex-shrink-0 w-64 bg-white hover:shadow-xl border border-slate-100 rounded-xl overflow-hidden transition-all duration-300">
+            <div class="h-44 bg-[#F9F9FB] flex items-center justify-center p-4 overflow-hidden border-b border-slate-100">
+              <img src={p.image} alt={p.name} class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[8px] font-mono text-[#07bee8] uppercase tracking-widest">{p.tier}</span>
+                <span class={`text-[8px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${p.availability === 'In Stock' ? 'badge-stock' : 'badge-order'}`}>{p.availability}</span>
+              </div>
+              <h3 class="text-sm font-black uppercase tracking-tight text-[#024095] group-hover:text-[#07bee8] transition-colors leading-snug">{p.name}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 4. ABOUT SUMMARY -->
+  <!-- ======================================================== -->
+  <section id="about-summary" class="bg-white text-slate-900 border-t border-slate-100 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 items-center reveal">
+        <div class="lg:col-span-7 space-y-5">
+          <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#07bee8]">About Our Company</p>
+          <h2 class="text-4xl sm:text-6xl font-black tracking-tighter text-[#024095] uppercase leading-none">Who We Are.</h2>
+          <p class="text-sm text-slate-500 font-light leading-relaxed max-w-xl">
+            Started in 2009 in Thiruvananthapuram, Samudhra fixes local water problems. We don't sell generic filters — we test your water supply and engineer a custom solution that's always completely clean and safe.
           </p>
+          <div class="grid grid-cols-3 gap-4 pt-4">
+            {[
+              { val:"17+", label:"Years Experience" },
+              { val:"02",  label:"Showrooms TVM" },
+              { val:"10+", label:"Service Types" },
+            ].map(s => (
+              <div class="border border-slate-100 rounded-lg p-4 text-center hover:border-[#07bee8] transition-colors">
+                <p class="text-2xl font-black text-[#024095]">{s.val}</p>
+                <p class="text-[9px] text-slate-400 uppercase tracking-wider mt-1 font-bold">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
         <div class="lg:col-span-5 flex lg:justify-end">
-          <a href="/about" class="w-full lg:w-auto inline-block text-center px-8 py-4 bg-white border-2 border-[#024095] text-[#024095] font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#024095] hover:text-white transition-all duration-400">
-            Read Our Full History
+          <a href="/about" class="w-full lg:w-auto inline-block text-center px-8 py-4 bg-white border-2 border-[#024095] text-[#024095] font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#024095] hover:text-white transition-all duration-300">
+            Read Our Full History &rarr;
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- 3. SERVICES SECTION (What We Do / Our Support) -->
-  <!-- ========================================================================= -->
-  <section id="services-summary" class="bg-[#F9F9FB] text-slate-900 border-t border-slate-200/50">
-    <div class="max-w-7xl mx-auto px-6 py-24">
-      <div class="grid lg:grid-cols-12 gap-8 items-start mb-16">
-        <div class="lg:col-span-6 space-y-2">
-          <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#07bee8]">WHAT WE DO</p>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#024095] uppercase">Our Services.</h2>
+  <!-- ======================================================== -->
+  <!-- 5. TESTIMONIALS -->
+  <!-- ======================================================== -->
+  <section id="testimonials-summary" class="bg-[#024095] text-white border-t border-[#024095]/10 py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 items-start mb-16 reveal">
+        <div class="lg:col-span-7 space-y-3">
+          <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#07bee8]">Customer Reviews</p>
+          <h2 class="text-4xl sm:text-6xl font-black tracking-tighter uppercase leading-none">What Customers Say.</h2>
         </div>
-        <div class="lg:col-span-6 lg:pt-6 flex lg:justify-end">
-          <a href="/service" class="group text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2 text-[#024095] hover:text-[#07bee8] transition-colors">
-            See All Service Details <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+        <div class="lg:col-span-5 lg:pt-8 flex lg:justify-end">
+          <a href="/testimonial" class="group text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2 text-white/60 hover:text-[#07bee8] transition-colors">
+            Read All Reviews <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
           </a>
         </div>
       </div>
 
-      <!-- Service Card 1 -->
-      <div class="grid lg:grid-cols-12 gap-8 items-start border-t border-slate-200 py-10 bg-white mb-4 px-6 rounded-md shadow-sm">
-        <div class="lg:col-span-4">
-          <span class="text-xs font-mono text-slate-400 font-bold uppercase tracking-widest">[ REPAIR & SETUP ]</span>
-          <h3 class="text-xl font-black text-[#024095] tracking-tight mt-1 uppercase">Home Water Purifiers</h3>
-        </div>
-        <div class="lg:col-span-5">
-          <p class="text-sm text-slate-500 font-light leading-relaxed">
-            We inspect and install high-quality multi-brand home purifiers. Our setups completely remove yellow iron stains, heavy white chalky scale, and bad smells from well and tap water lines.
+      <div class="grid md:grid-cols-2 gap-6 reveal">
+        {[
+          { quote: "Samudhra built a high-performance water treatment plant for our clinical center. Their special filters completely removed the heavy iron from our water supply. The purity remains constant and perfect.", author: "Dr. K. Raghavan", org: "Private Medical Clinic, Thiruvananthapuram" },
+          { quote: "We had severe scale issues in our apartment complex. Samudhra's team assessed the pipeline, installed a custom softening system, and the difference was immediately noticeable. Highly recommended.", author: "Mr. Suresh Pillai", org: "Apartment Association, Vattiyoorkavu" },
+        ].map(t => (
+          <div class="bg-white/10 border border-white/10 hover:border-[#07bee8]/40 rounded-xl p-8 transition-all duration-300">
+            <div class="text-[#07bee8] text-xs font-black tracking-widest mb-4">★★★★★</div>
+            <p class="text-sm text-white/80 font-light leading-relaxed italic mb-6">"{t.quote}"</p>
+            <div class="border-t border-white/10 pt-5">
+              <p class="text-sm font-black text-white tracking-tight uppercase">{t.author}</p>
+              <p class="text-[9px] font-bold text-white/40 uppercase tracking-widest mt-0.5">{t.org}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 6. FOUNDER -->
+  <!-- ======================================================== -->
+  <section id="founder-summary" class="bg-white text-slate-900 border-t border-slate-100 py-24">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center reveal">
+      <div class="lg:col-span-8 space-y-5">
+        <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#024095]">Founder Statement</p>
+        <h2 class="text-4xl sm:text-5xl font-black tracking-tighter text-[#024095] uppercase leading-tight">Message From<br/>Our Founder.</h2>
+        <blockquote class="border-l-4 border-[#07bee8] pl-6">
+          <p class="text-sm text-slate-500 font-light leading-relaxed italic">
+            "Clean water is a basic need. At Samudhra, we built our reputation over 17 years by refusing to offer cheap shortcuts — custom-building every layout package to fit your specific well or pipeline water supply."
           </p>
-        </div>
-        <div class="lg:col-span-3 lg:text-right">
-          <span class="text-[10px] font-extrabold text-[#07bee8] tracking-widest uppercase block mb-2">Well & Tank Testing</span>
-        </div>
-      </div>
-
-      <!-- Service Card 2 -->
-      <div class="grid lg:grid-cols-12 gap-8 items-start border-t border-b border-slate-200 py-10 bg-white px-6 rounded-md shadow-sm">
-        <div class="lg:col-span-4">
-          <span class="text-xs font-mono text-slate-400 font-bold uppercase tracking-widest">[ LARGE COMMERCIAL PLANTS ]</span>
-          <h3 class="text-xl font-black text-[#024095] tracking-tight mt-1 uppercase">Commercial Water Plants</h3>
-        </div>
-        <div class="lg:col-span-5">
-          <p class="text-sm text-slate-500 font-light leading-relaxed">
-            We blueprint and set up heavy-duty reverse osmosis filter plants, sewage treatment plans (STP), and public swimming pool systems for commercial structures and apartments.
-          </p>
-        </div>
-        <div class="lg:col-span-3 lg:text-right">
-          <span class="text-[10px] font-extrabold text-[#07bee8] tracking-widest uppercase block mb-2">Business Blueprints</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- 4. TESTIMONIALS SECTION (What Customers Say) -->
-  <!-- ========================================================================= -->
-  <section id="testimonials-summary" class="bg-white text-slate-900 border-t border-slate-100">
-    <div class="max-w-7xl mx-auto px-6 py-24">
-      <div class="grid lg:grid-cols-12 gap-8 items-start mb-16">
-        <div class="lg:col-span-6 space-y-2">
-          <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#07bee8]">REVIEWS</p>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#024095] uppercase">What Customers Say.</h2>
-        </div>
-        <div class="lg:col-span-6 lg:pt-6 flex lg:justify-end">
-          <a href="/testimonial" class="group text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2 text-[#024095] hover:text-[#07bee8] transition-colors">
-            Read All Customer Reviews <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="border-l-4 border-[#024095] bg-[#F9F9FB] p-10 md:p-12 shadow-sm rounded-r-lg max-w-4xl">
-        <div class="text-amber-500 text-xs font-black tracking-widest mb-4">★★★★★ 100% VERIFIED REVIEWS</div>
-        <p class="text-base md:text-lg text-slate-700 font-light leading-relaxed italic">
-          "Samudhra built a high-performance water treatment plant for our clinical center. Their special filters completely removed the heavy iron from our water supply. The purity remains constant and perfect."
-        </p>
-        <div class="mt-6">
-          <p class="text-sm font-black text-[#024095] tracking-tight uppercase">Dr. K. Raghavan</p>
-          <p class="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Private Medical Clinic, Thiruvananthapuram</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- 5. SHOP SECTION (Featured Systems & Products) -->
-  <!-- ========================================================================= -->
-  <section id="shop-summary" class="bg-white text-slate-900 border-t border-slate-200/40">
-    <div class="max-w-7xl mx-auto px-6 py-24">
-      <div class="grid lg:grid-cols-12 gap-8 items-start mb-16">
-        <div class="lg:col-span-6 space-y-2">
-          <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#07bee8]">SHOP PRODUCTS</p>
-          <h2 class="text-3xl sm:text-5xl font-black tracking-tight text-[#024095] uppercase">Our Products.</h2>
-        </div>
-        <div class="lg:col-span-6 lg:pt-6 flex lg:justify-end">
-          <a href="/shop" class="group text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2 text-[#024095] hover:text-[#07bee8] transition-colors">
-            Open Full Products Shop <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-          </a>
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-2 gap-0 border border-slate-100 shadow-sm rounded-lg overflow-hidden">
-        <!-- Product 1 -->
-        <div class="p-10 bg-[#F9F9FB] border-b md:border-b-0 md:border-r border-slate-200/60 flex flex-col justify-between group hover:bg-white transition-all duration-300">
-          <div class="space-y-4">
-            <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ Best Seller for Home ]</span>
-            <h3 class="text-2xl font-black text-[#024095] uppercase tracking-tight group-hover:text-[#07bee8] transition-colors">Samudhra Cleantech RO</h3>
-            <p class="text-sm text-slate-500 font-light leading-relaxed">Advanced 7-Stage Reverse Osmosis system with alkaline mineralization filter. Best solution for heavy household scale removal.</p>
-          </div>
-          <div class="pt-8 mt-8 border-t border-slate-200/40 flex items-center justify-between">
-            <span class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded uppercase">In Stock TVM</span>
-            <a href="/shop" class="text-xs font-bold text-[#024095] hover:underline uppercase tracking-wider">Product Specs &rarr;</a>
-          </div>
-        </div>
-
-        <!-- Product 2 -->
-        <div class="p-10 bg-[#F9F9FB] flex flex-col justify-between group hover:bg-white transition-all duration-300">
-          <div class="space-y-4">
-            <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ Best Seller for Business ]</span>
-            <h3 class="text-2xl font-black text-[#024095] uppercase tracking-tight group-hover:text-[#07bee8] transition-colors">Compact Plant 500 LPH</h3>
-            <p class="text-sm text-slate-500 font-light leading-relaxed">High-yield water processing unit made with premium stainless steel parts. Built for heavy commercial use.</p>
-          </div>
-          <div class="pt-8 mt-8 border-t border-slate-200/40 flex items-center justify-between">
-            <span class="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded uppercase">Built to Order</span>
-            <a href="/shop" class="text-xs font-bold text-[#024095] hover:underline uppercase tracking-wider">Product Specs &rarr;</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- 6. FOUNDER SECTION (Leadership Statement) -->
-  <!-- ========================================================================= -->
-  <section id="founder-summary" class="bg-slate-50 text-black border-t border-b border-black/5 py-24">
-    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-8 space-y-4">
-        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#024095]">FOUNDER STATEMENT</p>
-        <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-[#024095] uppercase">Message From Our Founder.</h2>
-        <p class="text-sm text-slate-500 font-light leading-relaxed max-w-2xl">
-          "Clean water is a basic need. At Samudhra, we built our reputation over 17 years by refusing to offer cheap shortcuts, custom-building every layout package to fit your specific well or pipeline water supply."
-        </p>
-        <p class="text-xs font-bold text-black uppercase tracking-wider pt-2">— Muhammed Syam S., Founder & Managing Director</p>
+        </blockquote>
+        <p class="text-xs font-black text-[#024095] uppercase tracking-wider">— Muhammed Syam S., Founder & Managing Director</p>
       </div>
       <div class="lg:col-span-4 lg:text-right">
-        <a href="/founder" class="inline-block px-8 py-4 bg-[#024095] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all duration-400 text-center w-full lg:w-auto rounded">
-          Read Full Message
+        <a href="/founder" class="inline-block px-8 py-4 bg-[#024095] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all duration-300 rounded w-full lg:w-auto text-center">
+          Read Full Message &rarr;
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ========================================================================= -->
-  <!-- 7. CONTACT SECTION (Locations & Footer Directory Map) -->
-  <!-- ========================================================================= -->
-  <section id="contact-summary" class="bg-[#ffffff] text-black border-t border-black/5 py-24">
+  <!-- ======================================================== -->
+  <!-- 7. CONTACT / SHOWROOMS -->
+  <!-- ======================================================== -->
+  <section id="contact-summary" class="bg-[#F9F9FB] text-slate-900 border-t border-slate-100 py-24">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-xl mx-auto mb-16 space-y-2">
-        <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#024095]">CONTACT OFFICE</p>
-        <h2 class="text-2xl sm:text-4xl font-black tracking-tight text-[#024095]">Our Showrooms.</h2>
+      <div class="text-center max-w-xl mx-auto mb-16 space-y-3 reveal">
+        <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#07bee8]">Visit Us</p>
+        <h2 class="text-4xl sm:text-5xl font-black tracking-tighter text-[#024095] uppercase">Our Showrooms.</h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-0 border border-slate-200 shadow-sm rounded-lg overflow-hidden mb-12">
-        <div class="p-10 md:p-12 border-b md:border-b-0 md:border-r border-slate-200/60 space-y-2 bg-[#F9F9FB] hover:bg-white transition-colors">
-          <span class="text-xs font-mono text-slate-400 font-bold uppercase tracking-widest">POOJAPPURA CENTRE</span>
-          <h4 class="text-xl font-bold tracking-tight text-black">Central Showroom</h4>
-          <p class="text-sm text-slate-500 font-light leading-relaxed">Soorya Nidhi, TC 42/1231, Near Canara Bank, Thiruvananthapuram</p>
-        </div>
-        <div class="p-10 md:p-12 space-y-2 bg-[#F9F9FB] hover:bg-white transition-colors">
-          <span class="text-xs font-mono text-slate-400 font-bold uppercase tracking-widest">THIRUMALA HUB</span>
-          <h4 class="text-xl font-bold tracking-tight text-black">Logistics Hub</h4>
-          <p class="text-sm text-slate-500 font-light leading-relaxed">No.TC 40/147-1, Near MRA Restaurant, Thiruvananthapuram</p>
-        </div>
+      <div class="grid md:grid-cols-2 gap-6 mb-12 reveal">
+        {[
+          { label:"Poojappura Centre", sub:"Central Showroom", address:"Soorya Nidhi, TC 42/1231, Near Canara Bank, Thiruvananthapuram" },
+          { label:"Thirumala Hub",     sub:"Logistics Hub",    address:"No. TC 40/147-1, Near MRA Restaurant, Thiruvananthapuram" },
+        ].map(loc => (
+          <div class="bg-white border border-slate-100 rounded-xl p-8 hover:shadow-lg hover:border-[#07bee8]/30 transition-all duration-300">
+            <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">{loc.label}</span>
+            <h4 class="text-xl font-black tracking-tight text-[#024095] mt-1 mb-3 uppercase">{loc.sub}</h4>
+            <p class="text-sm text-slate-500 font-light leading-relaxed">{loc.address}</p>
+          </div>
+        ))}
       </div>
 
-      <div class="text-center">
-        <a href="/contact" class="inline-block px-10 py-4 bg-black text-white text-xs font-black uppercase tracking-[0.25em] hover:bg-[#024095] transition-all duration-400 rounded">
-          Open Contact Page
+      <div class="text-center reveal">
+        <a href="/contact" class="inline-block px-12 py-4 bg-[#024095] text-white text-xs font-black uppercase tracking-[0.25em] hover:bg-[#07bee8] transition-all duration-300 rounded-md shadow-lg">
+          Open Contact Page &rarr;
         </a>
       </div>
     </div>
   </section>
 
-  <!-- FLOATING WHATSAPP CHAT HOTKEY -->
+  <!-- ======================================================== -->
+  <!-- FLOATING WHATSAPP -->
+  <!-- ======================================================== -->
   <div class="fixed bottom-8 right-8 z-50 flex items-center gap-3 group">
     <div class="bg-[#024095] text-white text-[9px] font-black uppercase tracking-[0.25em] px-4 py-2 shadow-2xl rounded-md border border-[#07bee8]/20 opacity-0 group-hover:opacity-100 -translate-x-2 pointer-events-none transition-all duration-300 hidden md:flex items-center gap-2">
       <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
       <span>Desk Online</span>
     </div>
-
-    <a 
-      href="https://wa.me/919645830994?text=Hi, I would like to book a quick water analysis appointment." 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      class="w-14 h-14 bg-[#024095] text-white hover:bg-[#07bee8] hover:text-white transition-all duration-400 shadow-2xl flex items-center justify-center relative rounded-full"
+    <a
+      href="https://wa.me/919645830994?text=Hi, I would like to book a quick water analysis appointment."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="w-14 h-14 bg-[#024095] text-white hover:bg-[#07bee8] transition-all duration-300 shadow-2xl flex items-center justify-center relative rounded-full"
       aria-label="Contact Us on WhatsApp"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-6 h-6 transform group-hover:scale-110 transition-transform">
@@ -294,50 +374,52 @@ import Navbar from '../components/Navbar.astro';
     </a>
   </div>
 
-  <!-- MULTI-COLUMN COMPACT CORPORATE FOOTER -->
+  <!-- ======================================================== -->
+  <!-- FOOTER -->
+  <!-- ======================================================== -->
   <footer class="bg-white text-slate-900 pt-24 pb-12 border-t border-slate-100 relative z-10">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-12 gap-12 pb-16 border-b border-slate-100">
-      
-      <!-- Company Statement -->
       <div class="col-span-2 md:col-span-4 space-y-4">
         <p class="text-xl font-black tracking-[0.25em] text-[#024095]">SAMUDHRA</p>
         <p class="text-xs text-slate-400 font-light leading-relaxed max-w-xs">
           Your premium multi-brand water systems platform inside Kerala. Custom engineering purifiers for homes and heavy-duty plants for commercial sites since 2009.
         </p>
       </div>
-
-      <!-- Links Columns Matrix aligned with navbar mapping -->
       <div class="col-span-1 md:col-span-4 space-y-4">
-        <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#07bee8]">SITE LINKS</p>
+        <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#07bee8]">Site Links</p>
         <div class="flex flex-col gap-2.5 text-xs font-bold uppercase tracking-wider">
-          <a href="/" class="text-slate-500 hover:text-[#024095] transition-colors">Home</a>
-          <a href="/about" class="text-slate-500 hover:text-[#024095] transition-colors">About Us</a>
-          <a href="/service" class="text-slate-500 hover:text-[#024095] transition-colors">Our Services</a>
+          <a href="/"            class="text-slate-500 hover:text-[#024095] transition-colors">Home</a>
+          <a href="/about"       class="text-slate-500 hover:text-[#024095] transition-colors">About Us</a>
+          <a href="/service"     class="text-slate-500 hover:text-[#024095] transition-colors">Our Services</a>
           <a href="/testimonial" class="text-slate-500 hover:text-[#024095] transition-colors">Testimonials</a>
         </div>
       </div>
-
       <div class="col-span-1 md:col-span-4 space-y-4">
-        <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#07bee8]">INVENTORY & CONTACT</p>
+        <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#07bee8]">Inventory & Contact</p>
         <div class="flex flex-col gap-2.5 text-xs font-bold uppercase tracking-wider">
-          <a href="/shop" class="text-slate-500 hover:text-[#024095] transition-colors">Products Shop</a>
+          <a href="/shop"    class="text-slate-500 hover:text-[#024095] transition-colors">Products Shop</a>
           <a href="/founder" class="text-slate-500 hover:text-[#024095] transition-colors">Founder Message</a>
           <a href="/contact" class="text-slate-500 hover:text-[#024095] transition-colors">Contact Hub</a>
         </div>
       </div>
-
     </div>
-
-    <!-- Legal Baseline Base -->
     <div class="max-w-7xl mx-auto px-6 pt-12 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] font-bold uppercase tracking-[0.25em] text-slate-400">
-      <div>
-        <span>&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</span>
-      </div>
-      <div class="flex items-center gap-6 text-slate-400 font-light">
-        <span class="text-[#07bee8]">ISO 9001 STATUS</span>
-        <span class="text-[#024095] font-black">TRIVANDRUM, KERALA</span>
+      <span>&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</span>
+      <div class="flex items-center gap-6">
+        <span class="text-[#07bee8]">ISO 9001 Status</span>
+        <span class="text-[#024095] font-black">Trivandrum, Kerala</span>
       </div>
     </div>
   </footer>
+
+  <!-- Scroll reveal script -->
+  <script is:inline>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 
 </Layout>
