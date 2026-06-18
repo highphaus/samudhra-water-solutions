@@ -70,6 +70,10 @@ const products = [
     .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
+    /* Hide scrollbars for sliders */
+    .scrollbar-none::-webkit-scrollbar { display: none; }
+    .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
     /* Hero blob */
     @keyframes pulse-blob {
       0%,100% { transform: scale(1) translate(0,0); opacity:.6; }
