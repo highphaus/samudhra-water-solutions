@@ -48,8 +48,8 @@ const products = [
     /* ── Page-level responsive overrides ── */
 
     /* Slider cards - responsive width */
-    .svc-card  { flex-shrink: 0; width: min(320px, 82vw); }
-    .prod-card { flex-shrink: 0; width: min(288px, 78vw); }
+    .svc-card  { flex-shrink: 0; width: min(360px, 85vw); }
+    .prod-card { flex-shrink: 0; width: min(320px, 82vw); }
 
     /* Hero heading fluid */
     .hero-h1 { font-size: clamp(2.4rem, 8vw, 6.5rem); }
@@ -155,17 +155,26 @@ const products = [
   <!-- ======================================================== -->
   <!-- 2. SERVICES SLIDER                                        -->
   <!-- ======================================================== -->
-  <section id="services-carousel" class="bg-[#024095] text-white py-16 sm:py-24 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12 reveal">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
-        <div>
-          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8] mb-2">What We Do</p>
-          <h2 class="section-h2 font-black tracking-tighter uppercase leading-none">Our Services.</h2>
-          <p class="text-sm text-white/60 font-light mt-3 max-w-md leading-relaxed">10 specialised water treatment and maintenance services engineered for every scale.</p>
+  <section id="services-carousel" class="relative bg-[#024095] text-white py-20 sm:py-32 overflow-hidden">
+    <!-- Decorative background glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#07bee8]/20 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16 reveal">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <div class="relative">
+          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8] mb-3 flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-[#07bee8]"></span>
+            What We Do
+          </p>
+          <h2 class="section-h2 font-black tracking-tighter uppercase leading-none drop-shadow-lg">Our Services.</h2>
+          <p class="text-sm sm:text-base text-white/70 font-light mt-4 max-w-lg leading-relaxed">
+            10 specialised water treatment and maintenance services engineered for every scale, ensuring purity and reliability.
+          </p>
         </div>
         <div class="flex items-center">
-          <a href="/service" class="inline-flex items-center gap-2 min-h-[48px] px-5 sm:px-6 py-3 border-2 border-white/30 text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-white hover:text-[#024095] transition-all rounded whitespace-nowrap">
-            See All Services &rarr;
+          <a href="/service" class="group inline-flex items-center gap-3 min-h-[48px] px-6 py-3 border border-[#07bee8]/40 bg-[#07bee8]/10 backdrop-blur-sm text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] hover:text-[#024095] transition-all duration-300 rounded-full shadow-[0_0_20px_rgba(7,190,232,0.1)] hover:shadow-[0_0_30px_rgba(7,190,232,0.4)] whitespace-nowrap">
+            Explore All Services
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
         </div>
       </div>
@@ -173,30 +182,38 @@ const products = [
 
     <!-- Snapping Slider -->
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div id="services-slider" class="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory py-4" style="-webkit-overflow-scrolling:touch;">
+      <div id="services-slider" class="flex gap-5 sm:gap-8 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory py-4 pb-8" style="-webkit-overflow-scrolling:touch;">
         {services.map((svc) => (
-          <a href="/service" class="svc-card group snap-start bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-[#07bee8] rounded-2xl overflow-hidden transition-all duration-500 backdrop-blur-sm flex flex-col justify-between shadow-lg hover:shadow-2xl hover:-translate-y-1" style="height:clamp(360px,55vw,420px)">
-            <div class="relative overflow-hidden bg-white/5" style="height:clamp(160px,30vw,208px)">
-              <img src={svc.image} alt={svc.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80"></div>
-              <div class="absolute top-3 left-3 sm:top-4 sm:left-4">
-                <span class="text-[8px] sm:text-[9px] font-black uppercase tracking-widest text-[#07bee8] bg-[#07bee8]/15 border border-[#07bee8]/30 px-2 sm:px-3 py-1 rounded-full">{svc.tag}</span>
+          <a href="/service" class="svc-card group snap-start bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/10 hover:border-[#07bee8]/60 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-xl hover:shadow-[0_15px_40px_rgba(7,190,232,0.2)] hover:-translate-y-2 relative" style="height:clamp(380px,60vw,460px)">
+            <div class="relative overflow-hidden bg-slate-900 rounded-t-3xl" style="height:clamp(180px,35vw,240px)">
+              <img src={svc.image} alt={svc.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700 ease-out opacity-90 group-hover:opacity-100" />
+              <!-- Glassmorphism overlay on image -->
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90"></div>
+              
+              <!-- Tag -->
+              <div class="absolute top-4 left-4 z-10">
+                <span class="text-[9px] font-black uppercase tracking-widest text-white backdrop-blur-md bg-white/10 border border-white/20 px-3 py-1.5 rounded-full shadow-lg">{svc.tag}</span>
               </div>
-              <div class="absolute top-3 right-3 sm:top-4 sm:right-4">
-                <span class="text-xl sm:text-2xl font-mono font-black text-white/30 group-hover:text-[#07bee8] transition-colors">#{svc.num}</span>
+              <!-- Number -->
+              <div class="absolute top-4 right-4 z-10">
+                <span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white/80 to-white/10 group-hover:from-[#07bee8] group-hover:to-transparent transition-all duration-500">#{svc.num}</span>
               </div>
             </div>
-            <div class="p-4 sm:p-6 flex-1 flex flex-col justify-between bg-gradient-to-b from-transparent to-black/20">
-              <div class="space-y-2 sm:space-y-3">
-                <h3 class="text-base sm:text-xl font-black uppercase tracking-tight text-white group-hover:text-[#07bee8] transition-colors leading-snug">{svc.title}</h3>
-                <p class="text-xs text-white/50 line-clamp-3 leading-relaxed font-light">
-                  Professional installation, calibration and service operations. Assured safety standards compliance for clean yields.
+            
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between relative z-10 bg-gradient-to-b from-transparent to-slate-950/50">
+              <div class="space-y-3">
+                <h3 class="text-lg sm:text-xl font-black uppercase tracking-tight text-white group-hover:text-[#07bee8] transition-colors leading-snug drop-shadow-md">{svc.title}</h3>
+                <p class="text-xs sm:text-sm text-white/60 line-clamp-2 leading-relaxed font-light group-hover:text-white/80 transition-colors">
+                  Professional installation, calibration and service operations. Assured safety standards.
                 </p>
               </div>
-              <div class="pt-3 sm:pt-4 flex items-center justify-between border-t border-white/5">
-                <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-[#07bee8] group-hover:text-white transition-colors">Book Service</span>
-                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 group-hover:bg-[#07bee8] text-white flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-1">
-                  <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              <div class="pt-5 flex items-center justify-between border-t border-white/10 group-hover:border-[#07bee8]/30 transition-colors">
+                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-[#07bee8] group-hover:text-white transition-colors flex items-center gap-2">
+                  Book Service
+                  <div class="w-0 h-[1px] bg-white group-hover:w-4 transition-all duration-300"></div>
+                </span>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 group-hover:bg-[#07bee8] group-hover:border-[#07bee8] text-white flex items-center justify-center transition-all duration-500 transform group-hover:translate-x-1 group-hover:shadow-[0_0_15px_rgba(7,190,232,0.5)]">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </div>
               </div>
             </div>
@@ -204,32 +221,34 @@ const products = [
         ))}
       </div>
 
-      <!-- Dots -->
-      <div class="mt-6 sm:mt-8 flex justify-between items-center text-xs font-bold text-white/40">
-        <div class="flex gap-1 sm:gap-1.5 flex-wrap" id="services-dots">
-          {services.map((_, i) => (
-            <button class="w-6 sm:w-8 h-1 rounded bg-white/20 transition-all duration-300 focus:outline-none min-h-[24px]" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
-          ))}
-        </div>
-        <span id="services-count">01 / 10</span>
-      </div>
+
     </div>
   </section>
 
   <!-- ======================================================== -->
   <!-- 3. PRODUCTS SLIDER                                        -->
   <!-- ======================================================== -->
-  <section id="products-carousel" class="bg-[#F9F9FB] text-slate-900 py-16 sm:py-24 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-10 sm:mb-12 reveal">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6">
-        <div>
-          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8] mb-2">Shop Products</p>
-          <h2 class="section-h2 font-black tracking-tighter uppercase text-[#024095] leading-none">Our Products.</h2>
-          <p class="text-sm text-black font-light mt-3 max-w-md leading-relaxed">20 curated water purification systems — from compact home purifiers to 100,000 LPH industrial plants.</p>
+  <section id="products-carousel" class="relative bg-white text-slate-900 py-20 sm:py-32 overflow-hidden">
+    <!-- Subtle grid background -->
+    <div class="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.02] pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#024095]/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16 reveal">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <div class="relative">
+          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#024095] mb-3 flex items-center gap-2">
+            <span class="w-8 h-[2px] bg-[#024095]"></span>
+            Shop Products
+          </p>
+          <h2 class="section-h2 font-black tracking-tighter uppercase text-slate-900 leading-none drop-shadow-sm">Our Products.</h2>
+          <p class="text-sm sm:text-base text-slate-600 font-medium mt-4 max-w-lg leading-relaxed">
+            20 curated water purification systems — from compact home purifiers to 100,000 LPH industrial plants.
+          </p>
         </div>
         <div class="flex items-center">
-          <a href="/shop" class="inline-flex items-center gap-2 min-h-[48px] px-5 sm:px-6 py-3 border-2 border-[#024095] text-[#024095] text-xs font-black uppercase tracking-[0.2em] hover:bg-[#024095] hover:text-white transition-all rounded whitespace-nowrap">
-            Open Shop &rarr;
+          <a href="/shop" class="group inline-flex items-center gap-3 min-h-[48px] px-6 py-3 bg-[#024095] text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all duration-300 rounded-full shadow-[0_10px_20px_rgba(2,64,149,0.2)] hover:shadow-[0_15px_30px_rgba(7,190,232,0.3)] whitespace-nowrap">
+            Open Shop
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
           </a>
         </div>
       </div>
@@ -237,29 +256,35 @@ const products = [
 
     <!-- Snapping Slider -->
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div id="products-slider" class="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory py-4" style="-webkit-overflow-scrolling:touch;">
+      <div id="products-slider" class="flex gap-5 sm:gap-8 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory py-4 pb-8" style="-webkit-overflow-scrolling:touch;">
         {products.map((p) => (
-          <a href="/shop" class="prod-card group snap-start bg-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] border border-slate-100 hover:border-[#024095]/30 rounded-2xl overflow-hidden transition-all duration-500 flex flex-col justify-between hover:-translate-y-1" style="height:clamp(360px,55vw,420px)">
-            <div class="relative bg-gradient-to-b from-[#F9F9FB] to-white flex items-center justify-center p-4 sm:p-6 overflow-hidden border-b border-slate-100/60" style="height:clamp(150px,28vw,192px)">
-              <img src={p.image} alt={p.name} loading="lazy" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out" />
-              <div class="absolute top-3 left-3">
-                <span class="text-[8px] font-mono font-black text-[#07bee8] bg-slate-50 border border-slate-100 px-2 py-0.5 rounded-full uppercase tracking-wider">{p.tier}</span>
+          <a href="/shop" class="prod-card group snap-start bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#024095]/30 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-sm hover:shadow-[0_20px_40px_rgba(2,64,149,0.08)] hover:-translate-y-2" style="height:clamp(380px,60vw,460px)">
+            <div class="relative bg-gradient-to-b from-slate-50 to-white flex items-center justify-center p-6 sm:p-8 overflow-hidden border-b border-slate-100/60" style="height:clamp(180px,35vw,220px)">
+              <div class="absolute inset-0 bg-[#024095]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <img src={p.image} alt={p.name} loading="lazy" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out relative z-10 drop-shadow-md" />
+              
+              <div class="absolute top-4 left-4 z-20">
+                <span class="text-[9px] font-bold text-[#024095] bg-white/80 backdrop-blur-md border border-[#024095]/10 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">{p.tier}</span>
               </div>
-              <div class="absolute top-3 right-3">
-                <span class={`text-[8px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-sm ${p.availability === 'In Stock' ? 'badge-stock' : 'badge-order'}`}>
+              <div class="absolute top-4 right-4 z-20">
+                <span class={`text-[9px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm border ${p.availability === 'In Stock' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-amber-50 text-amber-600 border-amber-100'}`}>
                   {p.availability}
                 </span>
               </div>
             </div>
-            <div class="p-4 sm:p-6 flex-1 flex flex-col justify-between">
-              <div class="space-y-1 sm:space-y-2">
-                <h3 class="text-base sm:text-lg font-black uppercase tracking-tight text-[#024095] group-hover:text-[#07bee8] transition-colors leading-tight line-clamp-2">{p.name}</h3>
-                <p class="text-xs text-black font-light leading-relaxed">High-efficiency multi-stage system built using top grade components.</p>
+            
+            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between bg-white relative z-10">
+              <div class="space-y-3">
+                <h3 class="text-lg sm:text-xl font-black uppercase tracking-tight text-slate-900 group-hover:text-[#024095] transition-colors leading-tight line-clamp-2">{p.name}</h3>
+                <p class="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed group-hover:text-slate-700 transition-colors">High-efficiency multi-stage system built using top grade components.</p>
               </div>
-              <div class="pt-3 sm:pt-4 flex items-center justify-between border-t border-slate-100">
-                <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-widest text-black group-hover:text-[#024095] transition-colors">Inquire Now</span>
-                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-slate-50 group-hover:bg-[#024095] group-hover:text-white text-black flex items-center justify-center transition-all duration-300 transform group-hover:translate-x-1">
-                  <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path></svg>
+              <div class="pt-5 flex items-center justify-between border-t border-slate-100 group-hover:border-[#024095]/20 transition-colors">
+                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-slate-400 group-hover:text-[#024095] transition-colors flex items-center gap-2">
+                  Inquire Now
+                  <div class="w-0 h-[1px] bg-[#024095] group-hover:w-4 transition-all duration-300"></div>
+                </span>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-50 border border-slate-200 group-hover:bg-[#024095] group-hover:border-[#024095] group-hover:text-white text-slate-400 flex items-center justify-center transition-all duration-500 transform group-hover:translate-x-1 group-hover:shadow-[0_5px_15px_rgba(2,64,149,0.3)]">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                 </div>
               </div>
             </div>
@@ -267,15 +292,7 @@ const products = [
         ))}
       </div>
 
-      <!-- Dots -->
-      <div class="mt-6 sm:mt-8 flex justify-between items-center text-xs font-bold text-black">
-        <div class="flex gap-1 sm:gap-1.5 flex-wrap" id="products-dots">
-          {products.map((_, i) => (
-            <button class="w-4 sm:w-6 h-1 rounded bg-slate-200 transition-all duration-300 focus:outline-none min-h-[24px]" data-index={i} aria-label={`Go to slide ${i + 1}`}></button>
-          ))}
-        </div>
-        <span id="products-count">01 / 20</span>
-      </div>
+
     </div>
   </section>
 
@@ -344,24 +361,29 @@ const products = [
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 reveal">
         {[
-          { step: "01", title: "Water Analysis", desc: "Our on-site field technicians chemically audit your source water to measure heavy iron, mineral scales, acidity, and TDS.", highlight: "Chemical Profiling" },
-          { step: "02", title: "Custom Design", desc: "We configure components matching multi-brand membranes, sand media filters, softeners, and stabilizers for your target needs.", highlight: "Layout Optimization" },
-          { step: "03", title: "Expert Setup", desc: "Certified squads install structural lines, mount valves, adjust booster flows, and run initial calibration testing.", highlight: "Precision Fitting" },
-          { step: "04", title: "AMC Maintenance", desc: "We perform AMC flushes, sanitization routines, and keep automated audit records to secure long term water yield.", highlight: "Lifecycle Support" },
+          { step: "01", title: "Inspection & Assessment", desc: "Our on-site field technicians physically and chemically audit your source water, pipeline structures, and specific layout constraints to form a complete assessment.", highlight: "Site Audit", image: "/images/how do we work/Inspection and Assessment.jpg" },
+          { step: "02", title: "Designing", desc: "We configure custom system layouts and select the optimal multi-brand membranes, filters, and components tailored specifically for your water parameters.", highlight: "Custom Layouts", image: "/images/how do we work/Designing.jpg" },
+          { step: "03", title: "Engineering", desc: "Our certified technical squads engineer and assemble structural lines, mount heavy-duty valves, and optimize booster flows for maximum durability.", highlight: "Precision Assembly", image: "/images/how do we work/Engineering.jpg" },
+          { step: "04", title: "Commissioning", desc: "We run rigorous calibration testing, complete sanitization flushes, and finalize the system handover, backed by continuous AMC support.", highlight: "System Handover", image: "/images/how do we work/Commissioning.jpg" },
         ].map((item) => (
-          <div class="bg-white border border-slate-100 rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-[#07bee8]/40 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 group relative overflow-hidden">
-            <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-[#024095] to-[#07bee8] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            <div class="space-y-3 sm:space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="text-3xl sm:text-4xl font-black font-mono text-[#024095]/15 group-hover:text-[#07bee8] transition-colors duration-500">{item.step}</span>
-                <span class="text-[8px] font-mono font-bold text-[#07bee8] uppercase bg-[#07bee8]/10 px-2 py-0.5 rounded-full">{item.highlight}</span>
+          <div class="bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[#07bee8]/40 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 group relative overflow-hidden">
+            <div class="h-40 sm:h-48 overflow-hidden relative">
+              <img src={item.image} alt={item.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
+                <span class="text-3xl sm:text-4xl font-black font-mono text-white/50 group-hover:text-white transition-colors duration-500">{item.step}</span>
+                <span class="text-[8px] font-mono font-bold text-[#024095] uppercase bg-[#07bee8] px-2 py-0.5 rounded-full shadow-md">{item.highlight}</span>
               </div>
+            </div>
+            <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 flex-1">
               <h3 class="text-base sm:text-lg font-black uppercase tracking-tight text-[#024095]">{item.title}</h3>
               <p class="text-xs text-black font-semibold leading-relaxed">{item.desc}</p>
             </div>
-            <div class="pt-5 sm:pt-6 mt-5 sm:mt-6 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-[#024095]">
-              <span>STEP {item.step} INTACT</span>
-              <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+            <div class="px-6 sm:px-8 pb-6 sm:pb-8">
+              <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-[#024095]">
+                <span>STEP {item.step} INTACT</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </div>
             </div>
           </div>
         ))}
@@ -384,12 +406,12 @@ const products = [
         </a>
       </div>
 
-      <div class="grid sm:grid-cols-2 gap-4 sm:gap-6 reveal">
+      <div class="flex sm:grid sm:grid-cols-2 gap-4 sm:gap-6 reveal overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory sm:snap-none scrollbar-none" style="-webkit-overflow-scrolling:touch;">
         {[
           { quote: "Samudhra built a high-performance water treatment plant for our clinical center. Their special filters completely removed the heavy iron from our water supply. The purity remains constant and perfect.", author: "Dr. K. Raghavan", org: "Private Medical Clinic, Thiruvananthapuram" },
           { quote: "We had severe scale issues in our apartment complex. Samudhra's team assessed the pipeline, installed a custom softening system, and the difference was immediately noticeable. Highly recommended.", author: "Mr. Suresh Pillai", org: "Apartment Association, Vattiyoorkavu" },
         ].map(t => (
-          <div class="bg-white/10 border border-white/10 hover:border-[#07bee8]/40 rounded-xl p-6 sm:p-8 transition-all duration-300">
+          <div class="w-[85vw] sm:w-auto shrink-0 sm:shrink snap-center sm:snap-align-none bg-white/10 border border-white/10 hover:border-[#07bee8]/40 rounded-xl p-6 sm:p-8 transition-all duration-300">
             <div class="text-[#07bee8] text-xs font-black tracking-widest mb-4">★★★★★</div>
             <p class="text-sm text-white/80 font-light leading-relaxed italic mb-6">"{t.quote}"</p>
             <div class="border-t border-white/10 pt-4 sm:pt-5">
