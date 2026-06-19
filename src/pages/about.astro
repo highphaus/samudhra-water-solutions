@@ -2,6 +2,7 @@
 // src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout title="About Us - Mission and Vision | Samudhra Water Solutions">
@@ -9,7 +10,7 @@ import Navbar from '../components/Navbar.astro';
   <Navbar />
 
   <!-- 1. HERO HEADER -->
-  <section class="bg-[#F9F9FB] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-slate-200/60">
+  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-slate-200/60">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="flex items-center gap-3 mb-5 sm:mb-6">
         <span class="h-[1px] w-10 sm:w-12 bg-[#024095]"></span>
@@ -27,7 +28,7 @@ import Navbar from '../components/Navbar.astro';
   </section>
 
   <!-- 2. NARRATIVE & PARTNERSHIPS -->
-  <section class="bg-white text-slate-900 py-16 sm:py-24">
+  <section class="bg-[#FAF9F6] text-slate-900 py-16 sm:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid md:grid-cols-12 gap-8 sm:gap-12 items-start">
 
@@ -76,7 +77,7 @@ import Navbar from '../components/Navbar.astro';
   </section>
 
   <!-- 3. MISSION, VISION, VALUES -->
-  <section class="bg-[#F9F9FB] text-slate-900 py-16 sm:py-24 border-t border-b border-slate-200/50">
+  <section class="bg-[#FAF9F6] text-slate-900 py-16 sm:py-24 border-t border-b border-slate-200/50">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
 
@@ -108,7 +109,7 @@ import Navbar from '../components/Navbar.astro';
   </section>
 
   <!-- 4. CORE REASONS -->
-  <section class="bg-white text-slate-900 py-16 sm:py-24">
+  <section class="bg-[#FAF9F6] text-slate-900 py-16 sm:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center max-w-xl mx-auto mb-10 sm:mb-16 space-y-2">
         <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-[#07bee8]">PURITY ASSURED</p>
@@ -146,11 +147,5 @@ import Navbar from '../components/Navbar.astro';
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-[#F9F9FB] text-black py-10 sm:py-12 border-t border-slate-200/60">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-[10px] font-bold uppercase tracking-[0.25em] text-center">
-      <p>&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</p>
-      <p class="text-[#024095] font-black">Trivandrum, Kerala</p>
-    </div>
-  </footer>
+  <Footer />
 </Layout>

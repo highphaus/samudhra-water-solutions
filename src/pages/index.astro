@@ -2,6 +2,7 @@
 // src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
 
 const services = [
   { num: "01", title: "UF Plant Installation & Maintenance", image: "/images/products/Uf Plant.jpg", tag: "Filtration" },
@@ -37,6 +38,65 @@ const products = [
   { name: "Water Softening Plant", image: "/images/products/Water softening plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
   { name: "Water Treatment Plant", image: "/images/products/Water treatment plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
   { name: "ZEDERA Water Purifiers", image: "/images/products/ZEDERA WATER PURIFIERS.jpg", tier: "Residential", availability: "In Stock" },
+];
+
+const reviews = [
+  {
+    client: "Dr. K. Raghavan",
+    entity: "Private Clinical Center, TVM",
+    statement: "Samudhra precision-engineered our full 50,000 LPH reverse osmosis layout with absolute corporate standard clean lines. Their custom media filter parameters handled our hard water iron properties flawlessly. Purity remains total.",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "KR"
+  },
+  {
+    client: "Meera Nair",
+    entity: "Residential Villa, Kowdiar",
+    statement: "We completely bypassed generic retail options and had Samudhra customize an automated brine softener and multi-brand copper infusion system for our whole house. The white scale buildup inside our piping networks was instantly eliminated.",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "MN"
+  },
+  {
+    client: "Thomas Kurian",
+    entity: "Commercial Complex, Thampanoor",
+    statement: "Managing high-volume commercial properties requires absolute direct service accountability. Samudhra's maintenance contract team performs rigorous membrane audits and parameter inspections like clockwork.",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "TK"
+  },
+  {
+    client: "Anil Kumar",
+    entity: "Factory Director, Kazhakkoottam",
+    statement: "Excellent service and prompt response. The team installed a commercial RO plant in our factory near Kazhakkoottam. Very professional and highly recommended for industrial water purification needs.",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "AK"
+  },
+  {
+    client: "Remya Krishnan",
+    entity: "Home Owner, Kowdiar",
+    statement: "I bought a domestic water purifier (Aqua C3) from Samudhra. Excellent follow up, and water tank cleaning service was done very neatly. Excellent behaviour from Rajesh and staff.",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "RK"
+  },
+  {
+    client: "George Mathew",
+    entity: "Resident, Pattom",
+    statement: "We had severe iron content in our well water. They analyzed the water test report and designed a custom iron removal filter. Now the water is crystal clear. 24x7 support is very helpful.",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "GM"
+  },
+  {
+    client: "Sajeev S.",
+    entity: "Store Owner, Poojappura",
+    statement: "Best service for multibrand water purifiers in Trivandrum. They repaired my Kent RO purifier within 2 hours. Reasonable charges and genuine spares. Highly satisfied!",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "SS"
+  },
+  {
+    client: "Deepa Nair",
+    entity: "Apartment Association, Sasthamangalam",
+    statement: "Professional water treatment plants setup. Installed swimming pool filtration plant for our building association. Excellent design, timely execution, and reliable maintenance.",
+    rating: "\u2605\u2605\u2605\u2605\u2605",
+    initials: "DN"
+  }
 ];
 ---
 
@@ -228,7 +288,7 @@ const products = [
   <!-- ======================================================== -->
   <!-- 3. PRODUCTS SLIDER                                        -->
   <!-- ======================================================== -->
-  <section id="products-carousel" class="relative bg-white text-slate-900 py-20 sm:py-32 overflow-hidden">
+  <section id="products-carousel" class="relative bg-[#FAF9F6] text-slate-900 py-20 sm:py-32 overflow-hidden">
     <!-- Subtle grid background -->
     <div class="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.02] pointer-events-none"></div>
     <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#024095]/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
@@ -257,8 +317,8 @@ const products = [
     <!-- Snapping Slider -->
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
       <div id="products-slider" class="flex gap-5 sm:gap-8 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory py-4 pb-8" style="-webkit-overflow-scrolling:touch;">
-        {products.map((p) => (
-          <a href={`https://wa.me/919645830994?text=Hi, I would like to inquire about the ${p.name}.`} target="_blank" rel="noopener noreferrer" class="prod-card group snap-start bg-white hover:bg-slate-50 border border-slate-200 hover:border-[#024095]/30 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-sm hover:shadow-[0_20px_40px_rgba(2,64,149,0.08)] hover:-translate-y-2" style="height:clamp(380px,60vw,460px)">
+        {products.map((p, index) => (
+          <div class="prod-card group snap-start bg-white border border-slate-200 hover:border-[#024095]/30 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-sm hover:shadow-[0_20px_40px_rgba(2,64,149,0.08)] hover:-translate-y-2" style="height:clamp(450px,70vw,510px)">
             <div class="relative bg-gradient-to-b from-slate-50 to-white flex items-center justify-center p-6 sm:p-8 overflow-hidden border-b border-slate-100/60" style="height:clamp(180px,35vw,220px)">
               <div class="absolute inset-0 bg-[#024095]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <img src={p.image} alt={p.name} loading="lazy" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out relative z-10 drop-shadow-md" />
@@ -278,17 +338,24 @@ const products = [
                 <h3 class="text-lg sm:text-xl font-black uppercase tracking-tight text-slate-900 group-hover:text-[#024095] transition-colors leading-tight line-clamp-2">{p.name}</h3>
                 <p class="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed group-hover:text-slate-700 transition-colors">High-efficiency multi-stage system built using top grade components.</p>
               </div>
-              <div class="pt-5 flex items-center justify-between border-t border-slate-100 group-hover:border-[#024095]/20 transition-colors">
-                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-slate-400 group-hover:text-[#024095] transition-colors flex items-center gap-2">
-                  Inquire Now
-                  <div class="w-0 h-[1px] bg-[#024095] group-hover:w-4 transition-all duration-300"></div>
-                </span>
-                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-slate-50 border border-slate-200 group-hover:bg-[#024095] group-hover:border-[#024095] group-hover:text-white text-slate-400 flex items-center justify-center transition-all duration-500 transform group-hover:translate-x-1 group-hover:shadow-[0_5px_15px_rgba(2,64,149,0.3)]">
+              <div class="pt-5 flex flex-col gap-2 border-t border-slate-100 group-hover:border-[#024095]/20 transition-colors">
+                <input 
+                  type="text" 
+                  id={`home-inquiry-input-${index}`}
+                  placeholder="Enter details or ask about price..." 
+                  class="w-full px-3 py-2 text-xs border border-slate-200 rounded-lg focus:outline-none focus:border-[#024095] bg-white text-slate-800 transition-colors placeholder:text-slate-400"
+                />
+                <button
+                  data-name={p.name}
+                  data-index={index}
+                  class="home-enquiry-btn w-full flex items-center justify-between min-h-[40px] px-4 py-2 bg-slate-50 border border-slate-200 hover:bg-[#024095] hover:border-[#024095] hover:text-white rounded-lg transition-all duration-300 text-slate-500"
+                >
+                  <span class="text-[10px] font-extrabold uppercase tracking-[0.2em]">Send Enquiry</span>
                   <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                </div>
+                </button>
               </div>
             </div>
-          </a>
+          </div>
         ))}
       </div>
 
@@ -299,7 +366,7 @@ const products = [
   <!-- ======================================================== -->
   <!-- 4. ABOUT SUMMARY                                          -->
   <!-- ======================================================== -->
-  <section id="about-summary" class="bg-white text-slate-900 border-t border-slate-100 py-16 sm:py-24">
+  <section id="about-summary" class="bg-[#FAF9F6] text-slate-900 border-t border-slate-100 py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center reveal">
         <div class="lg:col-span-7 space-y-5 sm:space-y-6">
@@ -396,38 +463,53 @@ const products = [
   <!-- ======================================================== -->
   <section id="testimonials-summary" class="bg-[#024095] text-white border-t border-[#024095]/10 py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <!-- Header row: title left, buttons right -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-10 sm:mb-16 reveal">
         <div class="space-y-2 sm:space-y-3">
           <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#07bee8]">Customer Reviews</p>
           <h2 class="section-h2 font-black tracking-tighter uppercase leading-none">What Customers Say.</h2>
         </div>
-        <a href="/testimonial" class="group text-xs font-black uppercase tracking-[0.2em] flex items-center gap-2 text-white/60 hover:text-[#07bee8] transition-colors min-h-[48px] self-start sm:self-auto whitespace-nowrap">
-          Read All Reviews <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-        </a>
+        <!-- Buttons top-right -->
+        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
+          <a href="/testimonial" class="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 bg-[#07bee8] hover:bg-white hover:text-[#024095] text-[#024095] font-extrabold text-[10px] uppercase tracking-[0.2em] rounded-md transition-all duration-300 shadow-md whitespace-nowrap">
+            View All Reviews
+          </a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Samudhra+Water+Solutions+Poojappura+Thiruvananthapuram" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 bg-transparent border-2 border-white hover:bg-white hover:text-[#024095] text-white font-extrabold text-[10px] uppercase tracking-[0.2em] rounded-md transition-all duration-300 whitespace-nowrap">
+            Write a Review
+          </a>
+        </div>
       </div>
 
-      <div class="flex sm:grid sm:grid-cols-2 gap-4 sm:gap-6 reveal overflow-x-auto sm:overflow-x-visible snap-x snap-mandatory sm:snap-none scrollbar-none" style="-webkit-overflow-scrolling:touch;">
-        {[
-          { quote: "Samudhra built a high-performance water treatment plant for our clinical center. Their special filters completely removed the heavy iron from our water supply. The purity remains constant and perfect.", author: "Dr. K. Raghavan", org: "Private Medical Clinic, Thiruvananthapuram" },
-          { quote: "We had severe scale issues in our apartment complex. Samudhra's team assessed the pipeline, installed a custom softening system, and the difference was immediately noticeable. Highly recommended.", author: "Mr. Suresh Pillai", org: "Apartment Association, Vattiyoorkavu" },
-        ].map(t => (
-          <div class="w-[85vw] sm:w-auto shrink-0 sm:shrink snap-center sm:snap-align-none bg-white/10 border border-white/10 hover:border-[#07bee8]/40 rounded-xl p-6 sm:p-8 transition-all duration-300">
-            <div class="text-[#07bee8] text-xs font-black tracking-widest mb-4">★★★★★</div>
-            <p class="text-sm text-white/80 font-light leading-relaxed italic mb-6">"{t.quote}"</p>
-            <div class="border-t border-white/10 pt-4 sm:pt-5">
-              <p class="text-sm font-black text-white tracking-tight uppercase">{t.author}</p>
-              <p class="text-[9px] font-bold text-white/40 uppercase tracking-widest mt-0.5">{t.org}</p>
+      <!-- Testimonials Carousel Container -->
+      <div class="relative overflow-hidden w-full reveal">
+        <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out gap-6" style="transform: translateX(0px);">
+          {reviews.map((t) => (
+            <div class="testimonial-slide shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white/10 border border-white/10 hover:border-[#07bee8]/40 rounded-2xl p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between select-none">
+              <div>
+                <div class="text-[#07bee8] text-xs font-black tracking-widest mb-4">{t.rating} GOOGLE REVIEW</div>
+                <p class="text-sm text-white/80 font-light leading-relaxed italic mb-6">"{t.statement}"</p>
+              </div>
+              <div class="border-t border-white/10 pt-4 sm:pt-5 mt-auto flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-[#07bee8]/30 border border-white/20 flex items-center justify-center flex-shrink-0">
+                  <span class="text-white text-xs font-black">{t.initials}</span>
+                </div>
+                <div>
+                  <p class="text-sm font-black text-white tracking-tight uppercase">{t.client}</p>
+                  <p class="text-[9px] font-bold text-white/40 uppercase tracking-widest mt-0.5">{t.entity}</p>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- ======================================================== -->
   <!-- 6. FOUNDER                                                -->
   <!-- ======================================================== -->
-  <section id="founder-summary" class="bg-white text-slate-900 border-t border-slate-100 py-16 sm:py-24">
+  <section id="founder-summary" class="bg-[#FAF9F6] text-slate-900 border-t border-slate-100 py-16 sm:py-24">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center reveal">
         <div class="lg:col-span-8 space-y-4 sm:space-y-5">
@@ -477,57 +559,7 @@ const products = [
     </a>
   </div>
 
-  <!-- ======================================================== -->
-  <!-- FOOTER                                                    -->
-  <!-- ======================================================== -->
-  <footer class="bg-white text-slate-900 pt-16 sm:pt-24 pb-10 sm:pb-12 border-t border-slate-100 relative z-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-12 pb-12 sm:pb-16 border-b border-slate-100">
-        <div class="sm:col-span-2 lg:col-span-4 space-y-4">
-          <p class="text-lg sm:text-xl font-black tracking-[0.25em] text-[#024095]">SAMUDHRA</p>
-          <p class="text-xs text-black font-light leading-relaxed max-w-xs">
-            Your premium multi-brand water systems platform inside Kerala. Custom engineering purifiers for homes and heavy-duty plants for commercial sites since 2009.
-          </p>
-          <!-- Social Icons -->
-          <div class="flex items-center gap-3 pt-2">
-            <a href="https://www.instagram.com/samudhra_water_solutions?igsh=c2dobW5sNXI1ZDc=" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-9 h-9 shrink-0 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-gradient-to-br hover:from-purple-500 hover:via-pink-500 hover:to-orange-400 hover:border-transparent transition-all duration-300 shadow-sm hover:shadow-md">
-              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-            <a href="https://www.facebook.com/share/18iKpcHqLT/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="w-9 h-9 shrink-0 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all duration-300 shadow-sm hover:shadow-md">
-              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-            <a href="https://youtube.com/@samudhrawatersolutions?si=HGWyepM9F6-N5EkB" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-9 h-9 shrink-0 rounded-full border border-slate-200 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#FF0000] hover:border-[#FF0000] transition-all duration-300 shadow-sm hover:shadow-md">
-              <svg class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="lg:col-span-4 space-y-4">
-          <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#07bee8]">Site Links</p>
-          <div class="flex flex-col gap-2 sm:gap-2.5 text-xs font-bold uppercase tracking-wider">
-            <a href="/"            class="text-black hover:text-[#024095] transition-colors min-h-[36px] flex items-center">Home</a>
-            <a href="/about"       class="text-black hover:text-[#024095] transition-colors min-h-[36px] flex items-center">About Us</a>
-            <a href="/service"     class="text-black hover:text-[#024095] transition-colors min-h-[36px] flex items-center">Our Services</a>
-            <a href="/testimonial" class="text-black hover:text-[#024095] transition-colors min-h-[36px] flex items-center">Testimonials</a>
-          </div>
-        </div>
-        <div class="lg:col-span-4 space-y-4">
-          <p class="text-[10px] font-extrabold uppercase tracking-[0.3em] text-[#07bee8]">Inventory &amp; Contact</p>
-          <div class="flex flex-col gap-2 sm:gap-2.5 text-xs font-bold uppercase tracking-wider">
-            <a href="/shop"    class="text-black hover:text-[#024095] transition-colors min-h-[36px] flex items-center">Products Shop</a>
-            <a href="/founder" class="text-black hover:text-[#024095] transition-colors min-h-[36px] flex items-center">Founder Message</a>
-            <a href="/contact" class="text-black hover:text-[#024095] transition-colors min-h-[36px] flex items-center">Contact Hub</a>
-          </div>
-        </div>
-      </div>
-      <div class="pt-8 sm:pt-12 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-[10px] font-bold uppercase tracking-[0.25em] text-black text-center">
-        <span>&copy; {new Date().getFullYear()} Samudhra Water Solutions. All Rights Reserved.</span>
-        <div class="flex items-center gap-4 sm:gap-6">
-          <span class="text-[#07bee8]">ISO 9001 Status</span>
-          <span class="text-[#024095] font-black">Trivandrum, Kerala</span>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <Footer />
 
   <!-- Scripts -->
   <script is:inline>
@@ -592,6 +624,133 @@ const products = [
 
     initSlider({ sliderId: 'services-slider', dotsId: 'services-dots', countId: 'services-count', total: 10, interval: 3000 });
     initSlider({ sliderId: 'products-slider', dotsId: 'products-dots', countId: 'products-count', total: 20, interval: 3500 });
+
+    // Handle home product custom enquiries on WhatsApp
+    document.querySelectorAll('.home-enquiry-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const index = btn.getAttribute('data-index');
+        const name = btn.getAttribute('data-name');
+        const input = document.getElementById(`home-inquiry-input-${index}`);
+        const customText = input ? input.value.trim() : '';
+        let message = `Hi, I would like to inquire about the ${name}.`;
+        if (customText) {
+          message += ` Details: ${customText}`;
+        }
+        const encoded = encodeURIComponent(message);
+        window.open(`https://wa.me/919645830994?text=${encoded}`, '_blank');
+      });
+
+      // Press Enter key to submit
+      const index = btn.getAttribute('data-index');
+      const input = document.getElementById(`home-inquiry-input-${index}`);
+      if (input) {
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') {
+            btn.click();
+          }
+        });
+      }
+    });
+
+    // Testimonials Carousel auto-scrolling & controls
+    const track = document.getElementById('testimonials-track');
+    const slides = Array.from(track ? track.children : []);
+    const dotsContainer = document.getElementById('testimonials-dots');
+    
+    if (track && slides.length > 0) {
+      let currentIdx = 0;
+      let autoPlayTimer;
+
+      const getSlidesPerPage = () => {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+      };
+
+      const getMaxIndex = () => {
+        return Math.max(0, slides.length - getSlidesPerPage());
+      };
+
+      const initDots = () => {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        const numDots = getMaxIndex() + 1;
+        for (let i = 0; i < numDots; i++) {
+          const dot = document.createElement('button');
+          dot.className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white transition-all duration-300';
+          dot.setAttribute('aria-label', `Go to review slide ${i + 1}`);
+          if (i === 0) {
+            dot.classList.add('bg-white', 'w-8');
+            dot.classList.remove('bg-white/30');
+          }
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
+        }
+      };
+
+      const updateCarousel = () => {
+        const slidesPerPage = getSlidesPerPage();
+        const slideWidth = slides[0].getBoundingClientRect().width;
+        const gap = parseInt(window.getComputedStyle(track).gap || '24');
+        const offset = currentIdx * (slideWidth + gap);
+        
+        track.style.transform = `translateX(-${offset}px)`;
+
+        // Update dots
+        if (dotsContainer) {
+          Array.from(dotsContainer.children).forEach((dot, idx) => {
+            if (idx === currentIdx) {
+              dot.className = 'w-8 h-2 rounded-full bg-white transition-all duration-300';
+            } else {
+              dot.className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white transition-all duration-300';
+            }
+          });
+        }
+      };
+
+      const goToSlide = (idx) => {
+        currentIdx = Math.min(Math.max(0, idx), getMaxIndex());
+        updateCarousel();
+        resetAutoPlay();
+      };
+
+      const nextSlide = () => {
+        const maxIdx = getMaxIndex();
+        if (currentIdx >= maxIdx) {
+          goToSlide(0);
+        } else {
+          goToSlide(currentIdx + 1);
+        }
+      };
+
+      const startAutoPlay = () => {
+        autoPlayTimer = setInterval(nextSlide, 4500);
+      };
+
+      const stopAutoPlay = () => {
+        clearInterval(autoPlayTimer);
+      };
+
+      const resetAutoPlay = () => {
+        stopAutoPlay();
+        startAutoPlay();
+      };
+
+      track.addEventListener('mouseenter', stopAutoPlay);
+      track.addEventListener('mouseleave', startAutoPlay);
+      track.addEventListener('touchstart', stopAutoPlay, { passive: true });
+      track.addEventListener('touchend', startAutoPlay, { passive: true });
+
+      window.addEventListener('resize', () => {
+        initDots();
+        currentIdx = Math.min(currentIdx, getMaxIndex());
+        updateCarousel();
+      });
+
+      initDots();
+      updateCarousel();
+      startAutoPlay();
+    }
   </script>
 
 </Layout>
