@@ -4,753 +4,476 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-const services = [
-  { num: "01", title: "UF Plant Installation & Maintenance", image: "/images/products/Uf Plant.jpg", tag: "Filtration" },
-  { num: "02", title: "Swimming Pool Filtration Plant", image: "/images/products/Swimming Pool Filtration Plant.jpeg", tag: "Commercial" },
-  { num: "03", title: "Sewage Treatment Plant (STP)", image: "/images/products/Sewage Treatment Plant.jpg", tag: "Infrastructure" },
-  { num: "04", title: "Effluent Treatment Plants (ETPs)", image: "/images/products/Effluent Treatment Plant.jpg", tag: "Industrial" },
-  { num: "05", title: "De-Mineralizing (DM) Plants", image: "/images/products/DM plant.jpg", tag: "Purification" },
-  { num: "06", title: "Desalination Water Filtration Plants", image: "/images/products/Desalination Water Filtration.jpg", tag: "Coastal" },
-  { num: "07", title: "100,000 LPH RO Plant", image: "/images/products/100000 LPH RO plant.jpg", tag: "Large Scale" },
-  { num: "08", title: "250 LPH RO Plant", image: "/images/products/100LPH-10000LPH RO Plant.jpg", tag: "Commercial" },
-  { num: "09", title: "MultiBrand Water Purifier Servicing", image: "/images/products/Multibrand Water Purifiers.jpg", tag: "Servicing" },
-  { num: "10", title: "Water Tank Cleaning", image: "/images/products/Stainless steel water tanks.jpg", tag: "Maintenance" },
+const clients = [
+  "/images/client/1.jpg",
+  "/images/client/2.jpg",
+  "/images/client/3.jpg",
+  "/images/client/4.jpg",
+  "/images/client/5.jpg",
+  "/images/client/6.jpg",
+  "/images/client/7.jpg",
+  "/images/client/8.jpg"
 ];
 
-const products = [
-  { name: "100000 LPH RO Plant", image: "/images/products/100000 LPH RO plant.jpg", tier: "Industrial Tier", availability: "Built to Order" },
-  { name: "100LPH–10000LPH RO Plant", image: "/images/products/100LPH-10000LPH RO Plant.jpg", tier: "Commercial Tier", availability: "Built to Order" },
-  { name: "AQUA C3", image: "/images/products/AQUA C3.jpg", tier: "Residential", availability: "In Stock" },
-  { name: "AQUA XZORA", image: "/images/products/AQUA XZORA.jpg", tier: "Residential", availability: "In Stock" },
-  { name: "AQUA 9090", image: "/images/products/AQUA9090.jpg", tier: "Residential", availability: "In Stock" },
-  { name: "BELLA+ & AVA+", image: "/images/products/BELLA+ & AVA+.jpg", tier: "Residential", availability: "In Stock" },
-  { name: "DM Plant", image: "/images/products/DM plant.jpg", tier: "Industrial Tier", availability: "Built to Order" },
-  { name: "Desalination Filtration", image: "/images/products/Desalination Water Filtration.jpg", tier: "Industrial Tier", availability: "Built to Order" },
-  { name: "Effluent Treatment Plant", image: "/images/products/Effluent Treatment Plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
-  { name: "Hot & Cold Dispenser", image: "/images/products/HOT AND COLD Water Dispenser.jpg", tier: "Commercial Tier", availability: "In Stock" },
-  { name: "Multibrand Purifiers", image: "/images/products/Multibrand Water Purifiers.jpg", tier: "Residential", availability: "In Stock" },
-  { name: "PZONE BLACK Purifier", image: "/images/products/PZONE BLACK Water purifier.jpg", tier: "Residential", availability: "In Stock" },
-  { name: "SALVADOR RO Purifier", image: "/images/products/SALVADOR RO water purifier.jpg", tier: "Residential", availability: "In Stock" },
-  { name: "Sewage Treatment Plant", image: "/images/products/Sewage Treatment Plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
-  { name: "Stainless Steel Water Tanks", image: "/images/products/Stainless steel water tanks.jpg", tier: "Storage", availability: "In Stock" },
-  { name: "Swimming Pool Filtration", image: "/images/products/Swimming Pool Filtration Plant.jpeg", tier: "Commercial Tier", availability: "Built to Order" },
-  { name: "UF Plant", image: "/images/products/Uf Plant.jpg", tier: "Commercial Tier", availability: "Built to Order" },
-  { name: "Water Softening Plant", image: "/images/products/Water softening plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
-  { name: "Water Treatment Plant", image: "/images/products/Water treatment plant.jpg", tier: "Infrastructure", availability: "Built to Order" },
-  { name: "ZEDERA Water Purifiers", image: "/images/products/ZEDERA WATER PURIFIERS.jpg", tier: "Residential", availability: "In Stock" },
-];
-
-const reviews = [
+const projects = [
   {
-    client: "Dr. K. Raghavan",
-    entity: "Private Clinical Center, TVM",
-    statement: "Samudhra precision-engineered our full 50,000 LPH reverse osmosis layout with absolute corporate standard clean lines. Their custom media filter parameters handled our hard water iron properties flawlessly. Purity remains total.",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "KR"
+    title: "Hospital Water Treatment System",
+    location: "Thiruvananthapuram",
+    before: "/images/products/DM plant.jpg",
+    after: "/images/products/Uf Plant.jpg",
+    desc: "Complete water treatment system for a multi-speciality hospital ensuring safe drinking water for patients."
   },
   {
-    client: "Meera Nair",
-    entity: "Residential Villa, Kowdiar",
-    statement: "We completely bypassed generic retail options and had Samudhra customize an automated brine softener and multi-brand copper infusion system for our whole house. The white scale buildup inside our piping networks was instantly eliminated.",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "MN"
+    title: "Industrial RO Plant Installation",
+    location: "Ernakulam",
+    before: "/images/products/Desalination Water Filtration.jpg",
+    after: "/images/products/100000 LPH RO plant.jpg",
+    desc: "High capacity RO plant installation for an industrial facility with TDS reduction and consistent water quality."
   },
   {
-    client: "Thomas Kurian",
-    entity: "Commercial Complex, Thampanoor",
-    statement: "Managing high-volume commercial properties requires absolute direct service accountability. Samudhra's maintenance contract team performs rigorous membrane audits and parameter inspections like clockwork.",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "TK"
-  },
-  {
-    client: "Anil Kumar",
-    entity: "Factory Director, Kazhakkoottam",
-    statement: "Excellent service and prompt response. The team installed a commercial RO plant in our factory near Kazhakkoottam. Very professional and highly recommended for industrial water purification needs.",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "AK"
-  },
-  {
-    client: "Remya Krishnan",
-    entity: "Home Owner, Kowdiar",
-    statement: "I bought a domestic water purifier (Aqua C3) from Samudhra. Excellent follow up, and water tank cleaning service was done very neatly. Excellent behaviour from Rajesh and staff.",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "RK"
-  },
-  {
-    client: "George Mathew",
-    entity: "Resident, Pattom",
-    statement: "We had severe iron content in our well water. They analyzed the water test report and designed a custom iron removal filter. Now the water is crystal clear. 24x7 support is very helpful.",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "GM"
-  },
-  {
-    client: "Sajeev S.",
-    entity: "Store Owner, Poojappura",
-    statement: "Best service for multibrand water purifiers in Trivandrum. They repaired my Kent RO purifier within 2 hours. Reasonable charges and genuine spares. Highly satisfied!",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "SS"
-  },
-  {
-    client: "Deepa Nair",
-    entity: "Apartment Association, Sasthamangalam",
-    statement: "Professional water treatment plants setup. Installed swimming pool filtration plant for our building association. Excellent design, timely execution, and reliable maintenance.",
-    rating: "\u2605\u2605\u2605\u2605\u2605",
-    initials: "DN"
+    title: "STP Installation - 500 KLD",
+    location: "Kollam",
+    before: "/images/products/Sewage Treatment Plant.jpg",
+    after: "/images/products/Effluent Treatment Plant.jpg",
+    desc: "Sewage Treatment Plant installed with advanced technology for effective treatment and reuse of water."
   }
+];
+
+const treatments = [
+  { name: "Iron Removal", before: "/images/new_home/iron_water_1781948634540.png", after: "https://images.unsplash.com/photo-1541336032412-2048a678540d?q=80&w=600&auto=format&fit=crop" },
+  { name: "Hard Water Treatment", before: "/images/new_home/hard_water_1781948623171.png", after: "https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=600&auto=format&fit=crop" },
+  { name: "Tank Cleaning", before: "/images/how do we work/Inspection and Assessment.jpg", after: "/images/how do we work/Commissioning.jpg" },
+  { name: "Waste Water Treatment", before: "/images/new_home/waste_water_1781948670592.png", after: "https://images.unsplash.com/photo-1470509037663-253afd7f0f51?q=80&w=600&auto=format&fit=crop" }
 ];
 ---
 
-<Layout title="Samudhra Water Solutions | Pure Water Systems & Support">
+<Layout title="Samudhra Water Solutions | Kerala's Trusted Partner">
   <script is:inline src="https://cdn.tailwindcss.com"></script>
-  <Navbar />
+  <!-- Use a custom navbar style in index if needed, or stick to the global Navbar -->
+  <Navbar theme="dark" />
 
-  <style>
-    /* ── Page-level responsive overrides ── */
-
-    /* Slider cards - responsive width */
-    .svc-card  { flex-shrink: 0; width: min(360px, 85vw); }
-    .prod-card { flex-shrink: 0; width: min(320px, 82vw); }
-
-    /* Hero heading fluid */
-    .hero-h1 { font-size: clamp(2.4rem, 8vw, 6.5rem); }
-
-    /* Section heading fluid */
-    .section-h2 { font-size: clamp(1.8rem, 5vw, 4rem); }
-
-    /* WhatsApp FAB – smaller on mobile */
-    @media (max-width: 480px) {
-      .wa-fab { width: 52px; height: 52px; bottom: 1.25rem; right: 1.25rem; }
-    }
-
-    /* Availability badge colours */
-    .badge-stock { background: #ecfdf5; color: #059669; }
-    .badge-order { background: #fff7ed; color: #d97706; }
-
-    /* Reveal animation */
-    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* Hide scrollbars for sliders */
-    .scrollbar-none::-webkit-scrollbar { display: none; }
-    .scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
-
-    /* Hero blob */
-    @keyframes pulse-blob {
-      0%,100% { transform: scale(1) translate(0,0); opacity:.6; }
-      50%      { transform: scale(1.15) translate(20px,-10px); opacity:.9; }
-    }
-    .hero-blob { animation: pulse-blob 8s ease-in-out infinite; }
-  </style>
-
-  <!-- ======================================================== -->
-  <!-- 1. HERO                                                    -->
-  <!-- ======================================================== -->
-  <section id="home" class="relative min-h-screen flex items-center bg-[#F9F9FB] overflow-hidden pt-20">
-    <!-- Decorative blobs -->
-    <div class="hero-blob absolute top-[-60px] right-[-40px] w-[300px] h-[300px] sm:w-[520px] sm:h-[520px] rounded-full bg-gradient-to-br from-[#07bee8]/20 to-[#024095]/10 blur-3xl pointer-events-none" aria-hidden="true"></div>
-    <div class="hero-blob absolute bottom-[-80px] left-[-60px] w-[260px] h-[260px] sm:w-[420px] sm:h-[420px] rounded-full bg-gradient-to-tr from-[#024095]/10 to-[#07bee8]/10 blur-3xl pointer-events-none" style="animation-delay:4s" aria-hidden="true"></div>
-    <div class="absolute inset-y-0 right-0 w-[30%] bg-[#024095]/4 hidden lg:block pointer-events-none" style="clip-path:polygon(10% 0,100% 0,100% 100%,0% 100%)" aria-hidden="true"></div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full py-16 sm:py-24 relative z-10">
-      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-
-        <!-- Left copy -->
-        <div class="lg:col-span-7 space-y-6 sm:space-y-8 text-center lg:text-left">
-          <div class="inline-flex items-center gap-3 px-4 py-2 bg-white border-l-4 border-[#07bee8] shadow-sm">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] animate-pulse"></span>
-            <span class="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] text-[#024095]">Kerala's Premium Water Solutions Since 2009</span>
-          </div>
-
-          <h1 class="hero-h1 font-black tracking-tighter text-[#024095] leading-[0.92] uppercase">
-            PURE WATER.<br/>
-            EVERY SINGLE<br/>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#024095] via-[#07bee8] to-slate-400">DROP.</span>
-          </h1>
-
-          <p class="text-sm sm:text-base text-black max-w-xl mx-auto lg:mx-0 font-medium leading-relaxed">
-            We provide custom water purifiers for houses and high-capacity water plants for businesses. Trusted clean water across Trivandrum.
-          </p>
-
-          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4">
-            <a href="/shop" class="w-full sm:w-auto min-h-[48px] px-8 py-3 bg-[#024095] text-white font-extrabold text-xs uppercase tracking-[0.2em] rounded-md shadow-lg hover:bg-[#07bee8] transition-all duration-300 text-center flex items-center justify-center">
-              View Our Products
-            </a>
-            <a href="/contact" class="w-full sm:w-auto min-h-[48px] px-8 py-3 bg-white border-2 border-[#024095] text-[#024095] font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#024095] hover:text-white transition-all duration-300 text-center flex items-center justify-center">
-              Contact Our Desk
-            </a>
-          </div>
-        </div>
-
-        <!-- Right stats -->
-        <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
-          {[
-            { label:"Water Purity",   val:"99.7%",    accent:"#024095" },
-            { label:"Max Plant Size", val:"100k LPH",  accent:"#07bee8" },
-            { label:"Years Active",   val:"17+",       accent:"#07bee8" },
-            { label:"Quality Code",   val:"ISO 9001",  accent:"#024095" },
-          ].map(s => (
-            <div class="bg-white p-4 sm:p-6 border-b-4 shadow-md rounded-md space-y-2 hover:shadow-xl transition-shadow" style={`border-color:${s.accent}`}>
-              <p class="text-[8px] sm:text-[9px] font-bold text-black uppercase tracking-widest">{s.label}</p>
-              <p class="text-xl sm:text-2xl font-black" style={`color:${s.accent}`}>{s.val}</p>
-            </div>
-          ))}
-
-          <!-- Quick links row -->
-          <div class="col-span-2 bg-white rounded-md shadow-md border border-slate-100 p-3 sm:p-4 flex items-center justify-between gap-2 flex-wrap">
-            {[
-              {href:"/service", label:"Services"},
-              {href:"/shop",    label:"Products"},
-              {href:"/about",   label:"About Us"},
-              {href:"/contact", label:"Contact"},
-            ].map(l => (
-              <a href={l.href} class="text-[8px] sm:text-[9px] font-black uppercase tracking-[0.2em] text-black hover:text-[#024095] transition-colors px-2 py-1 min-h-[44px] flex items-center">{l.label}</a>
-            ))}
-          </div>
-        </div>
-
-      </div>
+  <!-- HERO SECTION -->
+  <section class="relative min-h-[90vh] flex items-center justify-center pt-20">
+    <div class="absolute inset-0 z-0">
+      <img src="/images/new_home/hero_bg_1781948610252.png" alt="Industrial Water Treatment" class="w-full h-full object-cover" />
+      <!-- Subtle dark overlay to ensure the white text remains readable -->
+      <div class="absolute inset-0 bg-black/40"></div>
     </div>
-  </section>
 
-  <!-- ======================================================== -->
-  <!-- 2. SERVICES SLIDER                                        -->
-  <!-- ======================================================== -->
-  <section id="services-carousel" class="relative bg-[#024095] text-white py-20 sm:py-32 overflow-hidden">
-    <!-- Decorative background glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#07bee8]/20 rounded-full blur-[120px] pointer-events-none" aria-hidden="true"></div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16 reveal">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-        <div class="relative">
-          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8] mb-3 flex items-center gap-2">
-            <span class="w-8 h-[2px] bg-[#07bee8]"></span>
-            What We Do
-          </p>
-          <h2 class="section-h2 font-black tracking-tighter uppercase leading-none drop-shadow-lg">Our Services.</h2>
-          <p class="text-sm sm:text-base text-white/70 font-light mt-4 max-w-lg leading-relaxed">
-            10 specialised water treatment and maintenance services engineered for every scale, ensuring purity and reliability.
-          </p>
-        </div>
-        <div class="flex items-center">
-          <a href="/service" class="group inline-flex items-center gap-3 min-h-[48px] px-6 py-3 border border-[#07bee8]/40 bg-[#07bee8]/10 backdrop-blur-sm text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] hover:text-[#024095] transition-all duration-300 rounded-full shadow-[0_0_20px_rgba(7,190,232,0.1)] hover:shadow-[0_0_30px_rgba(7,190,232,0.4)] whitespace-nowrap">
-            Explore All Services
-            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-24">
+      <div class="max-w-3xl space-y-6">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+          Kerala's Trusted<br />Water Solutions Partner
+        </h1>
+        <p class="text-lg sm:text-xl text-blue-100 font-medium max-w-xl">
+          From water testing to complete water treatment systems, we deliver safe, reliable & sustainable water solutions for every need.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="/contact" class="inline-flex items-center justify-center px-8 py-3.5 bg-[#07bee8] text-[#024095] font-bold rounded-md hover:bg-white transition-colors gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            GET FREE WATER TESTING
+          </a>
+          <a href="tel:+919645830994" class="inline-flex items-center justify-center px-8 py-3.5 bg-transparent border-2 border-white text-white font-bold rounded-md hover:bg-white/10 transition-colors gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            TALK TO AN EXPERT
           </a>
         </div>
       </div>
     </div>
 
-    <!-- Snapping Slider -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div id="services-slider" class="flex gap-5 sm:gap-8 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory py-4 pb-8" style="-webkit-overflow-scrolling:touch;">
-        {services.map((svc) => (
-          <a href="/service" class="svc-card group snap-start bg-white/5 hover:bg-white/10 backdrop-blur-xl border border-white/10 hover:border-[#07bee8]/60 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-xl hover:shadow-[0_15px_40px_rgba(7,190,232,0.2)] hover:-translate-y-2 relative" style="height:clamp(380px,60vw,460px)">
-            <div class="relative overflow-hidden bg-slate-900 rounded-t-3xl" style="height:clamp(180px,35vw,240px)">
-              <img src={svc.image} alt={svc.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-110 group-hover:rotate-1 transition-all duration-700 ease-out opacity-90 group-hover:opacity-100" />
-              <!-- Glassmorphism overlay on image -->
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-90"></div>
-              
-              <!-- Tag -->
-              <div class="absolute top-4 left-4 z-10">
-                <span class="text-[9px] font-black uppercase tracking-widest text-white backdrop-blur-md bg-white/10 border border-white/20 px-3 py-1.5 rounded-full shadow-lg">{svc.tag}</span>
-              </div>
-              <!-- Number -->
-              <div class="absolute top-4 right-4 z-10">
-                <span class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white/80 to-white/10 group-hover:from-[#07bee8] group-hover:to-transparent transition-all duration-500">#{svc.num}</span>
-              </div>
-            </div>
-            
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between relative z-10 bg-gradient-to-b from-transparent to-slate-950/50">
-              <div class="space-y-3">
-                <h3 class="text-lg sm:text-xl font-black uppercase tracking-tight text-white group-hover:text-[#07bee8] transition-colors leading-snug drop-shadow-md">{svc.title}</h3>
-                <p class="text-xs sm:text-sm text-white/60 line-clamp-2 leading-relaxed font-light group-hover:text-white/80 transition-colors">
-                  Professional installation, calibration and service operations. Assured safety standards.
-                </p>
-              </div>
-              <div class="pt-5 flex items-center justify-between border-t border-white/10 group-hover:border-[#07bee8]/30 transition-colors">
-                <span class="text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.2em] text-[#07bee8] group-hover:text-white transition-colors flex items-center gap-2">
-                  Book Service
-                  <div class="w-0 h-[1px] bg-white group-hover:w-4 transition-all duration-300"></div>
-                </span>
-                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/5 border border-white/10 group-hover:bg-[#07bee8] group-hover:border-[#07bee8] text-white flex items-center justify-center transition-all duration-500 transform group-hover:translate-x-1 group-hover:shadow-[0_0_15px_rgba(7,190,232,0.5)]">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                </div>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-
-
-    </div>
-  </section>
-
-  <!-- ======================================================== -->
-  <!-- 3. PRODUCTS SLIDER                                        -->
-  <!-- ======================================================== -->
-  <section id="products-carousel" class="relative bg-[#FAF9F6] text-slate-900 py-20 sm:py-32 overflow-hidden">
-    <!-- Subtle grid background -->
-    <div class="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.02] pointer-events-none"></div>
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-[#024095]/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16 reveal">
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-        <div class="relative">
-          <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#024095] mb-3 flex items-center gap-2">
-            <span class="w-8 h-[2px] bg-[#024095]"></span>
-            Shop Products
-          </p>
-          <h2 class="section-h2 font-black tracking-tighter uppercase text-slate-900 leading-none drop-shadow-sm">Our Products.</h2>
-          <p class="text-sm sm:text-base text-slate-600 font-medium mt-4 max-w-lg leading-relaxed">
-            20 curated water purification systems — from compact home purifiers to 100,000 LPH industrial plants.
-          </p>
+    <!-- STATS BAR (Overlapping) -->
+    <div class="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
+      <div class="bg-white rounded-xl shadow-xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-5 gap-6 divide-x divide-slate-100">
+        <div class="flex flex-col items-center text-center px-2">
+          <div class="text-[#024095] text-3xl mb-2"><svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg></div>
+          <span class="text-2xl font-black text-[#024095]">17+</span>
+          <span class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Years<br/>Experience</span>
         </div>
-        <div class="flex items-center">
-          <a href="/shop" class="group inline-flex items-center gap-3 min-h-[48px] px-6 py-3 bg-[#024095] text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all duration-300 rounded-full shadow-[0_10px_20px_rgba(2,64,149,0.2)] hover:shadow-[0_15px_30px_rgba(7,190,232,0.3)] whitespace-nowrap">
-            Open Shop
-            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </a>
+        <div class="flex flex-col items-center text-center px-2">
+          <div class="text-[#07bee8] text-3xl mb-2"><svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg></div>
+          <span class="text-2xl font-black text-[#024095]">1000+</span>
+          <span class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Projects<br/>Delivered</span>
+        </div>
+        <div class="flex flex-col items-center text-center px-2">
+          <div class="text-[#024095] text-3xl mb-2"><svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg></div>
+          <span class="text-2xl font-black text-[#024095]">10000+</span>
+          <span class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Customers<br/>Served</span>
+        </div>
+        <div class="flex flex-col items-center text-center px-2">
+          <div class="text-[#07bee8] text-3xl mb-2"><svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+          <span class="text-2xl font-black text-[#024095]">ISO</span>
+          <span class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">9001:2015<br/>Certified</span>
+        </div>
+        <div class="flex flex-col items-center text-center px-2">
+          <div class="text-[#024095] text-3xl mb-2"><svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg></div>
+          <span class="text-2xl font-black text-[#024095]">Govt. & Inst.</span>
+          <span class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Projects<br/>Experience</span>
         </div>
       </div>
     </div>
-
-    <!-- Snapping Slider -->
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
-      <div id="products-slider" class="flex gap-5 sm:gap-8 overflow-x-auto scroll-smooth scrollbar-none snap-x snap-mandatory py-4 pb-8" style="-webkit-overflow-scrolling:touch;">
-        {products.map((p, index) => (
-          <div class="prod-card group snap-start bg-white border border-slate-200 hover:border-[#024095]/30 rounded-3xl overflow-hidden transition-all duration-500 flex flex-col justify-between shadow-sm hover:shadow-[0_20px_40px_rgba(2,64,149,0.08)] hover:-translate-y-2" style="height:clamp(450px,70vw,510px)">
-            <div class="relative bg-gradient-to-b from-slate-50 to-white flex items-center justify-center p-6 sm:p-8 overflow-hidden border-b border-slate-100/60" style="height:clamp(180px,35vw,220px)">
-              <div class="absolute inset-0 bg-[#024095]/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <img src={p.image} alt={p.name} loading="lazy" class="max-h-full max-w-full object-contain group-hover:scale-110 transition-transform duration-700 ease-out relative z-10 drop-shadow-md" />
-              
-              <div class="absolute top-4 left-4 z-20">
-                <span class="text-[9px] font-bold text-[#024095] bg-white/80 backdrop-blur-md border border-[#024095]/10 px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">{p.tier}</span>
-              </div>
-              <div class="absolute top-4 right-4 z-20">
-                <span class={`text-[9px] font-black uppercase tracking-wider px-3 py-1.5 rounded-full shadow-sm border ${p.availability === 'In Stock' ? 'bg-emerald-50 text-emerald-600 border-emerald-100' : 'bg-amber-50 text-amber-600 border-amber-100'}`}>
-                  {p.availability}
-                </span>
-              </div>
-            </div>
-            
-            <div class="p-6 sm:p-8 flex-1 flex flex-col justify-between bg-white relative z-10">
-              <div class="space-y-3">
-                <h3 class="text-lg sm:text-xl font-black uppercase tracking-tight text-slate-900 group-hover:text-[#024095] transition-colors leading-tight line-clamp-2">{p.name}</h3>
-                <p class="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed group-hover:text-slate-700 transition-colors">High-efficiency multi-stage system built using top grade components.</p>
-              </div>
-              <div class="pt-5 flex flex-col gap-2 border-t border-slate-100 group-hover:border-[#024095]/20 transition-colors">
-                <input 
-                  type="text" 
-                  id={`home-inquiry-input-${index}`}
-                  placeholder="Enter details or ask about price..." 
-                  class="w-full px-3 py-2 text-xs border border-slate-200 rounded-lg focus:outline-none focus:border-[#024095] bg-white text-slate-800 transition-colors placeholder:text-slate-400"
-                />
-                <button
-                  data-name={p.name}
-                  data-index={index}
-                  class="home-enquiry-btn w-full flex items-center justify-between min-h-[40px] px-4 py-2 bg-slate-50 border border-slate-200 hover:bg-[#024095] hover:border-[#024095] hover:text-white rounded-lg transition-all duration-300 text-slate-500"
-                >
-                  <span class="text-[10px] font-extrabold uppercase tracking-[0.2em]">Send Enquiry</span>
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-
-    </div>
   </section>
 
-  <!-- ======================================================== -->
-  <!-- 4. ABOUT SUMMARY                                          -->
-  <!-- ======================================================== -->
-  <section id="about-summary" class="bg-[#FAF9F6] text-slate-900 border-t border-slate-100 py-16 sm:py-24">
+  <!-- TRUSTED BY (Moved under Hero) -->
+  <section class="pt-32 pb-16 bg-[#024095]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center reveal">
-        <div class="lg:col-span-7 space-y-5 sm:space-y-6">
-          <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#07bee8]">About Our Company</p>
-          <h2 class="section-h2 font-black tracking-tighter text-[#024095] uppercase leading-none">Who We Are.</h2>
-          <p class="text-sm text-black font-light leading-relaxed max-w-xl">
-            Started in 2009 in Thiruvananthapuram, Samudhra fixes local water problems. We don't sell generic filters — we test your water supply and engineer a custom solution that's always completely clean and safe.
-          </p>
-          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-2">
-            {[
-              { val:"17+", label:"Years Experience" },
-              { val:"01",  label:"Showroom TVM" },
-              { val:"10+", label:"Service Types" },
-            ].map(s => (
-              <div class="border border-slate-100 rounded-lg p-3 sm:p-4 text-center hover:border-[#07bee8] transition-colors">
-                <p class="text-xl sm:text-2xl font-black text-[#024095]">{s.val}</p>
-                <p class="text-[8px] sm:text-[9px] text-black uppercase tracking-wider mt-1 font-bold">{s.label}</p>
-              </div>
-            ))}
+      <h2 class="text-xl sm:text-2xl font-bold text-center text-white mb-10 uppercase tracking-widest">
+        TRUSTED BY KERALA'S LEADING INSTITUTIONS
+      </h2>
+
+      <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
+        {clients.slice(0, 8).map(client => (
+          <div class="bg-white p-3 rounded shadow-md flex items-center justify-center w-28 h-20">
+            <img src={client} alt="Client Logo" class="max-w-full max-h-full object-contain filter grayscale hover:grayscale-0 transition-all duration-300" />
+          </div>
+        ))}
+      </div>
+      
+      <div class="text-center mt-8">
+        <span class="inline-block px-4 py-1.5 bg-[#024095] border border-white/30 text-white text-xs font-bold rounded-full">
+          &amp; 100+ MORE CLIENTS
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVERY WATER PROBLEM HAS A SOLUTION -->
+  <section class="pt-40 pb-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#024095] mb-12 uppercase">
+        EVERY <span class="text-[#07bee8]">WATER PROBLEM</span> HAS A SOLUTION
+      </h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="/images/new_home/hard_water_1781948623171.png" alt="Hard Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-[#024095]/20"></div>
+            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+          </div>
+          <div class="p-8 pt-10">
+            <h3 class="text-xl font-bold text-[#024095] mb-4">Hard Water</h3>
+            <ul class="space-y-2 text-sm text-slate-600 font-medium">
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Bathroom stains</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Pipe scaling</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Appliance damage</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="/images/new_home/iron_water_1781948634540.png" alt="Iron Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-[#024095]/20"></div>
+            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+            </div>
+          </div>
+          <div class="p-8 pt-10">
+            <h3 class="text-xl font-bold text-[#024095] mb-4">Iron Water</h3>
+            <ul class="space-y-2 text-sm text-slate-600 font-medium">
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Brown water</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Bad smell</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Health concerns</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="/images/new_home/salty_water_1781948658809.png" alt="Salty Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-[#024095]/20"></div>
+            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            </div>
+          </div>
+          <div class="p-8 pt-10">
+            <h3 class="text-xl font-bold text-[#024095] mb-4">Salty Water</h3>
+            <ul class="space-y-2 text-sm text-slate-600 font-medium">
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Coastal areas</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> High TDS</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Poor taste</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="/images/new_home/waste_water_1781948670592.png" alt="Waste Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute inset-0 bg-[#024095]/20"></div>
+            <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            </div>
+          </div>
+          <div class="p-8 pt-10">
+            <h3 class="text-xl font-bold text-[#024095] mb-4">Waste Water</h3>
+            <ul class="space-y-2 text-sm text-slate-600 font-medium">
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Industrial discharge</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Recycling challenges</li>
+              <li class="flex items-start gap-2"><span class="text-[#07bee8] mt-1">•</span> Compliance issues</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-[#024095] text-[#024095] font-bold rounded-md hover:bg-[#024095] hover:text-white transition-colors gap-2 uppercase tracking-wide">
+          Book Free Water Testing &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLETE WATER SOLUTIONS -->
+  <section class="py-20 bg-[#024095] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase">
+        COMPLETE <span class="text-[#07bee8]">WATER SOLUTIONS</span> FOR EVERY NEED
+      </h2>
+
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Residential -->
+        <div class="bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="/images/new_home/residential_home_1781948726505.png" alt="Residential Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100">
+              <svg class="w-7 h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            </div>
+          </div>
+          <div class="p-8 pt-10 flex flex-col flex-1">
+            <h3 class="text-2xl font-black text-[#024095] mb-3">Residential<br/>Water Solutions</h3>
+            <p class="text-sm font-medium text-slate-600 mb-6 flex-1">Safe & healthy drinking water for your home and family.</p>
+            <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
+              Explore Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Commercial -->
+        <div class="bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1470&auto=format&fit=crop" alt="Commercial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100">
+              <svg class="w-7 h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            </div>
+          </div>
+          <div class="p-8 pt-10 flex flex-col flex-1">
+            <h3 class="text-2xl font-black text-[#024095] mb-3">Commercial<br/>Water Solutions</h3>
+            <p class="text-sm font-medium text-slate-600 mb-6 flex-1">Reliable water systems for businesses & institutions.</p>
+            <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
+              Explore Solutions &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Industrial -->
+        <div class="bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+          <div class="h-64 overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop" alt="Industrial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            <div class="absolute -bottom-6 left-6 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100">
+              <svg class="w-7 h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            </div>
+          </div>
+          <div class="p-8 pt-10 flex flex-col flex-1">
+            <h3 class="text-2xl font-black text-[#024095] mb-3">Industrial<br/>Water Treatment</h3>
+            <p class="text-sm font-medium text-slate-600 mb-6 flex-1">Advanced treatment systems for industrial applications.</p>
+            <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
+              Explore Solutions &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- FOUNDER SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <!-- Profile Card -->
+        <div class="lg:col-span-4 space-y-6 border-l-4 border-[#024095] bg-slate-50 p-6 sm:p-8 rounded-r-xl shadow-sm">
+          <div class="w-full rounded-lg overflow-hidden border border-slate-200 shadow-md">
+            <img src="/images/founder.jpeg" alt="Rajesh - Founder & Managing Director" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+          <div>
+            <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ EXECUTIVE CHAIR ]</span>
+            <p class="text-3xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
+            <p class="text-xs font-bold text-black tracking-wider uppercase mt-1">Founder &amp; Managing Director</p>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="lg:col-span-8 space-y-8">
+          <div class="space-y-4">
+            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// STRATEGIC VISION</span>
+            <h3 class="text-2xl sm:text-4xl font-black tracking-tight text-[#024095] uppercase leading-tight">The Architecture <br class="hidden sm:block" />of Performance</h3>
+            <p class="text-base text-slate-600 font-medium leading-relaxed max-w-2xl">
+              "When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that layout model entirely. By committing our engineering teams to meticulous pre-assembly site analysis, we ensured that residential and commercial clients receive long-lasting operational certainty."
+            </p>
           </div>
           <div class="pt-2">
-            <a href="/about" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-[#024095] text-white font-extrabold text-xs uppercase tracking-[0.2em] rounded-md hover:bg-[#07bee8] transition-all duration-300 shadow-md">
-              Read Our Full History &rarr;
+            <a href="/founder"
+               class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-[#024095] text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
+              Read Full Statement &rarr;
             </a>
-          </div>
-        </div>
-        <div class="lg:col-span-5 relative group">
-          <div class="absolute inset-0 bg-gradient-to-tr from-[#024095]/10 to-[#07bee8]/10 rounded-2xl filter blur-xl transform translate-x-2 translate-y-2 opacity-70 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
-          <div class="relative overflow-hidden rounded-2xl border border-slate-100 shadow-xl bg-white">
-            <img
-              src="/images/office image/Samdhura Office.jpg"
-              alt="Samudhra Water Solutions Corporate Office, Poojappura, Thiruvananthapuram"
-              loading="lazy"
-              class="w-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              style="aspect-ratio: 4/3;"
-            />
-            <div class="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 bg-white/95 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-lg border border-slate-100 shadow-sm">
-              <p class="text-[8px] sm:text-[9px] font-mono font-black text-[#024095] uppercase tracking-wider">// POOJAPPURA HQ</p>
-            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ======================================================== -->
-  <!-- 4.5 HOW WE WORK                                           -->
-  <!-- ======================================================== -->
-  <section id="how-we-work" class="bg-[#F9F9FB] text-slate-900 border-t border-slate-100 py-16 sm:py-24">
+  <!-- REAL PROJECTS. REAL RESULTS. -->
+  <section class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#024095] mb-12 uppercase">
+        REAL <span class="text-[#07bee8]">PROJECTS.</span> REAL RESULTS.
+      </h2>
 
-      <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-16 space-y-3 sm:space-y-4 reveal">
-        <p class="text-[10px] font-bold uppercase tracking-[0.4em] text-[#07bee8]">Process Integrity</p>
-        <h2 class="section-h2 font-black tracking-tighter text-[#024095] uppercase">How We Work.</h2>
-        <p class="text-sm text-black font-semibold leading-relaxed">
-          From first water testing chemical reviews to precision component selection and ongoing maintenance audit loops.
-        </p>
+      <div class="grid lg:grid-cols-3 gap-8">
+        {projects.map(proj => (
+          <div class="bg-[#024095] rounded-xl shadow-lg border border-[#024095] overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+            <div class="p-6 pb-4">
+              <h3 class="text-lg font-bold text-white">{proj.title}</h3>
+              <p class="text-xs text-blue-200 font-medium flex items-center gap-1 mt-1">
+                <svg class="w-3 h-3 text-[#07bee8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                {proj.location}
+              </p>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-1 px-6">
+              <div class="relative">
+                <div class="absolute top-2 left-2 bg-black/60 text-white text-[9px] font-bold px-2 py-0.5 rounded z-10">BEFORE</div>
+                <img src={proj.before} class="w-full h-32 object-cover rounded" alt="Before" />
+              </div>
+              <div class="relative">
+                <div class="absolute top-2 left-2 bg-[#07bee8] text-[#024095] text-[9px] font-black px-2 py-0.5 rounded z-10">AFTER</div>
+                <img src={proj.after} class="w-full h-32 object-cover rounded" alt="After" />
+              </div>
+            </div>
+
+            <div class="p-6">
+              <p class="text-sm text-blue-50 font-medium mb-6">{proj.desc}</p>
+              <a href="/shop" class="text-xs font-bold uppercase tracking-wider text-[#07bee8] hover:text-white transition-colors flex items-center gap-1">
+                VIEW PROJECT <span class="text-lg leading-none">&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
+      
+      <div class="mt-12 text-center">
+        <a href="/service" class="inline-block px-8 py-3 border border-[#024095] text-[#024095] text-xs font-bold uppercase tracking-wider rounded hover:bg-[#024095] hover:text-white transition-colors">
+          VIEW ALL PROJECTS
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 reveal">
-        {[
-          { step: "01", title: "Inspection & Assessment", desc: "Our on-site field technicians physically and chemically audit your source water, pipeline structures, and specific layout constraints to form a complete assessment.", highlight: "Site Audit", image: "/images/how do we work/Inspection and Assessment.jpg" },
-          { step: "02", title: "Designing", desc: "We configure custom system layouts and select the optimal multi-brand membranes, filters, and components tailored specifically for your water parameters.", highlight: "Custom Layouts", image: "/images/how do we work/Designing.jpg" },
-          { step: "03", title: "Engineering", desc: "Our certified technical squads engineer and assemble structural lines, mount heavy-duty valves, and optimize booster flows for maximum durability.", highlight: "Precision Assembly", image: "/images/how do we work/Engineering.jpg" },
-          { step: "04", title: "Commissioning", desc: "We run rigorous calibration testing, complete sanitization flushes, and finalize the system handover, backed by continuous AMC support.", highlight: "System Handover", image: "/images/how do we work/Commissioning.jpg" },
-        ].map((item) => (
-          <div class="bg-white border border-slate-100 rounded-2xl shadow-sm hover:shadow-xl hover:border-[#07bee8]/40 transition-all duration-500 flex flex-col justify-between hover:-translate-y-1 group relative overflow-hidden">
-            <div class="h-40 sm:h-48 overflow-hidden relative">
-              <img src={item.image} alt={item.title} loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
-              <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between">
-                <span class="text-3xl sm:text-4xl font-black font-mono text-white/50 group-hover:text-white transition-colors duration-500">{item.step}</span>
-                <span class="text-[8px] font-mono font-bold text-[#024095] uppercase bg-[#07bee8] px-2 py-0.5 rounded-full shadow-md">{item.highlight}</span>
+  <!-- TRANSFORMING WATER -->
+  <section class="py-20 bg-[#024095] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 uppercase tracking-wide">
+        TRANSFORMING WATER. IMPROVING LIVES.
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {treatments.map(t => (
+          <div class="bg-white/5 rounded-xl border border-white/10 p-4">
+            <div class="grid grid-cols-2 gap-2 mb-4">
+              <div class="relative">
+                <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[8px] font-bold uppercase">BEFORE</div>
+                <img src={t.before} class="w-full h-24 object-cover rounded shadow" alt="Before" />
+              </div>
+              <div class="relative">
+                <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[8px] font-bold uppercase">AFTER</div>
+                <img src={t.after} class="w-full h-24 object-cover rounded shadow" alt="After" />
               </div>
             </div>
-            <div class="p-6 sm:p-8 space-y-3 sm:space-y-4 flex-1">
-              <h3 class="text-base sm:text-lg font-black uppercase tracking-tight text-[#024095]">{item.title}</h3>
-              <p class="text-xs text-black font-semibold leading-relaxed">{item.desc}</p>
-            </div>
-            <div class="px-6 sm:px-8 pb-6 sm:pb-8">
-              <div class="pt-4 border-t border-slate-100 flex items-center justify-between text-[10px] font-bold text-[#024095]">
-                <span>STEP {item.step} INTACT</span>
-                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </div>
-            </div>
+            <p class="text-center text-sm font-bold">{t.name}</p>
+            <p class="text-center text-[10px] text-[#07bee8] font-bold uppercase tracking-wider mt-1">BEFORE / AFTER</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ======================================================== -->
-  <!-- 5. TESTIMONIALS                                           -->
-  <!-- ======================================================== -->
-  <section id="testimonials-summary" class="bg-[#024095] text-white border-t border-[#024095]/10 py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <!-- Header row: title left, buttons right -->
-      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-10 sm:mb-16 reveal">
-        <div class="space-y-2 sm:space-y-3">
-          <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#07bee8]">Customer Reviews</p>
-          <h2 class="section-h2 font-black tracking-tighter uppercase leading-none">What Customers Say.</h2>
-        </div>
-        <!-- Buttons top-right -->
-        <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 shrink-0">
-          <a href="/testimonial" class="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 bg-[#07bee8] hover:bg-white hover:text-[#024095] text-[#024095] font-extrabold text-[10px] uppercase tracking-[0.2em] rounded-md transition-all duration-300 shadow-md whitespace-nowrap">
-            View All Reviews
-          </a>
-          <a href="https://www.google.com/maps/search/?api=1&query=Samudhra+Water+Solutions+Poojappura+Thiruvananthapuram" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 bg-transparent border-2 border-white hover:bg-white hover:text-[#024095] text-white font-extrabold text-[10px] uppercase tracking-[0.2em] rounded-md transition-all duration-300 whitespace-nowrap">
-            Write a Review
-          </a>
-        </div>
-      </div>
-
-      <!-- Testimonials Carousel Container -->
-      <div class="relative overflow-hidden w-full reveal">
-        <div id="testimonials-track" class="flex transition-transform duration-500 ease-in-out gap-6" style="transform: translateX(0px);">
-          {reviews.map((t) => (
-            <div class="testimonial-slide shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white/10 border border-white/10 hover:border-[#07bee8]/40 rounded-2xl p-6 sm:p-8 transition-all duration-300 flex flex-col justify-between select-none">
-              <div>
-                <div class="text-[#07bee8] text-xs font-black tracking-widest mb-4">{t.rating} GOOGLE REVIEW</div>
-                <p class="text-sm text-white/80 font-light leading-relaxed italic mb-6">"{t.statement}"</p>
-              </div>
-              <div class="border-t border-white/10 pt-4 sm:pt-5 mt-auto flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-[#07bee8]/30 border border-white/20 flex items-center justify-center flex-shrink-0">
-                  <span class="text-white text-xs font-black">{t.initials}</span>
-                </div>
-                <div>
-                  <p class="text-sm font-black text-white tracking-tight uppercase">{t.client}</p>
-                  <p class="text-[9px] font-bold text-white/40 uppercase tracking-widest mt-0.5">{t.entity}</p>
-                </div>
-              </div>
+  <!-- GET FREE WATER TESTING CTA -->
+  <section class="py-24 bg-white relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="bg-gradient-to-br from-[#024095] to-[#011c44] rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-[#024095]/50">
+        
+        <!-- Left Content -->
+        <div class="lg:w-3/5 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
+          <span class="text-[#07bee8] font-black uppercase tracking-widest text-xs sm:text-sm mb-4">Not sure about your water quality?</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+            Get Free Water Testing
+          </h2>
+          <p class="text-blue-100 text-sm sm:text-base font-medium mb-10 max-w-lg leading-relaxed">
+            Our experts will test your water and provide the perfect, customized purification solution for your specific needs.
+          </p>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+            <div class="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-3">
+               <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-[#07bee8] shadow-inner backdrop-blur-sm">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+               </div>
+               <span class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Expert<br class="hidden sm:block"/>Analysis</span>
             </div>
-          ))}
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ======================================================== -->
-  <!-- 6. FOUNDER                                                -->
-  <!-- ======================================================== -->
-  <section id="founder-summary" class="bg-[#FAF9F6] text-slate-900 border-t border-slate-100 py-16 sm:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center reveal">
-        <div class="lg:col-span-8 space-y-4 sm:space-y-5">
-          <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-[#024095]">Founder Statement</p>
-          <h2 class="section-h2 font-black tracking-tighter text-[#024095] uppercase leading-tight">Message From<br/>Our Founder.</h2>
-          <blockquote class="border-l-4 border-[#07bee8] pl-5 sm:pl-6">
-            <p class="text-sm text-black font-light leading-relaxed italic">
-              "Clean water is a basic need. At Samudhra, we built our reputation over 17 years by refusing to offer cheap shortcuts — custom-building every layout package to fit your specific well or pipeline water supply."
-            </p>
-          </blockquote>
-          <p class="text-xs font-black text-[#024095] uppercase tracking-wider">— Rajesh, Founder &amp; Managing Director</p>
-        </div>
-        <div class="lg:col-span-4 relative group">
-          <div class="absolute inset-0 bg-gradient-to-tr from-[#024095]/10 to-[#07bee8]/10 rounded-2xl filter blur-xl transform translate-x-2 translate-y-2 opacity-70 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true"></div>
-          <div class="relative overflow-hidden rounded-2xl border border-slate-100 shadow-xl bg-white aspect-[4/5] mb-6">
-            <img src="/images/founder.jpeg" alt="Rajesh - Founder" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+            <div class="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-3">
+               <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-[#07bee8] shadow-inner backdrop-blur-sm">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+               </div>
+               <span class="text-xs font-bold text-white uppercase tracking-wider leading-tight">100%<br class="hidden sm:block"/>Free</span>
+            </div>
+            <div class="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-3">
+               <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-[#07bee8] shadow-inner backdrop-blur-sm">
+                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+               </div>
+               <span class="text-xs font-bold text-white uppercase tracking-wider leading-tight">Best Solution<br class="hidden sm:block"/>Recommendation</span>
+            </div>
           </div>
-          <div class="text-left lg:text-right">
-            <a href="/founder" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-[#024095] text-white text-xs font-bold uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all duration-300 rounded w-full lg:w-auto text-center shadow-md relative z-10">
-              Read Full Message &rarr;
+          
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="https://wa.me/919645830994?text=Hi%2C+I+would+like+to+book+a+free+water+testing+for+my+home%2Fbusiness.+Please+let+me+know+the+next+steps." target="_blank" rel="noopener noreferrer" class="flex-1 text-center px-8 py-4 bg-[#07bee8] text-[#024095] font-black uppercase tracking-widest text-xs rounded-xl hover:bg-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
+              Book Free Testing
+            </a>
+            <a href="https://wa.me/919645830994" class="flex-1 text-center px-8 py-4 bg-[#25D366] text-white font-black uppercase tracking-widest text-xs rounded-xl hover:bg-[#128C7E] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.124.553 4.195 1.603 6.012L.175 23.364l5.46-1.433c1.764.954 3.754 1.458 5.807 1.458 6.647 0 12.03-5.383 12.03-12.031S18.678 0 12.031 0zm6.545 17.381c-.266.75-1.528 1.442-2.126 1.488-.584.045-1.332.147-3.957-.936-3.158-1.303-5.187-4.526-5.342-4.733-.155-.207-1.275-1.696-1.275-3.238 0-1.542.798-2.3.109-.272.296-.065.642-.065.875 0 .222.065.518-.109.813.612.311.751 1.01 2.451 1.101 2.637.091.186.155.405.045.612-.11.207-.168.337-.337.531-.168.187-.349.427-.505.583-.168.168-.349.349-.142.707.207.363.921 1.528 1.982 2.474 1.365 1.216 2.489 1.593 2.852 1.764.363.168.57.142.784-.091.214-.233.921-1.075 1.167-1.442.246-.363.492-.311.829-.187.337.123 2.126 1.01 2.489 1.191.363.187.604.285.694.44.091.155.091.905-.175 1.655z"></path></svg>
+              WhatsApp Us
             </a>
           </div>
         </div>
+        
+        <!-- Right Image -->
+        <div class="lg:w-2/5 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full">
+           <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1470&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Scientist Testing Water" />
+           <div class="absolute inset-0 bg-[#024095]/30 mix-blend-multiply"></div>
+           <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#024095] lg:via-[#024095]/80 via-[#024095]/90 to-transparent"></div>
+        </div>
+        
       </div>
     </div>
   </section>
 
-  <!-- ======================================================== -->
-  <!-- FLOATING WHATSAPP                                         -->
-  <!-- ======================================================== -->
-  <div class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50 flex items-center gap-3 group">
-    <div class="bg-[#024095] text-white text-[9px] font-black uppercase tracking-[0.25em] px-4 py-2 shadow-2xl rounded-md border border-[#07bee8]/20 opacity-0 group-hover:opacity-100 pointer-events-none transition-all duration-300 hidden sm:flex items-center gap-2">
-      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-      <span>Desk Online</span>
-    </div>
+  <!-- FLOATING WHATSAPP -->
+  <div class="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-50">
     <a
-      href="https://wa.me/919645830994?text=Hi, I would like to book a quick water analysis appointment."
+      href="https://wa.me/919645830994"
       target="_blank"
       rel="noopener noreferrer"
-      class="wa-fab w-12 h-12 sm:w-14 sm:h-14 bg-[#024095] text-white hover:bg-[#07bee8] transition-all duration-300 shadow-2xl flex items-center justify-center relative rounded-full"
+      class="w-14 h-14 bg-[#25D366] text-white hover:bg-[#128C7E] transition-all duration-300 shadow-2xl flex items-center justify-center rounded-full"
       aria-label="Contact Us on WhatsApp"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" class="w-5 h-5 sm:w-6 sm:h-6 transform group-hover:scale-110 transition-transform">
-        <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7 .9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
-      </svg>
-      <span class="absolute top-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#024095] rounded-full shadow-inner animate-pulse"></span>
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 0C5.383 0 0 5.383 0 12.031c0 2.124.553 4.195 1.603 6.012L.175 23.364l5.46-1.433c1.764.954 3.754 1.458 5.807 1.458 6.647 0 12.03-5.383 12.03-12.031S18.678 0 12.031 0zm6.545 17.381c-.266.75-1.528 1.442-2.126 1.488-.584.045-1.332.147-3.957-.936-3.158-1.303-5.187-4.526-5.342-4.733-.155-.207-1.275-1.696-1.275-3.238 0-1.542.798-2.3.109-.272.296-.065.642-.065.875 0 .222.065.518-.109.813.612.311.751 1.01 2.451 1.101 2.637.091.186.155.405.045.612-.11.207-.168.337-.337.531-.168.187-.349.427-.505.583-.168.168-.349.349-.142.707.207.363.921 1.528 1.982 2.474 1.365 1.216 2.489 1.593 2.852 1.764.363.168.57.142.784-.091.214-.233.921-1.075 1.167-1.442.246-.363.492-.311.829-.187.337.123 2.126 1.01 2.489 1.191.363.187.604.285.694.44.091.155.091.905-.175 1.655z"></path></svg>
     </a>
   </div>
 
   <Footer />
-
-  <!-- Scripts -->
-  <script is:inline>
-    // 1. Scroll Reveal
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-    // 2. Slider Factory
-    function initSlider({ sliderId, dotsId, countId, total, interval: ms }) {
-      const slider = document.getElementById(sliderId);
-      const countEl = document.getElementById(countId);
-      const dotsEl = document.getElementById(dotsId);
-      if (!slider) return;
-
-      const dots = dotsEl ? Array.from(dotsEl.children) : [];
-      let idx = 0;
-
-      const getCardW = () => {
-        const card = slider.querySelector('[class*="snap-start"]');
-        if (!card) return 300;
-        return card.offsetWidth + parseInt(getComputedStyle(slider).gap || '24');
-      };
-
-      const goTo = (i) => {
-        idx = i;
-        slider.scrollTo({ left: i * getCardW(), behavior: 'smooth' });
-        update();
-      };
-
-      const update = () => {
-        if (countEl) countEl.textContent = `${String(idx + 1).padStart(2,'0')} / ${String(total).padStart(2,'0')}`;
-        dots.forEach((d, di) => {
-          if (di === idx) {
-            d.style.width = '3rem';
-            d.style.opacity = '1';
-          } else {
-            d.style.width = '';
-            d.style.opacity = '0.4';
-          }
-        });
-      };
-
-      let timer = setInterval(() => goTo((idx + 1) % total), ms);
-      slider.addEventListener('mouseenter', () => clearInterval(timer));
-      slider.addEventListener('touchstart',  () => clearInterval(timer), { passive: true });
-      slider.addEventListener('mouseleave',  () => { timer = setInterval(() => goTo((idx + 1) % total), ms); });
-      slider.addEventListener('touchend',    () => {
-        clearInterval(timer);
-        timer = setInterval(() => goTo((idx + 1) % total), ms);
-      }, { passive: true });
-      slider.addEventListener('scroll', () => {
-        const w = getCardW();
-        if (w > 0) idx = Math.round(slider.scrollLeft / w);
-        update();
-      }, { passive: true });
-
-      dots.forEach((d, di) => d.addEventListener('click', () => goTo(di)));
-      update();
-    }
-
-    initSlider({ sliderId: 'services-slider', dotsId: 'services-dots', countId: 'services-count', total: 10, interval: 3000 });
-    initSlider({ sliderId: 'products-slider', dotsId: 'products-dots', countId: 'products-count', total: 20, interval: 3500 });
-
-    // Handle home product custom enquiries on WhatsApp
-    document.querySelectorAll('.home-enquiry-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const index = btn.getAttribute('data-index');
-        const name = btn.getAttribute('data-name');
-        const input = document.getElementById(`home-inquiry-input-${index}`);
-        const customText = input ? input.value.trim() : '';
-        let message = `Hi, I would like to inquire about the ${name}.`;
-        if (customText) {
-          message += ` Details: ${customText}`;
-        }
-        const encoded = encodeURIComponent(message);
-        window.open(`https://wa.me/919645830994?text=${encoded}`, '_blank');
-      });
-
-      // Press Enter key to submit
-      const index = btn.getAttribute('data-index');
-      const input = document.getElementById(`home-inquiry-input-${index}`);
-      if (input) {
-        input.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') {
-            btn.click();
-          }
-        });
-      }
-    });
-
-    // Testimonials Carousel auto-scrolling & controls
-    const track = document.getElementById('testimonials-track');
-    const slides = Array.from(track ? track.children : []);
-    const dotsContainer = document.getElementById('testimonials-dots');
-    
-    if (track && slides.length > 0) {
-      let currentIdx = 0;
-      let autoPlayTimer;
-
-      const getSlidesPerPage = () => {
-        if (window.innerWidth >= 1024) return 3;
-        if (window.innerWidth >= 768) return 2;
-        return 1;
-      };
-
-      const getMaxIndex = () => {
-        return Math.max(0, slides.length - getSlidesPerPage());
-      };
-
-      const initDots = () => {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = '';
-        const numDots = getMaxIndex() + 1;
-        for (let i = 0; i < numDots; i++) {
-          const dot = document.createElement('button');
-          dot.className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white transition-all duration-300';
-          dot.setAttribute('aria-label', `Go to review slide ${i + 1}`);
-          if (i === 0) {
-            dot.classList.add('bg-white', 'w-8');
-            dot.classList.remove('bg-white/30');
-          }
-          dot.addEventListener('click', () => goToSlide(i));
-          dotsContainer.appendChild(dot);
-        }
-      };
-
-      const updateCarousel = () => {
-        const slidesPerPage = getSlidesPerPage();
-        const slideWidth = slides[0].getBoundingClientRect().width;
-        const gap = parseInt(window.getComputedStyle(track).gap || '24');
-        const offset = currentIdx * (slideWidth + gap);
-        
-        track.style.transform = `translateX(-${offset}px)`;
-
-        // Update dots
-        if (dotsContainer) {
-          Array.from(dotsContainer.children).forEach((dot, idx) => {
-            if (idx === currentIdx) {
-              dot.className = 'w-8 h-2 rounded-full bg-white transition-all duration-300';
-            } else {
-              dot.className = 'w-2 h-2 rounded-full bg-white/30 hover:bg-white transition-all duration-300';
-            }
-          });
-        }
-      };
-
-      const goToSlide = (idx) => {
-        currentIdx = Math.min(Math.max(0, idx), getMaxIndex());
-        updateCarousel();
-        resetAutoPlay();
-      };
-
-      const nextSlide = () => {
-        const maxIdx = getMaxIndex();
-        if (currentIdx >= maxIdx) {
-          goToSlide(0);
-        } else {
-          goToSlide(currentIdx + 1);
-        }
-      };
-
-      const startAutoPlay = () => {
-        autoPlayTimer = setInterval(nextSlide, 4500);
-      };
-
-      const stopAutoPlay = () => {
-        clearInterval(autoPlayTimer);
-      };
-
-      const resetAutoPlay = () => {
-        stopAutoPlay();
-        startAutoPlay();
-      };
-
-      track.addEventListener('mouseenter', stopAutoPlay);
-      track.addEventListener('mouseleave', startAutoPlay);
-      track.addEventListener('touchstart', stopAutoPlay, { passive: true });
-      track.addEventListener('touchend', startAutoPlay, { passive: true });
-
-      window.addEventListener('resize', () => {
-        initDots();
-        currentIdx = Math.min(currentIdx, getMaxIndex());
-        updateCarousel();
-      });
-
-      initDots();
-      updateCarousel();
-      startAutoPlay();
-    }
-  </script>
-
 </Layout>
