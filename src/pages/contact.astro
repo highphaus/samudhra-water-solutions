@@ -112,44 +112,63 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
 
       <!-- Section Heading -->
-      <div class="flex items-center gap-3 mb-6">
+      <div class="flex items-center gap-3 mb-4">
         <span class="h-[1px] w-10 bg-[#024095]"></span>
         <span class="text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">FIND US HERE</span>
       </div>
       <h2 class="text-2xl sm:text-3xl font-black text-[#024095] uppercase mb-8">Our Office Location</h2>
 
-      <!-- Map Card -->
-      <div class="w-full rounded-2xl shadow-xl border border-slate-200 overflow-hidden">
-        <!-- Map iframe - using reliable embed with coordinates -->
-        <div class="relative w-full h-[450px] sm:h-[520px]">
+      <!-- Map + Info Card -->
+      <div class="w-full rounded-2xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col lg:flex-row">
+
+        <!-- Left: Info Panel -->
+        <div class="bg-[#024095] lg:w-[340px] shrink-0 p-8 flex flex-col justify-between gap-8">
+          <div class="space-y-6">
+            <div>
+              <p class="text-[10px] font-black uppercase tracking-[0.3em] text-[#07bee8] mb-2">Company</p>
+              <p class="text-white font-black text-lg leading-tight">Samudhra Water Solutions</p>
+            </div>
+            <div>
+              <p class="text-[10px] font-black uppercase tracking-[0.3em] text-[#07bee8] mb-2">Address</p>
+              <p class="text-blue-100 text-sm font-medium leading-relaxed">
+                Soorya Nidhi, TC 42/1231,<br/>
+                Near Canara Bank, Poojapura,<br/>
+                Thiruvananthapuram, Kerala 695012
+              </p>
+            </div>
+            <div>
+              <p class="text-[10px] font-black uppercase tracking-[0.3em] text-[#07bee8] mb-2">Phone</p>
+              <a href="tel:+919645830994" class="text-white font-black text-base hover:text-[#07bee8] transition-colors">
+                +91 96458 30994
+              </a>
+            </div>
+            <div>
+              <p class="text-[10px] font-black uppercase tracking-[0.3em] text-[#07bee8] mb-2">Hours</p>
+              <p class="text-blue-100 text-sm font-medium">Mon – Sat: 8:00 AM – 8:00 PM</p>
+              <p class="text-blue-200 text-xs font-medium mt-1">Sunday: Closed</p>
+            </div>
+          </div>
+
+          <a href="https://maps.app.goo.gl/f9PezLmRUYLq52998" target="_blank" rel="noopener noreferrer"
+             class="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#07bee8] text-[#024095] text-xs font-black uppercase tracking-widest rounded-xl hover:bg-white transition-all shadow-lg">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Open in Google Maps
+          </a>
+        </div>
+
+        <!-- Right: Map Embed (OpenStreetMap - always works!) -->
+        <div class="flex-1 min-h-[400px] sm:min-h-[500px]">
           <iframe
-            src="https://maps.google.com/maps?q=8.4941369,76.9758414&hl=en&z=16&output=embed"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=76.9708414%2C8.4891369%2C76.9808414%2C8.4991369&layer=mapnik&marker=8.4941369%2C76.9758414"
             width="100%"
             height="100%"
-            style="border:0; display:block;"
+            style="border:0; display:block; min-height:400px;"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Samudhra Water Solutions Location">
+            title="Samudhra Water Solutions - Poojapura, Thiruvananthapuram">
           </iframe>
         </div>
 
-        <!-- Footer bar with address + open maps button -->
-        <div class="bg-[#024095] px-6 py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div class="flex items-start gap-3 text-white">
-            <svg class="w-5 h-5 mt-0.5 shrink-0 text-[#07bee8]" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-            </svg>
-            <div>
-              <p class="text-xs font-black uppercase tracking-widest text-[#07bee8] mb-0.5">Samudhra Water Solutions</p>
-              <p class="text-xs text-blue-100 font-medium">Soorya Nidhi, TC 42/1231, Near Canara Bank, Poojapura, Thiruvananthapuram, Kerala 695012</p>
-            </div>
-          </div>
-          <a href="https://maps.app.goo.gl/f9PezLmRUYLq52998" target="_blank" rel="noopener noreferrer"
-             class="shrink-0 px-5 py-2.5 bg-[#07bee8] text-[#024095] text-xs font-black uppercase tracking-widest rounded-lg hover:bg-white transition-colors whitespace-nowrap">
-            Open in Google Maps →
-          </a>
-        </div>
       </div>
 
     </div>
