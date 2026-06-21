@@ -115,27 +115,101 @@ const treatments = [
   </div>
 
   <!-- TRUSTED BY (Moved under Hero) -->
-  <section class="pt-16 pb-16 bg-[#eff6ff] overflow-hidden relative z-20">
+  <section class="pt-10 pb-10 bg-[#eff6ff] overflow-hidden relative z-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-xs font-black text-center text-blue-900/60 mb-8 uppercase tracking-[0.3em]">
+      <h2 class="text-xs font-black text-center text-blue-900/60 mb-6 uppercase tracking-[0.3em]">
         TRUSTED BY KERALA'S LEADING INSTITUTIONS
       </h2>
 
-      <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-10">
-        {clients.slice(0, 8).map(client => (
-          <div class="flex items-center justify-center w-28 h-14">
-            <img src={client} alt="Client Logo" class="max-w-full max-h-full object-contain filter grayscale opacity-60 hover:opacity-100 transition-all duration-300 mix-blend-multiply" />
+      <!-- Horizontal row: 4 animated logo slots, each cycles through 2 logos vertically -->
+      <div class="flex items-center justify-center gap-4 sm:gap-8 md:gap-12">
+
+        <!-- Slot 1: logo 1 → logo 5 -->
+        <div class="logo-slot overflow-hidden h-12 w-24 sm:w-32 md:w-36 flex-shrink-0">
+          <div class="logo-strip slot-1">
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/1.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/5.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
           </div>
-        ))}
+        </div>
+
+        <!-- Slot 2: logo 2 → logo 6 -->
+        <div class="logo-slot overflow-hidden h-12 w-24 sm:w-32 md:w-36 flex-shrink-0">
+          <div class="logo-strip slot-2">
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/2.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/6.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot 3: logo 3 → logo 7 -->
+        <div class="logo-slot overflow-hidden h-12 w-24 sm:w-32 md:w-36 flex-shrink-0">
+          <div class="logo-strip slot-3">
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/3.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/7.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slot 4: logo 4 → logo 8 -->
+        <div class="logo-slot overflow-hidden h-12 w-24 sm:w-32 md:w-36 flex-shrink-0">
+          <div class="logo-strip slot-4">
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/4.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
+            <div class="logo-item h-12 flex items-center justify-center">
+              <img src="/images/client/8.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain grayscale opacity-60 mix-blend-multiply" />
+            </div>
+          </div>
+        </div>
+
       </div>
-      
-      <div class="text-center mt-8">
+
+      <div class="text-center mt-6">
         <span class="inline-block px-4 py-1.5 bg-white border border-blue-100 text-blue-950/60 text-[10px] font-bold rounded-full shadow-sm">
           &amp; 100+ MORE CLIENTS
         </span>
       </div>
     </div>
   </section>
+
+  <style is:global>
+    .logo-slot {
+      position: relative;
+    }
+    .logo-strip {
+      display: flex;
+      flex-direction: column;
+      will-change: transform;
+    }
+    .logo-item {
+      width: 100%;
+      flex-shrink: 0;
+    }
+
+    /* Each slot animates upward at its own pace with staggered delay */
+    .slot-1 { animation: logoFlip 3s ease-in-out 0s infinite; }
+    .slot-2 { animation: logoFlip 3s ease-in-out 0.75s infinite; }
+    .slot-3 { animation: logoFlip 3s ease-in-out 1.5s infinite; }
+    .slot-4 { animation: logoFlip 3s ease-in-out 2.25s infinite; }
+
+    @keyframes logoFlip {
+      0%   { transform: translateY(0); }
+      35%  { transform: translateY(0); }
+      50%  { transform: translateY(-50%); }
+      85%  { transform: translateY(-50%); }
+      100% { transform: translateY(0); }
+    }
+  </style>
 
 
 
