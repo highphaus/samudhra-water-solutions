@@ -10,14 +10,14 @@ import Footer from '../components/Footer.astro';
   <Navbar />
 
   <!-- HERO HEADER -->
-  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-24 border-b border-slate-200/60">
+  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-12 sm:pb-20 border-b border-slate-200/60">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="flex items-center gap-3 mb-5 sm:mb-6">
         <span class="h-[1px] w-10 sm:w-12 bg-[#024095]"></span>
         <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">LEADERSHIP PROFILE / MD STATEMENT</span>
       </div>
-      <h1 class="text-3xl sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">
-        Engineering <br /> Trust By Volume.
+      <h1 class="text-[clamp(1.5rem,6.5vw,3rem)] sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">
+        Engineering <br class="hidden sm:inline" /> Trust By Volume.
       </h1>
       <p class="text-base sm:text-lg lg:text-xl font-light text-black mt-6 sm:mt-8 leading-relaxed max-w-3xl">
         "Pure water is an uncompromised structural baseline. At Samudhra, we built our reputation over 17 years by refusing to deploy stock pre-packaged shortcuts, configuring every system to the actual water chemistry parameters of Kerala."
@@ -26,18 +26,18 @@ import Footer from '../components/Footer.astro';
   </section>
 
   <!-- FOUNDER PROFILE -->
-  <section class="bg-[#FAF9F6] text-slate-900 py-16 sm:py-24">
+  <section class="bg-[#FAF9F6] text-slate-900 py-12 sm:py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="grid md:grid-cols-12 gap-8 sm:gap-12 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
         <!-- Profile Card -->
-        <div class="md:col-span-4 space-y-5 sm:space-y-6 border-l-4 border-[#024095] bg-white p-5 sm:p-6 rounded-r">
+        <div class="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-none mx-auto col-span-1 lg:col-span-4 space-y-5 sm:space-y-6 bg-white p-5 sm:p-6 rounded-xl shadow-sm">
           <div class="w-full rounded-lg overflow-hidden border border-slate-200 shadow-sm">
             <img src="/images/founder.jpeg" alt="Rajesh - Founder & Managing Director" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700 ease-out" />
           </div>
           <div>
             <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ EXECUTIVE CHAIR ]</span>
-            <p class="text-2xl sm:text-3xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
+            <p class="text-xl sm:text-3xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
             <p class="text-xs font-bold text-black tracking-wider uppercase mt-0.5">Founder &amp; Managing Director</p>
           </div>
           <div class="space-y-2 pt-4 border-t border-slate-200/60">
@@ -57,19 +57,19 @@ import Footer from '../components/Footer.astro';
         </div>
 
         <!-- Content -->
-        <div class="md:col-span-8 space-y-8 sm:space-y-10">
+        <div class="col-span-1 lg:col-span-8 space-y-8 sm:space-y-10">
           <div class="space-y-3">
-            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// STRATEGIC VISION</span>
-            <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#024095] uppercase">The Architecture of Performance</h3>
-            <p class="text-sm text-black font-light leading-relaxed">
+            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">STRATEGIC VISION</span>
+            <h3 class="text-lg sm:text-2xl font-black tracking-tight text-[#024095] uppercase">The Architecture of Performance</h3>
+            <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
               When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that layout model entirely. By committing our engineering teams to meticulous pre-assembly site analysis, we ensured that residential and commercial clients receive long-lasting operational certainty.
             </p>
           </div>
 
           <div class="space-y-3 pt-4 sm:pt-6 border-t border-slate-100">
-            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// OUR COMMITMENT</span>
-            <h3 class="text-xl sm:text-2xl font-black tracking-tight text-[#024095] uppercase">Quality Without Compromise</h3>
-            <p class="text-sm text-black font-light leading-relaxed">
+            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">OUR COMMITMENT</span>
+            <h3 class="text-lg sm:text-2xl font-black tracking-tight text-[#024095] uppercase">Quality Without Compromise</h3>
+            <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
               Every system we deploy is tested, calibrated and certified before it reaches your property. Our after-sales maintenance contracts ensure that the water quality you experienced on Day 1 remains consistent for years.
             </p>
           </div>

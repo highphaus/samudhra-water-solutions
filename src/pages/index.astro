@@ -62,8 +62,8 @@ const treatments = [
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-32 sm:pb-36 lg:pb-24">
       <div class="max-w-3xl space-y-6">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
-          Kerala's Trusted<br />Water Solutions Partner
+        <h1 class="text-[clamp(1rem,5.2vw,2.5rem)] max-sm:whitespace-nowrap sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+          Kerala's Trusted<br class="hidden sm:inline" />Water Solutions Partner
         </h1>
         <p class="text-lg sm:text-xl text-blue-100 font-medium max-w-xl">
           From water testing to complete water treatment systems, we deliver safe, reliable & sustainable water solutions for every need.
@@ -117,7 +117,7 @@ const treatments = [
   <!-- TRUSTED BY (Moved under Hero) -->
   <section class="pt-10 pb-10 bg-[#eff6ff] overflow-hidden relative z-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-xs font-black text-center text-[#024095] mb-6 uppercase tracking-[0.3em]">
+      <h2 class="text-[clamp(0.55rem,2.5vw,0.75rem)] tracking-[0.15em] sm:tracking-[0.3em] font-black text-center text-[#024095] mb-6 uppercase">
         TRUSTED BY KERALA'S LEADING INSTITUTIONS
       </h2>
 
@@ -303,6 +303,15 @@ const treatments = [
       85%  { transform: translateY(-50%); }
       100% { transform: translateY(0); }
     }
+    @media (min-width: 1024px) {
+      .carousel-clone {
+        display: none !important;
+      }
+    }
+    .no-snap {
+      scroll-snap-type: none !important;
+      scroll-behavior: auto !important;
+    }
   </style>
 
 
@@ -310,29 +319,29 @@ const treatments = [
   <!-- EVERY WATER PROBLEM HAS A SOLUTION -->
   <section class="pt-20 md:pt-40 pb-10 md:pb-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-xl sm:text-3xl md:text-4xl font-bold center text-[#024095] mb-6 md:mb-12 uppercase text-center">
+      <h2 class="text-[clamp(0.7rem,3.8vw,1.5rem)] max-sm:whitespace-nowrap sm:text-2xl md:text-3xl font-bold center text-[#024095] mb-6 md:mb-12 uppercase text-center">
         EVERY <span class="text-[#07bee8]">WATER PROBLEM</span> HAS A SOLUTION
       </h2>
 
       <!-- Carousel wrapper -->
       <div class="relative animate-fadeIn">
         <!-- Scroll container -->
-        <div id="water-carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 cursor-grab select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
+        <div id="water-carousel" class="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-smooth cursor-default md:cursor-grab lg:cursor-default select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
 
           <!-- Card 1: Hard Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
             <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
               <img src="/images/new_home/hard_water_1781948623171.png" alt="Hard Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-[#024095]/20"></div>
             </div>
-            <div class="p-4 sm:p-5">
+            <div class="p-4 sm:p-5 text-center">
               <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                 </div>
               </div>
-              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Hard Water</h3>
-              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Hard Water</h3>
+              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Bathroom stains</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Pipe scaling</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Appliance damage</li>
@@ -341,19 +350,19 @@ const treatments = [
           </div>
 
           <!-- Card 2: Iron Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
             <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
               <img src="/images/new_home/iron_water_1781948634540.png" alt="Iron Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-[#024095]/20"></div>
             </div>
-            <div class="p-4 sm:p-5">
+            <div class="p-4 sm:p-5 text-center">
               <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                 </div>
               </div>
-              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Iron Water</h3>
-              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Iron Water</h3>
+              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Brown water</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Bad smell</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Health concerns</li>
@@ -362,19 +371,19 @@ const treatments = [
           </div>
 
           <!-- Card 3: Salty Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
             <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
               <img src="/images/new_home/salty_water_1781948658809.png" alt="Salty Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-[#024095]/20"></div>
             </div>
-            <div class="p-4 sm:p-5">
+            <div class="p-4 sm:p-5 text-center">
               <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
               </div>
-              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Salty Water</h3>
-              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Salty Water</h3>
+              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Coastal areas</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> High TDS</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Poor taste</li>
@@ -383,19 +392,19 @@ const treatments = [
           </div>
 
           <!-- Card 4: Waste Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
             <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
               <img src="/images/new_home/waste_water_1781948670592.png" alt="Waste Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
               <div class="absolute inset-0 bg-[#024095]/20"></div>
             </div>
-            <div class="p-4 sm:p-5">
+            <div class="p-4 sm:p-5 text-center">
               <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                 </div>
               </div>
-              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Waste Water</h3>
-              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Waste Water</h3>
+              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Industrial discharge</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Recycling challenges</li>
                 <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Compliance issues</li>
@@ -487,7 +496,9 @@ const treatments = [
           isDragging = true;
           startX = e.pageX;
           startScroll = carousel.scrollLeft;
-          carousel.style.cursor = 'grabbing';
+          if (window.innerWidth >= 768) {
+            carousel.style.cursor = 'grabbing';
+          }
           carousel.style.scrollBehavior = 'auto';
           clearInterval(autoTimer);
         });
@@ -500,7 +511,11 @@ const treatments = [
 
         carousel.addEventListener('mouseup', () => {
           isDragging = false;
-          carousel.style.cursor = 'grab';
+          if (window.innerWidth >= 768) {
+            carousel.style.cursor = 'grab';
+          } else {
+            carousel.style.cursor = 'default';
+          }
           carousel.style.scrollBehavior = 'smooth';
           startTimer();
         });
@@ -508,7 +523,11 @@ const treatments = [
         carousel.addEventListener('mouseleave', () => {
           if (isDragging) {
             isDragging = false;
-            carousel.style.cursor = 'grab';
+            if (window.innerWidth >= 768) {
+              carousel.style.cursor = 'grab';
+            } else {
+              carousel.style.cursor = 'default';
+            }
             carousel.style.scrollBehavior = 'smooth';
             startTimer();
           }
@@ -547,22 +566,18 @@ const treatments = [
           const posCardLast = getScrollPosition(allCards.length - 2);
 
           if (scrollLeft >= maxScroll - tolerance) {
-            carousel.style.scrollBehavior = 'auto';
-            carousel.style.scrollSnapType = 'none';
+            carousel.classList.add('no-snap');
             carousel.scrollLeft = posCard1;
             currentIdx = 1;
             carousel.offsetHeight; // force reflow
-            carousel.style.scrollSnapType = 'x mandatory';
-            carousel.style.scrollBehavior = 'smooth';
+            carousel.classList.remove('no-snap');
             isTransitioning = false;
           } else if (scrollLeft <= tolerance) {
-            carousel.style.scrollBehavior = 'auto';
-            carousel.style.scrollSnapType = 'none';
+            carousel.classList.add('no-snap');
             carousel.scrollLeft = posCardLast;
             currentIdx = allCards.length - 2;
             carousel.offsetHeight; // force reflow
-            carousel.style.scrollSnapType = 'x mandatory';
-            carousel.style.scrollBehavior = 'smooth';
+            carousel.classList.remove('no-snap');
             isTransitioning = false;
           }
 
@@ -590,6 +605,7 @@ const treatments = [
         initCarousel('water-carousel');
         initCarousel('solutions-carousel');
         initCarousel('projects-carousel');
+        initCarousel('transforming-carousel');
       }, 100);
     })();
   </script>
@@ -598,26 +614,26 @@ const treatments = [
   <!-- COMPLETE WATER SOLUTIONS -->
   <section class="py-20 bg-[#024095] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12 uppercase">
+      <h2 class="text-[clamp(0.7rem,3.6vw,1.35rem)] max-sm:whitespace-nowrap sm:text-xl lg:text-2xl font-bold text-center mb-8 uppercase">
         COMPLETE <span class="text-[#07bee8]">WATER SOLUTIONS</span> FOR EVERY NEED
       </h2>
 
       <!-- Carousel wrapper -->
       <div class="relative animate-fadeIn">
         <!-- Scroll container -->
-        <div id="solutions-carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 cursor-grab select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
+        <div id="solutions-carousel" class="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-smooth cursor-default md:cursor-grab lg:cursor-default select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
 
           <!-- Residential -->
-          <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
-            <div class="h-40 sm:h-52 md:h-64 overflow-hidden relative">
+          <div class="snap-start flex-shrink-0 w-[65vw] max-w-[260px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+            <div class="h-32 sm:h-44 md:h-52 overflow-hidden relative">
               <img src="/images/new_home/residential_home_1781948726505.png" alt="Residential Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="p-5 sm:p-8 sm:pt-6 flex flex-col flex-1">
-              <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-4 sm:mb-6">
-                <svg class="w-5 h-5 sm:w-7 sm:h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            <div class="p-4 sm:p-6 sm:pt-5 flex flex-col flex-1">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-3 sm:mb-4">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
               </div>
-              <h3 class="text-xl sm:text-2xl font-black text-[#024095] mb-2 sm:mb-3">Residential<br/>Water Solutions</h3>
-              <p class="text-xs sm:text-sm font-medium text-slate-600 mb-4 sm:mb-6 flex-1">Safe & healthy drinking water for your home and family.</p>
+              <h3 class="text-base sm:text-lg lg:text-xl font-black text-[#024095] mb-1.5 sm:mb-2">Residential<br/>Water Solutions</h3>
+              <p class="text-[11px] sm:text-xs font-medium text-slate-600 mb-3 sm:mb-4 flex-1">Safe & healthy drinking water for your home and family.</p>
               <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
                 Explore Solutions &rarr;
               </a>
@@ -625,16 +641,16 @@ const treatments = [
           </div>
 
           <!-- Commercial -->
-          <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
-            <div class="h-40 sm:h-52 md:h-64 overflow-hidden relative">
+          <div class="snap-start flex-shrink-0 w-[65vw] max-w-[260px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+            <div class="h-32 sm:h-44 md:h-52 overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1470&auto=format&fit=crop" alt="Commercial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="p-5 sm:p-8 sm:pt-6 flex flex-col flex-1">
-              <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-4 sm:mb-6">
-                <svg class="w-5 h-5 sm:w-7 sm:h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+            <div class="p-4 sm:p-6 sm:pt-5 flex flex-col flex-1">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-3 sm:mb-4">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
               </div>
-              <h3 class="text-xl sm:text-2xl font-black text-[#024095] mb-2 sm:mb-3">Commercial<br/>Water Solutions</h3>
-              <p class="text-xs sm:text-sm font-medium text-slate-600 mb-4 sm:mb-6 flex-1">Reliable water systems for businesses & institutions.</p>
+              <h3 class="text-base sm:text-lg lg:text-xl font-black text-[#024095] mb-1.5 sm:mb-2">Commercial<br/>Water Solutions</h3>
+              <p class="text-[11px] sm:text-xs font-medium text-slate-600 mb-3 sm:mb-4 flex-1">Reliable water systems for businesses & institutions.</p>
               <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
                 Explore Solutions &rarr;
               </a>
@@ -642,16 +658,16 @@ const treatments = [
           </div>
 
           <!-- Industrial -->
-          <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
-            <div class="h-40 sm:h-52 md:h-64 overflow-hidden relative">
+          <div class="snap-start flex-shrink-0 w-[65vw] max-w-[260px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+            <div class="h-32 sm:h-44 md:h-52 overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop" alt="Industrial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <div class="p-5 sm:p-8 sm:pt-6 flex flex-col flex-1">
-              <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-4 sm:mb-6">
-                <svg class="w-5 h-5 sm:w-7 sm:h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            <div class="p-4 sm:p-6 sm:pt-5 flex flex-col flex-1">
+              <div class="w-8 h-8 sm:w-10 sm:h-10 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-3 sm:mb-4">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
               </div>
-              <h3 class="text-xl sm:text-2xl font-black text-[#024095] mb-2 sm:mb-3">Industrial<br/>Water Treatment</h3>
-              <p class="text-xs sm:text-sm font-medium text-slate-600 mb-4 sm:mb-6 flex-1">Advanced treatment systems for industrial applications.</p>
+              <h3 class="text-base sm:text-lg lg:text-xl font-black text-[#024095] mb-1.5 sm:mb-2">Industrial<br/>Water Treatment</h3>
+              <p class="text-[11px] sm:text-xs font-medium text-slate-600 mb-3 sm:mb-4 flex-1">Advanced treatment systems for industrial applications.</p>
               <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
                 Explore Solutions &rarr;
               </a>
@@ -666,27 +682,27 @@ const treatments = [
 
 
   <!-- FOUNDER SECTION -->
-  <section class="py-20 bg-white">
+  <section class="py-12 sm:py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         <!-- Profile Card -->
-        <div class="lg:col-span-4 space-y-6 border-l-4 border-[#024095] bg-slate-50 p-6 sm:p-8 rounded-r-xl shadow-sm">
+        <div class="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-none mx-auto col-span-1 lg:col-span-4 space-y-6 bg-slate-50 p-5 sm:p-8 rounded-xl shadow-sm">
           <div class="w-full rounded-lg overflow-hidden border border-slate-200 shadow-md">
             <img src="/images/founder.jpeg" alt="Rajesh - Founder & Managing Director" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700 ease-out" />
           </div>
           <div>
             <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ EXECUTIVE CHAIR ]</span>
-            <p class="text-3xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
+            <p class="text-xl sm:text-3xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
             <p class="text-xs font-bold text-black tracking-wider uppercase mt-1">Founder &amp; Managing Director</p>
           </div>
         </div>
 
         <!-- Content -->
-        <div class="lg:col-span-8 space-y-8">
+        <div class="col-span-1 lg:col-span-8 space-y-6 lg:space-y-8">
           <div class="space-y-4">
-            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">// STRATEGIC VISION</span>
-            <h3 class="text-2xl sm:text-4xl font-black tracking-tight text-[#024095] uppercase leading-tight">The Architecture <br class="hidden sm:block" />of Performance</h3>
-            <p class="text-base text-slate-600 font-medium leading-relaxed max-w-2xl">
+            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">STRATEGIC VISION</span>
+            <h3 class="text-lg sm:text-2xl lg:text-4xl font-black tracking-tight text-[#024095] uppercase leading-tight">The Architecture <br class="hidden sm:block" />of Performance</h3>
+            <p class="text-xs sm:text-sm lg:text-base text-slate-600 font-medium leading-relaxed max-w-2xl">
               "When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that layout model entirely. By committing our engineering teams to meticulous pre-assembly site analysis, we ensured that residential and commercial clients receive long-lasting operational certainty."
             </p>
           </div>
@@ -704,16 +720,16 @@ const treatments = [
   <!-- REAL PROJECTS. REAL RESULTS. -->
   <section class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold text-[#024095] mb-12 uppercase text-center sm:text-left">
+      <h2 class="text-[clamp(0.75rem,3.8vw,1.5rem)] max-sm:whitespace-nowrap sm:text-2xl lg:text-3xl font-bold text-[#024095] mb-8 uppercase text-center sm:text-left">
         REAL <span class="text-[#07bee8]">PROJECTS.</span> REAL RESULTS.
       </h2>
 
       <!-- Carousel wrapper -->
       <div class="relative animate-fadeIn">
         <!-- Scroll container -->
-        <div id="projects-carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 cursor-grab select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
+        <div id="projects-carousel" class="flex lg:grid lg:grid-cols-3 gap-6 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-smooth cursor-default md:cursor-grab lg:cursor-default select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
           {projects.map(proj => (
-            <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-[#024095] rounded-xl shadow-lg border border-[#024095] overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+            <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-[#024095] rounded-xl shadow-lg border border-[#024095] overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
               <div class="p-5 pb-4">
                 <h3 class="text-base sm:text-lg font-bold text-white">{proj.title}</h3>
                 <p class="text-xs text-blue-200 font-medium flex items-center gap-1 mt-1">
@@ -753,49 +769,53 @@ const treatments = [
   </section>
 
   <!-- TRANSFORMING WATER -->
-  <section class="py-20 bg-[#024095] text-white">
+  <section class="py-12 sm:py-16 bg-[#024095] text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-2xl sm:text-3xl font-bold text-center mb-12 uppercase tracking-wide">
+      <h2 class="text-[clamp(0.75rem,3.8vw,1.5rem)] max-sm:whitespace-nowrap sm:text-2xl font-bold text-center mb-8 uppercase tracking-wide">
         TRANSFORMING WATER. IMPROVING LIVES.
       </h2>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {treatments.map(t => (
-          <div class="bg-white/5 rounded-xl border border-white/10 p-4">
-            <div class="grid grid-cols-2 gap-2 mb-4">
-              <div class="relative">
-                <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[8px] font-bold uppercase">BEFORE</div>
-                <img src={t.before} class="w-full h-24 object-cover rounded shadow" alt="Before" />
+      <!-- Carousel wrapper -->
+      <div class="relative animate-fadeIn">
+        <!-- Scroll container -->
+        <div id="transforming-carousel" class="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-smooth cursor-default md:cursor-grab lg:cursor-default select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
+          {treatments.map(t => (
+            <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white/5 rounded-xl border border-white/10 p-3">
+              <div class="grid grid-cols-2 gap-2 mb-3">
+                <div class="relative">
+                  <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[7px] font-bold uppercase">BEFORE</div>
+                  <img src={t.before} class="w-full h-20 sm:h-24 object-cover rounded shadow" alt="Before" />
+                </div>
+                <div class="relative">
+                  <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[7px] font-bold uppercase">AFTER</div>
+                  <img src={t.after} class="w-full h-20 sm:h-24 object-cover rounded shadow" alt="After" />
+                </div>
               </div>
-              <div class="relative">
-                <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[8px] font-bold uppercase">AFTER</div>
-                <img src={t.after} class="w-full h-24 object-cover rounded shadow" alt="After" />
-              </div>
+              <p class="text-center text-xs sm:text-sm font-bold">{t.name}</p>
+              <p class="text-center text-[9px] text-[#07bee8] font-bold uppercase tracking-wider mt-0.5">BEFORE / AFTER</p>
             </div>
-            <p class="text-center text-sm font-bold">{t.name}</p>
-            <p class="text-center text-[10px] text-[#07bee8] font-bold uppercase tracking-wider mt-1">BEFORE / AFTER</p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   </section>
 
   <!-- GET FREE WATER TESTING CTA -->
-  <section class="py-24 bg-white relative overflow-hidden">
+  <section class="py-12 sm:py-20 bg-white relative overflow-hidden">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
       <div class="bg-gradient-to-br from-[#024095] to-[#011c44] rounded-3xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-[#024095]/50">
         
         <!-- Left Content -->
-        <div class="lg:w-3/5 p-8 sm:p-12 lg:p-16 flex flex-col justify-center">
-          <span class="text-[#07bee8] font-black uppercase tracking-widest text-xs sm:text-sm mb-4">Not sure about your water quality?</span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+        <div class="lg:w-3/5 p-5 sm:p-12 lg:p-16 flex flex-col justify-center">
+          <span class="text-[#07bee8] font-black uppercase tracking-widest text-xs sm:text-sm mb-3 sm:mb-4">Not sure about your water quality?</span>
+          <h2 class="text-[clamp(1.5rem,6.5vw,3rem)] sm:text-4xl lg:text-5xl font-black text-white mb-4 sm:mb-6 leading-tight">
             Get Free Water Testing
           </h2>
-          <p class="text-blue-100 text-sm sm:text-base font-medium mb-10 max-w-lg leading-relaxed">
+          <p class="text-blue-100 text-sm sm:text-base font-medium mb-6 sm:mb-10 max-w-lg leading-relaxed">
             Our experts will test your water and provide the perfect, customized purification solution for your specific needs.
           </p>
           
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
             <div class="flex items-center gap-4 sm:flex-col sm:items-start sm:gap-3">
                <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-[#07bee8] shadow-inner backdrop-blur-sm">
                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
@@ -816,7 +836,7 @@ const treatments = [
             </div>
           </div>
           
-          <div class="flex flex-col sm:flex-row gap-4">
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a href="https://wa.me/919645830994?text=Hi%2C+I+would+like+to+book+a+free+water+testing+for+my+home%2Fbusiness.+Please+let+me+know+the+next+steps." target="_blank" rel="noopener noreferrer" class="flex-1 text-center px-8 py-4 bg-[#07bee8] text-[#024095] font-black uppercase tracking-widest text-xs rounded-xl hover:bg-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-1">
               Book Free Testing
             </a>
@@ -830,7 +850,7 @@ const treatments = [
         </div>
         
         <!-- Right Image -->
-        <div class="lg:w-2/5 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full">
+        <div class="lg:w-2/5 relative min-h-[220px] sm:min-h-[320px] lg:min-h-full">
            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1470&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Scientist Testing Water" />
            <div class="absolute inset-0 bg-[#024095]/30 mix-blend-multiply"></div>
            <div class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#024095] lg:via-[#024095]/80 via-[#024095]/90 to-transparent"></div>
