@@ -799,6 +799,126 @@ const treatments = [
       </div>
     </div>
   </section>
+  <!-- CLIENT REVIEWS & GOOGLE RATINGS -->
+  <section class="py-16 sm:py-24 bg-[#FAF9F6] border-b border-slate-200/60 relative overflow-hidden">
+    <!-- Decorative background glow -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#07bee8]/5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+    <div class="absolute bottom-0 left-0 w-96 h-96 bg-[#024095]/5 rounded-full blur-3xl -ml-20 -mb-20"></div>
+    
+    <style>
+      #reviews-carousel::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#024095]/5 border border-[#024095]/10 mb-4 hover:scale-105 transition-transform duration-300">
+          <!-- Google Star -->
+          <svg class="w-4 h-4 text-amber-500 fill-current" viewBox="0 0 24 24">
+            <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+          </svg>
+          <span class="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#024095]">4.9 / 5 Google Rating</span>
+        </div>
+        <h2 class="text-[clamp(1.5rem,6vw,3rem)] sm:text-4xl lg:text-5xl font-black text-[#024095] tracking-tight uppercase leading-none">
+          Kerala's Choice for Purity.
+        </h2>
+        <p class="text-xs sm:text-sm lg:text-base text-slate-600 font-medium leading-relaxed max-w-xl mx-auto mt-4">
+          Read verified feedback from our residential and commercial clients who trust Samudhra for custom-engineered water solutions.
+        </p>
+      </div>
+
+      <!-- Testimonials Scroll Container / Grid -->
+      <div class="relative">
+        <div id="reviews-carousel" class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-x-visible pb-6 md:pb-0 max-md:snap-x max-md:snap-mandatory max-md:scroll-smooth cursor-default md:cursor-grab select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
+          
+          <!-- Review 1 -->
+          <div class="snap-start flex-shrink-0 w-[82vw] max-w-[320px] md:w-full md:max-w-none bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl border border-slate-100/80 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex gap-1 text-amber-500 text-sm">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="text-4xl text-[#07bee8]/20 font-serif leading-none select-none">“</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed italic mb-6">
+                "Samudhra precision-engineered our full 50,000 LPH reverse osmosis layout with absolute corporate standard clean lines. Their custom media filter parameters handled our hard water iron properties flawlessly."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-black shrink-0" style="background-color: #024095;">
+                KR
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-[#024095]">Dr. K. Raghavan</p>
+                <p class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Private Clinical Center, TVM</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="snap-start flex-shrink-0 w-[82vw] max-w-[320px] md:w-full md:max-w-none bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl border border-slate-100/80 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex gap-1 text-amber-500 text-sm">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="text-4xl text-[#07bee8]/20 font-serif leading-none select-none">“</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed italic mb-6">
+                "We completely bypassed generic retail options and had Samudhra customize an automated brine softener and multi-brand copper infusion system. The white scale buildup inside our piping was instantly eliminated."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-black shrink-0" style="background-color: #07bee8;">
+                MN
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-[#024095]">Meera Nair</p>
+                <p class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Residential Villa, Kowdiar</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="snap-start flex-shrink-0 w-[82vw] max-w-[320px] md:w-full md:max-w-none bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-xl border border-slate-100/80 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="flex gap-1 text-amber-500 text-sm">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+                <span class="text-4xl text-[#07bee8]/20 font-serif leading-none select-none">“</span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-600 font-medium leading-relaxed italic mb-6">
+                "Managing high-volume commercial properties requires absolute direct service accountability. Samudhra's maintenance contract team performs rigorous membrane audits like clockwork."
+              </p>
+            </div>
+            <div class="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <div class="w-9 h-9 rounded-full flex items-center justify-center text-white text-xs font-black shrink-0" style="background-color: #0ea5e9;">
+                TK
+              </div>
+              <div>
+                <p class="text-xs sm:text-sm font-bold text-[#024095]">Thomas Kurian</p>
+                <p class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Commercial Complex, Thampanoor</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Action Button -->
+      <div class="text-center mt-12 sm:mt-16">
+        <a href="/testimonial" 
+           class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-[#024095] hover:bg-[#07bee8] text-white hover:shadow-lg transition-all duration-300 text-xs font-black uppercase tracking-[0.2em] rounded shadow-md hover:-translate-y-0.5">
+          View All Testimonials &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
 
   <!-- GET FREE WATER TESTING CTA -->
   <section class="py-12 sm:py-20 bg-white relative overflow-hidden">
