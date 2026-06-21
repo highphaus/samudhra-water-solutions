@@ -60,7 +60,7 @@ const treatments = [
       <div class="absolute inset-0 bg-black/40"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-24">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pb-32 sm:pb-36 lg:pb-24">
       <div class="max-w-3xl space-y-6">
         <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
           Kerala's Trusted<br />Water Solutions Partner
@@ -83,7 +83,7 @@ const treatments = [
 
     <!-- STATS BAR (Overlapping) -->
     <div class="absolute bottom-0 left-0 right-0 transform translate-y-1/2 z-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
-      <div class="bg-white rounded-xl shadow-xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-5 gap-6 divide-x divide-slate-100">
+      <div class="bg-white rounded-xl shadow-xl p-6 sm:p-8 grid grid-cols-2 md:grid-cols-5 gap-6 divide-x-0 md:divide-x divide-slate-100">
         <div class="flex flex-col items-center text-center px-2">
           <div class="text-[#024095] text-3xl mb-2"><svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg></div>
           <span class="text-2xl font-black text-[#024095]">17+</span>
@@ -104,7 +104,7 @@ const treatments = [
           <span class="text-2xl font-black text-[#024095]">ISO</span>
           <span class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">9001:2015<br/>Certified</span>
         </div>
-        <div class="flex flex-col items-center text-center px-2">
+        <div class="flex flex-col items-center text-center px-2 col-span-2 md:col-span-1">
           <div class="text-[#024095] text-3xl mb-2"><svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"></path></svg></div>
           <span class="text-2xl font-black text-[#024095]">Govt. & Inst.</span>
           <span class="text-xs text-slate-500 font-bold uppercase tracking-wider mt-1">Projects<br/>Experience</span>
@@ -114,7 +114,7 @@ const treatments = [
   </section>
 
   <!-- TRUSTED BY (Moved under Hero) -->
-  <section class="pt-32 pb-16 bg-[#024095]">
+  <section class="pt-40 sm:pt-36 md:pt-32 pb-16 bg-[#024095]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <h2 class="text-xl sm:text-2xl font-bold text-center text-white mb-10 uppercase tracking-widest">
         TRUSTED BY KERALA'S LEADING INSTITUTIONS
@@ -244,7 +244,7 @@ const treatments = [
         COMPLETE <span class="text-[#07bee8]">WATER SOLUTIONS</span> FOR EVERY NEED
       </h2>
 
-      <div class="grid lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-8">
         <!-- Residential -->
         <div class="bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
           <div class="h-64 overflow-hidden relative">
@@ -344,7 +344,7 @@ const treatments = [
         REAL <span class="text-[#07bee8]">PROJECTS.</span> REAL RESULTS.
       </h2>
 
-      <div class="grid lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-8">
         {projects.map(proj => (
           <div class="bg-[#024095] rounded-xl shadow-lg border border-[#024095] overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
             <div class="p-6 pb-4">
@@ -465,7 +465,7 @@ const treatments = [
         <div class="lg:w-2/5 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full">
            <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?q=80&w=1470&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="Scientist Testing Water" />
            <div class="absolute inset-0 bg-[#024095]/30 mix-blend-multiply"></div>
-           <div class="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-[#024095] lg:via-[#024095]/80 via-[#024095]/90 to-transparent"></div>
+           <div class="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#024095] lg:via-[#024095]/80 via-[#024095]/90 to-transparent"></div>
         </div>
         
       </div>
