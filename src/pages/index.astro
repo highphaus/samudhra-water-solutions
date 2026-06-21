@@ -310,99 +310,290 @@ const treatments = [
   <!-- EVERY WATER PROBLEM HAS A SOLUTION -->
   <section class="pt-20 md:pt-40 pb-10 md:pb-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-xl sm:text-3xl md:text-4xl font-bold text-center text-[#024095] mb-6 md:mb-12 uppercase">
+      <h2 class="text-xl sm:text-3xl md:text-4xl font-bold center text-[#024095] mb-6 md:mb-12 uppercase text-center">
         EVERY <span class="text-[#07bee8]">WATER PROBLEM</span> HAS A SOLUTION
       </h2>
 
-      <div class="grid grid-cols-4 gap-1.5 md:gap-6">
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 group">
-          <div class="h-14 md:h-48 overflow-hidden relative rounded-t-xl">
-            <img src="/images/new_home/hard_water_1781948623171.png" alt="Hard Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-[#024095]/20"></div>
-          </div>
-          <div class="px-1 pt-1.5 pb-1.5 md:px-6 md:pt-6 md:pb-6">
-            <div class="flex justify-center mb-1 md:mb-4">
-              <div class="w-6 h-6 md:w-12 md:h-12 bg-[#024095] rounded-full flex items-center justify-center shadow">
-                <svg class="w-3 h-3 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
-              </div>
-            </div>
-            <h3 class="text-[7px] md:text-xl font-bold text-[#024095] mb-0 md:mb-3 text-center leading-tight">Hard Water</h3>
-            <ul class="hidden md:block space-y-2 text-sm text-slate-600 font-medium mt-3">
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Bathroom stains</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Pipe scaling</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Appliance damage</li>
-            </ul>
-          </div>
-        </div>
+      <!-- Carousel wrapper -->
+      <div class="relative animate-fadeIn">
+        <!-- Scroll container -->
+        <div id="water-carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 cursor-grab select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
 
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 group">
-          <div class="h-14 md:h-48 overflow-hidden relative rounded-t-xl">
-            <img src="/images/new_home/iron_water_1781948634540.png" alt="Iron Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-[#024095]/20"></div>
-          </div>
-          <div class="px-1 pt-1.5 pb-1.5 md:px-6 md:pt-6 md:pb-6">
-            <div class="flex justify-center mb-1 md:mb-4">
-              <div class="w-6 h-6 md:w-12 md:h-12 bg-[#024095] rounded-full flex items-center justify-center shadow">
-                <svg class="w-3 h-3 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-              </div>
+          <!-- Card 1: Hard Water -->
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
+              <img src="/images/new_home/hard_water_1781948623171.png" alt="Hard Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-[#024095]/20"></div>
             </div>
-            <h3 class="text-[7px] md:text-xl font-bold text-[#024095] mb-0 md:mb-3 text-center leading-tight">Iron Water</h3>
-            <ul class="hidden md:block space-y-2 text-sm text-slate-600 font-medium mt-3">
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Brown water</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Bad smell</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Health concerns</li>
-            </ul>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-center mb-2 md:mb-3">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+                </div>
+              </div>
+              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Hard Water</h3>
+              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Bathroom stains</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Pipe scaling</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Appliance damage</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 group">
-          <div class="h-14 md:h-48 overflow-hidden relative rounded-t-xl">
-            <img src="/images/new_home/salty_water_1781948658809.png" alt="Salty Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-[#024095]/20"></div>
-          </div>
-          <div class="px-1 pt-1.5 pb-1.5 md:px-6 md:pt-6 md:pb-6">
-            <div class="flex justify-center mb-1 md:mb-4">
-              <div class="w-6 h-6 md:w-12 md:h-12 bg-[#024095] rounded-full flex items-center justify-center shadow">
-                <svg class="w-3 h-3 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              </div>
+          <!-- Card 2: Iron Water -->
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
+              <img src="/images/new_home/iron_water_1781948634540.png" alt="Iron Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-[#024095]/20"></div>
             </div>
-            <h3 class="text-[7px] md:text-xl font-bold text-[#024095] mb-0 md:mb-3 text-center leading-tight">Salty Water</h3>
-            <ul class="hidden md:block space-y-2 text-sm text-slate-600 font-medium mt-3">
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Coastal areas</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> High TDS</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Poor taste</li>
-            </ul>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-center mb-2 md:mb-3">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                </div>
+              </div>
+              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Iron Water</h3>
+              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Brown water</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Bad smell</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Health concerns</li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div class="bg-white rounded-xl shadow-sm border border-slate-100 group">
-          <div class="h-14 md:h-48 overflow-hidden relative rounded-t-xl">
-            <img src="/images/new_home/waste_water_1781948670592.png" alt="Waste Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-            <div class="absolute inset-0 bg-[#024095]/20"></div>
-          </div>
-          <div class="px-1 pt-1.5 pb-1.5 md:px-6 md:pt-6 md:pb-6">
-            <div class="flex justify-center mb-1 md:mb-4">
-              <div class="w-6 h-6 md:w-12 md:h-12 bg-[#024095] rounded-full flex items-center justify-center shadow">
-                <svg class="w-3 h-3 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
-              </div>
+          <!-- Card 3: Salty Water -->
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
+              <img src="/images/new_home/salty_water_1781948658809.png" alt="Salty Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-[#024095]/20"></div>
             </div>
-            <h3 class="text-[7px] md:text-xl font-bold text-[#024095] mb-0 md:mb-3 text-center leading-tight">Waste Water</h3>
-            <ul class="hidden md:block space-y-2 text-sm text-slate-600 font-medium mt-3">
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Industrial discharge</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Recycling challenges</li>
-              <li class="flex items-start gap-2"><span class="text-[#07bee8]">•</span> Compliance issues</li>
-            </ul>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-center mb-2 md:mb-3">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                </div>
+              </div>
+              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Salty Water</h3>
+              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Coastal areas</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> High TDS</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Poor taste</li>
+              </ul>
+            </div>
           </div>
+
+          <!-- Card 4: Waste Water -->
+          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 md:w-80 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
+            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
+              <img src="/images/new_home/waste_water_1781948670592.png" alt="Waste Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+              <div class="absolute inset-0 bg-[#024095]/20"></div>
+            </div>
+            <div class="p-4 sm:p-5">
+              <div class="flex justify-center mb-2 md:mb-3">
+                <div class="w-9 h-9 sm:w-11 sm:h-11 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
+                  <svg class="w-4 h-4 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+                </div>
+              </div>
+              <h3 class="text-sm sm:text-base font-bold text-[#024095] mb-2 text-center">Waste Water</h3>
+              <ul class="space-y-1 text-xs text-slate-600 font-medium">
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Industrial discharge</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Recycling challenges</li>
+                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Compliance issues</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div class="mt-12 text-center">
-        <a href="/contact" class="inline-flex items-center justify-center px-8 py-3 bg-transparent border-2 border-[#024095] text-[#024095] font-bold rounded-md hover:bg-[#024095] hover:text-white transition-colors gap-2 uppercase tracking-wide">
+      <div class="mt-8 text-center">
+        <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-[#024095] text-[#024095] text-sm font-bold rounded-md hover:bg-[#024095] hover:text-white transition-colors gap-2 uppercase tracking-wide">
           Book Free Water Testing &rarr;
         </a>
       </div>
     </div>
   </section>
+
+  <script is:inline>
+    (function () {
+      function initCarousel(carouselId) {
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return;
+
+        const originalCards = Array.from(carousel.querySelectorAll(':scope > .snap-start'));
+        if (originalCards.length === 0) return;
+
+        // Clone nodes for infinite scroll
+        const firstClone = originalCards[0].cloneNode(true);
+        const lastClone = originalCards[originalCards.length - 1].cloneNode(true);
+
+        firstClone.classList.add('carousel-clone');
+        lastClone.classList.add('carousel-clone');
+
+        carousel.appendChild(firstClone);
+        carousel.insertBefore(lastClone, originalCards[0]);
+
+        const allCards = Array.from(carousel.querySelectorAll(':scope > .snap-start'));
+        let currentIdx = 1; // Start at Card 1 (first original)
+        let autoTimer;
+        let isDragging = false;
+        let startX = 0;
+        let startScroll = 0;
+        let isTransitioning = false;
+
+        function getScrollPosition(idx) {
+          if (idx < 0 || idx >= allCards.length) return 0;
+          const card = allCards[idx];
+          const cardRect = card.getBoundingClientRect();
+          const carouselRect = carousel.getBoundingClientRect();
+          return carousel.scrollLeft + cardRect.left - carouselRect.left;
+        }
+
+        function initScroll() {
+          carousel.scrollLeft = getScrollPosition(currentIdx);
+        }
+
+        // Initial scroll to Card 1
+        setTimeout(initScroll, 50);
+        window.addEventListener('resize', initScroll);
+
+        function scrollTo(idx, smooth = true) {
+          if (isTransitioning) return;
+          currentIdx = idx;
+          const targetScroll = getScrollPosition(currentIdx);
+          isTransitioning = true;
+          carousel.scrollTo({
+            left: targetScroll,
+            behavior: smooth ? 'smooth' : 'auto'
+          });
+        }
+
+        function startTimer() {
+          autoTimer = setInterval(() => {
+            if (isDragging) return;
+            carousel.style.scrollBehavior = 'smooth';
+            scrollTo(currentIdx + 1, true);
+          }, 3000);
+        }
+
+        startTimer();
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', () => clearInterval(autoTimer));
+        carousel.addEventListener('mouseleave', startTimer);
+
+        // Mouse drag
+        carousel.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          startX = e.pageX;
+          startScroll = carousel.scrollLeft;
+          carousel.style.cursor = 'grabbing';
+          carousel.style.scrollBehavior = 'auto';
+          clearInterval(autoTimer);
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          e.preventDefault();
+          carousel.scrollLeft = startScroll - (e.pageX - startX);
+        });
+
+        carousel.addEventListener('mouseup', () => {
+          isDragging = false;
+          carousel.style.cursor = 'grab';
+          carousel.style.scrollBehavior = 'smooth';
+          startTimer();
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+          if (isDragging) {
+            isDragging = false;
+            carousel.style.cursor = 'grab';
+            carousel.style.scrollBehavior = 'smooth';
+            startTimer();
+          }
+        });
+
+        // Touch drag
+        carousel.addEventListener('touchstart', (e) => {
+          isDragging = true;
+          startX = e.touches[0].pageX;
+          startScroll = carousel.scrollLeft;
+          carousel.style.scrollBehavior = 'auto';
+          clearInterval(autoTimer);
+        }, { passive: true });
+
+        carousel.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          carousel.scrollLeft = startScroll - (e.touches[0].pageX - startX);
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', () => {
+          isDragging = false;
+          carousel.style.scrollBehavior = 'smooth';
+          startTimer();
+        });
+
+        // Scroll loop detection
+        let checkTimer;
+        carousel.addEventListener('scroll', () => {
+          clearTimeout(checkTimer);
+          
+          const scrollLeft = carousel.scrollLeft;
+          const tolerance = 10;
+          const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+
+          const posCard1 = getScrollPosition(1);
+          const posCardLast = getScrollPosition(allCards.length - 2);
+
+          if (scrollLeft >= maxScroll - tolerance) {
+            carousel.style.scrollBehavior = 'auto';
+            carousel.style.scrollSnapType = 'none';
+            carousel.scrollLeft = posCard1;
+            currentIdx = 1;
+            carousel.offsetHeight; // force reflow
+            carousel.style.scrollSnapType = 'x mandatory';
+            carousel.style.scrollBehavior = 'smooth';
+            isTransitioning = false;
+          } else if (scrollLeft <= tolerance) {
+            carousel.style.scrollBehavior = 'auto';
+            carousel.style.scrollSnapType = 'none';
+            carousel.scrollLeft = posCardLast;
+            currentIdx = allCards.length - 2;
+            carousel.offsetHeight; // force reflow
+            carousel.style.scrollSnapType = 'x mandatory';
+            carousel.style.scrollBehavior = 'smooth';
+            isTransitioning = false;
+          }
+
+          checkTimer = setTimeout(() => {
+            isTransitioning = false;
+            // Update current index when scroll settles
+            const currentScroll = carousel.scrollLeft;
+            let closestIdx = 1;
+            let minDiff = Infinity;
+            for (let i = 1; i <= allCards.length - 2; i++) {
+              const pos = getScrollPosition(i);
+              const diff = Math.abs(pos - currentScroll);
+              if (diff < minDiff) {
+                minDiff = diff;
+                closestIdx = i;
+              }
+            }
+            currentIdx = closestIdx;
+          }, 150);
+        });
+      }
+
+      // Initialize all carousels
+      setTimeout(() => {
+        initCarousel('water-carousel');
+        initCarousel('solutions-carousel');
+        initCarousel('projects-carousel');
+      }, 100);
+    })();
+  </script>
+
 
   <!-- COMPLETE WATER SOLUTIONS -->
   <section class="py-20 bg-[#024095] text-white">
@@ -411,56 +602,62 @@ const treatments = [
         COMPLETE <span class="text-[#07bee8]">WATER SOLUTIONS</span> FOR EVERY NEED
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Residential -->
-        <div class="bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
-          <div class="h-64 overflow-hidden relative">
-            <img src="/images/new_home/residential_home_1781948726505.png" alt="Residential Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="p-8 pt-6 flex flex-col flex-1">
-            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-6">
-              <svg class="w-7 h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-            </div>
-            <h3 class="text-2xl font-black text-[#024095] mb-3">Residential<br/>Water Solutions</h3>
-            <p class="text-sm font-medium text-slate-600 mb-6 flex-1">Safe & healthy drinking water for your home and family.</p>
-            <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
-              Explore Solutions &rarr;
-            </a>
-          </div>
-        </div>
+      <!-- Carousel wrapper -->
+      <div class="relative animate-fadeIn">
+        <!-- Scroll container -->
+        <div id="solutions-carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 cursor-grab select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
 
-        <!-- Commercial -->
-        <div class="bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
-          <div class="h-64 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1470&auto=format&fit=crop" alt="Commercial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="p-8 pt-6 flex flex-col flex-1">
-            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-6">
-              <svg class="w-7 h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+          <!-- Residential -->
+          <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+            <div class="h-40 sm:h-52 md:h-64 overflow-hidden relative">
+              <img src="/images/new_home/residential_home_1781948726505.png" alt="Residential Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-2xl font-black text-[#024095] mb-3">Commercial<br/>Water Solutions</h3>
-            <p class="text-sm font-medium text-slate-600 mb-6 flex-1">Reliable water systems for businesses & institutions.</p>
-            <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
-              Explore Solutions &rarr;
-            </a>
+            <div class="p-5 sm:p-8 sm:pt-6 flex flex-col flex-1">
+              <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-4 sm:mb-6">
+                <svg class="w-5 h-5 sm:w-7 sm:h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-[#024095] mb-2 sm:mb-3">Residential<br/>Water Solutions</h3>
+              <p class="text-xs sm:text-sm font-medium text-slate-600 mb-4 sm:mb-6 flex-1">Safe & healthy drinking water for your home and family.</p>
+              <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
+                Explore Solutions &rarr;
+              </a>
+            </div>
           </div>
-        </div>
 
-        <!-- Industrial -->
-        <div class="bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
-          <div class="h-64 overflow-hidden relative">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop" alt="Industrial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="p-8 pt-6 flex flex-col flex-1">
-            <div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-6">
-              <svg class="w-7 h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+          <!-- Commercial -->
+          <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+            <div class="h-40 sm:h-52 md:h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1470&auto=format&fit=crop" alt="Commercial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
             </div>
-            <h3 class="text-2xl font-black text-[#024095] mb-3">Industrial<br/>Water Treatment</h3>
-            <p class="text-sm font-medium text-slate-600 mb-6 flex-1">Advanced treatment systems for industrial applications.</p>
-            <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
-              Explore Solutions &rarr;
-            </a>
+            <div class="p-5 sm:p-8 sm:pt-6 flex flex-col flex-1">
+              <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-4 sm:mb-6">
+                <svg class="w-5 h-5 sm:w-7 sm:h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-[#024095] mb-2 sm:mb-3">Commercial<br/>Water Solutions</h3>
+              <p class="text-xs sm:text-sm font-medium text-slate-600 mb-4 sm:mb-6 flex-1">Reliable water systems for businesses & institutions.</p>
+              <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
+                Explore Solutions &rarr;
+              </a>
+            </div>
           </div>
+
+          <!-- Industrial -->
+          <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-white rounded-xl overflow-hidden group text-slate-900 flex flex-col">
+            <div class="h-40 sm:h-52 md:h-64 overflow-hidden relative">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=1470&auto=format&fit=crop" alt="Industrial Solutions" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-5 sm:p-8 sm:pt-6 flex flex-col flex-1">
+              <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-lg border border-slate-100 mb-4 sm:mb-6">
+                <svg class="w-5 h-5 sm:w-7 sm:h-7 text-[#024095]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-black text-[#024095] mb-2 sm:mb-3">Industrial<br/>Water Treatment</h3>
+              <p class="text-xs sm:text-sm font-medium text-slate-600 mb-4 sm:mb-6 flex-1">Advanced treatment systems for industrial applications.</p>
+              <a href="/service" class="text-xs font-bold uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors flex items-center gap-2 mt-auto">
+                Explore Solutions &rarr;
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -507,40 +704,44 @@ const treatments = [
   <!-- REAL PROJECTS. REAL RESULTS. -->
   <section class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-3xl sm:text-4xl font-bold text-[#024095] mb-12 uppercase">
+      <h2 class="text-3xl sm:text-4xl font-bold text-[#024095] mb-12 uppercase text-center sm:text-left">
         REAL <span class="text-[#07bee8]">PROJECTS.</span> REAL RESULTS.
       </h2>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        {projects.map(proj => (
-          <div class="bg-[#024095] rounded-xl shadow-lg border border-[#024095] overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
-            <div class="p-6 pb-4">
-              <h3 class="text-lg font-bold text-white">{proj.title}</h3>
-              <p class="text-xs text-blue-200 font-medium flex items-center gap-1 mt-1">
-                <svg class="w-3 h-3 text-[#07bee8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                {proj.location}
-              </p>
-            </div>
-            
-            <div class="grid grid-cols-2 gap-1 px-6">
-              <div class="relative">
-                <div class="absolute top-2 left-2 bg-black/60 text-white text-[9px] font-bold px-2 py-0.5 rounded z-10">BEFORE</div>
-                <img src={proj.before} class="w-full h-32 object-cover rounded" alt="Before" />
+      <!-- Carousel wrapper -->
+      <div class="relative animate-fadeIn">
+        <!-- Scroll container -->
+        <div id="projects-carousel" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4 cursor-grab select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
+          {projects.map(proj => (
+            <div class="snap-start flex-shrink-0 w-[75vw] max-w-[320px] sm:w-80 md:w-[350px] bg-[#024095] rounded-xl shadow-lg border border-[#024095] overflow-hidden transform hover:-translate-y-1 transition-transform duration-300">
+              <div class="p-5 pb-4">
+                <h3 class="text-base sm:text-lg font-bold text-white">{proj.title}</h3>
+                <p class="text-xs text-blue-200 font-medium flex items-center gap-1 mt-1">
+                  <svg class="w-3 h-3 text-[#07bee8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                  {proj.location}
+                </p>
               </div>
-              <div class="relative">
-                <div class="absolute top-2 left-2 bg-[#07bee8] text-[#024095] text-[9px] font-black px-2 py-0.5 rounded z-10">AFTER</div>
-                <img src={proj.after} class="w-full h-32 object-cover rounded" alt="After" />
+              
+              <div class="grid grid-cols-2 gap-1 px-5">
+                <div class="relative">
+                  <div class="absolute top-2 left-2 bg-black/60 text-white text-[9px] font-bold px-2 py-0.5 rounded z-10">BEFORE</div>
+                  <img src={proj.before} class="w-full h-24 sm:h-32 object-cover rounded" alt="Before" />
+                </div>
+                <div class="relative">
+                  <div class="absolute top-2 left-2 bg-[#07bee8] text-[#024095] text-[9px] font-black px-2 py-0.5 rounded z-10">AFTER</div>
+                  <img src={proj.after} class="w-full h-24 sm:h-32 object-cover rounded" alt="After" />
+                </div>
               </div>
-            </div>
 
-            <div class="p-6">
-              <p class="text-sm text-blue-50 font-medium mb-6">{proj.desc}</p>
-              <a href="/shop" class="text-xs font-bold uppercase tracking-wider text-[#07bee8] hover:text-white transition-colors flex items-center gap-1">
-                VIEW PROJECT <span class="text-lg leading-none">&rarr;</span>
-              </a>
+              <div class="p-5">
+                <p class="text-xs sm:text-sm text-blue-50 font-medium mb-4 sm:mb-6">{proj.desc}</p>
+                <a href="/shop" class="text-xs font-bold uppercase tracking-wider text-[#07bee8] hover:text-white transition-colors flex items-center gap-1">
+                  VIEW PROJECT <span class="text-lg leading-none">&rarr;</span>
+                </a>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       
       <div class="mt-12 text-center">
