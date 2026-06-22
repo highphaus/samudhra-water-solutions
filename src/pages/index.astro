@@ -55,7 +55,7 @@ const treatments = [
   <!-- HERO SECTION -->
   <section class="relative min-h-[90vh] flex items-center justify-center pt-20">
     <div class="absolute inset-0 z-0">
-      <img src="/images/hero/hero1.png" alt="Industrial Water Treatment" class="w-full h-full object-cover object-top lg:object-contain lg:scale-90 origin-center" />
+      <img src="/images/hero/hero1.png" alt="Industrial Water Treatment" class="w-full h-full object-cover object-top" />
       <!-- Subtle dark overlay to ensure the white text remains readable -->
       <div class="absolute inset-0 bg-black/40"></div>
     </div>
@@ -121,142 +121,130 @@ const treatments = [
         TRUSTED BY KERALA'S LEADING INSTITUTIONS
       </h2>
 
-      <!-- MOBILE ONLY: 4 animated logo slots (visible on < md) -->
-      <div class="flex md:hidden items-center justify-center gap-2">
+      <!-- MOBILE ONLY: 6 animated logo slots (visible on < md) -->
+      <div class="flex md:hidden items-center justify-center gap-2 flex-wrap">
 
-        <!-- Slot 1: logo 1 → client image1 -->
+        <!-- Slot 1: image1 → image7 -->
         <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
           <div class="logo-strip slot-1">
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/1.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image7.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
           </div>
         </div>
 
-        <!-- Slot 2: logo 2 → client image2 -->
+        <!-- Slot 2: image2 → image8 -->
         <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
           <div class="logo-strip slot-2">
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/2.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image2.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image2.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image8.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
           </div>
         </div>
 
-        <!-- Slot 3: logo 3 → client image3 -->
+        <!-- Slot 3: image3 → image9 -->
         <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
           <div class="logo-strip slot-3">
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/3.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image3.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image3.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image9.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
           </div>
         </div>
 
-        <!-- Slot 4: logo 4 → client image4 -->
+        <!-- Slot 4: image4 → image10 -->
         <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
           <div class="logo-strip slot-4">
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/4.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image4.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
             <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image4.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90" />
+              <img src="/images/client/client%20image10.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
             </div>
           </div>
         </div>
 
       </div>
 
-      <!-- DESKTOP ONLY: 7 animated slots in one line (visible on md+) -->
-      <div class="hidden md:flex items-center justify-center gap-8 lg:gap-12">
+      <!-- DESKTOP ONLY: 6 animated slots covering all 11 client images -->
+      <div class="hidden md:flex items-center justify-center gap-6 lg:gap-10 flex-wrap">
 
-        <!-- D-Slot 1: logo 1 → client image1 -->
-        <div class="logo-slot overflow-hidden h-14 w-36 flex-shrink-0">
+        <!-- D-Slot 1: image1 → image7 -->
+        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
           <div class="logo-strip slot-d-1">
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/1.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image7.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
         </div>
 
-        <!-- D-Slot 2: logo 2 → client image2 -->
-        <div class="logo-slot overflow-hidden h-14 w-36 flex-shrink-0">
+        <!-- D-Slot 2: image2 → image8 -->
+        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
           <div class="logo-strip slot-d-2">
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/2.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image2.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/client%20image2.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image8.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
         </div>
 
-        <!-- D-Slot 3: logo 3 → client image3 -->
-        <div class="logo-slot overflow-hidden h-14 w-36 flex-shrink-0">
+        <!-- D-Slot 3: image3 → image9 -->
+        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
           <div class="logo-strip slot-d-3">
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/3.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image3.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/client%20image3.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image9.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
         </div>
 
-        <!-- D-Slot 4: logo 4 → client image4 -->
-        <div class="logo-slot overflow-hidden h-14 w-36 flex-shrink-0">
+        <!-- D-Slot 4: image4 → image10 -->
+        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
           <div class="logo-strip slot-d-4">
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/4.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image4.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/client%20image4.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image10.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
         </div>
 
-        <!-- D-Slot 5: logo 5 → logo 1 -->
-        <div class="logo-slot overflow-hidden h-14 w-36 flex-shrink-0">
+        <!-- D-Slot 5: image5 → image11 -->
+        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
           <div class="logo-strip slot-d-5">
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/5.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image5.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/1.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image11.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
         </div>
 
-        <!-- D-Slot 6: logo 6 → logo 2 -->
-        <div class="logo-slot overflow-hidden h-14 w-36 flex-shrink-0">
+        <!-- D-Slot 6: image6 → image1 -->
+        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
           <div class="logo-strip slot-d-6">
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/6.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image6.svg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/2.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-        </div>
-
-        <!-- D-Slot 7: logo 7 → logo 3 -->
-        <div class="logo-slot overflow-hidden h-14 w-36 flex-shrink-0">
-          <div class="logo-strip slot-d-7">
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/7.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div class="logo-item h-14 flex items-center justify-center">
-              <img src="/images/client/3.jpg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-90 hover:opacity-100 transition-opacity duration-300" />
+            <div class="logo-item h-16 flex items-center justify-center">
+              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
             </div>
           </div>
         </div>
@@ -286,20 +274,19 @@ const treatments = [
       flex-shrink: 0;
     }
 
-    /* Mobile slots (4) */
+    /* Mobile slots (4) — evenly spaced */
     .slot-1 { animation: logoFlip 10s ease-in-out 0s infinite; }
     .slot-2 { animation: logoFlip 10s ease-in-out 2.5s infinite; }
     .slot-3 { animation: logoFlip 10s ease-in-out 5s infinite; }
     .slot-4 { animation: logoFlip 10s ease-in-out 7.5s infinite; }
 
-    /* Desktop slots (7) — evenly spaced across 10s cycle */
+    /* Desktop slots (6) — evenly spaced across 10s cycle */
     .slot-d-1 { animation: logoFlip 10s ease-in-out 0s infinite; }
-    .slot-d-2 { animation: logoFlip 10s ease-in-out 1.43s infinite; }
-    .slot-d-3 { animation: logoFlip 10s ease-in-out 2.86s infinite; }
-    .slot-d-4 { animation: logoFlip 10s ease-in-out 4.29s infinite; }
-    .slot-d-5 { animation: logoFlip 10s ease-in-out 5.71s infinite; }
-    .slot-d-6 { animation: logoFlip 10s ease-in-out 7.14s infinite; }
-    .slot-d-7 { animation: logoFlip 10s ease-in-out 8.57s infinite; }
+    .slot-d-2 { animation: logoFlip 10s ease-in-out 1.67s infinite; }
+    .slot-d-3 { animation: logoFlip 10s ease-in-out 3.33s infinite; }
+    .slot-d-4 { animation: logoFlip 10s ease-in-out 5s infinite; }
+    .slot-d-5 { animation: logoFlip 10s ease-in-out 6.67s infinite; }
+    .slot-d-6 { animation: logoFlip 10s ease-in-out 8.33s infinite; }
 
     @keyframes logoFlip {
       0%   { transform: translateY(0); }
