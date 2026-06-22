@@ -29,49 +29,77 @@ import Footer from '../components/Footer.astro';
   <section class="bg-[#FAF9F6] text-slate-900 py-14 sm:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-start">
 
-      <!-- Left: Contact Card -->
-      <div class="col-span-1 lg:col-span-7 bg-white border-t-4 border-[#024095] p-6 sm:p-8 lg:p-10 rounded-b-md shadow-sm space-y-6 sm:space-y-8">
+      <!-- Left: Email Enquiry Form -->
+      <div class="col-span-1 lg:col-span-7 bg-white border-t-4 border-[#024095] p-6 sm:p-8 lg:p-10 rounded-b-md shadow-sm space-y-6">
         <div>
-          <h2 class="text-xl sm:text-2xl font-black text-[#024095] uppercase tracking-tight">Contact Information</h2>
-          <p class="text-xs text-black font-bold uppercase tracking-widest mt-0.5">Central Showroom Registry</p>
+          <h2 class="text-xl sm:text-2xl font-black text-[#024095] uppercase tracking-tight">Email Enquiry</h2>
+          <p class="text-xs text-black font-bold uppercase tracking-widest mt-0.5">Send us a direct message</p>
         </div>
 
-        <!-- Location -->
-        <div class="space-y-2 pt-4 border-t border-slate-200/60">
-          <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Our Location</p>
-          <p class="text-sm font-medium text-black leading-relaxed">
-            Soorya nidhi, TC 42/1231, main road, near canara bank, Poojapura, Thiruvananthapuram, Kerala 695012
-          </p>
-        </div>
-
-        <!-- Phone & Email -->
-        <div class="grid sm:grid-cols-2 gap-5 sm:gap-6 pt-4 border-t border-slate-200/60">
-          <div class="space-y-1">
-            <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Phone Number</p>
-            <a href="tel:+919645830994" class="text-base sm:text-lg font-bold text-[#024095] hover:text-[#07bee8] transition-colors min-h-[44px] flex items-center">
-              9645830994
-            </a>
+        <form id="enquiry-form" class="space-y-5 pt-4 border-t border-slate-200/60">
+          <div>
+            <label for="enquiry-name" class="block text-[10px] font-black text-[#07bee8] uppercase tracking-widest mb-1.5">Full Name</label>
+            <input type="text" id="enquiry-name" required placeholder="John Doe" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-black focus:outline-none focus:ring-2 focus:ring-[#024095]/20 focus:border-[#024095] transition-all" />
           </div>
-          <div class="space-y-1">
-            <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Email Address</p>
-            <a href="mailto:mail@samudhra.co.in" class="text-sm font-medium text-black hover:text-[#024095] transition-colors break-all min-h-[44px] flex items-center">
-              mail@samudhra.co.in
-            </a>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="enquiry-email" class="block text-[10px] font-black text-[#07bee8] uppercase tracking-widest mb-1.5">Email Address</label>
+              <input type="email" id="enquiry-email" required placeholder="john@example.com" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-black focus:outline-none focus:ring-2 focus:ring-[#024095]/20 focus:border-[#024095] transition-all" />
+            </div>
+            <div>
+              <label for="enquiry-phone" class="block text-[10px] font-black text-[#07bee8] uppercase tracking-widest mb-1.5">Phone Number</label>
+              <input type="tel" id="enquiry-phone" required placeholder="9645830994" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-black focus:outline-none focus:ring-2 focus:ring-[#024095]/20 focus:border-[#024095] transition-all" />
+            </div>
           </div>
-        </div>
-
-        <!-- WhatsApp CTA -->
-        <div class="pt-2">
-          <a href="https://wa.me/919645830994?text=Hi, I want to get in touch with your water filtration service team."
-             target="_blank"
-             class="w-full inline-flex items-center justify-center min-h-[52px] px-8 py-4 bg-[#024095] text-white font-black text-xs uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
-            SEND MESSAGE NOW
-          </a>
-        </div>
+          <div>
+            <label for="enquiry-message" class="block text-[10px] font-black text-[#07bee8] uppercase tracking-widest mb-1.5">Message / Requirement</label>
+            <textarea id="enquiry-message" required rows="4" placeholder="Describe your water problems, requirements or query here..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-black focus:outline-none focus:ring-2 focus:ring-[#024095]/20 focus:border-[#024095] transition-all resize-none"></textarea>
+          </div>
+          <button type="submit" class="w-full inline-flex items-center justify-center min-h-[52px] px-8 py-4 bg-[#024095] text-white font-black text-xs uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
+            SUBMIT ENQUIRY
+          </button>
+        </form>
       </div>
 
-      <!-- Right: Schedule & Emergency -->
+      <!-- Right: Contact info, Schedule & Emergency -->
       <div class="col-span-1 lg:col-span-5 space-y-4 sm:space-y-6">
+
+        <!-- Contact Info Card -->
+        <div class="bg-white border-t-4 border-[#024095] p-6 sm:p-8 rounded-b-md shadow-sm space-y-4">
+          <div>
+            <h3 class="text-lg sm:text-xl font-black text-[#024095] uppercase tracking-tight">Contact Information</h3>
+            <p class="text-xs text-black font-bold uppercase tracking-widest mt-0.5">Central Showroom Registry</p>
+          </div>
+          <div class="space-y-4 pt-2 text-sm text-black font-medium border-t border-slate-200/40">
+            <div>
+              <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Our Location</p>
+              <p class="text-xs text-black leading-relaxed mt-1">
+                Soorya nidhi, TC 42/1231, main road, near canara bank, Poojapura, Thiruvananthapuram, Kerala 695012
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Phone Number</p>
+                <a href="tel:+919645830994" class="text-sm font-bold text-[#024095] hover:text-[#07bee8] transition-colors mt-1 block">
+                  9645830994
+                </a>
+              </div>
+              <div>
+                <p class="text-[10px] font-black text-[#07bee8] uppercase tracking-widest">Email Address</p>
+                <a href="mailto:mail@samudhra.co.in" class="text-xs font-medium text-black hover:text-[#024095] transition-colors break-all mt-1 block">
+                  mail@samudhra.co.in
+                </a>
+              </div>
+            </div>
+            <div class="pt-2">
+              <a href="https://wa.me/919645830994?text=Hi, I want to get in touch with your water filtration service team."
+                 target="_blank"
+                 class="w-full inline-flex items-center justify-center min-h-[44px] px-4 py-2.5 bg-[#024095] text-white font-black text-xs uppercase tracking-widest hover:bg-[#07bee8] transition-all rounded shadow-md">
+                WhatsApp Chat
+              </a>
+            </div>
+          </div>
+        </div>
 
         <!-- Schedule Hours -->
         <div class="bg-white border-t-4 border-[#07bee8] p-6 sm:p-8 rounded-b-md shadow-sm space-y-4">
@@ -174,6 +202,31 @@ import Footer from '../components/Footer.astro';
 
     </div>
   </section>
+
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      const form = document.getElementById('enquiry-form');
+      if (!form) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('enquiry-name').value;
+        const email = document.getElementById('enquiry-email').value;
+        const phone = document.getElementById('enquiry-phone').value;
+        const message = document.getElementById('enquiry-message').value;
+
+        const subject = encodeURIComponent(`Water Solutions Enquiry - ${name}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\n` +
+          `Email: ${email}\n` +
+          `Phone: ${phone}\n\n` +
+          `Message:\n${message}`
+        );
+
+        window.location.href = `mailto:mail@samudhra.co.in?subject=${subject}&body=${body}`;
+      });
+    });
+  </script>
 
   <Footer />
 </Layout>
