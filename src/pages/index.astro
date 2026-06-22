@@ -322,11 +322,15 @@ const treatments = [
 
 
   <!-- EVERY WATER PROBLEM HAS A SOLUTION -->
-  <section class="pt-20 md:pt-40 pb-10 md:pb-20 bg-slate-50">
+  <section class="pt-20 md:pt-40 pb-10 md:pb-20 bg-slate-50 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-[clamp(0.7rem,3.8vw,1.5rem)] max-sm:whitespace-nowrap sm:text-2xl md:text-3xl font-bold center text-[#024095] mb-6 md:mb-12 uppercase text-center">
-        EVERY <span class="text-[#07bee8]">WATER PROBLEM</span> HAS A SOLUTION
-      </h2>
+      <div class="text-center mb-12 md:mb-20 animate-fadeIn">
+        <span class="text-[10px] sm:text-xs md:text-sm font-extrabold tracking-widest text-[#07bee8] uppercase block mb-1">Water Quality Check</span>
+        <h2 class="text-[clamp(1.1rem,4.5vw,1.75rem)] sm:text-2xl md:text-3xl font-black text-[#024095] uppercase relative inline-block pb-3">
+          EVERY <span class="text-[#07bee8]">WATER PROBLEM</span> HAS A SOLUTION
+          <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-[3px] bg-gradient-to-r from-[#07bee8] to-[#024095] rounded-full"></span>
+        </h2>
+      </div>
 
       <!-- Carousel wrapper -->
       <div class="relative animate-fadeIn">
@@ -334,93 +338,141 @@ const treatments = [
         <div id="water-carousel" class="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-smooth cursor-default md:cursor-grab lg:cursor-default select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
 
           <!-- Card 1: Hard Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
-            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
-              <img src="/images/new_home/hard_water_1781948623171.png" alt="Hard Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-[#024095]/20"></div>
+          <div class="relative snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none bg-gradient-to-br from-white to-slate-50/50 rounded-2xl shadow-md hover:shadow-xl border border-slate-100 hover:border-slate-200/60 transform hover:-translate-y-2 transition-all duration-300 group overflow-hidden flex flex-col">
+            <div class="h-[130px] sm:h-40 md:h-44 overflow-hidden relative">
+              <img src="/images/new_home/hard_water_1781948623171.png" alt="Hard Water" class="w-full h-full object-cover transform group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#024095]/40 via-transparent to-transparent opacity-85 group-hover:opacity-60 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-[#024095]/10 mix-blend-overlay"></div>
             </div>
-            <div class="p-4 sm:p-5 text-center">
-              <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
+            <div class="p-5 pt-0 pb-6 text-center flex flex-col items-center flex-1 relative">
+              <div class="relative -mt-7 sm:-mt-9 mb-4 flex justify-center z-10">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#07bee8] to-[#024095] rounded-full flex items-center justify-center shadow-lg border-4 border-white transform group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                 </div>
               </div>
-              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Hard Water</h3>
-              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Bathroom stains</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Pipe scaling</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Appliance damage</li>
+              <h3 class="text-sm sm:text-base font-extrabold text-[#024095] mb-2 group-hover:text-[#07bee8] transition-colors duration-300">Hard Water</h3>
+              <div class="w-8 h-[2px] bg-slate-200 mb-3 group-hover:bg-[#07bee8]/40 transition-colors duration-300"></div>
+              <ul class="space-y-2 text-[11px] sm:text-xs text-slate-600 font-semibold inline-block text-left">
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Bathroom stains</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Pipe scaling</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Appliance damage</span>
+                </li>
               </ul>
             </div>
+            <div class="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#07bee8] to-[#024095] transition-all duration-300 group-hover:w-full"></div>
           </div>
 
           <!-- Card 2: Iron Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
-            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
-              <img src="/images/new_home/iron_water_1781948634540.png" alt="Iron Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-[#024095]/20"></div>
+          <div class="relative snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none bg-gradient-to-br from-white to-slate-50/50 rounded-2xl shadow-md hover:shadow-xl border border-slate-100 hover:border-slate-200/60 transform hover:-translate-y-2 transition-all duration-300 group overflow-hidden flex flex-col">
+            <div class="h-[130px] sm:h-40 md:h-44 overflow-hidden relative">
+              <img src="/images/new_home/iron_water_1781948634540.png" alt="Iron Water" class="w-full h-full object-cover transform group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#024095]/40 via-transparent to-transparent opacity-85 group-hover:opacity-60 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-[#024095]/10 mix-blend-overlay"></div>
             </div>
-            <div class="p-4 sm:p-5 text-center">
-              <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+            <div class="p-5 pt-0 pb-6 text-center flex flex-col items-center flex-1 relative">
+              <div class="relative -mt-7 sm:-mt-9 mb-4 flex justify-center z-10">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#07bee8] to-[#024095] rounded-full flex items-center justify-center shadow-lg border-4 border-white transform group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                 </div>
               </div>
-              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Iron Water</h3>
-              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Brown water</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Bad smell</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Health concerns</li>
+              <h3 class="text-sm sm:text-base font-extrabold text-[#024095] mb-2 group-hover:text-[#07bee8] transition-colors duration-300">Iron Water</h3>
+              <div class="w-8 h-[2px] bg-slate-200 mb-3 group-hover:bg-[#07bee8]/40 transition-colors duration-300"></div>
+              <ul class="space-y-2 text-[11px] sm:text-xs text-slate-600 font-semibold inline-block text-left">
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Brown water</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Bad smell</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Health concerns</span>
+                </li>
               </ul>
             </div>
+            <div class="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#07bee8] to-[#024095] transition-all duration-300 group-hover:w-full"></div>
           </div>
 
           <!-- Card 3: Salty Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
-            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
-              <img src="/images/new_home/salty_water_1781948658809.png" alt="Salty Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-[#024095]/20"></div>
+          <div class="relative snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none bg-gradient-to-br from-white to-slate-50/50 rounded-2xl shadow-md hover:shadow-xl border border-slate-100 hover:border-slate-200/60 transform hover:-translate-y-2 transition-all duration-300 group overflow-hidden flex flex-col">
+            <div class="h-[130px] sm:h-40 md:h-44 overflow-hidden relative">
+              <img src="/images/new_home/salty_water_1781948658809.png" alt="Salty Water" class="w-full h-full object-cover transform group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#024095]/40 via-transparent to-transparent opacity-85 group-hover:opacity-60 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-[#024095]/10 mix-blend-overlay"></div>
             </div>
-            <div class="p-4 sm:p-5 text-center">
-              <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <div class="p-5 pt-0 pb-6 text-center flex flex-col items-center flex-1 relative">
+              <div class="relative -mt-7 sm:-mt-9 mb-4 flex justify-center z-10">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#07bee8] to-[#024095] rounded-full flex items-center justify-center shadow-lg border-4 border-white transform group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
               </div>
-              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Salty Water</h3>
-              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Coastal areas</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> High TDS</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Poor taste</li>
+              <h3 class="text-sm sm:text-base font-extrabold text-[#024095] mb-2 group-hover:text-[#07bee8] transition-colors duration-300">Salty Water</h3>
+              <div class="w-8 h-[2px] bg-slate-200 mb-3 group-hover:bg-[#07bee8]/40 transition-colors duration-300"></div>
+              <ul class="space-y-2 text-[11px] sm:text-xs text-slate-600 font-semibold inline-block text-left">
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Coastal areas</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>High TDS</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Poor taste</span>
+                </li>
               </ul>
             </div>
+            <div class="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#07bee8] to-[#024095] transition-all duration-300 group-hover:w-full"></div>
           </div>
 
           <!-- Card 4: Waste Water -->
-          <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white rounded-xl shadow-md border border-slate-100 group overflow-hidden">
-            <div class="h-[140px] sm:h-44 md:h-52 overflow-hidden relative">
-              <img src="/images/new_home/waste_water_1781948670592.png" alt="Waste Water" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
-              <div class="absolute inset-0 bg-[#024095]/20"></div>
+          <div class="relative snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none bg-gradient-to-br from-white to-slate-50/50 rounded-2xl shadow-md hover:shadow-xl border border-slate-100 hover:border-slate-200/60 transform hover:-translate-y-2 transition-all duration-300 group overflow-hidden flex flex-col">
+            <div class="h-[130px] sm:h-40 md:h-44 overflow-hidden relative">
+              <img src="/images/new_home/waste_water_1781948670592.png" alt="Waste Water" class="w-full h-full object-cover transform group-hover:scale-108 transition-transform duration-700 ease-out" />
+              <div class="absolute inset-0 bg-gradient-to-t from-[#024095]/40 via-transparent to-transparent opacity-85 group-hover:opacity-60 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-[#024095]/10 mix-blend-overlay"></div>
             </div>
-            <div class="p-4 sm:p-5 text-center">
-              <div class="flex justify-center mb-2 md:mb-3">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-[#024095] rounded-full flex items-center justify-center shadow-lg">
-                  <svg class="w-3.5 h-3.5 sm:w-4.5 sm:h-4.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
+            <div class="p-5 pt-0 pb-6 text-center flex flex-col items-center flex-1 relative">
+              <div class="relative -mt-7 sm:-mt-9 mb-4 flex justify-center z-10">
+                <div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-[#07bee8] to-[#024095] rounded-full flex items-center justify-center shadow-lg border-4 border-white transform group-hover:rotate-6 group-hover:scale-105 transition-all duration-300">
+                  <svg class="w-6 h-6 sm:w-7 sm:h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path></svg>
                 </div>
               </div>
-              <h3 class="text-xs sm:text-sm font-bold text-[#024095] mb-2 text-center">Waste Water</h3>
-              <ul class="space-y-1.5 text-[11px] sm:text-xs text-slate-600 font-medium inline-block text-left">
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Industrial discharge</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Recycling challenges</li>
-                <li class="flex items-start gap-1.5"><span class="text-[#07bee8]">•</span> Compliance issues</li>
+              <h3 class="text-sm sm:text-base font-extrabold text-[#024095] mb-2 group-hover:text-[#07bee8] transition-colors duration-300">Waste Water</h3>
+              <div class="w-8 h-[2px] bg-slate-200 mb-3 group-hover:bg-[#07bee8]/40 transition-colors duration-300"></div>
+              <ul class="space-y-2 text-[11px] sm:text-xs text-slate-600 font-semibold inline-block text-left">
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Industrial discharge</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Recycling challenges</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-3.5 h-3.5 text-rose-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12,2C12,2 6,10 6,14A6,6 0 0,0 12,20A6,6 0 0,0 18,14C18,10 12,2 12,2Z" /></svg>
+                  <span>Compliance issues</span>
+                </li>
               </ul>
             </div>
+            <div class="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#07bee8] to-[#024095] transition-all duration-300 group-hover:w-full"></div>
           </div>
 
         </div>
       </div>
 
-      <div class="mt-8 text-center">
+      <div class="mt-12 text-center animate-fadeIn">
         <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-transparent border-2 border-[#024095] text-[#024095] text-sm font-bold rounded-md hover:bg-[#024095] hover:text-white transition-colors gap-2 uppercase tracking-wide">
           Book Free Water Testing &rarr;
         </a>
