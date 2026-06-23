@@ -128,16 +128,12 @@ const treatments = [
       {[...Array(7)].map((_, i) => {
         // Initial image for this slot
         const initialImgNum = i + 1;
-        let ext = 'png';
-        if (initialImgNum === 4 || initialImgNum === 5 || initialImgNum === 38) {
+                let ext = 'png';
+        if (initialImgNum === 5 || initialImgNum === 38) {
           ext = 'webp';
         } else if (initialImgNum === 6) {
           ext = 'svg';
-        } else if (initialImgNum === 39 || initialImgNum === 59) {
-          ext = 'avif';
-        } else if (
-          [40, 42, 43, 44, 46, 48, 49, 52, 55, 56, 57].includes(initialImgNum)
-        ) {
+        } else if (initialImgNum === 43) {
           ext = 'jpg';
         }
         const initialImg = `/images/client/client%20image${initialImgNum}.${ext}`;
@@ -150,12 +146,12 @@ const treatments = [
         }
 
         return (
-          <div class={`logo-slot overflow-hidden h-12 sm:h-14 w-24 sm:w-32 flex-shrink-0 relative ${visibilityClass}`}>
+          <div class={`logo-slot overflow-hidden h-14 sm:h-16 w-28 sm:w-36 flex-shrink-0 relative ${visibilityClass}`}>
             <div class="logo-strip flex flex-col absolute w-full top-0 left-0" data-slot-index={i}>
-              <div class="logo-item h-12 sm:h-14 w-full flex items-center justify-center flex-shrink-0">
+              <div class="logo-item h-14 sm:h-16 w-full flex items-center justify-center flex-shrink-0">
                 <img src={initialImg} alt="Client Logo" class="max-h-full max-w-full object-contain active-img" />
               </div>
-              <div class="logo-item h-12 sm:h-14 w-full flex items-center justify-center flex-shrink-0">
+              <div class="logo-item h-14 sm:h-16 w-full flex items-center justify-center flex-shrink-0">
                 <img src="" alt="Client Logo" class="max-h-full max-w-full object-contain next-img" />
               </div>
             </div>
