@@ -116,190 +116,166 @@ const treatments = [
 
   <!-- TRUSTED BY (Moved under Hero) -->
   <section class="pt-10 pb-10 bg-[#eff6ff] overflow-hidden relative z-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-[clamp(0.55rem,2.5vw,0.75rem)] tracking-[0.15em] sm:tracking-[0.3em] font-black text-center text-[#024095] mb-6 uppercase">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6">
+      <h2 class="text-[clamp(0.55rem,2.5vw,0.75rem)] tracking-[0.15em] sm:tracking-[0.3em] font-black text-center text-[#024095] uppercase">
         TRUSTED BY KERALA'S LEADING INSTITUTIONS
       </h2>
+    </div>
 
-      <!-- MOBILE ONLY: 6 animated logo slots (visible on < md) -->
-      <div class="flex md:hidden items-center justify-center gap-2 flex-wrap">
+    <!-- Infinite marquee track — no JS needed -->
+    <div class="client-marquee-outer overflow-hidden relative">
+      <!-- Fade edges -->
+      <div class="absolute left-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none" style="background:linear-gradient(to right,#eff6ff,transparent);"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-16 sm:w-24 z-10 pointer-events-none" style="background:linear-gradient(to left,#eff6ff,transparent);"></div>
 
-        <!-- Slot 1: image1 → image7 -->
-        <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
-          <div class="logo-strip slot-1">
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image7.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-          </div>
+      <div class="client-marquee-track flex gap-8 sm:gap-12 items-center w-max">
+        <!-- First copy -->
+        <div class="flex gap-8 sm:gap-12 items-center flex-shrink-0">
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image1.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image2.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image3.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image4.webp" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image5.webp" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image6.svg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image7.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image8.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image9.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image10.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image11.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image12.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image13.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image14.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image15.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image16.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image17.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image18.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image19.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image20.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image21.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image22.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image23.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image24.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image25.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image26.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image27.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image28.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image29.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image30.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image31.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image32.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image33.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image34.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image35.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image36.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image37.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image38.webp" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image39.avif" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image40.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image41.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image42.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image43.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image44.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image45.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image46.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image47.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image48.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image49.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image50.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image51.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image52.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image53.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image54.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image55.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image56.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image57.jpg" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image58.png" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image59.avif" alt="Client" class="max-h-full max-w-full object-contain opacity-90 hover:opacity-100 transition-opacity" /></div>
         </div>
-
-        <!-- Slot 2: image2 → image8 -->
-        <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
-          <div class="logo-strip slot-2">
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image2.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image8.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-          </div>
+        <!-- Duplicate for seamless loop -->
+        <div class="flex gap-8 sm:gap-12 items-center flex-shrink-0" aria-hidden="true">
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image1.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image2.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image3.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image4.webp" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image5.webp" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image6.svg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image7.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image8.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image9.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image10.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image11.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image12.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image13.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image14.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image15.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image16.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image17.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image18.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image19.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image20.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image21.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image22.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image23.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image24.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image25.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image26.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image27.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image28.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image29.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image30.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image31.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image32.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image33.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image34.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image35.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image36.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image37.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image38.webp" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image39.avif" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image40.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image41.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image42.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image43.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image44.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image45.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image46.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image47.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image48.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image49.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image50.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image51.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image52.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image53.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image54.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image55.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image56.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image57.jpg" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image58.png" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
+          <div class="h-10 sm:h-14 w-24 sm:w-32 flex-shrink-0 flex items-center justify-center"><img src="/images/client/client%20image59.avif" alt="" class="max-h-full max-w-full object-contain opacity-90" /></div>
         </div>
-
-        <!-- Slot 3: image3 → image9 -->
-        <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
-          <div class="logo-strip slot-3">
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image3.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image9.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Slot 4: image4 → image10 -->
-        <div class="logo-slot overflow-hidden h-10 w-[70px] flex-shrink-0">
-          <div class="logo-strip slot-4">
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image4.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-            <div class="logo-item h-10 flex items-center justify-center">
-              <img src="/images/client/client%20image10.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95" />
-            </div>
-          </div>
-        </div>
-
       </div>
+    </div>
 
-      <!-- DESKTOP ONLY: 6 animated slots covering all 11 client images -->
-      <div class="hidden md:flex items-center justify-center gap-6 lg:gap-10 flex-wrap">
-
-        <!-- D-Slot 1: image1 → image7 -->
-        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
-          <div class="logo-strip slot-d-1">
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image7.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-        </div>
-
-        <!-- D-Slot 2: image2 → image8 -->
-        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
-          <div class="logo-strip slot-d-2">
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image2.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image8.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-        </div>
-
-        <!-- D-Slot 3: image3 → image9 -->
-        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
-          <div class="logo-strip slot-d-3">
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image3.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image9.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-        </div>
-
-        <!-- D-Slot 4: image4 → image10 -->
-        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
-          <div class="logo-strip slot-d-4">
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image4.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image10.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-        </div>
-
-        <!-- D-Slot 5: image5 → image11 -->
-        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
-          <div class="logo-strip slot-d-5">
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image5.webp" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image11.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-        </div>
-
-        <!-- D-Slot 6: image6 → image1 -->
-        <div class="logo-slot overflow-hidden h-16 w-40 flex-shrink-0">
-          <div class="logo-strip slot-d-6">
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image6.svg" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-            <div class="logo-item h-16 flex items-center justify-center">
-              <img src="/images/client/client%20image1.png" alt="Client Logo" class="max-w-full max-h-full object-contain opacity-95 hover:opacity-100 transition-opacity duration-300" />
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="mt-10 text-center relative z-30">
-        <a href="/testimonial" class="inline-flex items-center justify-center px-6 py-2.5 bg-transparent border-2 border-[#024095] text-[#024095] text-xs font-bold rounded hover:bg-[#024095] hover:text-white transition-colors gap-2 uppercase tracking-wide">
-          View All &rarr;
-        </a>
-      </div>
-
+    <div class="mt-8 text-center">
+      <a href="/testimonial" class="inline-flex items-center justify-center px-6 py-2.5 bg-transparent border-2 border-[#024095] text-[#024095] text-xs font-bold rounded hover:bg-[#024095] hover:text-white transition-colors gap-2 uppercase tracking-wide">
+        View All &rarr;
+      </a>
     </div>
   </section>
 
   <style is:global>
-    .logo-slot {
-      position: relative;
+    /* Infinite marquee */
+    @keyframes marqueeScroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .logo-strip {
-      display: flex;
-      flex-direction: column;
-      will-change: transform;
+    .client-marquee-track {
+      animation: marqueeScroll 60s linear infinite;
     }
-    .logo-item {
-      width: 100%;
-      flex-shrink: 0;
+    .client-marquee-outer:hover .client-marquee-track {
+      animation-play-state: paused;
     }
 
-    /* Mobile slots (4) — evenly spaced */
-    .slot-1 { animation: logoFlip 10s ease-in-out 0s infinite; }
-    .slot-2 { animation: logoFlip 10s ease-in-out 2.5s infinite; }
-    .slot-3 { animation: logoFlip 10s ease-in-out 5s infinite; }
-    .slot-4 { animation: logoFlip 10s ease-in-out 7.5s infinite; }
-
-    /* Desktop slots (6) — evenly spaced across 10s cycle */
-    .slot-d-1 { animation: logoFlip 10s ease-in-out 0s infinite; }
-    .slot-d-2 { animation: logoFlip 10s ease-in-out 1.67s infinite; }
-    .slot-d-3 { animation: logoFlip 10s ease-in-out 3.33s infinite; }
-    .slot-d-4 { animation: logoFlip 10s ease-in-out 5s infinite; }
-    .slot-d-5 { animation: logoFlip 10s ease-in-out 6.67s infinite; }
-    .slot-d-6 { animation: logoFlip 10s ease-in-out 8.33s infinite; }
-
-    @keyframes logoFlip {
-      0%   { transform: translateY(0); }
-      35%  { transform: translateY(0); }
-      50%  { transform: translateY(-50%); }
-      85%  { transform: translateY(-50%); }
-      100% { transform: translateY(0); }
-    }
-    @media (min-width: 1024px) {
-      .carousel-clone {
-        display: none !important;
-      }
-    }
     .no-snap {
       scroll-snap-type: none !important;
       scroll-behavior: auto !important;
