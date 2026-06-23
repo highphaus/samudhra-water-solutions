@@ -195,68 +195,19 @@ const treatments = [
   </style>
 
   <script>
-    // List of all 59 client images
-    const clientImages = [
-      "/images/client/client%20image1.png",
-      "/images/client/client%20image2.png",
-      "/images/client/client%20image3.png",
-      "/images/client/client%20image4.webp",
-      "/images/client/client%20image5.webp",
-      "/images/client/client%20image6.svg",
-      "/images/client/client%20image7.png",
-      "/images/client/client%20image8.png",
-      "/images/client/client%20image9.png",
-      "/images/client/client%20image10.png",
-      "/images/client/client%20image11.png",
-      "/images/client/client%20image12.png",
-      "/images/client/client%20image13.png",
-      "/images/client/client%20image14.png",
-      "/images/client/client%20image15.png",
-      "/images/client/client%20image16.png",
-      "/images/client/client%20image17.png",
-      "/images/client/client%20image18.png",
-      "/images/client/client%20image19.png",
-      "/images/client/client%20image20.png",
-      "/images/client/client%20image21.png",
-      "/images/client/client%20image22.png",
-      "/images/client/client%20image23.png",
-      "/images/client/client%20image24.png",
-      "/images/client/client%20image25.png",
-      "/images/client/client%20image26.png",
-      "/images/client/client%20image27.png",
-      "/images/client/client%20image28.png",
-      "/images/client/client%20image29.png",
-      "/images/client/client%20image30.png",
-      "/images/client/client%20image31.png",
-      "/images/client/client%20image32.png",
-      "/images/client/client%20image33.png",
-      "/images/client/client%20image34.png",
-      "/images/client/client%20image35.png",
-      "/images/client/client%20image36.png",
-      "/images/client/client%20image37.png",
-      "/images/client/client%20image38.webp",
-      "/images/client/client%20image39.avif",
-      "/images/client/client%20image40.jpg",
-      "/images/client/client%20image41.png",
-      "/images/client/client%20image42.jpg",
-      "/images/client/client%20image43.jpg",
-      "/images/client/client%20image44.jpg",
-      "/images/client/client%20image45.png",
-      "/images/client/client%20image46.jpg",
-      "/images/client/client%20image47.png",
-      "/images/client/client%20image48.jpg",
-      "/images/client/client%20image49.jpg",
-      "/images/client/client%20image50.png",
-      "/images/client/client%20image51.png",
-      "/images/client/client%20image52.jpg",
-      "/images/client/client%20image53.png",
-      "/images/client/client%20image54.png",
-      "/images/client/client%20image55.jpg",
-      "/images/client/client%20image56.jpg",
-      "/images/client/client%20image57.jpg",
-      "/images/client/client%20image58.png",
-      "/images/client/client%20image59.avif"
-    ];
+        // Build list of all 60 client images dynamically
+    const clientImages = [];
+    for (let i = 1; i <= 60; i++) {
+      let ext = 'png';
+      if (i === 5 || i === 38) {
+        ext = 'webp';
+      } else if (i === 6) {
+        ext = 'svg';
+      } else if (i === 43) {
+        ext = 'jpg';
+      }
+      clientImages.push(`/images/client/client%20image${i}.${ext}`);
+    }
 
     let nextImageIndex = 7;
     let activeSlotIndex = 0;
@@ -467,8 +418,8 @@ const treatments = [
         const firstClone = originalCards[0].cloneNode(true);
         const lastClone = originalCards[originalCards.length - 1].cloneNode(true);
 
-        firstClone.classList.add('carousel-clone');
-        lastClone.classList.add('carousel-clone');
+        firstClone.classList.add('carousel-clone', 'lg:hidden');
+        lastClone.classList.add('carousel-clone', 'lg:hidden');
 
         carousel.appendChild(firstClone);
         carousel.insertBefore(lastClone, originalCards[0]);
@@ -751,7 +702,7 @@ const treatments = [
   <!-- REAL PROJECTS. REAL RESULTS. -->
   <section class="py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-[clamp(0.75rem,3.8vw,1.5rem)] max-sm:whitespace-nowrap sm:text-2xl lg:text-3xl font-bold text-[#024095] mb-8 uppercase text-center sm:text-left">
+      <h2 class="text-[clamp(0.75rem,3.8vw,1.5rem)] max-sm:whitespace-nowrap sm:text-2xl lg:text-3xl font-bold text-[#024095] mb-8 uppercase text-center">
         REAL <span class="text-[#07bee8]">PROJECTS.</span> REAL RESULTS.
       </h2>
 
