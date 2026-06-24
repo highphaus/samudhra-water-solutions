@@ -55,7 +55,8 @@ import Footer from '../components/Footer.astro';
             <label for="enquiry-message" class="block text-[10px] font-black text-[#07bee8] uppercase tracking-widest mb-1.5">Message / Requirement</label>
             <textarea id="enquiry-message" required rows="4" placeholder="Describe your water problems, requirements or query here..." class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg text-sm text-black focus:outline-none focus:ring-2 focus:ring-[#024095]/20 focus:border-[#024095] transition-all resize-none"></textarea>
           </div>
-          <button type="submit" class="w-full inline-flex items-center justify-center min-h-[52px] px-8 py-4 bg-[#024095] text-white font-black text-xs uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
+          <div id="form-feedback" class="hidden text-xs font-bold rounded-lg p-4 transition-all"></div>
+          <button type="submit" id="submit-btn" class="w-full inline-flex items-center justify-center min-h-[52px] px-8 py-4 bg-[#024095] text-white font-black text-xs uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
             SUBMIT ENQUIRY
           </button>
         </form>
@@ -206,24 +207,55 @@ import Footer from '../components/Footer.astro';
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       const form = document.getElementById('enquiry-form');
-      if (!form) return;
+      const feedback = document.getElementById('form-feedback');
+      const submitBtn = document.getElementById('submit-btn');
+      if (!form || !feedback || !submitBtn) return;
 
-      form.addEventListener('submit', (e) => {
+      form.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        // Clear previous feedback
+        feedback.className = 'hidden text-xs font-bold rounded-lg p-4 transition-all';
+        feedback.innerText = '';
+
         const name = document.getElementById('enquiry-name').value;
         const email = document.getElementById('enquiry-email').value;
         const phone = document.getElementById('enquiry-phone').value;
         const message = document.getElementById('enquiry-message').value;
 
-        const subject = encodeURIComponent(`Water Solutions Enquiry - ${name}`);
-        const body = encodeURIComponent(
-          `Name: ${name}\n` +
-          `Email: ${email}\n` +
-          `Phone: ${phone}\n\n` +
-          `Message:\n${message}`
-        );
+        // Set loading state
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'SENDING...';
+        submitBtn.style.opacity = '0.7';
 
-        window.location.href = `mailto:mail@samudhra.co.in?subject=${subject}&body=${body}`;
+        try {
+          const response = await fetch('/api/send-enquiry', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ name, email, phone, message }),
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            feedback.innerText = result.message || 'Enquiry sent successfully!';
+            feedback.className = 'text-xs font-bold rounded-lg p-4 transition-all bg-emerald-50 text-emerald-700 border border-emerald-200';
+            form.reset();
+          } else {
+            feedback.innerText = result.error || 'Failed to send enquiry. Please try again.';
+            feedback.className = 'text-xs font-bold rounded-lg p-4 transition-all bg-rose-50 text-rose-700 border border-rose-200';
+          }
+        } catch (error) {
+          console.error('Enquiry submission error:', error);
+          feedback.innerText = 'An error occurred while sending your enquiry. Please check your connection and try again.';
+          feedback.className = 'text-xs font-bold rounded-lg p-4 transition-all bg-rose-50 text-rose-700 border border-rose-200';
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = 'SUBMIT ENQUIRY';
+          submitBtn.style.opacity = '1';
+        }
       });
     });
   </script>
