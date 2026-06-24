@@ -47,7 +47,16 @@ const { title } = Astro.props;
   </head>
   <body class="bg-[#FAF9F6] text-black font-['Plus_Jakarta_Sans',sans-serif] antialiased">
     <!-- Splash Screen / Preloader (Homepage only, once per session) -->
-    <div id="preloader" class="fixed inset-0 z-[9999] bg-[#FAF9F6] flex items-center justify-center transition-all duration-1000 ease-in-out" style="display:none;">
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-[#FAF9F6] flex items-center justify-center transition-all duration-1000 ease-in-out">
+      <script is:inline>
+        (function() {
+          const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
+          const hasSeenSplash = sessionStorage.getItem('splashShown');
+          if (!isHome || hasSeenSplash) {
+            document.getElementById('preloader').style.display = 'none';
+          }
+        })();
+      </script>
       <div class="flex flex-col items-center" style="animation: fadeUpIn 1s ease-out forwards;">
         
         <div class="mb-10" style="animation: slowZoom 3.5s ease-out forwards;">
@@ -156,13 +165,24 @@ const { title } = Astro.props;
         const preloader = document.getElementById('preloader');
         if (!preloader) return;
 
-        // Only show on the homepage
         const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
-        // Only show once per session
         const hasSeenSplash = sessionStorage.getItem('splashShown');
 
+        function showPopupWithDelay() {
+          const hasSeenPopup = sessionStorage.getItem('callPopupShown');
+          if (!hasSeenPopup) {
+            setTimeout(() => {
+              const popup = document.getElementById('call-popup');
+              if (popup) {
+                popup.style.removeProperty('display');
+                popup.style.display = 'flex';
+                sessionStorage.setItem('callPopupShown', 'true');
+              }
+            }, 12000); // 12 seconds delay after preloader is removed
+          }
+        }
+
         if (isHome && !hasSeenSplash) {
-          preloader.style.display = 'flex';
           sessionStorage.setItem('splashShown', 'true');
 
           window.addEventListener('load', () => {
@@ -172,25 +192,13 @@ const { title } = Astro.props;
               preloader.style.transform = 'scale(1.05)';
               setTimeout(() => {
                 preloader.remove();
+                showPopupWithDelay();
               }, 1000);
             }, 2500);
           });
         } else {
           preloader.remove();
-        }
-
-        // Show call popup after delay (once per session)
-        const hasSeenPopup = sessionStorage.getItem('callPopupShown');
-        if (!hasSeenPopup) {
-          const delayMs = isHome ? 5500 : 4000; // after splash on home, sooner on other pages
-          setTimeout(() => {
-            const popup = document.getElementById('call-popup');
-            if (popup) {
-              popup.style.removeProperty('display');
-              popup.style.display = 'flex';
-              sessionStorage.setItem('callPopupShown', 'true');
-            }
-          }, delayMs);
+          showPopupWithDelay();
         }
       })();
     </script>
