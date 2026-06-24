@@ -55,22 +55,18 @@ const services = [
   },
   {
     num: "07",
-    title: "100,000 LPH RO Plant",
-    description: "<p>A 100,000 LPH RO plant is a high-capacity reverse osmosis system designed for large-scale water treatment applications. It is capable of producing high-purity water for municipal, industrial, agricultural, and commercial uses.</p>",
-    scope: "<p>This type of RO plant is typically used in industrial, municipal, and large-scale commercial applications.</p>",
+    title: "100,000 LPH & 250 LPH RO Plants",
+    description: "<p>Reverse Osmosis (RO) plants are high-efficiency water purification systems designed for various scales of commercial, industrial, and institutional needs. From high-capacity 100,000 LPH plants tailored for large factories and hospitals, to versatile 250 LPH systems suitable for offices and schools, we engineer systems that reduce heavy TDS, remove pathogens, and ensure premium water quality.</p>",
+    scope: "<p><strong>High-Capacity Industrial RO:</strong> Heavy-duty systems up to 100,000 LPH for large factories, municipalities, and medical facilities requiring continuous high-purity water.</p><p><strong>Commercial & Institutional RO:</strong> Mid-sized solutions (including 250 LPH plants) designed for offices, restaurants, and apartments for safe drinking water and scaling protection.</p>",
     image: "/images/products/100000 LPH RO plant.jpg",
+    images: [
+      "/images/products/100000 LPH RO plant.jpg",
+      "/images/products/100LPH-10000LPH RO Plant.jpg"
+    ],
     categories: ["commercial", "industrial", "salty-water", "hard-water", "iron-water"]
   },
   {
     num: "08",
-    title: "250 LPH RO Plant",
-    description: "<p>A 250 LPH RO plant is a versatile water purification solution designed for small to medium-scale commercial, industrial, and institutional applications. It provides high-quality water for drinking, industrial processes, and other uses by removing contaminants, salts, and impurities.</p>",
-    scope: "<p>This plant is commonly used for commercial, small industrial, and institutional purposes where a moderate amount of clean water is required daily.</p>",
-    image: "/images/products/100LPH-10000LPH RO Plant.jpg",
-    categories: ["commercial", "industrial", "salty-water", "hard-water", "iron-water"]
-  },
-  {
-    num: "09",
     title: "MultiBrand Water Purifier Servicing",
     description: "<p>MultiBrand water purifier servicing refers to maintenance, repair, and service offerings for water purifiers of various brands by a single service provider. This type of service is particularly useful for users who have water purifiers from different brands or those seeking a convenient, one-stop solution for maintenance and repairs.</p>",
     scope: "<p>This type of service helps extend the life of your water purifier, ensuring it provides clean, safe drinking water reliably across various brand models.</p>",
@@ -78,7 +74,7 @@ const services = [
     categories: ["residential", "hard-water", "iron-water"]
   },
   {
-    num: "10",
+    num: "09",
     title: "Water Tank Cleaning",
     description: "<p>A clean water tank ensures efficient water flow throughout the plumbing system and prevents clogging of filters and other components. Regular water tank cleaning is a proactive measure that ensures safe, clean, and healthy water for your household, while also protecting your water storage system from damage.</p>",
     scope: "<p><strong>Residential Households:</strong> Regular tank cleaning ensures families have access to safe, hygienic drinking and utility water.</p><p><strong>Commercial & Industrial Facilities:</strong> Offices, factories, and institutions rely on clean storage tanks to maintain water quality standards.</p><p><strong>Hospitals & Healthcare:</strong> Clean water tanks are critical in healthcare settings to prevent waterborne diseases.</p><p><strong>Hotels & Hospitality:</strong> Ensuring spotless water storage tanks preserves guest safety and establishment reputation.</p>",
@@ -104,10 +100,21 @@ const services = [
     </div>
   </section>
 
+  <style is:global>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none !important;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none !important;
+      scrollbar-width: none !important;
+    }
+  </style>
+
+
   <!-- FILTER TABS -->
   <section class="bg-[#FAF9F6] pt-8 pb-4 relative z-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="flex flex-wrap items-center justify-center gap-2 bg-white/50 backdrop-blur-xs p-2 rounded-2xl border border-slate-200/60 shadow-xs">
+      <div class="flex flex-nowrap items-center justify-start md:justify-center gap-2 bg-white/50 backdrop-blur-xs p-2 rounded-2xl border border-slate-200/60 shadow-xs overflow-x-auto whitespace-nowrap no-scrollbar" style="scrollbar-width: none; -ms-overflow-style: none;">
         <button data-filter="all" class="filter-tab-btn px-4 py-2 text-[10px] sm:text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-300 bg-[#024095] text-white shadow-xs">All Services</button>
         <button data-filter="residential" class="filter-tab-btn px-4 py-2 text-[10px] sm:text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-300 text-slate-500 hover:text-[#024095] hover:bg-slate-100/80">Residential</button>
         <button data-filter="commercial" class="filter-tab-btn px-4 py-2 text-[10px] sm:text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-300 text-slate-500 hover:text-[#024095] hover:bg-slate-100/80">Commercial</button>
@@ -125,9 +132,20 @@ const services = [
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       {services.map((item) => (
         <div class="service-card group border border-slate-200/60 rounded-xl overflow-hidden bg-white hover:shadow-xl flex flex-col md:flex-row mb-6 sm:mb-8"
+             id={item.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
              data-categories={item.categories.join(',')}
              style="transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); opacity: 1; transform: scale(1);">
-          {item.image && (
+          {item.images ? (
+            <div class="md:w-2/5 overflow-hidden bg-[#F9F9FB] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-200/60 p-4 sm:p-6 relative group/slideshow" style="min-height:220px">
+              <div class="relative w-full h-full min-h-[180px] xs:min-h-[220px] flex items-center justify-center overflow-hidden rounded shadow-sm">
+                {item.images.map((img, idx) => (
+                  <img src={img} alt={`${item.title} - Image ${idx + 1}`} loading="lazy"
+                       class={`slideshow-img absolute inset-0 w-full h-full object-contain transition-opacity duration-1000 ease-in-out ${idx === 0 ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+                       style="max-height:260px" />
+                ))}
+              </div>
+            </div>
+          ) : item.image && (
             <div class="md:w-2/5 overflow-hidden bg-[#F9F9FB] flex items-center justify-center border-b md:border-b-0 md:border-r border-slate-200/60 p-4 sm:p-6" style="min-height:200px">
               <img src={item.image} alt={item.title} loading="lazy"
                    class="w-full h-auto object-contain rounded shadow-sm group-hover:scale-[1.02] transition-transform duration-500"
@@ -221,6 +239,31 @@ const services = [
       const urlParams = new URLSearchParams(window.location.search);
       const initialFilter = urlParams.get('filter') || 'all';
       filterServices(initialFilter);
+
+      // Slideshow auto loop logic for multi-image cards
+      const slideshows = document.querySelectorAll('.group\\/slideshow');
+      slideshows.forEach(slideshow => {
+        const imgs = slideshow.querySelectorAll('.slideshow-img');
+        if (imgs.length <= 1) return;
+        let currentIdx = 0;
+        setInterval(() => {
+          imgs[currentIdx].classList.remove('opacity-100', 'z-10');
+          imgs[currentIdx].classList.add('opacity-0', 'z-0');
+          currentIdx = (currentIdx + 1) % imgs.length;
+          imgs[currentIdx].classList.remove('opacity-0', 'z-0');
+          imgs[currentIdx].classList.add('opacity-100', 'z-10');
+        }, 3000);
+      });
+
+      // Scroll to hash if present after initial filter animation
+      if (window.location.hash) {
+        setTimeout(() => {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }, 500);
+      }
     });
   </script>
   <Footer />

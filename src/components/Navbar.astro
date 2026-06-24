@@ -17,12 +17,12 @@ const navigationLinks = [
 ---
 
 <nav id="navbar" aria-label="Main navigation" data-theme={theme}
-     class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-3 border-b border-black/0">
+     class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-2 border-b border-black/0">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
 
     <!-- Brand Logo -->
     <a href="/" class="flex items-center min-h-[48px]" aria-label="Samudhra Water Solutions – Home">
-      <img src="/images/company logo/SAMUDHRA WATER SOLUTIONS LOGO PNG.png" alt="Samudhra Water Solutions Logo" class="h-14 sm:h-16 w-auto object-contain" />
+      <img src="/images/company logo/SAMUDHRA WATER SOLUTIONS LOGO PNG.png" alt="Samudhra Water Solutions Logo" class="h-20 sm:h-24 w-auto object-contain" />
     </a>
 
     <!-- Desktop Nav Links -->
@@ -110,11 +110,11 @@ const navigationLinks = [
   /* ── Scroll: sticky background ── */
   function onScroll() {
     if (window.scrollY > 20) {
-      navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'border-slate-200/60', 'shadow-sm', 'scrolled');
-      navbar.classList.remove('bg-transparent', 'border-black/0');
+      navbar.classList.add('bg-white/95', 'backdrop-blur-md', 'border-slate-200/60', 'shadow-sm', 'scrolled', 'py-1');
+      navbar.classList.remove('bg-transparent', 'border-black/0', 'py-2');
     } else {
-      navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'border-slate-200/60', 'shadow-sm', 'scrolled');
-      navbar.classList.add('bg-transparent', 'border-black/0');
+      navbar.classList.remove('bg-white/95', 'backdrop-blur-md', 'border-slate-200/60', 'shadow-sm', 'scrolled', 'py-1');
+      navbar.classList.add('bg-transparent', 'border-black/0', 'py-2');
     }
   }
   window.addEventListener('scroll', onScroll, { passive: true });

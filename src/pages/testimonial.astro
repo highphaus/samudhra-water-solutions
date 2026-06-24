@@ -101,7 +101,7 @@ for (let i = 1; i <= 60; i++) {
       <h1 class="text-[clamp(1.1rem,5.5vw,3rem)] max-sm:whitespace-nowrap sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#024095] leading-none uppercase">Client Testimonials &amp; Case Logs.</h1>
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mt-4">
         <p class="text-sm text-black font-light max-w-xl leading-relaxed">Review real operational logs and performance validation records from our cross-brand installation client network across Kerala. Rated <strong>4.9 / 5</strong> on Google.</p>
-        <a href="https://www.google.com/maps/search/?api=1&query=Samudhra+Water+Solutions+Poojappura+Thiruvananthapuram" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 justify-center min-h-[48px] px-6 py-3 bg-[#024095] text-white hover:bg-[#07bee8] transition-colors text-xs font-black uppercase tracking-[0.2em] rounded-md shadow-md whitespace-nowrap self-start md:self-auto">
+        <button id="btn-write-review" class="trigger-reviews-tab hover:cursor-pointer inline-flex items-center gap-2 justify-center min-h-[48px] px-6 py-3 bg-[#024095] text-white hover:bg-[#07bee8] transition-colors text-xs font-black uppercase tracking-[0.2em] rounded-md shadow-md whitespace-nowrap self-start md:self-auto">
           <!-- Google G icon -->
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#fff"/>
@@ -110,13 +110,13 @@ for (let i = 1; i <= 60; i++) {
             <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#fff"/>
           </svg>
           Write a Google Review
-        </a>
+        </button>
       </div>
     </div>
   </section>
 
   <!-- GOOGLE RATING BADGE -->
-  <section class="bg-[#024095] text-white py-8 sm:py-10">
+  <section id="rating-badge-trigger" class="trigger-reviews-tab hover:cursor-pointer hover:bg-[#024095]/95 transition-colors bg-[#024095] text-white py-8 sm:py-10">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center gap-6 sm:gap-10">
       <div class="flex items-center gap-4">
         <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center shadow-md">
@@ -144,14 +144,14 @@ for (let i = 1; i <= 60; i++) {
     <div class="inline-flex p-1.5 bg-blue-50/80 backdrop-blur-sm rounded-full border border-blue-100 shadow-sm">
       <button 
         id="tab-reviews"
-        class="px-6 py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 flex items-center gap-2 bg-[#024095] text-white shadow-sm"
+        class="px-6 py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 flex items-center gap-2 text-[#024095] hover:text-[#07bee8] bg-transparent"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
         Customer Reviews
       </button>
       <button 
         id="tab-logos"
-        class="px-6 py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 flex items-center gap-2 text-[#024095] hover:text-[#07bee8] bg-transparent"
+        class="px-6 py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 flex items-center gap-2 bg-[#024095] text-white shadow-sm"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
         Trusted Clients ({clientLogos.length})
@@ -160,7 +160,7 @@ for (let i = 1; i <= 60; i++) {
   </div>
 
   <!-- REVIEWS GRID PANEL -->
-  <section id="reviews-section" class="bg-[#FAF9F6] text-slate-900 py-14 sm:py-20">
+  <section id="reviews-section" class="hidden bg-[#FAF9F6] text-slate-900 py-14 sm:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {reviews.map((rev) => (
@@ -213,7 +213,7 @@ for (let i = 1; i <= 60; i++) {
   </section>
 
   <!-- LOGOS GRID PANEL -->
-  <section id="logos-section" class="hidden bg-[#FAF9F6] text-slate-900 py-14 sm:py-20 border-t border-slate-200/60">
+  <section id="logos-section" class="bg-[#FAF9F6] text-slate-900 py-14 sm:py-20 border-t border-slate-200/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
         <h2 class="text-[clamp(1rem,4.5vw,1.75rem)] sm:text-2xl md:text-3xl font-black text-[#024095] uppercase relative inline-block pb-3">
@@ -272,6 +272,25 @@ for (let i = 1; i <= 60; i++) {
         reviewsSection.classList.add('hidden');
         logosSection.classList.remove('hidden');
       });
+
+      // Bind click triggers for Write Review / rating badge to switch to Customer Reviews tab
+      const reviewsTriggers = document.querySelectorAll('.trigger-reviews-tab');
+      reviewsTriggers.forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          tabReviews.click();
+          reviewsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      // Check URL query parameter for active tab initialization (default is logos first)
+      const urlParams = new URLSearchParams(window.location.search);
+      const tabParam = urlParams.get('tab');
+      if (tabParam === 'reviews') {
+        tabReviews.click();
+      } else {
+        tabLogos.click();
+      }
     }
   </script>
 
