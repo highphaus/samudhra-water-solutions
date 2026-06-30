@@ -140,7 +140,7 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
 
     <!-- Animated logo slots (No white cards, vertical upward rotation) -->
     <div class="flex items-center justify-center gap-6 sm:gap-10 md:gap-14 max-w-7xl mx-auto px-4 py-4">
-      {[...Array(7)].map((_, i) => {
+      {[...Array(6)].map((_, i) => {
         const initialImgNum = i + 1;
         let ext = 'png';
         if (initialImgNum === 5 || initialImgNum === 38) {
@@ -153,9 +153,7 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
         const initialImg = `/images/client/client%20image${initialImgNum}.${ext}`;
         
         let visibilityClass = "flex";
-        if (i >= 5) {
-          visibilityClass = "hidden md:flex";
-        } else if (i >= 3) {
+        if (i >= 3) {
           visibilityClass = "hidden sm:flex";
         }
 
@@ -1686,11 +1684,28 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
       clientImages.push(`/images/client/client%20image${i}.${ext}`);
     }
 
-    let nextImageIndex = 8;
+    let nextImageIndex = 6;
     let activeSlotIndex = 0;
 
     function rotateSlot() {
-      const strip = document.querySelector(`.logo-strip[data-slot-index="${activeSlotIndex}"]`);
+      let attempts = 0;
+      let strip = null;
+      while (attempts < 6) {
+        const checkIndex = (activeSlotIndex + attempts) % 6;
+        const candidate = document.querySelector(`.logo-strip[data-slot-index="${checkIndex}"]`);
+        if (candidate && candidate.offsetParent !== null) {
+          strip = candidate;
+          activeSlotIndex = (checkIndex + 1) % 6;
+          break;
+        }
+        attempts++;
+      }
+
+      if (!strip) {
+        strip = document.querySelector(`.logo-strip[data-slot-index="${activeSlotIndex}"]`);
+        activeSlotIndex = (activeSlotIndex + 1) % 6;
+      }
+
       if (!strip) return;
 
       const nextImgElement = strip.querySelector('.next-img');
@@ -1713,7 +1728,6 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
       }, 600);
 
       nextImageIndex = (nextImageIndex + 1) % clientImages.length;
-      activeSlotIndex = (activeSlotIndex + 1) % 7;
     }
 
     function initLogoSlots() {
