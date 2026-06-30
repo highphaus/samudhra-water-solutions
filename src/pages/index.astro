@@ -1715,19 +1715,35 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
       const nextSrc = clientImages[nextImageIndex];
       nextImgElement.src = nextSrc;
 
-      strip.style.transform = 'translateY(-50%)';
+      function triggerSlide() {
+        nextImgElement.onload = null;
+        nextImgElement.onerror = null;
 
-      setTimeout(() => {
-        activeImgElement.src = nextSrc;
-        strip.style.transition = 'none';
-        strip.style.transform = 'translateY(0)';
-        
-        strip.offsetHeight; // force repaint
-        
-        strip.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-      }, 600);
+        strip.style.transform = 'translateY(-50%)';
 
-      nextImageIndex = (nextImageIndex + 1) % clientImages.length;
+        setTimeout(() => {
+          activeImgElement.src = nextSrc;
+          strip.style.transition = 'none';
+          strip.style.transform = 'translateY(0)';
+          
+          strip.offsetHeight; // force repaint
+          
+          setTimeout(() => {
+            if (strip) {
+              strip.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            }
+          }, 50);
+        }, 650);
+
+        nextImageIndex = (nextImageIndex + 1) % clientImages.length;
+      }
+
+      if (nextImgElement.complete) {
+        triggerSlide();
+      } else {
+        nextImgElement.onload = triggerSlide;
+        nextImgElement.onerror = triggerSlide;
+      }
     }
 
     function initLogoSlots() {
