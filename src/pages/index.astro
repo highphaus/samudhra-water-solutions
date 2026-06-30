@@ -1588,12 +1588,41 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
 
             isTransitioning = true;
             container.style.scrollSnapType = 'none';
+
+            // Premium ease slide-scale-fade transitions
+            const secondItem = firstItem.nextElementSibling;
+            firstItem.style.transition = 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+            firstItem.style.opacity = '0';
+            firstItem.style.transform = 'scale(0.92) translateY(4px)';
+
+            if (secondItem) {
+              secondItem.style.transition = 'none';
+              secondItem.style.opacity = '0.5';
+              secondItem.style.transform = 'scale(0.96)';
+              secondItem.offsetHeight; // force repaint
+              secondItem.style.transition = 'opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)';
+              secondItem.style.opacity = '1';
+              secondItem.style.transform = 'scale(1)';
+            }
+
             container.style.scrollBehavior = 'smooth';
             container.scrollLeft = itemWidth;
 
             setTimeout(() => {
               // FIFO Ring scroll: move first child to end
               container.appendChild(firstItem);
+
+              // Restore styling states instantly
+              firstItem.style.transition = 'none';
+              firstItem.style.opacity = '1';
+              firstItem.style.transform = 'none';
+
+              if (secondItem) {
+                secondItem.style.transition = 'none';
+                secondItem.style.opacity = '1';
+                secondItem.style.transform = 'none';
+              }
+
               container.style.scrollBehavior = 'auto';
               container.scrollLeft = 0;
               container.style.scrollSnapType = '';
