@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://samudhra.co.in/sitemap-index.xml
