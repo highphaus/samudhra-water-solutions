@@ -48,6 +48,19 @@ const treatments = [
   { name: "Tank Cleaning", before: "/images/new_home/water tank cleaning before.png", after: "/images/new_home/water tank cleaning after.png" },
   { name: "Waste Water Treatment", before: "/images/new_home/waste water before.png", after: "/images/new_home/waste water after.png" }
 ];
+
+const clientLogos = Array.from({ length: 24 }, (_, idx) => {
+  const i = idx + 1;
+  let ext = 'png';
+  if (i === 5 || i === 38) {
+    ext = 'webp';
+  } else if (i === 6) {
+    ext = 'svg';
+  } else if (i === 43) {
+    ext = 'jpg';
+  }
+  return `/images/client/client%20image${i}.${ext}`;
+});
 ---
 
 <Layout title="Samudhra Water Solutions | Kerala's Trusted Partner">
@@ -125,42 +138,31 @@ const treatments = [
       </h2>
     </div>
 
-    <!-- Animated logo slots -->
-    <div class="flex items-center justify-center gap-6 sm:gap-10 md:gap-14 max-w-7xl mx-auto px-4">
-      {/* Generate 7 slots */}
-      {[...Array(7)].map((_, i) => {
-        // Initial image for this slot
-        const initialImgNum = i + 1;
-                let ext = 'png';
-        if (initialImgNum === 5 || initialImgNum === 38) {
-          ext = 'webp';
-        } else if (initialImgNum === 6) {
-          ext = 'svg';
-        } else if (initialImgNum === 43) {
-          ext = 'jpg';
-        }
-        const initialImg = `/images/client/client%20image${initialImgNum}.${ext}`;
-        
-        let visibilityClass = "flex";
-        if (i >= 5) {
-          visibilityClass = "hidden md:flex";
-        } else if (i >= 4) {
-          visibilityClass = "hidden sm:flex";
-        }
+    <!-- Infinite Scroll Wrapper -->
+    <div class="relative w-full overflow-hidden py-4 flex items-center">
+      <!-- Gradient masks on sides for premium look -->
+      <div class="absolute left-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-r from-[#eff6ff] to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-8 sm:w-16 bg-gradient-to-l from-[#eff6ff] to-transparent z-10 pointer-events-none"></div>
 
-        return (
-          <div class={`logo-slot overflow-hidden h-14 sm:h-16 w-28 sm:w-36 flex-shrink-0 relative ${visibilityClass}`}>
-            <div class="logo-strip flex flex-col absolute w-full top-0 left-0" data-slot-index={i}>
-              <div class="logo-item h-14 sm:h-16 w-full flex items-center justify-center flex-shrink-0">
-                <img src={initialImg} alt="Client Logo" class="max-h-full max-w-full object-contain active-img" />
-              </div>
-              <div class="logo-item h-14 sm:h-16 w-full flex items-center justify-center flex-shrink-0">
-                <img src="" alt="Client Logo" class="max-h-full max-w-full object-contain next-img" />
-              </div>
+      <!-- Moving strip -->
+      <div class="logo-marquee flex select-none cursor-default w-full overflow-hidden">
+        <!-- Logo track 1 -->
+        <div class="flex gap-4 sm:gap-8 items-center flex-shrink-0 pr-4 sm:pr-8 logo-marquee-track">
+          {clientLogos.map((src, idx) => (
+            <div class="h-10 sm:h-12 w-[calc((100vw-48px)/4)] sm:w-28 md:w-32 flex-shrink-0 flex items-center justify-center bg-white/40 rounded-lg p-2 border border-slate-200/40">
+              <img src={src} alt={`Client Logo ${idx}`} class="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" loading="lazy" />
             </div>
-          </div>
-        );
-      })}
+          ))}
+        </div>
+        <!-- Logo track 2 (duplicate) -->
+        <div class="flex gap-4 sm:gap-8 items-center flex-shrink-0 pr-4 sm:pr-8 logo-marquee-track" aria-hidden="true">
+          {clientLogos.map((src, idx) => (
+            <div class="h-10 sm:h-12 w-[calc((100vw-48px)/4)] sm:w-28 md:w-32 flex-shrink-0 flex items-center justify-center bg-white/40 rounded-lg p-2 border border-slate-200/40">
+              <img src={src} alt="" class="max-h-full max-w-full object-contain grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300" loading="lazy" />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
 
     <div class="mt-8 text-center">
@@ -171,22 +173,6 @@ const treatments = [
   </section>
 
   <style is:global>
-    .logo-slot {
-      position: relative;
-    }
-    .logo-strip {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      height: 200%;
-    }
-    .logo-item {
-      width: 100%;
-      height: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
     .no-snap {
       scroll-snap-type: none !important;
       scroll-behavior: auto !important;
@@ -202,59 +188,19 @@ const treatments = [
     .project-slider:hover .slider-animate {
       animation-play-state: paused;
     }
+
+    /* Logo Marquee Styles */
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    .logo-marquee-track {
+      animation: marquee 25s linear infinite;
+    }
+    .logo-marquee:hover .logo-marquee-track {
+      animation-play-state: paused;
+    }
   </style>
-
-  <script>
-        // Build list of all 60 client images dynamically
-    const clientImages = [];
-    for (let i = 1; i <= 60; i++) {
-      let ext = 'png';
-      if (i === 5 || i === 38) {
-        ext = 'webp';
-      } else if (i === 6) {
-        ext = 'svg';
-      } else if (i === 43) {
-        ext = 'jpg';
-      }
-      clientImages.push(`/images/client/client%20image${i}.${ext}`);
-    }
-
-    let nextImageIndex = 7;
-    let activeSlotIndex = 0;
-
-    function rotateSlot() {
-      const strip = document.querySelector(`.logo-strip[data-slot-index="${activeSlotIndex}"]`);
-      if (!strip) return;
-
-      const nextImgElement = strip.querySelector('.next-img');
-      const activeImgElement = strip.querySelector('.active-img');
-      if (!nextImgElement || !activeImgElement) return;
-
-      const nextSrc = clientImages[nextImageIndex];
-      nextImgElement.src = nextSrc;
-
-      strip.style.transform = 'translateY(-50%)';
-
-      setTimeout(() => {
-        activeImgElement.src = nextSrc;
-        strip.style.transition = 'none';
-        strip.style.transform = 'translateY(0)';
-        
-        strip.offsetHeight; 
-        
-        strip.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-      }, 600);
-
-      nextImageIndex = (nextImageIndex + 1) % clientImages.length;
-      activeSlotIndex = (activeSlotIndex + 1) % 7;
-    }
-
-    document.querySelectorAll('.logo-strip').forEach(el => {
-      el.style.transition = 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-    });
-
-    setInterval(rotateSlot, 2500);
-    </script>
 
 
 
