@@ -156,6 +156,13 @@ for (let i = 1; i <= 60; i++) {
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
         Trusted Clients ({clientLogos.length})
       </button>
+      <button 
+        id="tab-videos"
+        class="px-6 py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider transition-all duration-300 flex items-center gap-2 bg-transparent text-[#024095] hover:text-[#07bee8]"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+        Video Reviews
+      </button>
     </div>
   </div>
 
@@ -240,13 +247,68 @@ for (let i = 1; i <= 60; i++) {
     </div>
   </section>
 
+  <!-- VIDEOS GRID PANEL -->
+  <section id="videos-section" class="hidden bg-[#FAF9F6] text-slate-900 py-14 sm:py-20 border-t border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-[clamp(1rem,4.5vw,1.75rem)] sm:text-2xl md:text-3xl font-black text-[#024095] uppercase relative inline-block pb-3">
+          Video Testimonials &amp; Reviews
+          <span class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-[3px] bg-gradient-to-r from-[#07bee8] to-[#024095] rounded-full"></span>
+        </h2>
+        <p class="text-sm text-black font-light leading-relaxed max-w-xl mx-auto mt-4">
+          Watch real customer video reviews and installation walkthroughs demonstrating our treatment systems across Kerala.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-center max-w-4xl mx-auto">
+        <!-- Video 1 -->
+        <div class="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center">
+          <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden border border-slate-200/80 shadow-md bg-black">
+            <iframe 
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/NaS81NLs_4w" 
+              title="Samudhra Water Solutions Video Review 1" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="text-center mt-4">
+            <p class="text-xs font-black text-[#024095] uppercase tracking-wide">Client Review — Iron Removal Plant</p>
+            <p class="text-[10px] text-slate-500 font-bold uppercase mt-1">Verified Installation</p>
+          </div>
+        </div>
+
+        <!-- Video 2 -->
+        <div class="bg-white p-4 rounded-3xl border border-slate-100 shadow-sm flex flex-col items-center">
+          <div class="relative w-full aspect-[9/16] rounded-2xl overflow-hidden border border-slate-200/80 shadow-md bg-black">
+            <iframe 
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/itPpt6hUtP0" 
+              title="Samudhra Water Solutions Video Review 2" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="text-center mt-4">
+            <p class="text-xs font-black text-[#024095] uppercase tracking-wide">Client Review — Domestic RO Filter</p>
+            <p class="text-[10px] text-slate-500 font-bold uppercase mt-1">Verified Installation</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script>
     const tabReviews = document.getElementById('tab-reviews');
     const tabLogos = document.getElementById('tab-logos');
+    const tabVideos = document.getElementById('tab-videos');
     const reviewsSection = document.getElementById('reviews-section');
     const logosSection = document.getElementById('logos-section');
+    const videosSection = document.getElementById('videos-section');
 
-    if (tabReviews && tabLogos && reviewsSection && logosSection) {
+    if (tabReviews && tabLogos && tabVideos && reviewsSection && logosSection && videosSection) {
       tabReviews.addEventListener('click', () => {
         // Toggle button styles
         tabReviews.classList.add('bg-[#024095]', 'text-white', 'shadow-sm');
@@ -255,9 +317,13 @@ for (let i = 1; i <= 60; i++) {
         tabLogos.classList.remove('bg-[#024095]', 'text-white', 'shadow-sm');
         tabLogos.classList.add('text-[#024095]', 'hover:text-[#07bee8]', 'bg-transparent');
 
+        tabVideos.classList.remove('bg-[#024095]', 'text-white', 'shadow-sm');
+        tabVideos.classList.add('text-[#024095]', 'hover:text-[#07bee8]', 'bg-transparent');
+
         // Toggle content visibility
         reviewsSection.classList.remove('hidden');
         logosSection.classList.add('hidden');
+        videosSection.classList.add('hidden');
       });
 
       tabLogos.addEventListener('click', () => {
@@ -268,9 +334,30 @@ for (let i = 1; i <= 60; i++) {
         tabReviews.classList.remove('bg-[#024095]', 'text-white', 'shadow-sm');
         tabReviews.classList.add('text-[#024095]', 'hover:text-[#07bee8]', 'bg-transparent');
 
+        tabVideos.classList.remove('bg-[#024095]', 'text-white', 'shadow-sm');
+        tabVideos.classList.add('text-[#024095]', 'hover:text-[#07bee8]', 'bg-transparent');
+
         // Toggle content visibility
         reviewsSection.classList.add('hidden');
         logosSection.classList.remove('hidden');
+        videosSection.classList.add('hidden');
+      });
+
+      tabVideos.addEventListener('click', () => {
+        // Toggle button styles
+        tabVideos.classList.add('bg-[#024095]', 'text-white', 'shadow-sm');
+        tabVideos.classList.remove('text-[#024095]', 'hover:text-[#07bee8]', 'bg-transparent');
+
+        tabReviews.classList.remove('bg-[#024095]', 'text-white', 'shadow-sm');
+        tabReviews.classList.add('text-[#024095]', 'hover:text-[#07bee8]', 'bg-transparent');
+
+        tabLogos.classList.remove('bg-[#024095]', 'text-white', 'shadow-sm');
+        tabLogos.classList.add('text-[#024095]', 'hover:text-[#07bee8]', 'bg-transparent');
+
+        // Toggle content visibility
+        reviewsSection.classList.add('hidden');
+        logosSection.classList.add('hidden');
+        videosSection.classList.remove('hidden');
       });
 
       // Bind click triggers for Write Review / rating badge to switch to Customer Reviews tab
@@ -288,6 +375,13 @@ for (let i = 1; i <= 60; i++) {
       const tabParam = urlParams.get('tab');
       if (tabParam === 'reviews') {
         tabReviews.click();
+      } else if (tabParam === 'videos') {
+        tabVideos.click();
+        if (window.location.hash === '#videos-section') {
+          setTimeout(() => {
+            videosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+        }
       } else {
         tabLogos.click();
       }
