@@ -52,7 +52,7 @@ const treatments = [
 const clientLogos = Array.from({ length: 24 }, (_, idx) => {
   const i = idx + 1;
   let ext = 'png';
-  if (i === 5 || i === 38) {
+  if (i === 38) {
     ext = 'webp';
   } else if (i === 6) {
     ext = 'svg';
@@ -143,7 +143,7 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
       {[...Array(6)].map((_, i) => {
         const initialImgNum = i + 1;
         let ext = 'png';
-        if (initialImgNum === 5 || initialImgNum === 38) {
+        if (initialImgNum === 38) {
           ext = 'webp';
         } else if (initialImgNum === 6) {
           ext = 'svg';
@@ -1703,7 +1703,7 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
     const clientImages = [];
     for (let i = 1; i <= 60; i++) {
       let ext = 'png';
-      if (i === 5 || i === 38) {
+      if (i === 38) {
         ext = 'webp';
       } else if (i === 6) {
         ext = 'svg';
