@@ -42,9 +42,86 @@ const { title } = Astro.props;
         width: 100%;
         max-width: 100%;
       }
+      @keyframes fadeUpIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes loadingLine {
+        0% { left: -100%; }
+        100% { left: 100%; }
+      }
+      @keyframes slowZoom {
+        from { transform: scale(0.95); }
+        to { transform: scale(1.05); }
+      }
+      @keyframes simpleFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fadeUpIn {
+        animation: fadeUpIn 0.8s ease-out forwards;
+      }
+      .animate-loadingLine {
+        animation: loadingLine 1.2s ease-in-out infinite;
+      }
+      .animate-slowZoom {
+        animation: slowZoom 2.5s ease-out forwards;
+      }
+      .animate-simpleFadeIn {
+        animation: simpleFadeIn 0.8s ease-in forwards;
+        animation-delay: 0.4s;
+      }
     </style>
   </head>
   <body class="bg-[#FAF9F6] text-black font-['Plus_Jakarta_Sans',sans-serif] antialiased">
+    <!-- Welcome screen preloader (Homepage only, once per session) -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-[#FAF9F6] flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+      <script is:inline>
+        (function() {
+          const isHome = window.location.pathname === '/' || window.location.pathname === '/index.html';
+          const hasSeenSplash = sessionStorage.getItem('splashShown');
+          if (!isHome || hasSeenSplash) {
+            document.getElementById('preloader').style.display = 'none';
+            document.getElementById('preloader').remove();
+          }
+        })();
+      </script>
+      <div class="flex flex-col items-center animate-fadeUpIn">
+        <div class="mb-8 animate-slowZoom">
+          <img src="/images/samudhra.favicon image.png" alt="Samudhra Water Solutions" class="h-28 sm:h-36 w-auto object-contain" />
+        </div>
+        <div class="w-40 h-[2px] bg-slate-200 relative overflow-hidden rounded-full mb-4">
+          <div class="absolute top-0 bottom-0 w-1/2 bg-[#024095] animate-loadingLine"></div>
+        </div>
+        <div class="text-[9px] sm:text-[10px] font-black uppercase tracking-[0.4em] text-[#024095] animate-simpleFadeIn">
+          Samudhra Water Solutions
+        </div>
+      </div>
+    </div>
+
+    <script is:inline>
+      (function() {
+        const preloader = document.getElementById('preloader');
+        if (preloader && preloader.style.display !== 'none') {
+          sessionStorage.setItem('splashShown', 'true');
+          
+          function hidePreloader() {
+            preloader.style.opacity = '0';
+            preloader.style.visibility = 'hidden';
+            preloader.style.transform = 'scale(1.05)';
+            setTimeout(() => {
+              preloader.remove();
+            }, 800);
+          }
+
+          // Hide immediately when fully loaded
+          window.addEventListener('load', hidePreloader);
+          
+          // Safety timeout fallback (1.5 seconds max)
+          setTimeout(hidePreloader, 1500);
+        }
+      })();
+    </script>
 
     <!-- Call Popup Modal -->
     <div id="call-popup" class="fixed inset-0 z-[9998] flex items-end sm:items-center justify-center p-4 sm:p-6" style="display:none !important;">
