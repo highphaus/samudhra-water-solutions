@@ -16,14 +16,16 @@ export async function POST({ request }) {
     }
 
     // SMTP Configuration
-    const smtpHost = import.meta.env.SMTP_HOST || 'smtp.gmail.com';
-    const smtpPort = parseInt(import.meta.env.SMTP_PORT || '587');
-    const smtpSecure = import.meta.env.SMTP_SECURE === 'true';
-    const smtpUser = import.meta.env.SMTP_USER;
-    const smtpPass = import.meta.env.SMTP_PASS;
+    const smtpHost = import.meta.env.SMTP_HOST || 'smtp.zoho.in';
+    const smtpPort = parseInt(import.meta.env.SMTP_PORT || '465');
+    const smtpSecure = import.meta.env.SMTP_SECURE !== 'false'; // default to true (SSL) for 465
+    const smtpUser = import.meta.env.SMTP_USER || import.meta.env.EMAIL_USER;
+    const smtpPass = import.meta.env.SMTP_PASS || import.meta.env.EMAIL_PASS;
+    const smtpFromEmail = import.meta.env.SMTP_FROM_EMAIL || smtpUser;
+    const smtpToEmail = import.meta.env.SMTP_TO_EMAIL || import.meta.env.CONTACT_RECEIVER_EMAIL || 'mail@samudhra.co.in';
 
     if (!smtpUser || !smtpPass) {
-      console.warn('Nodemailer configuration error: SMTP_USER or SMTP_PASS environment variables are not set.');
+      console.warn('Nodemailer configuration error: SMTP or EMAIL environment variables are not set.');
       return new Response(
         JSON.stringify({ error: 'Email service is not configured' }),
         { status: 500, headers: { 'Content-Type': 'application/json' } }
@@ -41,8 +43,8 @@ export async function POST({ request }) {
     });
 
     const mailOptions = {
-      from: `"${name}" <${import.meta.env.SMTP_FROM_EMAIL || smtpUser}>`,
-      to: import.meta.env.SMTP_TO_EMAIL || 'mail@samudhra.co.in',
+      from: `"${name}" <${smtpFromEmail}>`,
+      to: smtpToEmail,
       replyTo: email,
       subject: `New Water Solutions Enquiry from ${name}`,
       text: `You have received a new enquiry:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`,
