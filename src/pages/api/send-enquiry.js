@@ -32,7 +32,7 @@ export async function POST({ request }) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
+    let transporter = nodemailer.createTransport({
       host: smtpHost,
       port: smtpPort,
       secure: smtpSecure,
@@ -62,7 +62,26 @@ export async function POST({ request }) {
       `,
     };
 
-    await transporter.sendMail(mailOptions);
+    try {
+      await transporter.sendMail(mailOptions);
+    } catch (firstError) {
+      // If we used the default smtp.zoho.in and it failed, retry with smtp.zoho.com
+      if (!import.meta.env.SMTP_HOST && smtpHost === 'smtp.zoho.in') {
+        console.warn('Zoho .in SMTP failed, retrying with Zoho .com SMTP...', firstError.message);
+        transporter = nodemailer.createTransport({
+          host: 'smtp.zoho.com',
+          port: 465,
+          secure: true,
+          auth: {
+            user: smtpUser,
+            pass: smtpPass,
+          },
+        });
+        await transporter.sendMail(mailOptions);
+      } else {
+        throw firstError;
+      }
+    }
 
     return new Response(
       JSON.stringify({ success: true, message: 'Enquiry sent successfully!' }),
