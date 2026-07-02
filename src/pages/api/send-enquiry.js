@@ -15,21 +15,32 @@ export async function POST({ request }) {
       );
     }
 
+    // Helper to sanitize environment variables (removes quotes and leading/trailing spaces)
+    const cleanEnvVar = (val) => {
+      if (!val) return val;
+      let cleaned = val.trim();
+      if ((cleaned.startsWith('"') && cleaned.endsWith('"')) || (cleaned.startsWith("'") && cleaned.endsWith("'"))) {
+        cleaned = cleaned.substring(1, cleaned.length - 1);
+      }
+      return cleaned.trim();
+    };
+
     // SMTP Configuration
-    const smtpHost = import.meta.env.SMTP_HOST || 'smtp.zoho.in';
-    const smtpPort = parseInt(import.meta.env.SMTP_PORT || '465');
-    const smtpSecure = import.meta.env.SMTP_SECURE !== 'false'; // default to true (SSL) for 465
-    const smtpUser = import.meta.env.SMTP_USER || import.meta.env.EMAIL_USER;
-    const smtpPass = import.meta.env.SMTP_PASS || import.meta.env.EMAIL_PASS;
-    const smtpFromEmail = import.meta.env.SMTP_FROM_EMAIL || smtpUser;
-    const smtpToEmail = import.meta.env.SMTP_TO_EMAIL || import.meta.env.CONTACT_RECEIVER_EMAIL || 'mail@samudhra.co.in';
+    const smtpHost = cleanEnvVar(import.meta.env.SMTP_HOST) || 'smtp.zoho.in';
+    const smtpPort = parseInt(cleanEnvVar(import.meta.env.SMTP_PORT) || '465');
+    const smtpSecure = cleanEnvVar(import.meta.env.SMTP_SECURE) !== 'false'; // default to true (SSL) for 465
+    const smtpUser = cleanEnvVar(import.meta.env.SMTP_USER) || cleanEnvVar(import.meta.env.EMAIL_USER);
+    const smtpPass = cleanEnvVar(import.meta.env.SMTP_PASS) || cleanEnvVar(import.meta.env.EMAIL_PASS);
+    const smtpFromEmail = cleanEnvVar(import.meta.env.SMTP_FROM_EMAIL) || smtpUser;
+    const smtpToEmail = cleanEnvVar(import.meta.env.SMTP_TO_EMAIL) || cleanEnvVar(import.meta.env.CONTACT_RECEIVER_EMAIL) || 'mail@samudhra.co.in';
 
     console.log('--- send-enquiry diagnostic ---');
     console.log('SMTP_HOST:', import.meta.env.SMTP_HOST, '-> using host:', smtpHost);
     console.log('SMTP_PORT:', import.meta.env.SMTP_PORT, '-> using port:', smtpPort);
     console.log('SMTP_USER:', import.meta.env.SMTP_USER);
     console.log('EMAIL_USER:', import.meta.env.EMAIL_USER, '-> using user:', smtpUser);
-    console.log('EMAIL_PASS length:', smtpPass ? smtpPass.length : 0);
+    console.log('EMAIL_PASS length (raw):', (import.meta.env.SMTP_PASS || import.meta.env.EMAIL_PASS)?.length);
+    console.log('EMAIL_PASS length (cleaned):', smtpPass ? smtpPass.length : 0);
 
     if (!smtpUser || !smtpPass) {
       console.warn('Nodemailer configuration error: SMTP or EMAIL environment variables are not set.');
