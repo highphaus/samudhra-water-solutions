@@ -24,6 +24,13 @@ export async function POST({ request }) {
     const smtpFromEmail = import.meta.env.SMTP_FROM_EMAIL || smtpUser;
     const smtpToEmail = import.meta.env.SMTP_TO_EMAIL || import.meta.env.CONTACT_RECEIVER_EMAIL || 'mail@samudhra.co.in';
 
+    console.log('--- send-enquiry diagnostic ---');
+    console.log('SMTP_HOST:', import.meta.env.SMTP_HOST, '-> using host:', smtpHost);
+    console.log('SMTP_PORT:', import.meta.env.SMTP_PORT, '-> using port:', smtpPort);
+    console.log('SMTP_USER:', import.meta.env.SMTP_USER);
+    console.log('EMAIL_USER:', import.meta.env.EMAIL_USER, '-> using user:', smtpUser);
+    console.log('EMAIL_PASS length:', smtpPass ? smtpPass.length : 0);
+
     if (!smtpUser || !smtpPass) {
       console.warn('Nodemailer configuration error: SMTP or EMAIL environment variables are not set.');
       return new Response(
@@ -65,11 +72,19 @@ export async function POST({ request }) {
     try {
       await transporter.sendMail(mailOptions);
     } catch (firstError) {
-      // If we used the default smtp.zoho.in and it failed, retry with smtp.zoho.com
-      if (!import.meta.env.SMTP_HOST && smtpHost === 'smtp.zoho.in') {
-        console.warn('Zoho .in SMTP failed, retrying with Zoho .com SMTP...', firstError.message);
+      console.warn(`SMTP transmission failed with host ${smtpHost}: ${firstError.message}`);
+      
+      let fallbackHost = null;
+      if (smtpHost === 'smtp.zoho.in') {
+        fallbackHost = 'smtp.zoho.com';
+      } else if (smtpHost === 'smtp.zoho.com') {
+        fallbackHost = 'smtp.zoho.in';
+      }
+
+      if (fallbackHost) {
+        console.warn(`Retrying email delivery with fallback host ${fallbackHost}...`);
         transporter = nodemailer.createTransport({
-          host: 'smtp.zoho.com',
+          host: fallbackHost,
           port: 465,
           secure: true,
           auth: {
