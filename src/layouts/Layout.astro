@@ -150,34 +150,39 @@ const { title } = Astro.props;
 
     <script>
       (function() {
-        let popupCount = 0;
-
         function showPopup() {
+          // MNC Level: Respect user dismissal across the session
+          if (sessionStorage.getItem('callPopupDismissed') === 'true') {
+            return;
+          }
+
           const popup = document.getElementById('call-popup');
           if (popup && (popup.style.display === 'none' || popup.style.display === '')) {
             popup.style.removeProperty('display');
             popup.style.display = 'flex';
             
-            // Reset inline styles that might have been added by close animation
             popup.style.opacity = '1';
             popup.style.transform = 'translateY(0)';
           }
           
-          popupCount++;
-          
-          if (popupCount === 1) {
-            // Show second popup 40 seconds after the first one (50s mark total, inside first minute)
-            setTimeout(showPopup, 40000);
-          } else if (popupCount === 2) {
-            // After the second popup, switch to a 2-minute interval
-            setInterval(showPopup, 120000);
+          // If this is the first time it shows, schedule a polite follow-up much later
+          if (!sessionStorage.getItem('popupShownOnce')) {
+            sessionStorage.setItem('popupShownOnce', 'true');
+            // Show one more time after 5 minutes (300,000 ms), IF they haven't dismissed it
+            setTimeout(showPopup, 300000); 
           }
         }
 
-        // Show first popup at 10 seconds
-        setTimeout(showPopup, 10000);
+        // MNC Level: Give the user time to read the site before interrupting.
+        // Show first popup at 25 seconds.
+        if (sessionStorage.getItem('callPopupDismissed') !== 'true') {
+          setTimeout(showPopup, 25000);
+        }
 
         window.closeCallPopup = function() {
+          // If the user actively closes the popup, don't show it again this session.
+          sessionStorage.setItem('callPopupDismissed', 'true');
+          
           const popup = document.getElementById('call-popup');
           if (popup) {
             popup.style.opacity = '0';
