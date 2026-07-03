@@ -1438,7 +1438,7 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
   <div class="fixed bottom-24 right-6 sm:bottom-28 sm:right-8 z-50 flex flex-col items-end">
     
     <!-- Chatbot Window -->
-    <div id="chat-window" class="hidden w-[300px] sm:w-[360px] h-[450px] max-h-[calc(100vh-140px)] sm:h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden mb-4 transition-all duration-300">
+    <div id="chat-window" class="hidden w-[300px] sm:w-[360px] h-[450px] max-h-[calc(100vh-200px)] sm:h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden mb-4 transition-all duration-300">
       
       <!-- Chat Header -->
       <div class="bg-gradient-to-r from-[#024095] to-[#011c44] text-white p-4 flex items-center justify-between shadow-md">
@@ -1471,20 +1471,41 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
         </div>
       </div>
 
+
       <!-- Quick Options Wrap -->
-      <div class="px-4 pt-2 pb-1 bg-slate-50 border-t border-slate-100 flex flex-wrap gap-1.5">
-        <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all">
-          Free Water Test
-        </button>
-        <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all">
-          Iron Red Water
-        </button>
-        <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all">
-          Hard Water Scale
-        </button>
-        <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all">
-          Other Query
-        </button>
+      <div class="pt-2 pb-1 bg-slate-50 border-t border-slate-100 overflow-hidden relative">
+        <div class="flex gap-1.5 w-max animate-chatbotScroll px-4">
+          <!-- Group 1 -->
+          <div class="flex gap-1.5 shrink-0">
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Free Water Test
+            </button>
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Iron Red Water
+            </button>
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Hard Water Scale
+            </button>
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Other Query
+            </button>
+          </div>
+          <!-- Group 2 (Duplicate for loop) -->
+          <div class="flex gap-1.5 shrink-0" aria-hidden="true">
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Free Water Test
+            </button>
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Iron Red Water
+            </button>
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Hard Water Scale
+            </button>
+            <button class="quick-chip-btn text-[9px] font-black uppercase tracking-wider text-[#024095] bg-[#024095]/5 hover:bg-[#024095]/15 border border-[#024095]/10 px-2.5 py-1.5 rounded-full transition-all whitespace-nowrap">
+              Other Query
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Chat Input Form -->
@@ -1949,3 +1970,16 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
 
   <Footer />
 </Layout>
+
+<style>
+  @keyframes chatbotScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .animate-chatbotScroll {
+    animation: chatbotScroll 15s linear infinite;
+  }
+  .animate-chatbotScroll:hover {
+    animation-play-state: paused;
+  }
+</style>
