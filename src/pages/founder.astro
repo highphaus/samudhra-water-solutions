@@ -14,7 +14,7 @@ import Footer from '../components/Footer.astro';
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="flex items-center gap-3 mb-5 sm:mb-6">
         <span class="h-[1px] w-10 sm:w-12 bg-[#024095]"></span>
-        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">LEADERSHIP PROFILE / MD STATEMENT</span>
+        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.4em] text-[#07bee8]">Leadership Profile / MD Statement</span>
       </div>
       <h1 class="text-[clamp(1.5rem,6.5vw,3rem)] sm:text-5xl lg:text-7xl font-black tracking-tighter text-[#024095] leading-[1.02] uppercase">
         Engineering <br class="hidden sm:inline" /> Trust By Volume.
@@ -28,58 +28,88 @@ import Footer from '../components/Footer.astro';
   <!-- FOUNDER PROFILE -->
   <section class="bg-[#FAF9F6] text-slate-900 py-12 sm:py-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
 
-        <!-- Profile Card -->
-        <div class="w-full max-w-[280px] sm:max-w-sm md:max-w-md lg:max-w-none mx-auto col-span-1 lg:col-span-4 space-y-5 sm:space-y-6 bg-white p-5 sm:p-6 rounded-xl shadow-sm">
-          <div class="w-full rounded-lg overflow-hidden border border-slate-200 shadow-sm">
-            <img src="/images/founder.jpeg" alt="Rajesh - Founder & Managing Director" class="w-full aspect-[4/5] object-cover hover:scale-105 transition-transform duration-700 ease-out" />
-          </div>
-          <div>
-            <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ EXECUTIVE CHAIR ]</span>
-            <p class="text-xl sm:text-3xl font-black text-[#024095] tracking-tight uppercase mt-1">Rajesh</p>
-            <p class="text-xs font-bold text-black tracking-wider uppercase mt-0.5">Founder &amp; Managing Director</p>
-          </div>
-          <div class="space-y-2 pt-4 border-t border-slate-200/60">
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
-              <span class="text-xs font-bold text-black">Est. 2009, Thiruvananthapuram</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#024095]"></span>
-              <span class="text-xs font-bold text-black">17+ Years in Water Solutions</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
-              <span class="text-xs font-bold text-black">ISO 9001 Certified Operations</span>
-            </div>
+        <!-- LEFT — Big tall portrait -->
+        <div class="col-span-1 lg:col-span-5">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg group">
+            <img
+              src="/images/founder.jpeg"
+              alt="Rajesh — Founder & Managing Director"
+              class="w-full aspect-[3/5] object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
           </div>
         </div>
 
-        <!-- Content -->
-        <div class="col-span-1 lg:col-span-8 space-y-8 sm:space-y-10">
-          <div class="space-y-3">
-            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">STRATEGIC VISION</span>
-            <h3 class="text-lg sm:text-2xl font-black tracking-tight text-[#024095] uppercase">The Architecture of Performance</h3>
-            <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
-              When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that layout model entirely. By committing our engineering teams to meticulous pre-assembly site analysis, we ensured that residential and commercial clients receive long-lasting operational certainty.
-            </p>
+        <!-- RIGHT — Text on top, second image below -->
+        <div class="col-span-1 lg:col-span-7 flex flex-col gap-8 sm:gap-10">
+
+          <!-- Name + bio -->
+          <div class="space-y-6">
+            <!-- Name block -->
+            <div class="space-y-1">
+              <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ Executive Chair ]</span>
+              <p class="text-3xl sm:text-4xl font-black text-[#024095] tracking-tight uppercase">Rajesh</p>
+              <p class="text-xs font-bold text-black tracking-wider uppercase">Founder &amp; Managing Director</p>
+            </div>
+
+            <!-- Quick facts -->
+            <div class="space-y-2 border-t border-slate-200/60 pt-4">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
+                <span class="text-xs font-bold text-black">Est. 2009, Thiruvananthapuram</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#024095]"></span>
+                <span class="text-xs font-bold text-black">17+ Years in Water Solutions</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
+                <span class="text-xs font-bold text-black">ISO 9001 Certified Operations</span>
+              </div>
+            </div>
+
+            <!-- Vision block -->
+            <div class="space-y-2 border-t border-slate-100 pt-4">
+              <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">Strategic Vision</span>
+              <h3 class="text-lg sm:text-xl font-black tracking-tight text-[#024095] uppercase">The Architecture of Performance</h3>
+              <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
+                When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that model entirely — committing our teams to meticulous pre-assembly site analysis so every client receives long-lasting operational certainty.
+              </p>
+            </div>
+
+            <!-- Commitment block -->
+            <div class="space-y-2 border-t border-slate-100 pt-4">
+              <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">Our Commitment</span>
+              <h3 class="text-lg sm:text-xl font-black tracking-tight text-[#024095] uppercase">Quality Without Compromise</h3>
+              <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
+                Every system we deploy is tested, calibrated and certified before it reaches your property. Our after-sales maintenance contracts ensure that the water quality you experienced on Day 1 remains consistent for years.
+              </p>
+            </div>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a href="/contact"
+                 class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-[#024095] text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md active:scale-95">
+                Get In Touch &rarr;
+              </a>
+              <a href="tel:+919645830994"
+                 class="inline-flex items-center justify-center gap-2 min-h-[48px] px-8 py-3 border border-[#024095] text-[#024095] text-xs font-black uppercase tracking-[0.2em] hover:bg-[#024095] hover:text-white transition-all rounded active:scale-95">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                Call Now
+              </a>
+            </div>
           </div>
 
-          <div class="space-y-3 pt-4 sm:pt-6 border-t border-slate-100">
-            <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">OUR COMMITMENT</span>
-            <h3 class="text-lg sm:text-2xl font-black tracking-tight text-[#024095] uppercase">Quality Without Compromise</h3>
-            <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
-              Every system we deploy is tested, calibrated and certified before it reaches your property. Our after-sales maintenance contracts ensure that the water quality you experienced on Day 1 remains consistent for years.
-            </p>
+          <!-- Second image at the bottom of the right column -->
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg group">
+            <img
+              src="/images/founder 2.png"
+              alt="Rajesh — In the field"
+              class="w-full aspect-video object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
           </div>
 
-          <div class="pt-4 sm:pt-6">
-            <a href="/contact"
-               class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 bg-[#024095] text-white text-xs font-black uppercase tracking-[0.2em] hover:bg-[#07bee8] transition-all rounded shadow-md">
-              Get In Touch &rarr;
-            </a>
-          </div>
         </div>
 
       </div>
