@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://samudhra.co.in/sitemap-index.xml
+Sitemap: https://samudhrawatersolutions.in/sitemap-index.xml
