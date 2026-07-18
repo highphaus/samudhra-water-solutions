@@ -5,26 +5,32 @@ import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
 const products = [
-  { name: "100000 LPH RO Plant", image: "/images/products/100000 LPH RO plant.jpg", tier: "Industrial Tier", specs: "High Capacity RO Filtration", contaminants: "Heavy TDS, Pathogens, Minerals", suitability: "Large Scale Industries, Factories", availability: "Built to Order" },
-  { name: "100LPH-10000LPH RO Plant", image: "/images/products/100LPH-10000LPH RO Plant.jpg", tier: "Commercial Tier", specs: "Customizable Output", contaminants: "TDS, Pathogens, Silt", suitability: "Hospitals, Offices, Institutions", availability: "Built to Order" },
-  { name: "AQUA C3", image: "/images/products/AQUA C3.jpg", tier: "Residential Purity", specs: "Advanced Purification", contaminants: "Pathogens, Hardness", suitability: "Home and Apartment use", availability: "In Stock" },
-  { name: "AQUA XZORA", image: "/images/products/AQUA XZORA.jpg", tier: "Residential Purity", specs: "Multi-Stage Filtration", contaminants: "TDS, Chemicals, Odor", suitability: "Home, Municipal Water", availability: "In Stock" },
+  { name: "Commercial & Industrial Water Treatment Plant", image: "/images/products/Commerical%20and%20Industrial%20water%20treatment%20plant.jpeg", tier: "Infrastructure Tier", specs: "High-Capacity Filtration System", contaminants: "Mud, Turbidity, Iron, Odor", suitability: "Communities, Factories, Commercial", availability: "Built to Order" },
+  { name: "Residential Water Treatment Plant", image: "/images/products/Residential%20water%20treatment%20plant.jpeg", tier: "Residential Purity", specs: "Multi-Stage Pre-filtration", contaminants: "Suspended Solids, Odor, Mud", suitability: "Independent Houses, Villas", availability: "In Stock" },
+  { name: "100LPH-10000LPH RO Plant", image: "/images/products/100LPH-10000LPH%20RO%20Plant.jpg", tier: "Commercial Tier", specs: "Customizable Output", contaminants: "TDS, Pathogens, Silt", suitability: "Hospitals, Offices, Institutions", availability: "Built to Order" },
+  { name: "100000 LPH RO Plant", image: "/images/products/100000%20LPH%20RO%20plant.jpg", tier: "Industrial Tier", specs: "High Capacity RO Filtration", contaminants: "Heavy TDS, Pathogens, Minerals", suitability: "Large Scale Industries, Factories", availability: "Built to Order" },
+  { name: "Sewage Treatment Plant", image: "/images/products/Sewage%20Treatment%20Plant.jpg", tier: "Infrastructure Tier", specs: "Sewage and Wastewater Recycling", contaminants: "Organic Waste, Pathogens", suitability: "Apartments, Hotels, Municipalities", availability: "Built to Order" },
+  { name: "Effluent Treatment Plant", image: "/images/products/Effluent%20Treatment%20Plant.jpg", tier: "Infrastructure Tier", specs: "Industrial Wastewater Processing", contaminants: "Chemicals, Effluents", suitability: "Factories, Manufacturing Units", availability: "Built to Order" },
+  { name: "Hot and Cold Water Dispenser", image: "/images/products/HOT%20AND%20COLD%20Water%20Dispenser.jpg", tier: "Commercial Tier", specs: "Temperature Controlled Dispensing", contaminants: "Integrated Filtration Options", suitability: "Offices, Clinics, Waiting Areas", availability: "In Stock" },
+  { name: "DM Plant", image: "/images/products/DM%20plant.jpg", tier: "Industrial Tier", specs: "Demineralization System", contaminants: "Dissolved Mineral Salts", suitability: "Laboratories, Power Plants", availability: "Built to Order" },
+  { name: "Desalination Water Filtration", image: "/images/products/Desalination%20Water%20Filtration.jpg", tier: "Industrial Tier", specs: "Seawater Desalination", contaminants: "High Salt Content", suitability: "Coastal Resorts, Marine Applications", availability: "Built to Order" },
+  { name: "UF Plant", image: "/images/products/Uf%20Plant.jpg", tier: "Commercial Tier", specs: "Ultrafiltration Technology", contaminants: "Suspended Solids, Bacteria", suitability: "Pre-treatment, Municipal Water", availability: "Built to Order" },
+  { name: "Commercial & Industrial Water Softener", image: "/images/products/commerical%20water%20softner.jpg", tier: "Infrastructure Tier", specs: "Heavy-duty Ion Exchange Process", contaminants: "Calcium, Magnesium (Hardness)", suitability: "Commercial Buildings, Industries, Boilers", availability: "Built to Order" },
+  { name: "Residential Water Softener", image: "/images/products/Residential%20Water%20Softner.jpeg", tier: "Residential Purity", specs: "Ion-Exchange Hardness Removal", contaminants: "Calcium, Magnesium (Scaling)", suitability: "Whole House, Apartments", availability: "In Stock" },
+  { name: "Industrial Water Softener", image: "/images/products/Industrial%20water%20softner.jpg", tier: "Industrial Tier", specs: "High Capacity Ion Exchange", contaminants: "Hardness, Scaling Minerals", suitability: "Large Boilers, Factories, Laundries", availability: "Built to Order" },
+  { name: "Swimming Pool Filtration Plant", image: "/images/products/Swimming%20Pool%20Filtration%20Plant.jpeg", tier: "Commercial Tier", specs: "Sand and Cartridge Filtration", contaminants: "Debris, Algae, Bacteria", suitability: "Hotels, Resorts, Public Pools", availability: "Built to Order" },
+  { name: "Stainless Steel Water Tanks", image: "/images/products/Stainless%20steel%20water%20tanks.jpg", tier: "Storage Solutions", specs: "Food Grade SS 304/316", contaminants: "Prevents Algae and Rust", suitability: "Residential, Commercial Storage", availability: "In Stock" },
+  { name: "Multibrand Water Purifiers", image: "/images/products/Multibrand%20Water%20Purifiers.png", tier: "Residential/Commercial", specs: "Various Top Brands", contaminants: "All Water Issues", suitability: "Homes, Shops, Offices", availability: "In Stock" },
+  { name: "AQUA C3", image: "/images/products/AQUA%20C3.jpg", tier: "Residential Purity", specs: "Advanced Purification", contaminants: "Pathogens, Hardness", suitability: "Home and Apartment use", availability: "In Stock" },
+  { name: "AQUA XZORA", image: "/images/products/AQUA%20XZORA.jpg", tier: "Residential Purity", specs: "Multi-Stage Filtration", contaminants: "TDS, Chemicals, Odor", suitability: "Home, Municipal Water", availability: "In Stock" },
   { name: "AQUA9090", image: "/images/products/AQUA9090.jpg", tier: "Residential Purity", specs: "Premium Water Purifier", contaminants: "Pathogens, Heavy Metals", suitability: "Home use", availability: "In Stock" },
-  { name: "BELLA+ & AVA+", image: "/images/products/BELLA+ & AVA+.jpg", tier: "Residential Purity", specs: "Compact Modern Purifiers", contaminants: "Bacteria, Cysts, Silt", suitability: "Kitchen, Small Office", availability: "In Stock" },
-  { name: "DM Plant", image: "/images/products/DM plant.jpg", tier: "Industrial Tier", specs: "Demineralization System", contaminants: "Dissolved Mineral Salts", suitability: "Laboratories, Power Plants", availability: "Built to Order" },
-  { name: "Desalination Water Filtration", image: "/images/products/Desalination Water Filtration.jpg", tier: "Industrial Tier", specs: "Seawater Desalination", contaminants: "High Salt Content", suitability: "Coastal Resorts, Marine Applications", availability: "Built to Order" },
-  { name: "Effluent Treatment Plant", image: "/images/products/Effluent Treatment Plant.jpg", tier: "Infrastructure Tier", specs: "Industrial Wastewater Processing", contaminants: "Chemicals, Effluents", suitability: "Factories, Manufacturing Units", availability: "Built to Order" },
-  { name: "Hot and Cold Water Dispenser", image: "/images/products/HOT AND COLD Water Dispenser.jpg", tier: "Commercial Tier", specs: "Temperature Controlled Dispensing", contaminants: "Integrated Filtration Options", suitability: "Offices, Clinics, Waiting Areas", availability: "In Stock" },
-  { name: "Multibrand Water Purifiers", image: "/images/products/Multibrand Water Purifiers.png", tier: "Residential/Commercial", specs: "Various Top Brands", contaminants: "All Water Issues", suitability: "Homes, Shops, Offices", availability: "In Stock" },
-  { name: "PZONE BLACK Water Purifier", image: "/images/products/PZONE BLACK Water purifier.jpg", tier: "Residential Purity", specs: "Elegant Black Design, RO+UV", contaminants: "TDS, Bacteria", suitability: "Modern Kitchens", availability: "In Stock" },
-  { name: "SALVADOR RO Water Purifier", image: "/images/products/SALVADOR RO water purifier.jpg", tier: "Residential Purity", specs: "RO Technology", contaminants: "Hard Water, Chemicals", suitability: "Household Drinking Water", availability: "In Stock" },
-  { name: "Sewage Treatment Plant", image: "/images/products/Sewage Treatment Plant.jpg", tier: "Infrastructure Tier", specs: "Sewage and Wastewater Recycling", contaminants: "Organic Waste, Pathogens", suitability: "Apartments, Hotels, Municipalities", availability: "Built to Order" },
-  { name: "Stainless Steel Water Tanks", image: "/images/products/Stainless steel water tanks.jpg", tier: "Storage Solutions", specs: "Food Grade SS 304/316", contaminants: "Prevents Algae and Rust", suitability: "Residential, Commercial Storage", availability: "In Stock" },
-  { name: "Swimming Pool Filtration Plant", image: "/images/products/Swimming Pool Filtration Plant.jpeg", tier: "Commercial Tier", specs: "Sand and Cartridge Filtration", contaminants: "Debris, Algae, Bacteria", suitability: "Hotels, Resorts, Public Pools", availability: "Built to Order" },
-  { name: "UF Plant", image: "/images/products/Uf Plant.jpg", tier: "Commercial Tier", specs: "Ultrafiltration Technology", contaminants: "Suspended Solids, Bacteria", suitability: "Pre-treatment, Municipal Water", availability: "Built to Order" },
-  { name: "Water Softening Plant", image: "/images/products/Water softening plant.jpg", tier: "Infrastructure Tier", specs: "Ion-Exchange Process", contaminants: "Calcium, Magnesium (Hardness)", suitability: "Whole House, Laundries, Boilers", availability: "Built to Order" },
-  { name: "Water Treatment Plant", image: "/images/products/Water treatment plant.jpg", tier: "Infrastructure Tier", specs: "Comprehensive Water Treatment", contaminants: "Multiple Contaminants", suitability: "Large Scale Supply, Factories", availability: "Built to Order" },
-  { name: "ZEDERA Water Purifiers", image: "/images/products/ZEDERA WATER PURIFIERS.jpg", tier: "Residential Purity", specs: "Advanced Home Filtration", contaminants: "Common Impurities", suitability: "Home use", availability: "In Stock" }
+  { name: "BELLA+ & AVA+", image: "/images/products/BELLA+%20&%20AVA+.jpg", tier: "Residential Purity", specs: "Compact Modern Purifiers", contaminants: "Bacteria, Cysts, Silt", suitability: "Kitchen, Small Office", availability: "In Stock" },
+  { name: "PZONE BLACK Water Purifier", image: "/images/products/PZONE%20BLACK%20Water%20purifier.jpg", tier: "Residential Purity", specs: "Elegant Black Design, RO+UV", contaminants: "TDS, Bacteria", suitability: "Modern Kitchens", availability: "In Stock" },
+  { name: "SALVADOR RO Water Purifier", image: "/images/products/SALVADOR%20RO%20water%20purifier.jpg", tier: "Residential Purity", specs: "RO Technology", contaminants: "Hard Water, Chemicals", suitability: "Household Drinking Water", availability: "In Stock" },
+  { name: "ZEDERA Water Purifiers", image: "/images/products/ZEDERA%20WATER%20PURIFIERS.jpg", tier: "Residential Purity", specs: "Advanced Home Filtration", contaminants: "Common Impurities", suitability: "Home use", availability: "In Stock" },
+  { name: "CONWAY Commercial Water Dispensers", image: "/images/products/CONWAY.jpeg", tier: "Commercial Tier", specs: "High-Volume Stainless Steel Dispensing", contaminants: "Authorized Dealer Sales & Service", suitability: "Schools, Colleges, Offices, Hospitals, Factories, Public Spaces", availability: "In Stock" },
+  { name: "Aquaguard Water Purifiers", image: "/images/products/Aquaguard%20Water%20Purifiers.jpeg", tier: "Residential Purity", specs: "Advanced RO+UV+UF + Active Copper", contaminants: "TDS, Chemicals, Heavy Metals, Pathogens", suitability: "Homes, Apartments, Small Offices, Kitchens", availability: "In Stock" },
+  { name: "KENT Water Purifiers", image: "/images/products/KENT%20Water%20Purifiers.jpeg", tier: "Residential/Commercial", specs: "Mineral RO, Alkaline & Copper Models", contaminants: "High TDS, Bacteria, Dissolved Impurities", suitability: "Homes, Offices, Apartments, Clinics", availability: "In Stock" }
 ];
 ---
 
@@ -135,6 +141,74 @@ const products = [
       }
     });
   </script>
+  <!-- LEADERSHIP & ENGINEERING QUALITY ASSURANCE -->
+  <section class="bg-white py-16 sm:py-24 border-t border-slate-200/60 relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 left-0 w-80 h-80 bg-[#07bee8]/5 rounded-full blur-3xl -ml-20 -mt-20"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#024095]/5 rounded-full blur-3xl -mr-20 -mb-20"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Leadership & Assurance</span>
+        <h2 class="text-[clamp(1rem,4vw,2.25rem)] font-black text-[#024095] uppercase tracking-tight">
+          FOUNDER'S TRUST & <span class="text-[#07bee8]">FIELD ENGAGEMENTS</span>
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm mt-4 font-light leading-relaxed max-w-xl mx-auto">
+          Every custom commercial and industrial installation is personally overseen and inspected by our founding leadership to guarantee compliance and operational longevity.
+        </p>
+      </div>
+
+      <!-- Founder Image Gallery/Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Founder Image 1: Main Portrait -->
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col">
+          <div class="aspect-[3/4] overflow-hidden bg-slate-100">
+            <img src="/images/founder.jpeg" alt="Rajesh — Founder & Managing Director" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+          <div class="p-4 text-center border-t border-slate-100">
+            <p class="text-sm font-bold text-[#024095] uppercase">Rajesh</p>
+            <p class="text-[10px] font-medium text-slate-500 uppercase tracking-wider mt-0.5">Founder & Managing Director</p>
+          </div>
+        </div>
+
+        <!-- Founder Image 2: Showroom/Office -->
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col">
+          <div class="aspect-[3/4] overflow-hidden bg-slate-100">
+            <img src="/images/founder%202.png" alt="Founder Rajesh - Office Checkpoint" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+          <div class="p-4 text-center border-t border-slate-100">
+            <p class="text-sm font-bold text-[#024095] uppercase">Showroom Oversight</p>
+            <p class="text-[10px] font-medium text-slate-500 uppercase tracking-wider mt-0.5">Inventory & Logistics Check</p>
+          </div>
+        </div>
+
+        <!-- Founder Image 3: Field Audit -->
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col">
+          <div class="aspect-[3/4] overflow-hidden bg-slate-100">
+            <img src="/images/founder%203.png" alt="Founder Rajesh - Engineering Operations" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+          <div class="p-4 text-center border-t border-slate-100">
+            <p class="text-sm font-bold text-[#024095] uppercase">Engineering Site Check</p>
+            <p class="text-[10px] font-medium text-slate-500 uppercase tracking-wider mt-0.5">Field Inspection & Audits</p>
+          </div>
+        </div>
+
+        <!-- Founder Image 4: Client Consultation -->
+        <div class="bg-slate-50 rounded-2xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-md transition-all duration-300 group flex flex-col">
+          <div class="aspect-[3/4] overflow-hidden bg-slate-100">
+            <img src="/images/founder%204.png" alt="Founder Rajesh - Plant Calibration" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+          <div class="p-4 text-center border-t border-slate-100">
+            <p class="text-sm font-bold text-[#024095] uppercase">Quality Validation</p>
+            <p class="text-[10px] font-medium text-slate-500 uppercase tracking-wider mt-0.5">Testing & Commissioning</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <Footer />
 </Layout>

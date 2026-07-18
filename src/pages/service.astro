@@ -4,6 +4,32 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import { services } from '../utils/services-data.js';
+
+const serviceOrder = [
+  'water-treatment-plant',
+  'ro-plant',
+  'sewage-treatment-plant',
+  'effluent-treatment-plant',
+  'hot-and-cold-water-dispenser',
+  'conway-commercial-water-dispenser',
+  'dm-plant',
+  'multibrand-purifier-servicing',
+  'aquaguard-water-purifiers',
+  'kent-water-purifiers',
+];
+
+const getServiceRank = (service) => {
+  const slug = service.slug;
+  const explicitIndex = serviceOrder.indexOf(slug);
+  if (explicitIndex !== -1) return explicitIndex;
+
+  return serviceOrder.length + services.indexOf(service);
+};
+
+const displayServices = [...services].sort((a, b) => {
+  const rank = getServiceRank(a) - getServiceRank(b);
+  return rank !== 0 ? rank : a.title.localeCompare(b.title);
+});
 ---
 
 <Layout title="Our Purification Services | Samudhra Water Solutions">
@@ -66,15 +92,17 @@ import { services } from '../utils/services-data.js';
   <section class="bg-[#FAF9F6] py-12 sm:py-16 min-h-[60vh]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {services.map((item) => (
+        {displayServices.map((item) => (
           <div class="service-card flex flex-col bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 opacity-0 translate-y-6 animate-fade-in-up"
                id={item.slug}
                data-categories={item.categories.join(',')}>
             
             <!-- Image & Badge Container -->
-            <div class="relative aspect-video overflow-hidden bg-slate-50 border-b border-slate-100">
+            <div class="relative aspect-video overflow-hidden bg-white p-4 border-b border-slate-100 flex items-center justify-center">
               <img src={item.image} alt={item.title} loading="lazy"
-                   class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                   class="service-card-img max-h-full max-w-full object-contain transition-transform duration-700 hover:scale-105"
+                   data-default-src={item.image}
+                   data-residential-src={item.residentialImage || item.image} />
               <span class="absolute top-4 left-4 bg-[#024095] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-sm">
                 SYSTEM {item.num}
               </span>
@@ -170,8 +198,20 @@ import { services } from '../utils/services-data.js';
         // Filter cards
         cards.forEach(card => {
           const cardCats = card.getAttribute('data-categories').split(',');
+          const img = card.querySelector('.service-card-img');
+          
           if (filterValue === 'all' || cardCats.includes(filterValue)) {
             card.style.display = 'flex';
+            
+            // Swap image source dynamically based on active filter tab
+            if (img) {
+              if (filterValue === 'residential') {
+                img.src = img.getAttribute('data-residential-src');
+              } else {
+                img.src = img.getAttribute('data-default-src');
+              }
+            }
+
             setTimeout(() => {
               card.style.opacity = '1';
               card.style.transform = 'translateY(0)';

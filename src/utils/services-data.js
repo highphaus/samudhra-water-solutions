@@ -9,8 +9,8 @@ export const services = [
     title: "UF Plant Installation & Maintenance",
     tagline: "Advanced ultrafiltration for consistently pure, bacteria-free water — built for scale.",
     shortDescription: "Remove suspended solids, bacteria, and harmful particles from water with our high-performance Ultrafiltration (UF) systems. Ideal for pre-treatment, municipal supply, and industrial wastewater recycling.",
-    image: "/images/products/Uf Plant.jpg",
-    heroImage: "/images/products/Uf Plant.jpg",
+    image: "/images/products/Uf%20Plant.jpg",
+    heroImage: "/images/products/Uf%20Plant.jpg",
     categories: ["commercial", "industrial"],
     idealFor: ["Municipalities", "Industries", "Hospitals", "Food & Beverage", "Apartments"],
     benefits: [
@@ -81,8 +81,8 @@ export const services = [
     title: "Sewage Treatment Plant (STP)",
     tagline: "Engineered sewage treatment systems that protect public health and the environment.",
     shortDescription: "Treat domestic and commercial wastewater to meet environmental discharge standards. Our STP systems ensure safe water disposal or reuse, protecting communities and ecosystems.",
-    image: "/images/products/Sewage Treatment Plant.jpg",
-    heroImage: "/images/products/Sewage Treatment Plant.jpg",
+    image: "/images/products/Sewage%20Treatment%20Plant.jpg",
+    heroImage: "/images/products/Sewage%20Treatment%20Plant.jpg",
     categories: ["commercial", "industrial", "waste-water"],
     idealFor: ["Apartments", "Hotels", "Hospitals", "IT Parks", "Townships", "Industries"],
     benefits: [
@@ -153,8 +153,8 @@ export const services = [
     title: "Effluent Treatment Plant (ETP)",
     tagline: "Industrial wastewater treatment engineered for compliance, sustainability, and zero liquid discharge.",
     shortDescription: "Treat industrial wastewater containing chemicals, heavy metals, and organic pollutants before discharge. Our ETP systems ensure regulatory compliance and protect the environment.",
-    image: "/images/products/Effluent Treatment Plant.jpg",
-    heroImage: "/images/products/Effluent Treatment Plant.jpg",
+    image: "/images/products/Effluent%20Treatment%20Plant.jpg",
+    heroImage: "/images/products/Effluent%20Treatment%20Plant.jpg",
     categories: ["commercial", "industrial", "waste-water"],
     idealFor: ["Factories", "Textile Mills", "Pharmaceutical Units", "Food Processing", "Chemical Plants"],
     benefits: [
@@ -225,8 +225,8 @@ export const services = [
     title: "De-Mineralizing (DM) Plant",
     tagline: "Ultra-pure demineralized water for critical industrial processes and laboratories.",
     shortDescription: "Produce highly purified water free from dissolved minerals and salts for pharmaceutical, power generation, electronics, and laboratory applications with our precision DM plant systems.",
-    image: "/images/products/DM plant.jpg",
-    heroImage: "/images/products/DM plant.jpg",
+    image: "/images/products/DM%20plant.jpg",
+    heroImage: "/images/products/DM%20plant.jpg",
     categories: ["commercial", "industrial"],
     idealFor: ["Pharmaceuticals", "Power Plants", "Electronics", "Laboratories", "Boilers"],
     benefits: [
@@ -297,8 +297,8 @@ export const services = [
     title: "Desalination Water Filtration Plant",
     tagline: "Converting seawater and brackish water into safe, drinkable freshwater.",
     shortDescription: "Solve water scarcity with our advanced desalination systems. We convert seawater and brackish groundwater into potable freshwater for coastal communities, resorts, and industrial facilities.",
-    image: "/images/products/Desalination Water Filtration.jpg",
-    heroImage: "/images/products/Desalination Water Filtration.jpg",
+    image: "/images/products/Desalination%20Water%20Filtration.jpg",
+    heroImage: "/images/products/Desalination%20Water%20Filtration.jpg",
     categories: ["commercial", "industrial", "salty-water"],
     idealFor: ["Coastal Communities", "Resorts", "Islands", "Naval Facilities", "Industries"],
     benefits: [
@@ -369,8 +369,8 @@ export const services = [
     title: "Iron Removal Plant (IRP)",
     tagline: "Eliminate iron stains, metallic taste, and unpleasant odor from your water supply.",
     shortDescription: "Remove excess iron from borewell water to eliminate stains, metallic taste, and unpleasant odor. Our IRP systems deliver crystal-clear, iron-free water for homes, businesses, and industries.",
-    image: "/images/products/Iron Remover Plant IRP.jpg",
-    heroImage: "/images/products/Iron Remover Plant IRP.jpg",
+    image: "/images/products/Iron%20Remover%20Plant%20IRP.jpg",
+    heroImage: "/images/products/Iron%20Remover%20Plant%20IRP.jpg",
     categories: ["residential", "commercial", "industrial", "iron-water"],
     idealFor: ["Homes", "Villas", "Apartments", "Hotels", "Factories", "Restaurants"],
     benefits: [
@@ -441,8 +441,8 @@ export const services = [
     title: "RO Plant (Reverse Osmosis)",
     tagline: "High-performance reverse osmosis systems from 250 LPH to 1,00,000 LPH — engineered for purity.",
     shortDescription: "From compact 250 LPH systems for offices to massive 1,00,000 LPH industrial plants, our RO systems reduce TDS, remove pathogens, and deliver premium-quality purified water for every scale.",
-    image: "/images/products/100000 LPH RO plant.jpg",
-    heroImage: "/images/products/100000 LPH RO plant.jpg",
+    image: "/images/products/100000%20LPH%20RO%20plant.jpg",
+    heroImage: "/images/products/100000%20LPH%20RO%20plant.jpg",
     categories: ["commercial", "industrial", "salty-water", "hard-water", "iron-water"],
     idealFor: ["Industries", "Hospitals", "Hotels", "Apartments", "Offices", "Schools"],
     benefits: [
@@ -513,8 +513,9 @@ export const services = [
     title: "Water Softener",
     tagline: "End hard water problems forever — protect your pipes, appliances, and family.",
     shortDescription: "Remove hardness-causing calcium, magnesium, and iron ions through proven ion exchange technology. Our water softeners prevent scaling, extend appliance life, and improve daily water quality.",
-    image: "/images/products/Water softening plant.jpg",
-    heroImage: "/images/products/Water softening plant.jpg",
+    image: "/images/products/commerical%20water%20softner.jpg",
+    residentialImage: "/images/products/Residential%20Water%20Softner.jpeg",
+    heroImage: "/images/products/Industrial%20water%20softner.jpg",
     categories: ["residential", "commercial", "industrial", "iron-water", "hard-water"],
     idealFor: ["Homes", "Villas", "Apartments", "Hotels", "Hospitals", "Boilers"],
     benefits: [
@@ -585,8 +586,8 @@ export const services = [
     title: "MultiBrand Water Purifier Servicing",
     tagline: "Expert repair and maintenance for all water purifier brands — one call, one solution.",
     shortDescription: "One-stop service center for all water purifier brands. We provide filter replacement, membrane cleaning, repair, and annual maintenance for Kent, Aquaguard, Pureit, LivPure, and all other brands.",
-    image: "/images/products/Multibrand Water Purifiers.png",
-    heroImage: "/images/products/Multibrand Water Purifiers.png",
+    image: "/images/products/Multibrand%20Water%20Purifiers.png",
+    heroImage: "/images/products/Multibrand%20Water%20Purifiers.png",
     categories: ["residential"],
     idealFor: ["Homes", "Offices", "Restaurants", "Schools", "Clinics"],
     benefits: [
@@ -657,8 +658,8 @@ export const services = [
     title: "Water Tank Cleaning",
     tagline: "Professional water tank cleaning for safe, hygienic water storage — every drop matters.",
     shortDescription: "Ensure safe, clean water storage with professional tank cleaning. We remove sludge, algae, bacteria, and sediment from overhead and underground tanks using advanced cleaning and disinfection methods.",
-    image: "/images/new_home/water cleaning.png",
-    heroImage: "/images/new_home/water cleaning.png",
+    image: "/images/new_home/water%20cleaning.png",
+    heroImage: "/images/new_home/water%20cleaning.png",
     categories: ["residential", "commercial"],
     idealFor: ["Homes", "Apartments", "Hotels", "Hospitals", "Schools", "Offices"],
     benefits: [
@@ -729,8 +730,8 @@ export const services = [
     title: "Swimming Pool Filtration Plant",
     tagline: "Crystal-clear, safe pool water — engineered for hygiene, aesthetics, and compliance.",
     shortDescription: "Maintain crystal-clear, hygienic pool water with our professional filtration systems. We design, install, and maintain complete pool filtration and chemical dosing systems for residential and commercial pools.",
-    image: "/images/products/Swimming Pool Filtration Plant.jpeg",
-    heroImage: "/images/products/Swimming Pool Filtration Plant.jpeg",
+    image: "/images/products/Swimming%20Pool%20Filtration%20Plant.jpeg",
+    heroImage: "/images/products/Swimming%20Pool%20Filtration%20Plant.jpeg",
     categories: ["residential", "commercial"],
     idealFor: ["Homes", "Hotels", "Resorts", "Clubs", "Fitness Centers", "Water Parks"],
     benefits: [
@@ -794,6 +795,317 @@ export const services = [
     metaTitle: "Swimming Pool Filtration Plant in Kerala | Samudhra Water Solutions",
     metaDescription: "Professional swimming pool filtration installation in Kerala. Crystal clear water, auto chemical dosing, energy-efficient pumps. Residential & commercial pools. Expert maintenance.",
     keywords: "pool filtration Kerala, swimming pool filter system, pool water treatment, pool maintenance, Samudhra water solutions"
+  },
+  {
+    num: "12",
+    slug: "water-treatment-plant",
+    title: "Water Treatment Plant (WTP)",
+    tagline: "High-capacity commercial & industrial filtration systems for clean, safe water.",
+    shortDescription: "Custom-designed Water Treatment Plants (WTP) to eliminate mud, turbidity, suspended solids, heavy metals, and chemical impurities from raw water. Calibrated for commercial establishments, factories, and municipal systems.",
+    image: "/images/products/Commerical%20and%20Industrial%20water%20treatment%20plant.jpeg",
+    residentialImage: "/images/products/Residential%20water%20treatment%20plant.jpeg",
+    heroImage: "/images/products/Commerical%20and%20Industrial%20water%20treatment%20plant.jpeg",
+    categories: ["residential", "commercial", "industrial"],
+    idealFor: ["Factories & Industries", "Residential Townships", "Hospitals & Schools", "Municipal Supplies", "Commercial Complexes"],
+    benefits: [
+      "Consistent output purity",
+      "Removes mud, color & odors",
+      "High flow rate performance",
+      "Protects downstream machinery",
+      "Extremely durable construction"
+    ],
+    problem: {
+      title: "Contaminated Raw Water Causes Scaling & Health Risks",
+      description: "Borewells, open wells, and surface water sources in Kerala often contain high levels of mud, iron, organic particles, turbidity, and chemical impurities. Using raw water directly causes staining of bathroom fixtures, scaling in industrial boilers, skin irritation, and severe health hazards if consumed."
+    },
+    solution: {
+      title: "WTP — Multi-Stage Physical & Chemical Treatment",
+      description: "Our custom-engineered Water Treatment Plants integrate aeration, coagulation, multi-grade sand filtration, activated carbon absorption, and iron removal filters. Every system is custom-designed based on a comprehensive water test report to deliver crystal-clear, safe water at scale."
+    },
+    features: [
+      { icon: "efficiency", title: "Heavy Duty Filters", description: "Multi-grade sand & carbon filters remove sediment, odors, and chlorine." },
+      { icon: "maintenance", title: "Iron Mitigation", description: "Specialized catalytic media filters remove dissolved iron and manganese." },
+      { icon: "energy", title: "Scale Control", description: "Integrated pre-treatment protects downstream RO systems & heat exchangers." },
+      { icon: "lifespan", title: "Corrosion Resistant", description: "Built with premium FRP/SS vessels and corrosion-proof valves." },
+      { icon: "custom", title: "Tailored Engineering", description: "Sized and designed specifically for your raw water parameters & daily demand." },
+      { icon: "install", title: "Professional Support", description: "Includes expert site selection, piping layout, and routine AMC support." }
+    ],
+    applications: ["Industrial Manufacturing", "Residential Complexes", "Hotels & Restaurants", "Hospitals & Clinics", "Educational Institutions", "Municipal Water Supply"],
+    process: [
+      { step: 1, title: "Water Analysis", description: "We run a laboratory test of your source water to identify specific contaminants." },
+      { step: 2, title: "Custom Engineering", description: "Design filtration stages, media volumes, and vessel sizing for your needs." },
+      { step: 3, title: "Civil & Piping Layout", description: "Prepare the installation site, structural supports, and plumbing layout." },
+      { step: 4, title: "System Assembly", description: "FRP/SS vessels are loaded with premium filter media and control valves." },
+      { step: 5, title: "Testing & Handover", description: "Verify output quality parameters and train site operators on backwash cycles." },
+      { step: 6, title: "Annual Maintenance", description: "Regular media backwashing, testing, and media replacement services." }
+    ],
+    specs: {
+      capacity: ["2,000 LPH", "5,000 LPH", "10,000 LPH", "25,000 LPH", "50,000+ LPH"],
+      waterSource: ["Borewell Water", "River Water", "Well Water", "Rainwater Harvesting"],
+      applications: ["Commercial Complexes", "Industrial Process", "Boiler Feed Pre-treatment", "Domestic Supply"]
+    },
+    benefitCards: [
+      { title: "Crystal Clear Water", description: "Eliminates all visible mud, turbidity, suspended solids, and coloration." },
+      { title: "Odor & Taste Correction", description: "Activated carbon removes chlorine, organic compounds, and bad odor." },
+      { title: "Iron Extraction", description: "Prevents yellow staining on floors, sanitary fittings, and clothes." },
+      { title: "Boiler Protection", description: "Significantly reduces scaling and corrosion inside heat exchangers and pipes." },
+      { title: "Cost Efficiency", description: "Extends lifespan of secondary filters, RO membranes, and appliances." },
+      { title: "High Flow Rates", description: "Delivers thousands of liters of clean water continuously without pressure drops." },
+      { title: "Long Lifespan", description: "Heavy-duty fiberglass-reinforced plastic (FRP) vessels built to last 10+ years." },
+      { title: "Low Maintenance", description: "Semi-automatic or automatic multiport valves make backwashing easy." }
+    ],
+    faqs: [
+      { question: "What is a Water Treatment Plant (WTP)?", answer: "A WTP is a centralized filtration system designed to treat raw water from borewells, wells, or rivers. It utilizes specialized media (sand, carbon, iron removal catalyst) inside FRP or stainless steel vessels to remove mud, odor, organic materials, and heavy metals like iron." },
+      { question: "How is a WTP different from an RO Plant?", answer: "A WTP performs physical filtration, organic removal, and iron removal, but does not reduce dissolved salt content (TDS). An RO (Reverse Osmosis) Plant uses high-pressure membranes to remove dissolved minerals and salts. WTP is often installed as a pre-treatment system before an RO plant." },
+      { question: "How do I know what size WTP my business needs?", answer: "WTPs are sized based on your hourly water demand (LPH - Liters Per Hour) and daily water usage. We assess your peak usage, source water test report, and storage tank capacities to design a system with the perfect flow rate." },
+      { question: "How often should WTP filter media be replaced?", answer: "Filter media (sand, gravel, activated carbon, and iron removal media) typically lasts between 2 to 4 years depending on the raw water quality and backwashing frequency. Regular backwashing keeps the media active and clean." },
+      { question: "Is the filtration process automatic?", answer: "We offer both semi-automatic and fully automatic systems. Semi-automatic systems use manual multiport valves that require an operator to turn a knob for backwashing, while automatic systems use PLC-controlled valves to run cleaning cycles automatically at scheduled times." }
+    ],
+    relatedServices: ["ro-plant", "uf-plant", "sewage-treatment-plant"],
+    metaTitle: "Water Treatment Plant (WTP) Installation in Kerala | Samudhra",
+    metaDescription: "Professional Water Treatment Plant (WTP) design, installation & maintenance services in Kerala. Clean raw water for commercial and industrial use.",
+    keywords: "WTP installation Kerala, water treatment plant Trivandrum, commercial water filter, industrial water treatment"
+  },
+  {
+    num: "13",
+    slug: "hot-and-cold-water-dispenser",
+    title: "Hot and Cold Water Dispenser",
+    tagline: "Instant purified drinking water at your desired temperature.",
+    shortDescription: "High-performance stainless steel hot, cold, and normal water dispensers with built-in multi-stage RO/UV filtration. Ideal for offices, schools, hospitals, and industrial canteens.",
+    image: "/images/products/HOT%20AND%20COLD%20Water%20Dispenser.jpg",
+    heroImage: "/images/products/HOT%20AND%20COLD%20Water%20Dispenser.jpg",
+    categories: ["commercial", "industrial"],
+    idealFor: ["Corporate Offices", "Hospitals & Clinics", "Schools & Colleges", "Industrial Canteens", "Waiting Rooms", "Gyms & Fitness Centers"],
+    benefits: [
+      "Instant hot, cold & normal water",
+      "Integrated RO+UV purification",
+      "Food-grade SS 304 tanks",
+      "Highly energy-efficient design",
+      "Durable stainless steel body"
+    ],
+    problem: {
+      title: "Unhygienic Jars & Constant Plastic Waste",
+      description: "Relying on commercial plastic bubble top water jars is expensive, logistically challenging, and raises hygiene concerns due to multiple handlings. Moreover, storing empty jars consumes space, and you don't get instant temperature options when needed."
+    },
+    solution: {
+      title: "Direct-Piped Filtration Dispensers",
+      description: "Our commercial-grade stainless steel hot and cold water dispensers connect directly to your building's water line. Equipped with advanced multi-stage RO, UV, and active carbon purification, they provide continuous, safe, and delicious drinking water at three distinct temperatures."
+    },
+    features: [
+      { icon: "efficiency", title: "Triple Temperature", description: "Offers instant hot (for tea/coffee), cold (for cooling), and normal drinking water." },
+      { icon: "maintenance", title: "Integrated Purifier", description: "Built-in multi-stage RO+UV filtration guarantees water safety at point of use." },
+      { icon: "energy", title: "Food-Grade SS 304", description: "Internal storage tanks and outer panels are made of high-quality stainless steel." },
+      { icon: "lifespan", title: "Eco-Friendly", description: "Eliminates single-use plastic water bottles and expensive bubble top jar rentals." },
+      { icon: "custom", title: "Energy Efficient", description: "Fast-cooling compressors and high-grade thermal insulation minimize power draw." },
+      { icon: "install", title: "Safety Features", description: "Equipped with hot water child safety locks and auto-cutoff overflow protection." }
+    ],
+    applications: ["Office Spaces", "Educational Institutions", "Medical Centers & Hospitals", "Manufacturing Plants", "Public Transport Hubs", "Community Centers"],
+    process: [
+      { step: 1, title: "Requirement Assessment", description: "We evaluate the number of users to determine the required heating and cooling capacity." },
+      { step: 2, title: "Location Setup", description: "Select an installation site with access to a water inlet, drain outlet, and power socket." },
+      { step: 3, title: "Model Selection", description: "Choose between floor-standing models, wall-mounted coolers, or compact countertop units." },
+      { step: 4, title: "Installation & Connection", description: "Connect the dispenser to the water supply line and set up the drainage system." },
+      { step: 5, title: "Filter Calibration", description: "Install and test the built-in RO/UV filters to ensure water taste and TDS are perfect." },
+      { step: 6, title: "Routine Maintenance", description: "Regular filter replacement, internal tank sanitization, and compressor checks." }
+    ],
+    specs: {
+      capacity: ["20 Liters/Hour", "40 Liters/Hour", "80 Liters/Hour", "150 Liters/Hour"],
+      waterSource: ["Municipal Supply", "Borewell Water", "Treated Building Supply"],
+      applications: ["Offices", "Clinics", "Industrial Plants", "Institutional Spaces"]
+    },
+    benefitCards: [
+      { title: "Continuous Supply", description: "Connects directly to your building tap water line so you never run out of drinking water." },
+      { title: "Pure & Safe", description: "Integrated sediment, pre-carbon, RO membrane, and UV disinfection eliminate all pathogens." },
+      { title: "Stainless Steel Build", description: "Corrosion-resistant SS 304 panels ensure maximum hygiene, rust prevention, and easy cleaning." },
+      { title: "Hot & Cold Taps", description: "Instant hot water (up to 90°C) and refreshing cold water (down to 10°C) on demand." },
+      { title: "Cost Savings", description: "Reduces drinking water expenses by up to 80% compared to purchasing bubble top jars." },
+      { title: "Anti-Overflow Tray", description: "Removable drip tray prevents water spills on the floor, keeping the area dry." },
+      { title: "LED Indicators", description: "Front panel lights display power, heating, and cooling status clearly." },
+      { title: "Child Lock Protection", description: "Prevents accidental hot water burns with a lock mechanism on the hot water tap." }
+    ],
+    faqs: [
+      { question: "What is a Direct-Piped Hot & Cold Water Dispenser?", answer: "Unlike traditional bubble-top dispensers that require manual jar replacement, a direct-piped dispenser is plumbed directly into your water inlet. It has built-in purification filters (like RO or UV) to purify the inlet water and store it in hot and cold chambers." },
+      { question: "How many users can one dispenser serve?", answer: "It depends on the tank capacity. A standard 20L/hr cooling model is ideal for small offices of 15-30 people, while our high-capacity 80L/hr and 150L/hr models are designed for large industrial canteens or schools with 100+ users." },
+      { question: "What purification technologies are built inside?", answer: "Our dispensers feature a multi-stage filtration system including a Sediment Filter, Activated Carbon Filter, high-grade RO Membrane, and an inline UV Sterilizer to ensure 100% bacteria-free water." },
+      { question: "How often do the dispenser filters need to be changed?", answer: "For typical office usage, pre-filters and carbon filters should be replaced every 6 months, and the RO membrane/UV lamp replaced annually to maintain optimum water taste and purity." },
+      { question: "Does it require a drain connection?", answer: "Yes. If the model includes an RO purifier, the reject water line needs to be routed to a nearby drain. Ambient/drip tray overflow water also requires a drainage point." }
+    ],
+    relatedServices: ["uf-plant", "ro-plant", "water-tank-cleaning"],
+    metaTitle: "Hot & Cold Water Dispenser Installation in Kerala | Samudhra",
+    metaDescription: "Commercial and industrial hot and cold water dispenser installation services in Kerala. Food-grade SS 304, high cooling/heating capacity, built-in RO+UV filters.",
+    keywords: "hot and cold water dispenser Kerala, commercial water dispenser Trivandrum, industrial water cooler, direct piped water dispenser"
+  },
+  {
+    num: "14",
+    slug: "conway-commercial-water-dispenser",
+    title: "CONWAY Commercial Water Dispensers",
+    tagline: "Reliable Water. Hygienic Dispensing. Trusted Support.",
+    shortDescription: "Samudhra Water Solutions is an authorized dealer of CONWAY Commercial Water Dispensers, offering reliable drinking water solutions for schools, colleges, offices, hospitals, industries, and public facilities. Built with durable stainless-steel construction and designed for high-volume usage, CONWAY dispensers provide safe, hygienic, and convenient access to drinking water.",
+    image: "/images/products/CONWAY.jpeg",
+    heroImage: "/images/products/CONWAY.jpeg",
+    categories: ["commercial", "industrial"],
+    idealFor: ["Schools", "Colleges", "Offices", "Hospitals", "Factories", "Public Spaces"],
+    benefits: [
+      "Instant hot, cold & normal water dispensing",
+      "Durable food-grade SS 304/316 construction",
+      "High-capacity cooling & heating units",
+      "Hygienic hands-free or push-tap operations",
+      "Authorized service & OEM warranty support"
+    ],
+    problem: {
+      title: "Low Capacity & High Plastic Waste in Large Facilities",
+      description: "High-volume facilities like schools, offices, and factories struggle with constant water jar changes and low-capacity domestic coolers. This leads to dry run times, bad water hygiene, and massive single-use plastic waste."
+    },
+    solution: {
+      title: "CONWAY Commercial Dispensers — Safe & Seamless High Volume",
+      description: "Directly plumbed into your source water with integrated filtration options. CONWAY dispensers deliver continuous hot, cold, and normal water through a food-grade stainless steel body, ensuring zero dry-runs and ultimate hygiene."
+    },
+    features: [
+      { icon: "efficiency", title: "Triple Temp Output", description: "Provides chilled, piping hot, and ambient water simultaneously at high flow rates." },
+      { icon: "maintenance", title: "SS 304 Build", description: "Constructed with heavy-gauge, food-grade stainless steel to prevent rust and ensure cleanliness." },
+      { icon: "energy", title: "Eco Friendly", description: "Direct pipe connection eliminates the need for plastic bubble-top jars or bottles." }
+    ],
+    applications: ["Schools & Colleges", "Hospitals & Clinics", "Factories & Warehouses", "Corporate Offices", "Canteens & Dining Halls", "Public Transit Stations"],
+    process: [
+      { step: 1, title: "Capacity Analysis", description: "We analyze student/staff headcounts to determine the required heating/cooling LPH." },
+      { step: 2, title: "Plumbing Inspection", description: "Inspect water inlet lines and floor drain lines at the proposed site." },
+      { step: 3, title: "Model Selection", description: "Choose the optimal floor-standing or wall-mounted CONWAY model." },
+      { step: 4, title: "Installation", description: "Expert plumber and technician setup with secure pipe connections." },
+      { step: 5, title: "Sanitization & Test", description: "Flush systems, sanitize tanks, and verify heating/cooling temperature ranges." },
+      { step: 6, title: "After-Sales AMC", description: "Periodic inspection, filter cleaning, and complete maintenance support." }
+    ],
+    specs: {
+      capacity: ["20 LPH", "40 LPH", "80 LPH", "120 LPH", "150 LPH"],
+      waterSource: ["Municipal Water", "RO Treated Water", "Borewell Water"],
+      applications: ["Schools", "Offices", "Hospitals", "Factories", "Public Facilities"]
+    },
+    benefitCards: [
+      { title: "Piping Hot & Cold", description: "Get instant hot water for beverages and chilled water for refreshment." },
+      { title: "Heavy-Duty Lifespan", description: "Built to withstand rough public handling with durable stainless-steel panels." },
+      { title: "Authorized OEM Warranty", description: "Backed by official CONWAY warranty and Samudhra's service assurance." }
+    ],
+    faqs: [
+      { question: "What is the warranty on CONWAY water dispensers?", answer: "All CONWAY dispensers carry a comprehensive 1-year manufacturer warranty. Samudhra provides authorized installation and local support across Kerala." },
+      { question: "Do CONWAY dispensers require external water jars?", answer: "No, these are direct-piped models that connect directly to your building water supply, eliminating the hassle of buying or loading plastic jars." }
+    ],
+    relatedServices: ["hot-and-cold-water-dispenser", "ro-plant", "water-tank-cleaning"],
+    metaTitle: "Authorized CONWAY Commercial Water Dispenser Dealer in Kerala",
+    metaDescription: "Samudhra Water Solutions is the authorized dealer of CONWAY Commercial Water Dispensers in Kerala. Heavy-duty stainless steel dispensers for schools, offices & factories.",
+    keywords: "CONWAY water dispenser Kerala, commercial water cooler, stainless steel dispenser, office water dispenser, Samudhra water solutions"
+  },
+  {
+    num: "15",
+    slug: "aquaguard-water-purifiers",
+    title: "Aquaguard Water Purifiers",
+    tagline: "Advanced RO, UV & Active Copper purification for healthy household water.",
+    shortDescription: "Samudhra Water Solutions is an authorized dealer of Aquaguard Water Purifiers, one of India's most trusted and innovative water purification brands. Designed with advanced RO, UV, UF, and Active Copper technologies, Aquaguard purifiers ensure safe, healthy, and great-tasting drinking water for your family.",
+    image: "/images/products/Aquaguard%20Water%20Purifiers.jpeg",
+    heroImage: "/images/products/Aquaguard%20Water%20Purifiers.jpeg",
+    categories: ["residential"],
+    idealFor: ["Homes", "Villas", "Apartments", "Small Offices", "Kitchens"],
+    benefits: [
+      "Advanced multi-stage RO+UV+UF filtration",
+      "Active Copper and Zinc infusion technologies",
+      "Custom fitments for municipal or borewell sources",
+      "Sleek and premium modern kitchen aesthetics",
+      "Authorized local service and repair support"
+    ],
+    problem: {
+      title: "Unsafe Drinking Water & Micro-Contaminants",
+      description: "Tap water from municipal pipes or domestic wells often carries micro-pollutants, heavy metals, chlorine, and viruses that traditional boiling cannot remove. This endangers family health, particularly children and the elderly."
+    },
+    solution: {
+      title: "Aquaguard Purifiers — Smart Purification Architecture",
+      description: "Using high-performance membranes and patented mineral infusion technologies, Aquaguard purifiers neutralize viruses and enrich water with trace minerals like copper and zinc, delivering 100% safe drinking water."
+    },
+    features: [
+      { icon: "efficiency", title: "Active Copper", description: "Infuses copper ions into drinking water to support metabolism and immunity." },
+      { icon: "maintenance", title: "UV e-boiling", description: "Ensures every drop of water is as pure and safe as water boiled for 20 minutes." },
+      { icon: "energy", title: "Taste Adjuster", description: "TDS regulator adjusts water taste according to the source water parameters." }
+    ],
+    applications: ["Residential Kitchens", "Executive Cabins", "Small Clinics", "Office Pantry Spaces", "Apartment Units"],
+    process: [
+      { step: 1, title: "Water Quality Check", description: "We test your tap water TDS and hardness to recommend the correct model." },
+      { step: 2, title: "Model Selection", description: "Choose between wall-mounted, tabletop, or under-counter Aquaguard models." },
+      { step: 3, title: "Installation", description: "Authorized technicians perform installation, plumbing feed, and initial calibration." },
+      { step: 4, title: "TDS Fine Tuning", description: "Calibrate taste adjusters and mineral levels for ideal drinking quality." },
+      { step: 5, title: "AMC Setup", description: "Activate official warranty and scheduled maintenance reminder programs." }
+    ],
+    specs: {
+      capacity: ["7 Liters", "8 Liters", "10 Liters"],
+      waterSource: ["Municipal Water", "Borewell Water", "Tanker Water"],
+      applications: ["Residential", "Domestic Drinking", "Pantry Use"]
+    },
+    benefitCards: [
+      { title: "Active Copper & Zinc", description: "Boosts immunity and wellness with every glass of purified water." },
+      { title: "Ultra-Fine RO Filtration", description: "Filters out heavy metals like lead, mercury, and arsenic efficiently." },
+      { title: "Authentic Service", description: "Authorized dealership ensures prompt spare filters and original membranes." }
+    ],
+    faqs: [
+      { question: "What is the benefit of Active Copper technology?", answer: "It infuses optimal levels of copper ions into the water, which aids digestion, boosts immunity, and maintains overall wellness." },
+      { question: "Which Aquaguard model is best for borewell water?", answer: "We recommend models with RO + UV + TDS regulator capabilities to handle high salinity and dissolved solids typical in borewells." }
+    ],
+    relatedServices: ["multibrand-purifier-servicing", "water-softener", "iron-removal-plant"],
+    metaTitle: "Authorized Aquaguard Water Purifier Dealer in Kerala | Samudhra",
+    metaDescription: "Purchase genuine Aquaguard Water Purifiers from Samudhra Water Solutions, the authorized dealer in Kerala. Expert advice, installation, and filter servicing.",
+    keywords: "Aquaguard dealer Kerala, Aquaguard water purifier, Aquaguard RO service, home water filter, Samudhra water solutions"
+  },
+  {
+    num: "16",
+    slug: "kent-water-purifiers",
+    title: "KENT Water Purifiers",
+    tagline: "House of Purity — India's most trusted Mineral RO water purifiers.",
+    shortDescription: "Samudhra Water Solutions is proud to be an authorized dealer of KENT Water Purifiers, India's most trusted water purification brand. We offer a complete range of KENT water purifiers including RO, UV, UF, Alkaline, Copper-enriched, and Smart IoT-enabled models designed to deliver safe, healthy, and great-tasting drinking water.",
+    image: "/images/products/KENT%20Water%20Purifiers.jpeg",
+    heroImage: "/images/products/KENT%20Water%20Purifiers.jpeg",
+    categories: ["residential"],
+    idealFor: ["Homes", "Offices", "Apartments", "Clinics", "Kitchens"],
+    benefits: [
+      "Patented Mineral RO technology with TDS controller",
+      "Zero Water Wastage technology re-circulates reject water",
+      "Alkaline and copper infusion for balanced pH",
+      "Real-time purity indicators and filter alarms",
+      "Authorized local dealership warranty & AMC services"
+    ],
+    problem: {
+      title: "Severe Salinity & Mineral Depletion during Filtration",
+      description: "Standard RO systems reject all minerals alongside contaminants, leaving drinking water highly acidic and depleted. Additionally, conventional RO systems waste up to 70% of inlet water during the filtration cycle."
+    },
+    solution: {
+      title: "KENT Mineral RO — Retained Minerals & Zero Wastage",
+      description: "KENT's double purification process combines RO + UV + UF while keeping essential natural minerals intact using a TDS controller. Its Zero Water Wastage tech recycles reject water back to your overhead storage tank."
+    },
+    features: [
+      { icon: "efficiency", title: "Mineral RO", description: "Retains essential minerals like calcium and magnesium in drinking water." },
+      { icon: "maintenance", title: "Zero Water Wastage", description: "Saves water by pumping reject water back to the overhead tank, achieving 100% water recovery." },
+      { icon: "energy", title: "Smart Monitoring", description: "Digital screen shows filter life, RO flow rate, and water purity levels." }
+    ],
+    applications: ["Homes & Apartments", "Offices & Pantries", "Clinics & Laboratories", "Restaurants", "Schools & Classrooms"],
+    process: [
+      { step: 1, title: "Source Testing", description: "Measure TDS to determine if a Mineral RO or basic UV filter is required." },
+      { step: 2, title: "Model Selection", description: "Choose between KENT Grand, KENT Supreme, Alkaline, or Under-sink models." },
+      { step: 3, title: "Installation", description: "Technicians secure the unit, configure inlet feed, and install the Zero-Wastage loop." },
+      { step: 4, title: "TDS Adjustments", description: "Calibrate the mineral controller to deliver clean, sweet, and mineral-rich output." },
+      { step: 5, title: "AMC Activation", description: "Register product serial numbers for official warranty coverage and support." }
+    ],
+    specs: {
+      capacity: ["8 Liters", "9 Liters", "15 Liters", "20 Liters"],
+      waterSource: ["Borewell Water", "Municipal Water", "Tanker Water"],
+      applications: ["Residential", "Commercial Offices", "Clinics"]
+    },
+    benefitCards: [
+      { title: "Retained Essential Minerals", description: "TDS Controller keeps natural minerals intact for healthier drinking." },
+      { title: "Zero Water Wastage", description: "Saves water by pumping reject water back to the overhead storage tank." },
+      { title: "Authorized Support", description: "Genuine spares, cartridges, and authorized technicians for maintenance." }
+    ],
+    faqs: [
+      { question: "What is KENT Mineral RO technology?", answer: "It is a patented purification system that uses a TDS Controller to retain essential natural minerals in the purified water, which are typically lost in standard RO purifiers." },
+      { question: "How does the Zero Water Wastage system work?", answer: "Instead of draining the rejected water, it utilizes an internal pump to send the reject water back to your overhead tank for non-potable household uses." }
+    ],
+    relatedServices: ["multibrand-purifier-servicing", "water-softener", "water-tank-cleaning"],
+    metaTitle: "Authorized KENT Water Purifier Dealer in Kerala | Samudhra",
+    metaDescription: "Explore and buy genuine KENT Mineral RO Water Purifiers from Samudhra Water Solutions, the authorized dealer in Kerala. Zero water wastage, mineral retention.",
+    keywords: "KENT water purifier Kerala, KENT Mineral RO, KENT dealer Trivandrum, home RO system, Samudhra water solutions"
   }
 ];
 
