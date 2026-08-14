@@ -1,0 +1,208 @@
+---
+// src/pages/blog.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { blogPosts } from '../utils/blog-data.js';
+
+const schemaData = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Samudhra Water Solutions Knowledge Hub - Water Treatment Guides Kerala",
+  "description": "Expert insights on water purification systems, borewell iron removal plants, water softeners, commercial RO systems, and water testing services across Kerala and Trivandrum.",
+  "url": "https://samudhrawatersolutions.in/blog",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Samudhra Water Solutions",
+    "logo": "https://samudhrawatersolutions.in/images/logo-preview.png",
+    "telephone": "+919645830994"
+  }
+};
+---
+
+<Layout 
+  title="Water Quality & Treatment Blog | Samudhra Water Solutions"
+  description="Expert guides on borewell iron removal, hard water softeners, commercial RO plants, STP, water tank cleaning & purifier servicing in Kerala & Trivandrum."
+  canonicalUrl={Astro.url.href}
+  schema={schemaData}
+>
+  <script is:inline src="https://cdn.tailwindcss.com"></script>
+  <Navbar />
+
+  <!-- PAGE HEADER HERO -->
+  <section class="bg-gradient-to-b from-[#f0f8ff] via-[#F9F9FB] to-white text-slate-900 pt-28 sm:pt-36 pb-12 sm:pb-16 border-b border-slate-200/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="h-[2px] w-12 bg-gradient-to-r from-[#024095] to-[#07bee8]"></span>
+        <span class="text-xs font-black uppercase tracking-[0.35em] text-[#07bee8]">Expert Technical Knowledge</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-[#024095] uppercase leading-tight">
+        Water Knowledge Hub
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 font-medium max-w-3xl mt-3 sm:mt-4 leading-relaxed">
+        Explore technical articles and practical guides from <strong>Samudhra Water Solutions</strong>. Learn how to solve borewell iron water problems, hard water scale, TDS issues, and choose the right treatment system for homes, apartments, hotels, and industrial sites across Kerala &amp; Trivandrum.
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mt-8 sm:mt-10" id="category-filters">
+        <button class="filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl bg-[#024095] text-white shadow-sm transition-all active-filter" data-category="All">
+          All Articles ({blogPosts.length})
+        </button>
+        <button class="filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl bg-white border border-slate-200 text-slate-700 hover:border-[#024095] hover:text-[#024095] transition-all" data-category="Home">
+          Home & Villa Solutions
+        </button>
+        <button class="filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl bg-white border border-slate-200 text-slate-700 hover:border-[#024095] hover:text-[#024095] transition-all" data-category="Commercial">
+          Commercial & Industrial RO
+        </button>
+        <button class="filter-btn px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-xl bg-white border border-slate-200 text-slate-700 hover:border-[#024095] hover:text-[#024095] transition-all" data-category="Sanitation">
+          Sanitation & Wastewater
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLE HERO CARD -->
+  <section class="bg-[#FAF9F6] py-8 sm:py-12 border-b border-slate-200/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="bg-white rounded-3xl border border-slate-200 shadow-md overflow-hidden grid grid-cols-1 lg:grid-cols-12 group hover:shadow-xl transition-all duration-300">
+        <!-- Feature Image -->
+        <div class="lg:col-span-6 relative min-h-[260px] sm:min-h-[340px] overflow-hidden bg-slate-100">
+          <img src={blogPosts[0].image} alt={blogPosts[0].title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute top-4 left-4 bg-[#024095] text-white text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-lg shadow-md">
+            FEATURED ARTICLE
+          </div>
+        </div>
+
+        <!-- Feature Content -->
+        <div class="lg:col-span-6 p-6 sm:p-10 flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center gap-3 text-xs text-slate-500 font-semibold mb-2">
+              <span class="text-[#07bee8] uppercase tracking-wider font-bold">{blogPosts[0].category}</span>
+              <span>•</span>
+              <span>{blogPosts[0].readTime}</span>
+              <span>•</span>
+              <span>{blogPosts[0].date}</span>
+            </div>
+
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-[#024095] uppercase leading-snug group-hover:text-[#07bee8] transition-colors">
+              <a href={`/blog/${blogPosts[0].slug}`}>{blogPosts[0].title}</a>
+            </h2>
+
+            <p class="text-xs sm:text-sm text-slate-600 mt-3 leading-relaxed font-normal">
+              {blogPosts[0].excerpt}
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-bold text-slate-500">By {blogPosts[0].author}</span>
+            <a href={`/blog/${blogPosts[0].slug}`} class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#024095] hover:bg-[#07bee8] text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-sm">
+              Read Full Guide →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL ARTICLES GRID SECTION -->
+  <section class="bg-white py-12 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-4xl font-black text-[#024095] uppercase tracking-tight">All Water Treatment Guides</h2>
+          <p class="text-xs sm:text-sm text-slate-600 mt-1">Select an article to read full technical breakdown and solutions</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8" id="blog-posts-grid">
+        {blogPosts.map((post) => (
+          <article class="post-card bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden flex flex-col justify-between hover:border-[#024095] hover:shadow-lg transition-all duration-300" data-category={post.category}>
+            <div>
+              <div class="relative h-48 sm:h-52 overflow-hidden bg-slate-200">
+                <img src={post.image} alt={post.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="absolute top-3 left-3 bg-[#024095]/90 text-white text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">
+                  {post.category}
+                </span>
+              </div>
+
+              <div class="p-5 sm:p-6 space-y-3">
+                <div class="flex items-center gap-2 text-[11px] text-slate-500 font-medium">
+                  <span>{post.date}</span>
+                  <span>•</span>
+                  <span>{post.readTime}</span>
+                </div>
+
+                <h3 class="text-base sm:text-lg font-bold text-slate-900 leading-snug hover:text-[#024095] transition-colors">
+                  <a href={`/blog/${post.slug}`}>{post.title}</a>
+                </h3>
+
+                <p class="text-xs text-slate-600 leading-relaxed line-clamp-3 font-normal">
+                  {post.excerpt}
+                </p>
+              </div>
+            </div>
+
+            <div class="p-5 pt-0 border-t border-slate-100/80 mt-4 flex items-center justify-between">
+              <span class="text-[11px] text-slate-500 font-medium">Kerala &amp; Trivandrum</span>
+              <a href={`/blog/${post.slug}`} class="inline-flex items-center gap-1.5 text-xs font-black text-[#024095] hover:text-[#07bee8] uppercase tracking-wider transition-colors">
+                Read Article →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WATER TESTING CTA BANNER -->
+  <section class="bg-[#FAF9F6] py-12 sm:py-16 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="bg-gradient-to-r from-[#024095] to-[#011c44] text-white rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-3 max-w-2xl text-center md:text-left">
+          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#07bee8]">Water Testing & Consultation</span>
+          <h3 class="text-2xl sm:text-3xl font-black uppercase tracking-tight">Have a Specific Water Problem in Kerala?</h3>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed">
+            Our engineers test your well or borewell water for iron, TDS, hardness, and bacteria before proposing the exact treatment system.
+          </p>
+        </div>
+        <a href="https://wa.me/919645830994?text=Hi%2C+I+have+a+question+about+a+water+problem+I+saw+on+your+blog."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="px-8 py-4 bg-[#07bee8] hover:bg-white text-[#024095] font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-lg whitespace-nowrap">
+          Talk to Water Engineer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script is:inline>
+  // Category Filter Logic
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const postCards = document.querySelectorAll('.post-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('bg-[#024095]', 'text-white', 'shadow-sm', 'active-filter');
+        b.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-700');
+      });
+
+      btn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-700');
+      btn.classList.add('bg-[#024095]', 'text-white', 'shadow-sm', 'active-filter');
+
+      const cat = btn.getAttribute('data-category');
+
+      postCards.forEach(card => {
+        const cardCat = card.getAttribute('data-category');
+        if (cat === 'All' || cardCat.includes(cat) || cat.includes(cardCat)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>

@@ -73,9 +73,12 @@ const getTrustIcon = (iconName) => {
 
 ---
 
-<Layout title={service.metaTitle}>
-  <!-- Schema markup injection -->
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+<Layout 
+  title={service.metaTitle}
+  description={service.metaDescription}
+  canonicalUrl={Astro.url.href}
+  schema={faqSchema}
+>
   <script is:inline src="https://cdn.tailwindcss.com"></script>
   <Navbar />
 

@@ -1,0 +1,144 @@
+---
+// src/pages/blog/[slug].astro
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+import { blogPosts, getBlogPostBySlug } from '../../utils/blog-data.js';
+
+export async function getStaticPaths() {
+  return blogPosts.map(post => ({
+    params: { slug: post.slug },
+    props: { post }
+  }));
+}
+
+const { post } = Astro.props;
+
+// Article Schema JSON-LD
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": post.title,
+  "description": post.metaDescription,
+  "image": new URL(post.image, Astro.url).toString(),
+  "datePublished": "2026-08-14",
+  "author": {
+    "@type": "Organization",
+    "name": "Samudhra Water Solutions"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Samudhra Water Solutions",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://samudhrawatersolutions.in/images/logo-preview.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": Astro.url.href
+  }
+};
+
+const otherPosts = blogPosts.filter(p => p.slug !== post.slug).slice(0, 3);
+---
+
+<Layout 
+  title={post.metaTitle}
+  description={post.metaDescription}
+  canonicalUrl={Astro.url.href}
+  schema={articleSchema}
+>
+  <script is:inline src="https://cdn.tailwindcss.com"></script>
+  <Navbar />
+
+  <!-- ARTICLE HEADER -->
+  <section class="bg-gradient-to-b from-[#e0f7fc] to-[#FAF9F6] pt-28 sm:pt-36 pb-12 sm:pb-16 border-b border-slate-200/60 relative overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex items-center gap-3 mb-4">
+        <a href="/blog" class="text-xs font-bold text-[#024095] hover:text-[#07bee8] flex items-center gap-1 transition-colors">
+          ← Back to Blog
+        </a>
+        <span class="text-slate-300">•</span>
+        <span class="bg-[#024095] text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-md">
+          {post.category}
+        </span>
+        <span class="text-slate-300">•</span>
+        <span class="text-xs text-slate-500 font-medium">{post.readTime}</span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-[#024095] tracking-tight leading-tight uppercase mb-6">
+        {post.title}
+      </h1>
+
+      <div class="flex items-center gap-4 text-xs text-slate-600 font-medium pt-2 border-t border-slate-200/80">
+        <span>By <strong class="text-slate-900">{post.author}</strong></span>
+        <span>•</span>
+        <span>{post.date}</span>
+        <span>•</span>
+        <span>Location: <strong>Kerala & Trivandrum</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN ARTICLE CONTENT -->
+  <article class="bg-white py-12 sm:py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <!-- Featured Image -->
+      <div class="w-full h-64 sm:h-96 rounded-2xl overflow-hidden shadow-lg border border-slate-200 mb-10">
+        <img src={post.image} alt={post.title} class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Content Body -->
+      <div class="prose prose-slate max-w-none text-slate-800 leading-relaxed space-y-6" set:html={post.content} />
+
+      <!-- CONVERSION CTA CARD -->
+      <div class="my-12 p-6 sm:p-8 bg-gradient-to-br from-[#024095] to-[#011c44] text-white rounded-3xl shadow-xl relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-[#07bee8]/20 rounded-full blur-2xl"></div>
+        <div class="relative z-10 space-y-4">
+          <span class="text-[10px] font-black uppercase tracking-[0.3em] text-[#07bee8]">Water Testing & Consultation</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight">Need a Solution tailored to your water problem?</h3>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed max-w-2xl font-light">
+            Don't guess what filter you need. Get your water tested by Samudhra's certified water engineers in Trivandrum and receive a customized treatment recommendation.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 pt-2">
+            <a href="https://wa.me/919645830994?text=Hi%2C+I+read+your+blog+article+about+${encodeURIComponent(post.title)}+and+want+to+book+a+free+water+test."
+               target="_blank"
+               rel="noopener noreferrer"
+               class="inline-flex items-center justify-center px-6 py-3 bg-[#07bee8] hover:bg-white text-[#024095] font-black text-xs uppercase tracking-widest rounded-xl transition-all shadow-md">
+              Book Free Water Test
+            </a>
+            <a href="/contact" class="inline-flex items-center justify-center px-6 py-3 bg-transparent border border-white/40 hover:bg-white/10 text-white font-bold text-xs uppercase tracking-widest rounded-xl transition-all">
+              Contact Our Engineers
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RELATED ARTICLES -->
+      {otherPosts.length > 0 && (
+        <div class="mt-16 pt-10 border-t border-slate-200">
+          <h3 class="text-xl font-black text-[#024095] uppercase tracking-tight mb-6">Related Water Knowledge Guides</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {otherPosts.map(rel => (
+              <a href={`/blog/${rel.slug}`} class="group bg-slate-50 rounded-2xl p-4 border border-slate-200 hover:border-[#024095] transition-all flex flex-col justify-between">
+                <div>
+                  <span class="text-[9px] font-bold uppercase tracking-wider text-[#07bee8]">{rel.category}</span>
+                  <h4 class="font-bold text-slate-900 text-sm mt-2 group-hover:text-[#024095] transition-colors leading-snug line-clamp-2">
+                    {rel.title}
+                  </h4>
+                </div>
+                <span class="text-xs font-bold text-[#024095] mt-4 flex items-center gap-1">
+                  Read Article →
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  </article>
+
+  <Footer />
+</Layout>
