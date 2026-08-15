@@ -67,14 +67,12 @@ const clientLogos = Array.from({ length: 24 }, (_, idx) => {
   title="Water Treatment Company in Kerala & Trivandrum | Samudhra"
   description="Samudhra Water Solutions is the leading water treatment company in Kerala and Trivandrum (Thiruvananthapuram). Expert borewell iron removal, water softeners, commercial RO plants, STP, ETP, and free water quality testing."
 >
-  <script is:inline src="https://cdn.tailwindcss.com"></script>
-  <!-- Use a custom navbar style in index if needed, or stick to the global Navbar -->
   <Navbar theme="dark" />
 
   <!-- HERO SECTION -->
   <section class="relative min-h-[90vh] flex items-center justify-center pt-28 sm:pt-36">
     <div class="absolute inset-0 z-0">
-      <img src="/images/hero/hero1.png" alt="Industrial water treatment company in Kerala and Trivandrum" class="w-full h-full object-cover object-top" />
+      <img src="/images/hero/hero1.png" alt="Industrial water treatment company in Kerala and Trivandrum" class="w-full h-full object-cover object-top" loading="eager" fetchpriority="high" decoding="async" />
       <!-- Subtle dark overlay to ensure the white text remains readable -->
       <div class="absolute inset-0 bg-black/40"></div>
     </div>

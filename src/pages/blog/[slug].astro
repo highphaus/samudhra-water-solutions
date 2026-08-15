@@ -49,7 +49,6 @@ const otherPosts = blogPosts.filter(p => p.slug !== post.slug).slice(0, 3);
   canonicalUrl={Astro.url.href}
   schema={articleSchema}
 >
-  <script is:inline src="https://cdn.tailwindcss.com"></script>
   <Navbar />
 
   <!-- ARTICLE HEADER -->
