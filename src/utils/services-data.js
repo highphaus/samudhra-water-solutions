@@ -648,9 +648,9 @@ export const services = [
       { question: "Is there a warranty on service work?", answer: "Yes, all parts replaced carry a manufacturer warranty, and our service work is warranted for 30-90 days depending on the type of repair performed." }
     ],
     relatedServices: ["ro-plant", "iron-removal-plant", "water-softener"],
-    metaTitle: "MultiBrand Water Purifier Service in Trivandrum | Samudhra Water Solutions",
-    metaDescription: "Expert water purifier servicing for all brands in Thiruvananthapuram. Kent, Aquaguard, Pureit, LivPure repair & maintenance. Genuine spares. Same-day doorstep service.",
-    keywords: "water purifier service Trivandrum, Kent service center, Aquaguard repair, multi-brand purifier maintenance, Samudhra water solutions"
+    metaTitle: "Water Purifier Service in Trivandrum & Kerala | RO Repair & AMC | Samudhra",
+    metaDescription: "Top-rated water purifier service in Trivandrum & Thiruvananthapuram, Kerala. RO purifier repair, filter cartridge replacement, membrane cleaning & AMC for Kent, Aquaguard, Pureit, LivPure & all brands.",
+    keywords: "water purifier service in Trivandrum, water purifier service Thiruvananthapuram, water purifier repair Kerala, Kent water purifier service Trivandrum, Aquaguard repair center Thiruvananthapuram, RO purifier servicing Kerala, filter cartridge replacement, water purifier AMC Kerala, doorstep purifier repair Trivandrum, Samudhra water solutions"
   },
   {
     num: "10",

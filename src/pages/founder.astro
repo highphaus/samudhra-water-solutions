@@ -6,14 +6,14 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Layout 
-  title="Leadership & Engineering Vision | Samudhra Water Solutions"
-  description="Read the founder statement and engineering vision behind Samudhra Water Solutions — pioneering customized water treatment and purification solutions across Kerala since 2009."
+  title="Founder Message | Water Treatment Company in Kerala | Samudhra"
+  description="Founder message by Rajesh Kumar V K, Managing Director of Samudhra Water Solutions — leading water treatment company in Kerala. 17+ years of water engineering excellence."
   canonicalUrl={Astro.url.href}
 >
   <Navbar />
 
   <!-- HERO HEADER -->
-  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-12 sm:pb-20 border-b border-slate-200/60">
+  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-12 sm:pb-16 border-b border-slate-200/60">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="flex items-center gap-3 mb-5 sm:mb-6">
         <span class="h-[1px] w-10 sm:w-12 bg-[#024095]"></span>
@@ -35,12 +35,17 @@ import Footer from '../components/Footer.astro';
 
         <!-- LEFT — Portrait (Main photo Rajesh) -->
         <div class="col-span-1 lg:col-span-5">
-          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg group">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xl group relative bg-white">
             <img
               src="/images/founder.jpeg"
               alt="Rajesh — Founder & Managing Director"
-              class="w-full aspect-[4/5] object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+              class="w-full aspect-[4/5] object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out cursor-pointer"
+              onclick="openLightbox('/images/founder.jpeg', 'Rajesh — Founder & Managing Director')"
             />
+            <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md px-4 py-3 rounded-xl border border-slate-200/80 shadow-md">
+              <p class="text-sm font-black text-[#024095] uppercase">Rajesh Kumar V K</p>
+              <p class="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Founder &amp; Managing Director</p>
+            </div>
           </div>
         </div>
 
@@ -51,41 +56,40 @@ import Footer from '../components/Footer.astro';
           <div class="space-y-6">
             <!-- Name block -->
             <div class="space-y-1">
-              <span class="text-[9px] font-mono text-[#07bee8] uppercase tracking-widest">[ Executive Chair ]</span>
-              <p class="text-3xl sm:text-4xl font-black text-[#024095] tracking-tight uppercase">Rajesh</p>
-              <p class="text-xs font-bold text-black tracking-wider uppercase">Founder &amp; Managing Director</p>
+              <p class="text-3xl sm:text-4xl font-black text-[#024095] tracking-tight uppercase">Rajesh Kumar V K</p>
+              <p class="text-xs font-bold text-slate-600 tracking-wider uppercase">Founder &amp; Managing Director</p>
             </div>
 
             <!-- Quick facts -->
-            <div class="space-y-2 border-t border-slate-200/60 pt-4">
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
-                <span class="text-xs font-bold text-black">Est. 2009, Thiruvananthapuram</span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 border-y border-slate-200/80 py-4">
+              <div class="flex items-center gap-2 bg-white px-3 py-2.5 rounded-lg border border-slate-200/60 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-[#07bee8] shrink-0"></span>
+                <span class="text-xs font-bold text-slate-800">Est. 2009, TVM</span>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#024095]"></span>
-                <span class="text-xs font-bold text-black">17+ Years in Water Solutions</span>
+              <div class="flex items-center gap-2 bg-white px-3 py-2.5 rounded-lg border border-slate-200/60 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-[#024095] shrink-0"></span>
+                <span class="text-xs font-bold text-slate-800">17+ Yrs Experience</span>
               </div>
-              <div class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8]"></span>
-                <span class="text-xs font-bold text-black">ISO 9001 Certified Operations</span>
+              <div class="flex items-center gap-2 bg-white px-3 py-2.5 rounded-lg border border-slate-200/60 shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-[#07bee8] shrink-0"></span>
+                <span class="text-xs font-bold text-slate-800">ISO 9001 Certified</span>
               </div>
             </div>
 
             <!-- Vision block -->
-            <div class="space-y-2 border-t border-slate-100 pt-4">
+            <div class="space-y-2 pt-2">
               <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">Strategic Vision</span>
               <h3 class="text-lg sm:text-xl font-black tracking-tight text-[#024095] uppercase">The Architecture of Performance</h3>
-              <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">
                 When I established this organization in 2009, the community was forced to settle for standardized generic filtration equipment. We rejected that model entirely — committing our teams to meticulous pre-assembly site analysis so every client receives long-lasting operational certainty.
               </p>
             </div>
 
             <!-- Commitment block -->
-            <div class="space-y-2 border-t border-slate-100 pt-4">
+            <div class="space-y-2 border-t border-slate-200/60 pt-4">
               <span class="text-xs font-mono text-[#07bee8] font-bold uppercase tracking-widest">Our Commitment</span>
               <h3 class="text-lg sm:text-xl font-black tracking-tight text-[#024095] uppercase">Quality Without Compromise</h3>
-              <p class="text-xs sm:text-sm text-black font-light leading-relaxed">
+              <p class="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">
                 Every system we deploy is tested, calibrated and certified before it reaches your property. Our after-sales maintenance contracts ensure that the water quality you experienced on Day 1 remains consistent for years.
               </p>
             </div>
@@ -109,6 +113,89 @@ import Footer from '../components/Footer.astro';
     </div>
   </section>
 
+  <!-- FEATURED RECOGNITION & AWARD SECTION (FOUNDER 6) -->
+  <section class="bg-slate-900 text-white py-16 sm:py-24 border-t border-slate-800 relative overflow-hidden">
+    <!-- Ambient light glow effects -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#07bee8]/10 rounded-full blur-3xl pointer-events-none -mr-40 -mt-40"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#024095]/20 rounded-full blur-3xl pointer-events-none -ml-40 -mb-40"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-mono text-[#07bee8] font-extrabold uppercase tracking-[0.25em] block mb-2">Prestigious Honor</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
+            MSME Day Award <span class="text-[#07bee8]">2026</span>
+          </h2>
+          <p class="text-slate-400 text-xs sm:text-sm mt-3 font-light max-w-2xl leading-relaxed">
+            Conferred by the Kerala State Small Industries Association (KSSIA) in recognition of outstanding dedication, innovation, and industrial growth in water purification engineering.
+          </p>
+        </div>
+        <div class="shrink-0">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#07bee8]/10 border border-[#07bee8]/30 text-[#07bee8] text-xs font-bold uppercase tracking-wider">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 011.342.447l1 2a1 1 0 01-.447 1.342l-1.599.8.8 3.954H19a1 1 0 110 2h-1.323l-1.582 3.954 1.599.8a1 1 0 01.447 1.342l-1 2a1 1 0 01-1.342.447l-1.599-.8-.8 3.954a1 1 0 01-1 1H8a1 1 0 01-1-1l-.8-3.954-1.599.8a1 1 0 01-1.342-.447l-1-2a1 1 0 01.447-1.342l1.599-.8L2 14.323V13a1 1 0 112 0v-1.323l3.954-1.582-1.599-.8a1 1 0 01-.447-1.342l1-2a1 1 0 011.342-.447l1.599.8L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd"/></svg>
+            State Industry Honor
+          </span>
+        </div>
+      </div>
+
+      <!-- Feature Content Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-800/60 border border-slate-700/80 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-2xl">
+        
+        <!-- Left: Image Showcase Card -->
+        <div class="lg:col-span-6 group cursor-pointer" onclick="openLightbox('/images/founder6.jpeg', 'Mr. Rajesh Kumar V K - MSME Day Award 2026 by KSSIA')">
+          <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-[#021434]">
+            <img 
+              src="/images/founder6.jpeg" 
+              alt="Mr. Rajesh Kumar V K receiving MSME Day Award 2026" 
+              class="w-full h-auto max-h-[520px] object-contain mx-auto group-hover:scale-105 transition-transform duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                Click to Enlarge
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Details & Citation -->
+        <div class="lg:col-span-6 flex flex-col gap-6 text-slate-200">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono text-[#07bee8] uppercase tracking-[0.3em] font-extrabold">Official Citation</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white leading-snug">
+              "Honouring Visionary Leadership, Dedication & Innovation"
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+              Mr. Rajesh Kumar V K, Managing Director of Samudhra Water Solutions, was conferred the <strong class="text-white font-semibold">MSME Day Award 2026</strong> by KSSIA in recognition of his outstanding dedication, technological innovation, and sustainable employment generation across Kerala.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-700/80 pt-6">
+            <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-700/60">
+              <p class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider mb-1">Presented By</p>
+              <p class="text-xs font-bold text-white">Shri V. D. Satheesan</p>
+              <p class="text-[10px] text-slate-400">Hon'ble Chief Minister of Kerala</p>
+            </div>
+            <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-700/60">
+              <p class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider mb-1">Distinguished Guests</p>
+              <p class="text-xs font-bold text-white">Shri P. K. Kunhalikutty</p>
+              <p class="text-[10px] text-slate-400">Minister for Industries, Govt. of Kerala</p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-[#024095]/40 to-[#07bee8]/20 p-4 rounded-xl border border-[#07bee8]/30">
+            <p class="text-xs text-white/90 italic leading-relaxed">
+              "This recognition reinforces our unwavering commitment to advancing Kerala's water engineering standards with pure, sustainable, and custom-designed purification solutions."
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- LEADERSHIP & ON-SITE ENGAGEMENT GALLERY -->
   <section class="bg-white py-16 sm:py-24 border-t border-slate-200/60 relative overflow-hidden">
     <!-- Decorative background elements -->
@@ -120,52 +207,127 @@ import Footer from '../components/Footer.astro';
       <div class="text-left max-w-3xl mb-12">
         <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Milestones & Leadership</span>
         <h2 class="text-3xl font-black text-[#024095] uppercase tracking-tight">
-          Recognition & <span class="text-[#07bee8]">Professional Engagements</span>
+          Professional <span class="text-[#07bee8]">Engagements & Events</span>
         </h2>
         <p class="text-slate-500 text-xs sm:text-sm mt-4 font-light leading-relaxed">
-          Highlighting milestones of excellence and leadership. From receiving industry honors and speaking at public forums to collaborating within professional business networks, Rajesh continues to drive standards across the water solutions sector.
+          Highlighting key moments from public forums, industry summits, and business networking engagements as Rajesh continues to champion engineering standards across Kerala.
         </p>
       </div>
 
-      <!-- Large Image Grid -->
+      <!-- 3-Column Balanced Image Grid -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         
         <!-- Image 2 -->
-        <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 group">
-          <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+        <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer bg-slate-50 flex flex-col" onclick="openLightbox('/images/founder%202.png', 'Rajesh - Professional Network & Leadership Engagement')">
+          <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
             <img 
               src="/images/founder%202.png" 
-              alt="Founder Rajesh" 
+              alt="Founder Rajesh Professional Engagement" 
               class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
             />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="w-10 h-10 rounded-full bg-white/90 text-[#024095] flex items-center justify-center shadow-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="p-4 bg-white border-t border-slate-100">
+            <p class="text-xs font-bold text-[#024095] uppercase">Industry Summits</p>
+            <p class="text-[11px] text-slate-500 mt-0.5">Professional Business Forums</p>
           </div>
         </div>
 
         <!-- Image 3 -->
-        <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 group bg-white">
-          <div class="aspect-[4/3] overflow-hidden bg-white">
+        <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 group bg-white cursor-pointer flex flex-col" onclick="openLightbox('/images/founder%203.png', 'Rajesh - Leadership Forum & Public Recognition')">
+          <div class="aspect-[4/3] overflow-hidden bg-white relative">
             <img 
               src="/images/founder%203.png" 
-              alt="Founder Rajesh" 
+              alt="Founder Rajesh Leadership Forum" 
               class="w-full h-full object-contain object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
             />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="w-10 h-10 rounded-full bg-white/90 text-[#024095] flex items-center justify-center shadow-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="p-4 bg-white border-t border-slate-100">
+            <p class="text-xs font-bold text-[#024095] uppercase">Leadership Forums</p>
+            <p class="text-[11px] text-slate-500 mt-0.5">Public Keynote & Honor</p>
           </div>
         </div>
 
         <!-- Image 4 -->
-        <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 group">
-          <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+        <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 group cursor-pointer bg-slate-50 flex flex-col" onclick="openLightbox('/images/founder%204.png', 'Rajesh - Water Sector Keynote Presentation')">
+          <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
             <img 
               src="/images/founder%204.png" 
-              alt="Founder Rajesh" 
+              alt="Founder Rajesh Industry Presentation" 
               class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
             />
+            <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <span class="w-10 h-10 rounded-full bg-white/90 text-[#024095] flex items-center justify-center shadow-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              </span>
+            </div>
+          </div>
+          <div class="p-4 bg-white border-t border-slate-100">
+            <p class="text-xs font-bold text-[#024095] uppercase">Keynote Presentations</p>
+            <p class="text-[11px] text-slate-500 mt-0.5">Water Tech Symposium</p>
           </div>
         </div>
 
       </div>
     </div>
   </section>
+
+  <!-- LIGHTBOX MODAL FOR GALLERY -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
+    <button 
+      id="lightbox-close" 
+      class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all z-10"
+      aria-label="Close modal"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="max-w-4xl max-h-[90vh] flex flex-col items-center justify-center">
+      <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full object-contain rounded-xl shadow-2xl" />
+      <p id="lightbox-caption" class="text-white/90 text-xs sm:text-sm font-semibold mt-4 text-center tracking-wide bg-slate-900/80 px-6 py-2 rounded-full border border-white/10"></p>
+    </div>
+  </div>
+
+  <script is:inline>
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      if (modal && img && cap) {
+        img.src = src;
+        cap.textContent = caption;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('lightbox-modal');
+      const closeBtn = document.getElementById('lightbox-close');
+      if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        });
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+  </script>
 
   <Footer />
 </Layout>

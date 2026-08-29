@@ -11,8 +11,8 @@ interface Props {
 }
 
 const { 
-  title = "Water Treatment Company in Kerala | Water Treatment Company in Trivandrum & Thiruvananthapuram | Samudhra",
-  description = "Samudhra Water Solutions is your trusted water treatment company in Kerala and water treatment company in Trivandrum & Thiruvananthapuram. Specializing in iron removal plants, water softeners, commercial RO systems, STP, ETP, and free water quality testing.",
+  title = "Water Treatment Company in Kerala | Water Purifier Services | Samudhra",
+  description = "Samudhra Water Solutions is a premier water treatment company in Kerala. Expert doorstep water purifier service in Trivandrum, iron removal plants, water softeners, commercial RO plants, STP, and ETP. Free water quality testing.",
   canonicalUrl,
   image = "/images/logo-preview.png",
   schema
@@ -21,19 +21,26 @@ const {
 const pageCanonical = canonicalUrl || Astro.url.href;
 const metaImageUrl = new URL(image, Astro.url).toString();
 
-// Base LocalBusiness Schema
+// Base LocalBusiness & WaterTreatmentCompany Schema
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
   "name": "Samudhra Water Solutions",
+  "alternateName": "Water Treatment Company in Kerala",
   "image": metaImageUrl,
   "@id": "https://samudhrawatersolutions.in",
   "url": "https://samudhrawatersolutions.in",
   "telephone": "+919645830994",
   "priceRange": "₹₹",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "384",
+    "bestRating": "5"
+  },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Poojappura",
+    "streetAddress": "Soorya Nidhi, TC 42/1231, Main Road, Near Canara Bank, Poojapura",
     "addressLocality": "Thiruvananthapuram",
     "addressRegion": "Kerala",
     "postalCode": "695012",
@@ -47,15 +54,24 @@ const localBusinessSchema = {
   "areaServed": [
     { "@type": "State", "name": "Kerala" },
     { "@type": "City", "name": "Thiruvananthapuram" },
-    { "@type": "City", "name": "Trivandrum" }
+    { "@type": "City", "name": "Trivandrum" },
+    { "@type": "City", "name": "Kollam" },
+    { "@type": "City", "name": "Kochi" },
+    { "@type": "City", "name": "Ernakulam" },
+    { "@type": "City", "name": "Kottayam" },
+    { "@type": "City", "name": "Thrissur" },
+    { "@type": "City", "name": "Kozhikode" }
   ],
   "knowsAbout": [
-    "Water Treatment Plant",
-    "Iron Removal Plant",
-    "Water Softener",
-    "Reverse Osmosis Plant",
-    "Sewage Treatment Plant",
-    "Effluent Treatment Plant",
+    "Best Water Treatment Company in Kerala",
+    "Best Water Treatment Company in Trivandrum",
+    "Water Purifier Service in Trivandrum",
+    "RO Water Purifier Repair & Servicing",
+    "Borewell Iron Removal Plant",
+    "Hard Water Softener Installation",
+    "Commercial Reverse Osmosis Plant",
+    "Sewage Treatment Plant STP",
+    "Effluent Treatment Plant ETP",
     "Water Quality Testing",
     "Water Tank Cleaning"
   ]
