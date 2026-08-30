@@ -1118,7 +1118,7 @@ export const companyStats = [
 ];
 
 export const whySamudhra = [
-  { title: "16+ Years Experience", description: "Trusted water treatment expertise since 2009.", icon: "trophy" },
+  { title: "16+ Years Experience", description: "Trusted water treatment expertise across Kerala.", icon: "trophy" },
   { title: "1000+ Installations", description: "Successfully completed across Kerala and beyond.", icon: "check-circle" },
   { title: "Expert Engineers", description: "Certified professionals with deep domain knowledge.", icon: "users" },
   { title: "Custom Solutions", description: "Every system designed specifically for your water.", icon: "settings" },

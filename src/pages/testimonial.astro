@@ -7,33 +7,9 @@ import Footer from '../components/Footer.astro';
 // Initials are derived from client names — no fake photos
 const reviews = [
   {
-    client: "Dr. K. Raghavan",
-    entity: "Private Clinical Center, TVM",
-    statement: "Samudhra precision-engineered our full 50,000 LPH reverse osmosis layout with absolute corporate standard clean lines. Their custom media filter parameters handled our hard water iron properties flawlessly. Purity remains total.",
-    rating: "★★★★★",
-    initials: "KR",
-    color: "#024095"
-  },
-  {
-    client: "Meera Nair",
-    entity: "Residential Villa, Kowdiar",
-    statement: "We completely bypassed generic retail options and had Samudhra customize an automated brine softener and multi-brand copper infusion system for our whole house. The white scale buildup inside our piping networks was instantly eliminated.",
-    rating: "★★★★★",
-    initials: "MN",
-    color: "#07bee8"
-  },
-  {
-    client: "Thomas Kurian",
-    entity: "Commercial Complex, Thampanoor",
-    statement: "Managing high-volume commercial properties requires absolute direct service accountability. Samudhra's maintenance contract team performs rigorous membrane audits and parameter inspections like clockwork.",
-    rating: "★★★★★",
-    initials: "TK",
-    color: "#024095"
-  },
-  {
     client: "Anil Kumar",
     entity: "Factory Director, Kazhakkoottam",
-    statement: "Excellent service and prompt response. The team installed a commercial RO plant in our factory near Kazhakkoottam. Very professional and highly recommended for industrial water purification needs.",
+    statement: "Installed a commercial RO plant in our factory near Kazhakkoottam. Very professional team, transparent guidance, and prompt maintenance support.",
     rating: "★★★★★",
     initials: "AK",
     color: "#0ea5e9"
@@ -69,6 +45,14 @@ const reviews = [
     rating: "★★★★★",
     initials: "DN",
     color: "#07bee8"
+  },
+  {
+    client: "Dr. K. Raghavan",
+    entity: "Clinical Center, TVM",
+    statement: "Samudhra designed and installed a reverse osmosis system for our facility. Their custom media filtration handled our iron and hard water issues reliably.",
+    rating: "★★★★★",
+    initials: "KR",
+    color: "#024095"
   }
 ];
 
@@ -88,8 +72,8 @@ for (let i = 1; i <= 60; i++) {
 ---
 
 <Layout 
-  title="Client Reviews | Water Treatment Company in Kerala | Samudhra"
-  description="Read 380+ verified 5-star customer reviews for Samudhra Water Solutions — premier water treatment company in Kerala and doorstep water purifier service in Trivandrum. Rated 4.9/5."
+  title="Client Testimonials and Reviews | Samudhra"
+  description="Read verified customer feedback for Samudhra Water Solutions across Kerala. See client experiences with iron removal filters, softeners and RO plants."
   canonicalUrl={Astro.url.href}
 >
   <Navbar />
@@ -170,12 +154,12 @@ for (let i = 1; i <= 60; i++) {
   </div>
 
   <!-- REVIEWS GRID PANEL -->
-  <section id="reviews-section" class="hidden bg-[#FAF9F6] text-slate-900 py-14 sm:py-20">
+  <section id="reviews-section" class="bg-[#FAF9F6] text-slate-900 py-14 sm:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {reviews.map((rev) => (
           <a 
-            href="https://www.google.com/maps/search/?api=1&query=Samudhra+Water+Solutions+Poojappura+Thiruvananthapuram"
+            href="https://maps.app.goo.gl/f9PezLmRUYLq52998"
             target="_blank"
             rel="noopener noreferrer"
             class="p-6 sm:p-8 lg:p-10 bg-white border-l-4 border-[#024095] rounded-r-md flex flex-col justify-between shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-pointer block text-left"
