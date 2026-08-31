@@ -7,7 +7,7 @@ export const blogPosts = [
     slug: "iron-removal-plant-borewell",
     title: "How to Remove Iron from Borewell & Well Water in Kerala: Complete Guide",
     metaTitle: "Iron Removal Plant for Borewell Water in Kerala | Samudhra",
-    metaDescription: "Learn how to eliminate iron, yellow water, reddish-brown rust stains, and metallic odor from borewell water using catalytic Iron Removal Plants in Trivandrum, Thiruvananthapuram & Kerala.",
+    metaDescription: "Learn how to eliminate iron, yellow water, reddish-brown rust stains, and metallic odor from borewell water using catalytic Iron Removal Plants in Trivandrum and throughout Kerala.",
     keywords: "iron in well water, iron in borewell water, how to remove iron from well water, iron removal filter, iron removal plant Kerala, iron removal plant Trivandrum, yellow well water treatment",
     category: "Home & Commercial Water",
     readTime: "7 min read",
