@@ -9,37 +9,37 @@ const teamMembers = [
     name: "Rajesh Kumar V K",
     role: "Founder & Managing Director",
     experience: "15+ Years Experience (Est. 2009)",
-    bio: "Pioneered customized water treatment engineering across Kerala. Leads strategic vision and system quality assurance.",
+    bio: "Pioneered customized water treatment engineering across Kerala. Leads strategic vision, system design, and overall quality assurance.",
     image: "/images/founder.jpeg",
     objectPos: "object-[center_35%]",
-    tag: "LEADERSHIP"
+    badge: "LEADERSHIP"
   },
   {
-    name: "Engineering & Field Operations Squad",
-    role: "Senior Water Process Engineers",
+    name: "Water Process Engineers",
+    role: "Senior Field Operations Squad",
     experience: "12+ Years Field Expertise",
-    bio: "Specialists in custom RO plants, iron removal systems, DM units, and industrial water treatment installations across Kerala.",
+    bio: "Specialists in custom RO plants, iron removal systems, DM units, and high-capacity industrial water treatment installations across Kerala.",
     image: "/images/team/DSC06080.JPG",
     objectPos: "object-center",
-    tag: "FIELD ENGINEERING"
+    badge: "FIELD ENGINEERING"
   },
   {
-    name: "Site Assessment & Technical Services",
-    role: "Operations & Quality Assessment Lead",
+    name: "Site Assessment Squad",
+    role: "Technical Operations & Audits",
     experience: "10+ Years Operational Service",
-    bio: "Oversees site water audits, STP/ETP commissioning, and emergency doorstep maintenance support across Trivandrum.",
+    bio: "Oversees doorstep water quality audits, automated STP/ETP commissioning, and emergency maintenance support across Trivandrum.",
     image: "/images/team/DSC06084%20(1).JPG",
     objectPos: "object-center",
-    tag: "OPERATIONS"
+    badge: "SITE OPERATIONS"
   },
   {
-    name: "Water Chemistry & Design Unit",
-    role: "CAD Design & Technical Planning Specialists",
+    name: "Water Quality Lab Unit",
+    role: "CAD & Chemistry Planning",
     experience: "8+ Years Engineering Design",
-    bio: "Analyzes raw water lab test metrics (iron, TDS, hardness) and designs tailored filtration flow diagrams.",
+    bio: "Analyzes raw water lab test metrics (iron, TDS, hardness) and configures custom filtration flow diagrams for homes & industries.",
     image: "/images/team/Laptop.jpeg",
     objectPos: "object-center",
-    tag: "DESIGN & PLANNING"
+    badge: "DESIGN & LAB"
   }
 ];
 
@@ -79,8 +79,8 @@ const teamPhotos = [
   <Navbar />
 
   <!-- HERO HEADER -->
-  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-20 border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-20 border-b border-slate-200/60 relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center relative z-10">
       <span class="text-[10px] sm:text-xs font-mono font-extrabold uppercase tracking-[0.35em] text-[#07bee8] block mb-3">
         EXPERT WATER SPECIALISTS &amp; ENGINEERS
       </span>
@@ -105,32 +105,56 @@ const teamPhotos = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {teamMembers.map((member) => (
-          <div class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between cursor-pointer" onclick={`openLightbox('${member.image}', '${member.name} - ${member.role}')`}>
+          <div 
+            class="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between cursor-pointer" 
+            onclick={`openLightbox('${member.image}', '${member.name} - ${member.role}')`}
+          >
             <div>
-              <div class="relative overflow-hidden aspect-[4/4] bg-slate-100">
-                <span class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-[#024095] text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
-                  {member.tag}
+              <!-- Photo Container -->
+              <div class="relative overflow-hidden aspect-[3/4] bg-slate-100">
+                <!-- Badge -->
+                <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-[#024095]/90 text-white text-[9px] font-black uppercase tracking-wider rounded-full backdrop-blur-md border border-white/20 shadow-lg">
+                  {member.badge}
                 </span>
+
+                <!-- Image -->
                 <img 
                   src={member.image} 
                   alt={member.name} 
                   class={`w-full h-full object-cover ${member.objectPos} group-hover:scale-105 transition-transform duration-700 ease-out`} 
                 />
+
+                <!-- Hover Overlay -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#024095]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span class="px-4 py-2 bg-white/90 text-[#024095] text-xs font-black uppercase tracking-wider rounded-full shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                    Enlarge Photo
+                  </span>
+                </div>
               </div>
-              <div class="p-5">
-                <span class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider block mb-1">
+
+              <!-- Content Area -->
+              <div class="p-6">
+                <!-- Experience Tag -->
+                <span class="px-2.5 py-1 bg-[#07bee8]/10 text-[#024095] text-[10px] font-black uppercase tracking-wider rounded-md inline-block mb-3 border border-[#07bee8]/20">
                   {member.experience}
                 </span>
-                <h3 class="text-base font-black text-[#024095] uppercase tracking-tight leading-snug">{member.name}</h3>
+
+                <!-- Name & Role -->
+                <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight leading-snug">{member.name}</h3>
                 <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mt-1">{member.role}</p>
-                <p class="text-xs text-slate-600 font-light leading-relaxed mt-3">{member.bio}</p>
+
+                <!-- Bio -->
+                <p class="text-xs text-slate-600 font-light leading-relaxed mt-3 pt-3 border-t border-slate-100">{member.bio}</p>
               </div>
             </div>
-            <div class="p-5 pt-0">
-              <span class="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider text-[#024095] group-hover:text-[#07bee8] transition-colors">
-                <span>Enlarge Photo</span>
-                <span>&rarr;</span>
-              </span>
+
+            <!-- Action Button Footer -->
+            <div class="p-6 pt-0">
+              <div class="w-full py-2.5 px-4 bg-slate-50 group-hover:bg-[#024095] text-[#024095] group-hover:text-white rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-between transition-all duration-300 border border-slate-200/70 group-hover:border-[#024095]">
+                <span>View Member Profile</span>
+                <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
+              </div>
             </div>
           </div>
         ))}
@@ -153,26 +177,35 @@ const teamPhotos = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {teamPhotos.map((photo) => (
-          <div class="bg-[#FAF9F6] rounded-3xl border border-slate-200/80 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col" onclick={`openLightbox('${photo.image}', '${photo.title} - ${photo.subtitle}')`}>
-            <div class="aspect-[16/10] overflow-hidden bg-slate-200 relative">
-              <img 
-                src={photo.image} 
-                alt={photo.title} 
-                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
-              />
-              <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="px-4 py-2 rounded-full bg-white/90 text-[#024095] text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-2">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
-                  Click to View Full Size
-                </span>
+          <div 
+            class="bg-[#FAF9F6] rounded-3xl border border-slate-200/80 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col justify-between" 
+            onclick={`openLightbox('${photo.image}', '${photo.title} - ${photo.subtitle}')`}
+          >
+            <div>
+              <div class="aspect-[16/10] overflow-hidden bg-slate-200 relative">
+                <img 
+                  src={photo.image} 
+                  alt={photo.title} 
+                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+                />
+                <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span class="px-4 py-2 rounded-full bg-white/90 text-[#024095] text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                    Click to View Full Size
+                  </span>
+                </div>
               </div>
-            </div>
-            <div class="p-6 bg-white flex-1 flex flex-col justify-between border-t border-slate-100">
-              <div>
+              <div class="p-6 bg-white border-t border-slate-100">
                 <span class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider block mb-1">{photo.subtitle}</span>
                 <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight">{photo.title}</h3>
                 <p class="text-xs text-slate-600 font-light leading-relaxed mt-2">{photo.description}</p>
               </div>
+            </div>
+            <div class="p-6 pt-0 bg-white">
+              <span class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#024095] group-hover:text-[#07bee8] transition-colors pt-3 border-t border-slate-100 w-full">
+                <span>View Operational Photo</span>
+                <span>&rarr;</span>
+              </span>
             </div>
           </div>
         ))}
@@ -248,5 +281,6 @@ const teamPhotos = [
 
   <Footer />
 </Layout>
+
 
 
