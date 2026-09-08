@@ -3,33 +3,6 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-
-const programs = [
-  {
-    title: "Clean School Water Initiative",
-    tag: "COMMUNITY & EDUCATION",
-    description: "Providing subsidized, high-capacity UV/UF filtration and iron removal systems for schools across Trivandrum and Kerala to ensure safe drinking water for students.",
-    highlights: ["Free Source Water Testing", "Subsidized Plant Installation", "Annual Maintenance Included"]
-  },
-  {
-    title: "Community Borewell Purification Drive",
-    tag: "PUBLIC HEALTH",
-    description: "Partnering with local self-governments, Panchayats, and resident associations to install centralized community iron removal and water softening plants.",
-    highlights: ["KSPCB Norms Compliant", "Multi-Stage Iron Removal", "High-Volume Output"]
-  },
-  {
-    title: "Zero Wastewater & STP Recycling Program",
-    tag: "ENVIRONMENT & SUSTAINABILITY",
-    description: "Assisting apartment complexes, hotels, and industrial facilities in deploying zero-discharge STP/ETP systems to reclaim up to 80% of wastewater for landscaping and non-potable reuse.",
-    highlights: ["MBBR / MBR Technology", "Water Reuse Ready", "Full KSPCB Paperwork Support"]
-  },
-  {
-    title: "Doorstep Water Audit & AMC Program",
-    tag: "RESIDENTIAL CARE",
-    description: "Comprehensive home water testing, filter health inspection, and scheduled annual maintenance contracts (AMC) for all major domestic water purifier brands.",
-    highlights: ["Genuine Multibrand Spares", "Doorstep Lab Testing", "24/7 Priority Support"]
-  }
-];
 ---
 
 <Layout 
@@ -208,96 +181,7 @@ const programs = [
     </div>
   </section>
 
-  <!-- PROGRAM LIST SECTION -->
-  <section class="py-16 sm:py-24 bg-[#FAF9F6] border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-left mb-12">
-        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Community &amp; Institutional Drives</span>
-        <h2 class="text-3xl font-black text-[#024095] uppercase tracking-tight">
-          Active Water <span class="text-[#07bee8]">Programs</span>
-        </h2>
-      </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {programs.map((prog) => (
-          <div class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
-            <div>
-              <!-- Tag & ISO Badge Header -->
-              <div class="flex items-center justify-between mb-4 gap-2 flex-wrap">
-                <span class="px-3 py-1 bg-[#024095]/10 text-[#024095] text-[10px] font-black uppercase tracking-wider rounded-lg border border-[#024095]/20">
-                  {prog.tag}
-                </span>
-                <span class="text-[10px] font-bold text-[#07bee8] uppercase tracking-wider font-mono">ISO 9001:2015 Program</span>
-              </div>
-
-              <!-- Content Area -->
-              <h3 class="text-xl font-black text-[#024095] uppercase tracking-tight mb-3">{prog.title}</h3>
-              <p class="text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-6">{prog.description}</p>
-              
-              <div class="space-y-2.5 border-t border-slate-100 pt-5 mb-6">
-                {prog.highlights.map((h) => (
-                  <div class="flex items-center gap-2.5 text-xs font-bold text-slate-800">
-                    <div class="w-5 h-5 rounded-full bg-[#07bee8]/10 text-[#07bee8] flex items-center justify-center shrink-0">
-                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-                    </div>
-                    <span>{h}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div class="pt-4 border-t border-slate-100">
-              <a href="/contact" class="w-full inline-flex items-center justify-center min-h-[46px] bg-[#024095] hover:bg-[#07bee8] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95">
-                Enroll / Inquire About Program &rarr;
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM IMPACT STATS BAR -->
-  <section class="py-12 bg-white border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-6 rounded-2xl bg-[#FAF9F6] border border-slate-200/80">
-          <p class="text-3xl sm:text-4xl font-black text-[#024095] mb-1">100+</p>
-          <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Schools Benefited</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-[#FAF9F6] border border-slate-200/80">
-          <p class="text-3xl sm:text-4xl font-black text-[#07bee8] mb-1">25+</p>
-          <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Panchayats Covered</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-[#FAF9F6] border border-slate-200/80">
-          <p class="text-3xl sm:text-4xl font-black text-[#024095] mb-1">50M+</p>
-          <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Liters Purified Daily</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-[#FAF9F6] border border-slate-200/80">
-          <p class="text-3xl sm:text-4xl font-black text-[#07bee8] mb-1">100%</p>
-          <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">KSPCB Norm Compliant</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROGRAM ENROLLMENT & CONSULTATION -->
-  <section class="py-16 sm:py-24 bg-[#FAF9F6]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center space-y-6">
-      <span class="text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-[0.3em]">PARTNER WITH SAMUDHRA</span>
-      <h2 class="text-2xl sm:text-4xl font-black text-[#024095] uppercase leading-tight">
-        Bring a Water Purification Program to Your Community or School
-      </h2>
-      <p class="text-xs sm:text-sm text-slate-600 font-light leading-relaxed max-w-2xl mx-auto">
-        Contact our program coordinator team to request a free site water audit and program proposal for your institution or Panchayath.
-      </p>
-      <div class="pt-4 flex justify-center gap-4">
-        <a href="/contact" class="px-8 py-3.5 bg-[#024095] text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-[#07bee8] transition-all shadow-md active:scale-95">
-          Request Program Proposal
-        </a>
-      </div>
-    </div>
-  </section>
 
   <!-- LIGHTBOX MODAL -->
   <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
