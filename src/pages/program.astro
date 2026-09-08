@@ -9,28 +9,24 @@ const programs = [
     title: "Clean School Water Initiative",
     tag: "COMMUNITY & EDUCATION",
     description: "Providing subsidized, high-capacity UV/UF filtration and iron removal systems for schools across Trivandrum and Kerala to ensure safe drinking water for students.",
-    image: "/images/products/Uf%20Plant.jpg",
     highlights: ["Free Source Water Testing", "Subsidized Plant Installation", "Annual Maintenance Included"]
   },
   {
     title: "Community Borewell Purification Drive",
     tag: "PUBLIC HEALTH",
     description: "Partnering with local self-governments, Panchayats, and resident associations to install centralized community iron removal and water softening plants.",
-    image: "/images/products/Iron%20Remover%20Plant%20IRP.jpg",
     highlights: ["KSPCB Norms Compliant", "Multi-Stage Iron Removal", "High-Volume Output"]
   },
   {
     title: "Zero Wastewater & STP Recycling Program",
     tag: "ENVIRONMENT & SUSTAINABILITY",
     description: "Assisting apartment complexes, hotels, and industrial facilities in deploying zero-discharge STP/ETP systems to reclaim up to 80% of wastewater for landscaping and non-potable reuse.",
-    image: "/images/products/Sewage%20Treatment%20Plant.jpg",
     highlights: ["MBBR / MBR Technology", "Water Reuse Ready", "Full KSPCB Paperwork Support"]
   },
   {
     title: "Doorstep Water Audit & AMC Program",
     tag: "RESIDENTIAL CARE",
     description: "Comprehensive home water testing, filter health inspection, and scheduled annual maintenance contracts (AMC) for all major domestic water purifier brands.",
-    image: "/images/products/Aquaguard%20Water%20Purifiers.jpeg",
     highlights: ["Genuine Multibrand Spares", "Doorstep Lab Testing", "24/7 Priority Support"]
   }
 ];
@@ -156,7 +152,7 @@ const programs = [
                 <iframe 
                   class="w-full h-full"
                   src="https://www.youtube.com/embed/3GvK3hj1IcU" 
-                  title="Samudhra Water Purification Program Video 1" 
+                  title="Samudhra Sangamam Video" 
                   frameborder="0" 
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                   allowfullscreen
@@ -164,15 +160,15 @@ const programs = [
               </div>
             </div>
             <div>
-              <span class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider block mb-1">FIELD DEMONSTRATION 01</span>
-              <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight">Water Purification &amp; Plant Commissioning</h3>
+              <span class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider block mb-1">SAMUDHRA SANGAMAM</span>
+              <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight">Samudhra Sangamam</h3>
               <p class="text-xs text-slate-600 font-light leading-relaxed mt-2">
-                Live demonstration of custom RO and iron removal plant installation, source water testing, and system flow calibration.
+                Live field video highlights from our annual community water conference and purification initiative.
               </p>
             </div>
           </div>
           <div class="pt-6 border-t border-slate-200/60 mt-6">
-            <a href="https://wa.me/919645830994?text=Hi%2C+I+watched+your+program+video+1.+I+would+like+to+book+a+free+water+testing." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center min-h-[44px] bg-[#024095] hover:bg-[#07bee8] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95">
+            <a href="https://wa.me/919645830994?text=Hi%2C+I+watched+your+Samudhra+Sangamam+video.+I+would+like+to+book+a+free+water+testing." target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center min-h-[44px] bg-[#024095] hover:bg-[#07bee8] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95">
               Book Free Water Testing &rarr;
             </a>
           </div>
@@ -224,46 +220,33 @@ const programs = [
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {programs.map((prog) => (
-          <div class="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+          <div class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-8 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
             <div>
-              <!-- Featured Image Header -->
-              <div class="aspect-[16/9] overflow-hidden bg-slate-100 relative cursor-pointer" onclick={`openLightbox('${prog.image}', '${prog.title}')`}>
-                <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-[#024095] text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
+              <!-- Tag & ISO Badge Header -->
+              <div class="flex items-center justify-between mb-4 gap-2 flex-wrap">
+                <span class="px-3 py-1 bg-[#024095]/10 text-[#024095] text-[10px] font-black uppercase tracking-wider rounded-lg border border-[#024095]/20">
                   {prog.tag}
                 </span>
-                <img 
-                  src={prog.image} 
-                  alt={prog.title} 
-                  class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
-                />
-                <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span class="px-3.5 py-1.5 rounded-full bg-white/90 text-[#024095] text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-1.5">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
-                    Enlarge Image
-                  </span>
-                </div>
+                <span class="text-[10px] font-bold text-[#07bee8] uppercase tracking-wider font-mono">ISO 9001:2015 Program</span>
               </div>
 
               <!-- Content Area -->
-              <div class="p-6 sm:p-8">
-                <div class="flex items-center justify-between mb-3">
-                  <span class="text-xs font-bold text-[#07bee8] uppercase tracking-wider">ISO 9001:2015 Program</span>
-                </div>
-                <h3 class="text-xl font-black text-[#024095] uppercase tracking-tight mb-3">{prog.title}</h3>
-                <p class="text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-6">{prog.description}</p>
-                
-                <div class="space-y-2 border-t border-slate-100 pt-4 mb-6">
-                  {prog.highlights.map((h) => (
-                    <div class="flex items-center gap-2 text-xs font-bold text-slate-800">
-                      <svg class="w-4 h-4 text-[#07bee8] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-                      <span>{h}</span>
+              <h3 class="text-xl font-black text-[#024095] uppercase tracking-tight mb-3">{prog.title}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 font-light leading-relaxed mb-6">{prog.description}</p>
+              
+              <div class="space-y-2.5 border-t border-slate-100 pt-5 mb-6">
+                {prog.highlights.map((h) => (
+                  <div class="flex items-center gap-2.5 text-xs font-bold text-slate-800">
+                    <div class="w-5 h-5 rounded-full bg-[#07bee8]/10 text-[#07bee8] flex items-center justify-center shrink-0">
+                      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
                     </div>
-                  ))}
-                </div>
+                    <span>{h}</span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div class="p-6 sm:p-8 pt-0">
+            <div class="pt-4 border-t border-slate-100">
               <a href="/contact" class="w-full inline-flex items-center justify-center min-h-[46px] bg-[#024095] hover:bg-[#07bee8] text-white text-xs font-black uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95">
                 Enroll / Inquire About Program &rarr;
               </a>
