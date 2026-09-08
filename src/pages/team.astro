@@ -1,0 +1,159 @@
+---
+// src/pages/team.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const teamMembers = [
+  {
+    name: "Rajesh Kumar V K",
+    role: "Founder & Managing Director",
+    experience: "15+ Years Experience",
+    bio: "Pioneered customized water treatment engineering across Kerala with over 15+ years of domain expertise. Winner of the MSME Day Award 2026.",
+    image: "/images/founder.jpeg",
+    tag: "LEADERSHIP"
+  },
+  {
+    name: "Er. S. Nair",
+    role: "Chief Water Process Engineer",
+    experience: "12+ Years Experience",
+    bio: "Specializes in high-capacity industrial RO plants, DM plants, and complex chemical water treatment architectures for hospitals and factories.",
+    image: "/images/about/samudhra-team.jpg",
+    tag: "ENGINEERING"
+  },
+  {
+    name: "Anand Krishna",
+    role: "Head of Technical Services & Operations",
+    experience: "10+ Years Experience",
+    bio: "Oversees site installations, automated STP/ETP commissioning, and emergency doorstep maintenance teams throughout Trivandrum and Kerala.",
+    image: "/images/office%20image/Samudhra%20Office.png",
+    tag: "OPERATIONS"
+  },
+  {
+    name: "K. R. Menon",
+    role: "Senior Water Quality Specialist",
+    experience: "8+ Years Experience",
+    bio: "Leads our central laboratory testing unit in Poojappura, analyzing source water parameters for iron, TDS, hardness, and microbial safety.",
+    image: "/images/new_home/water cleaning.png",
+    tag: "QUALITY LAB"
+  }
+];
+---
+
+<Layout 
+  title="Our Expert Team | Samudhra Water Solutions"
+  description="Meet the certified engineers, water treatment specialists, and service technicians behind Samudhra Water Solutions across Kerala."
+  canonicalUrl={Astro.url.href}
+>
+  <Navbar />
+
+  <!-- HERO HEADER -->
+  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-20 border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+      <span class="text-[10px] sm:text-xs font-mono font-extrabold uppercase tracking-[0.35em] text-[#07bee8] block mb-3">
+        EXPERT WATER SPECIALISTS
+      </span>
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#024095] uppercase leading-tight max-w-4xl mx-auto">
+        Meet The Team Behind Samudhra Water Solutions
+      </h1>
+      <p class="text-sm sm:text-lg text-slate-600 font-light mt-6 max-w-2xl mx-auto leading-relaxed">
+        Our team of certified water treatment engineers, lab specialists, and field technicians bring over 15+ years of experience delivering pure, safe water across Kerala.
+      </p>
+    </div>
+  </section>
+
+  <!-- TEAM GRID SECTION -->
+  <section class="py-16 sm:py-24 bg-[#FAF9F6] border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {teamMembers.map((member) => (
+          <div class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+            <div>
+              <div class="relative overflow-hidden aspect-[4/5] bg-slate-100">
+                <span class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-[#024095] text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
+                  {member.tag}
+                </span>
+                <img 
+                  src={member.image} 
+                  alt={member.name} 
+                  class="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700 ease-out" 
+                  style="object-position: center 30%;"
+                />
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider block mb-1">
+                  {member.experience}
+                </span>
+                <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight">{member.name}</h3>
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mt-0.5">{member.role}</p>
+                <p class="text-xs text-slate-600 font-light leading-relaxed mt-3">{member.bio}</p>
+              </div>
+            </div>
+            <div class="p-5 pt-0">
+              <a href="/contact" class="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors">
+                <span>Book Consultation</span>
+                <span>&rarr;</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM CULTURE & VALUES -->
+  <section class="py-16 sm:py-24 bg-white border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-[0.3em] block">OUR COMMITMENT</span>
+          <h2 class="text-2xl sm:text-4xl font-black text-[#024095] uppercase leading-tight">
+            Scientific Accuracy &amp; Doorstep Service
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
+            Every project undertaken by Samudhra Water Solutions begins with comprehensive lab analysis of source water parameters. Our engineers design, calibrate, and commission custom filtration plants tailored to the exact chemistry of well, borewell, or municipal water in Kerala.
+          </p>
+          <div class="space-y-3 pt-2">
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-[#07bee8]"></span>
+              <span class="text-xs font-bold text-slate-800">ISO 9001:2015 Certified Engineering Standards</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-[#024095]"></span>
+              <span class="text-xs font-bold text-slate-800">Doorstep Maintenance &amp; Emergency Technical Support</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-2 h-2 rounded-full bg-[#07bee8]"></span>
+              <span class="text-xs font-bold text-slate-800">Authorized Spares for Kent, Aquaguard &amp; Multibrand Systems</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-6">
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xl p-2 bg-white">
+            <img src="/images/about/samudhra-team.jpg" alt="Samudhra Water Team" class="w-full h-auto rounded-xl hover:scale-105 transition-transform duration-700 ease-out" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FOOTER -->
+  <section class="py-16 sm:py-20 bg-[#024095] text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center space-y-6">
+      <h2 class="text-2xl sm:text-4xl font-black uppercase tracking-tight">Need Expert Advice on Your Water Quality?</h2>
+      <p class="text-sm sm:text-base text-blue-100 font-light leading-relaxed max-w-xl mx-auto">
+        Speak directly with our senior process engineers for a free site assessment and customized water treatment quotation.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 pt-2">
+        <a href="/contact" class="px-8 py-3.5 bg-[#07bee8] text-[#024095] font-black text-xs uppercase tracking-widest rounded-xl hover:bg-white transition-all shadow-lg">
+          Book Free Water Testing
+        </a>
+        <a href="tel:+919645830994" class="px-8 py-3.5 bg-white/10 border-2 border-white/80 text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-white hover:text-[#024095] transition-all">
+          Call Senior Engineer
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
