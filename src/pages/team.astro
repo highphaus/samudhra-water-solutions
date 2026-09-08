@@ -4,45 +4,6 @@ import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 
-const teamMembers = [
-  {
-    name: "Rajesh Kumar V K",
-    role: "Founder & Managing Director",
-    experience: "15+ Years Experience (Est. 2009)",
-    bio: "Pioneered customized water treatment engineering across Kerala. Leads strategic vision, system design, and overall quality assurance.",
-    image: "/images/founder.jpeg",
-    objectPos: "object-[center_35%]",
-    badge: "LEADERSHIP"
-  },
-  {
-    name: "Water Process Engineers",
-    role: "Senior Field Operations Squad",
-    experience: "12+ Years Field Expertise",
-    bio: "Specialists in custom RO plants, iron removal systems, DM units, and high-capacity industrial water treatment installations across Kerala.",
-    image: "/images/team/DSC06080.JPG",
-    objectPos: "object-center",
-    badge: "FIELD ENGINEERING"
-  },
-  {
-    name: "Site Assessment Squad",
-    role: "Technical Operations & Audits",
-    experience: "10+ Years Operational Service",
-    bio: "Oversees doorstep water quality audits, automated STP/ETP commissioning, and emergency maintenance support across Trivandrum.",
-    image: "/images/team/DSC06084%20(1).JPG",
-    objectPos: "object-center",
-    badge: "SITE OPERATIONS"
-  },
-  {
-    name: "Water Quality Lab Unit",
-    role: "CAD & Chemistry Planning",
-    experience: "8+ Years Engineering Design",
-    bio: "Analyzes raw water lab test metrics (iron, TDS, hardness) and configures custom filtration flow diagrams for homes & industries.",
-    image: "/images/team/Laptop.jpeg",
-    objectPos: "object-center",
-    badge: "DESIGN & LAB"
-  }
-];
-
 const teamPhotos = [
   {
     title: "Field Engineering & Team Assessment",
@@ -90,75 +51,6 @@ const teamPhotos = [
       <p class="text-sm sm:text-lg text-slate-600 font-light mt-6 max-w-2xl mx-auto leading-relaxed">
         Our dedicated team of certified water process engineers, lab specialists, and field technicians bring over 15+ years of experience (Est. 2009) delivering pure, safe water solutions across Kerala.
       </p>
-    </div>
-  </section>
-
-  <!-- TEAM MEMBERS GRID -->
-  <section class="py-16 sm:py-24 bg-[#FAF9F6] border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-left mb-12">
-        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Core Leadership &amp; Engineering Squad</span>
-        <h2 class="text-3xl font-black text-[#024095] uppercase tracking-tight">
-          Our Team <span class="text-[#07bee8]">Specialists</span>
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {teamMembers.map((member) => (
-          <div 
-            class="bg-white rounded-3xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 group flex flex-col justify-between cursor-pointer" 
-            onclick={`openLightbox('${member.image}', '${member.name} - ${member.role}')`}
-          >
-            <div>
-              <!-- Photo Container -->
-              <div class="relative overflow-hidden aspect-[3/4] bg-slate-100">
-                <!-- Badge -->
-                <span class="absolute top-4 left-4 z-10 px-3 py-1 bg-[#024095]/90 text-white text-[9px] font-black uppercase tracking-wider rounded-full backdrop-blur-md border border-white/20 shadow-lg">
-                  {member.badge}
-                </span>
-
-                <!-- Image -->
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  class={`w-full h-full object-cover ${member.objectPos} group-hover:scale-105 transition-transform duration-700 ease-out`} 
-                />
-
-                <!-- Hover Overlay -->
-                <div class="absolute inset-0 bg-gradient-to-t from-[#024095]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span class="px-4 py-2 bg-white/90 text-[#024095] text-xs font-black uppercase tracking-wider rounded-full shadow-lg flex items-center gap-1.5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
-                    Enlarge Photo
-                  </span>
-                </div>
-              </div>
-
-              <!-- Content Area -->
-              <div class="p-6">
-                <!-- Experience Tag -->
-                <span class="px-2.5 py-1 bg-[#07bee8]/10 text-[#024095] text-[10px] font-black uppercase tracking-wider rounded-md inline-block mb-3 border border-[#07bee8]/20">
-                  {member.experience}
-                </span>
-
-                <!-- Name & Role -->
-                <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight leading-snug">{member.name}</h3>
-                <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mt-1">{member.role}</p>
-
-                <!-- Bio -->
-                <p class="text-xs text-slate-600 font-light leading-relaxed mt-3 pt-3 border-t border-slate-100">{member.bio}</p>
-              </div>
-            </div>
-
-            <!-- Action Button Footer -->
-            <div class="p-6 pt-0">
-              <div class="w-full py-2.5 px-4 bg-slate-50 group-hover:bg-[#024095] text-[#024095] group-hover:text-white rounded-xl text-xs font-black uppercase tracking-wider flex items-center justify-between transition-all duration-300 border border-slate-200/70 group-hover:border-[#024095]">
-                <span>View Member Profile</span>
-                <span class="transform group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
     </div>
   </section>
 
