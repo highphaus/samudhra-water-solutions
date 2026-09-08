@@ -9,79 +9,71 @@ const teamMembers = [
     name: "Rajesh Kumar V K",
     role: "Founder & Managing Director",
     experience: "15+ Years Experience (Est. 2009)",
-    bio: "Pioneered customized water treatment engineering across Kerala. Recipient of the MSME Day Award 2026 by KSSIA for industrial excellence and innovation.",
+    bio: "Pioneered customized water treatment engineering across Kerala. Leads strategic vision and system quality assurance.",
     image: "/images/founder.jpeg",
+    objectPos: "object-[center_35%]",
     tag: "LEADERSHIP"
   },
   {
-    name: "Engineering & Field Operations Team",
-    role: "Water Treatment Engineers & Operations",
+    name: "Engineering & Field Operations Squad",
+    role: "Senior Water Process Engineers",
     experience: "12+ Years Field Expertise",
-    bio: "Specializing in high-capacity RO plants, iron removal systems, DM plants, and complex water treatment architectures across Kerala.",
+    bio: "Specialists in custom RO plants, iron removal systems, DM units, and industrial water treatment installations across Kerala.",
     image: "/images/team/DSC06080.JPG",
-    tag: "ENGINEERING"
+    objectPos: "object-center",
+    tag: "FIELD ENGINEERING"
   },
   {
-    name: "Technical Services & Site Specialists",
-    role: "Installation & Maintenance Squad",
+    name: "Site Assessment & Technical Services",
+    role: "Operations & Quality Assessment Lead",
     experience: "10+ Years Operational Service",
-    bio: "Oversees site assessments, automated STP/ETP commissioning, and emergency doorstep maintenance teams throughout Trivandrum and Kerala.",
+    bio: "Oversees site water audits, STP/ETP commissioning, and emergency doorstep maintenance support across Trivandrum.",
     image: "/images/team/DSC06084%20(1).JPG",
+    objectPos: "object-center",
     tag: "OPERATIONS"
   },
   {
-    name: "Technical Planning & Design Unit",
-    role: "Water Quality & CAD Design Specialists",
+    name: "Water Chemistry & Design Unit",
+    role: "CAD Design & Technical Planning Specialists",
     experience: "8+ Years Engineering Design",
-    bio: "Analyzes source water parameters for iron, TDS, hardness, and microbial safety, engineering tailored purification systems for homes and industries.",
+    bio: "Analyzes raw water lab test metrics (iron, TDS, hardness) and designs tailored filtration flow diagrams.",
     image: "/images/team/Laptop.jpeg",
-    tag: "QUALITY & DESIGN"
+    objectPos: "object-center",
+    tag: "DESIGN & PLANNING"
   }
 ];
 
-const teamGallery = [
+const teamPhotos = [
   {
-    title: "Field Engineering & Team Collaboration",
-    category: "Site Operations",
+    title: "Field Engineering & Team Assessment",
+    subtitle: "On-Site Water Treatment Installation",
     image: "/images/team/DSC06080.JPG",
-    caption: "Samudhra Water Solutions Engineering Team on location"
+    description: "Our core engineering team reviewing plant parameters during site installation in Trivandrum."
   },
   {
-    title: "Technical Review & System Calibration",
-    category: "Technical Planning",
+    title: "Technical Field Operations & Quality Testing",
+    subtitle: "System Calibration & Maintenance",
     image: "/images/team/DSC06084%20(1).JPG",
-    caption: "Technical specialists evaluating site water quality metrics"
+    description: "Field technical squad conducting water quality checks and system flow diagnostics."
   },
   {
-    title: "Digital Design & Water Chemistry Analysis",
-    category: "Engineering Design",
+    title: "Water Chemistry & Digital System Architecture",
+    subtitle: "Custom Plant CAD & Test Analysis",
     image: "/images/team/Laptop.jpeg",
-    caption: "CAD design and water parameter analysis for custom plants"
+    description: "Technical design team configuring custom filtration plant specifications tailored to Kerala water source metrics."
   },
   {
-    title: "MSME Day Award 2026 Honor",
-    category: "State Recognition",
-    image: "/images/founder6.jpeg",
-    caption: "Managing Director Rajesh Kumar V K receiving the MSME Day Award 2026"
-  },
-  {
-    title: "Industry Summit & Forum Leadership",
-    category: "Business Forum",
-    image: "/images/founder%202.png",
-    caption: "Rajesh participating in Kerala Industrial Summits"
-  },
-  {
-    title: "Water Tech Keynote Presentation",
-    category: "Public Recognition",
-    image: "/images/founder%204.png",
-    caption: "Leadership presentation on Kerala water treatment standards"
+    title: "Technical Support & Service Crew",
+    subtitle: "Doorstep Service & Installation",
+    image: "/images/about/samudhra-team.jpg",
+    description: "Samudhra service technicians providing routine maintenance and emergency filter replacements."
   }
 ];
 ---
 
 <Layout 
-  title="Our Expert Team & Leadership | Samudhra Water Solutions"
-  description="Meet the certified engineers, water treatment specialists, and leadership team behind Samudhra Water Solutions across Kerala."
+  title="Our Expert Team | Samudhra Water Solutions"
+  description="Meet the certified process engineers, water treatment specialists, and field technicians at Samudhra Water Solutions Kerala."
   canonicalUrl={Astro.url.href}
 >
   <Navbar />
@@ -90,7 +82,7 @@ const teamGallery = [
   <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-20 border-b border-slate-200/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
       <span class="text-[10px] sm:text-xs font-mono font-extrabold uppercase tracking-[0.35em] text-[#07bee8] block mb-3">
-        EXPERT WATER SPECIALISTS &amp; LEADERSHIP
+        EXPERT WATER SPECIALISTS &amp; ENGINEERS
       </span>
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#024095] uppercase leading-tight max-w-4xl mx-auto">
         Meet The Team Behind Samudhra Water Solutions
@@ -101,13 +93,13 @@ const teamGallery = [
     </div>
   </section>
 
-  <!-- TEAM MEMBER CARDS -->
+  <!-- TEAM MEMBERS GRID -->
   <section class="py-16 sm:py-24 bg-[#FAF9F6] border-b border-slate-200/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="text-left mb-12">
-        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Core Leadership &amp; Operations</span>
+        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Core Leadership &amp; Engineering Squad</span>
         <h2 class="text-3xl font-black text-[#024095] uppercase tracking-tight">
-          Engineering &amp; Service <span class="text-[#07bee8]">Specialists</span>
+          Our Team <span class="text-[#07bee8]">Specialists</span>
         </h2>
       </div>
 
@@ -115,29 +107,28 @@ const teamGallery = [
         {teamMembers.map((member) => (
           <div class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between cursor-pointer" onclick={`openLightbox('${member.image}', '${member.name} - ${member.role}')`}>
             <div>
-              <div class="relative overflow-hidden aspect-[4/5] bg-slate-100">
+              <div class="relative overflow-hidden aspect-[4/4] bg-slate-100">
                 <span class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-[#024095] text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
                   {member.tag}
                 </span>
                 <img 
                   src={member.image} 
                   alt={member.name} 
-                  class="w-full h-full object-cover object-[center_30%] group-hover:scale-105 transition-transform duration-700 ease-out" 
-                  style="object-position: center 30%;"
+                  class={`w-full h-full object-cover ${member.objectPos} group-hover:scale-105 transition-transform duration-700 ease-out`} 
                 />
               </div>
               <div class="p-5">
                 <span class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider block mb-1">
                   {member.experience}
                 </span>
-                <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight">{member.name}</h3>
-                <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mt-0.5">{member.role}</p>
+                <h3 class="text-base font-black text-[#024095] uppercase tracking-tight leading-snug">{member.name}</h3>
+                <p class="text-xs font-bold text-slate-500 uppercase tracking-wide mt-1">{member.role}</p>
                 <p class="text-xs text-slate-600 font-light leading-relaxed mt-3">{member.bio}</p>
               </div>
             </div>
             <div class="p-5 pt-0">
               <span class="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider text-[#024095] group-hover:text-[#07bee8] transition-colors">
-                <span>View Details</span>
+                <span>Enlarge Photo</span>
                 <span>&rarr;</span>
               </span>
             </div>
@@ -147,112 +138,40 @@ const teamGallery = [
     </div>
   </section>
 
-  <!-- MSME AWARD & FOUNDER RECOGNITION FEATURE -->
-  <section class="bg-slate-900 text-white py-16 sm:py-24 border-t border-slate-800 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#07bee8]/10 rounded-full blur-3xl pointer-events-none -mr-40 -mt-40"></div>
-    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#024095]/20 rounded-full blur-3xl pointer-events-none -ml-40 -mb-40"></div>
-
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div>
-          <span class="text-xs font-mono text-[#07bee8] font-extrabold uppercase tracking-[0.25em] block mb-2">Leadership Recognition</span>
-          <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
-            MSME Day Award <span class="text-[#07bee8]">2026 Program</span>
-          </h2>
-          <p class="text-slate-400 text-xs sm:text-sm mt-3 font-light max-w-2xl leading-relaxed">
-            Conferred by the Kerala State Small Industries Association (KSSIA) celebrating industrial innovation, quality standards, and water treatment engineering excellence.
-          </p>
-        </div>
-        <div class="shrink-0">
-          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#07bee8]/10 border border-[#07bee8]/30 text-[#07bee8] text-xs font-bold uppercase tracking-wider">
-            State Industry Honor
-          </span>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-800/60 border border-slate-700/80 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-2xl">
-        <div class="lg:col-span-6 group cursor-pointer" onclick="openLightbox('/images/founder6.jpeg', 'Mr. Rajesh Kumar V K - MSME Day Award 2026 by KSSIA')">
-          <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-[#021434]">
-            <img 
-              src="/images/founder6.jpeg" 
-              alt="Mr. Rajesh Kumar V K receiving MSME Day Award 2026" 
-              class="w-full h-auto max-h-[500px] object-contain mx-auto group-hover:scale-105 transition-transform duration-700 ease-out" 
-            />
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-              <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold uppercase tracking-wider border border-white/30">
-                Click to Enlarge
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="lg:col-span-6 flex flex-col gap-6 text-slate-200">
-          <div class="space-y-3">
-            <span class="text-[10px] font-mono text-[#07bee8] uppercase tracking-[0.3em] font-extrabold">Official Citation</span>
-            <h3 class="text-xl sm:text-2xl font-bold text-white leading-snug">
-              "Honouring Visionary Leadership &amp; Engineering Innovation"
-            </h3>
-            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
-              Mr. Rajesh Kumar V K, Founder &amp; Managing Director of Samudhra Water Solutions, was honored with the <strong class="text-white font-semibold">MSME Day Award 2026</strong> for delivering tailored water purification plants across Kerala.
-            </p>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-700/80 pt-6">
-            <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-700/60">
-              <p class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider mb-1">Presented By</p>
-              <p class="text-xs font-bold text-white">Shri V. D. Satheesan</p>
-              <p class="text-[10px] text-slate-400">Hon'ble Chief Minister of Kerala</p>
-            </div>
-            <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-700/60">
-              <p class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider mb-1">Distinguished Guests</p>
-              <p class="text-xs font-bold text-white">Shri P. K. Kunhalikutty</p>
-              <p class="text-[10px] text-slate-400">Minister for Industries, Govt. of Kerala</p>
-            </div>
-          </div>
-
-          <div class="bg-gradient-to-r from-[#024095]/40 to-[#07bee8]/20 p-4 rounded-xl border border-[#07bee8]/30">
-            <p class="text-xs text-white/90 italic leading-relaxed">
-              "Our team's continuous effort ensures every home, school, and industry receives scientifically engineered water treatment."
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ON-SITE TEAM & EVENT GALLERY -->
+  <!-- ON-SITE TEAM WORK SHOWCASE GALLERY -->
   <section class="py-16 sm:py-24 bg-white border-b border-slate-200/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-left mb-12">
-        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Team Engagement &amp; Operations</span>
+      <div class="text-left mb-12 max-w-3xl">
+        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Team In Action</span>
         <h2 class="text-3xl font-black text-[#024095] uppercase tracking-tight">
-          Field Operations <span class="text-[#07bee8]"> &amp; Milestones</span>
+          Field Operations <span class="text-[#07bee8]"> &amp; Technical Work</span>
         </h2>
-        <p class="text-slate-500 text-xs sm:text-sm mt-3 font-light max-w-2xl leading-relaxed">
-          Explore on-site technical evaluations, engineering design sessions, and leadership forums featuring our team members across Kerala.
+        <p class="text-slate-500 text-xs sm:text-sm mt-3 font-light leading-relaxed">
+          Take a look behind the scenes at our team performing site assessments, water chemistry evaluations, system CAD designs, and plant installations across Kerala.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {teamGallery.map((item) => (
-          <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer bg-slate-50 flex flex-col" onclick={`openLightbox('${item.image}', '${item.title} - ${item.caption}')`}>
-            <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {teamPhotos.map((photo) => (
+          <div class="bg-[#FAF9F6] rounded-3xl border border-slate-200/80 overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 group cursor-pointer flex flex-col" onclick={`openLightbox('${photo.image}', '${photo.title} - ${photo.subtitle}')`}>
+            <div class="aspect-[16/10] overflow-hidden bg-slate-200 relative">
               <img 
-                src={item.image} 
-                alt={item.title} 
+                src={photo.image} 
+                alt={photo.title} 
                 class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
               />
-              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span class="w-10 h-10 rounded-full bg-white/90 text-[#024095] flex items-center justify-center shadow-lg">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+              <div class="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="px-4 py-2 rounded-full bg-white/90 text-[#024095] text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-2">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                  Click to View Full Size
                 </span>
               </div>
             </div>
-            <div class="p-5 bg-white border-t border-slate-100 flex-1 flex flex-col justify-between">
+            <div class="p-6 bg-white flex-1 flex flex-col justify-between border-t border-slate-100">
               <div>
-                <span class="text-[9px] font-mono text-[#07bee8] font-black uppercase tracking-wider block mb-1">{item.category}</span>
-                <h3 class="text-sm font-black text-[#024095] uppercase tracking-tight">{item.title}</h3>
-                <p class="text-xs text-slate-500 font-light mt-1">{item.caption}</p>
+                <span class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider block mb-1">{photo.subtitle}</span>
+                <h3 class="text-lg font-black text-[#024095] uppercase tracking-tight">{photo.title}</h3>
+                <p class="text-xs text-slate-600 font-light leading-relaxed mt-2">{photo.description}</p>
               </div>
             </div>
           </div>
@@ -329,4 +248,5 @@ const teamGallery = [
 
   <Footer />
 </Layout>
+
 
