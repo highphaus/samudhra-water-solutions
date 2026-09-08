@@ -8,41 +8,80 @@ const teamMembers = [
   {
     name: "Rajesh Kumar V K",
     role: "Founder & Managing Director",
-    experience: "15+ Years Experience",
-    bio: "Pioneered customized water treatment engineering across Kerala with over 15+ years of domain expertise. Winner of the MSME Day Award 2026.",
+    experience: "15+ Years Experience (Est. 2009)",
+    bio: "Pioneered customized water treatment engineering across Kerala. Recipient of the MSME Day Award 2026 by KSSIA for industrial excellence and innovation.",
     image: "/images/founder.jpeg",
     tag: "LEADERSHIP"
   },
   {
-    name: "Er. S. Nair",
-    role: "Chief Water Process Engineer",
-    experience: "12+ Years Experience",
-    bio: "Specializes in high-capacity industrial RO plants, DM plants, and complex chemical water treatment architectures for hospitals and factories.",
-    image: "/images/about/samudhra-team.jpg",
+    name: "Engineering & Field Operations Team",
+    role: "Water Treatment Engineers & Operations",
+    experience: "12+ Years Field Expertise",
+    bio: "Specializing in high-capacity RO plants, iron removal systems, DM plants, and complex water treatment architectures across Kerala.",
+    image: "/images/team/DSC06080.JPG",
     tag: "ENGINEERING"
   },
   {
-    name: "Anand Krishna",
-    role: "Head of Technical Services & Operations",
-    experience: "10+ Years Experience",
-    bio: "Oversees site installations, automated STP/ETP commissioning, and emergency doorstep maintenance teams throughout Trivandrum and Kerala.",
-    image: "/images/office%20image/Samudhra%20Office.png",
+    name: "Technical Services & Site Specialists",
+    role: "Installation & Maintenance Squad",
+    experience: "10+ Years Operational Service",
+    bio: "Oversees site assessments, automated STP/ETP commissioning, and emergency doorstep maintenance teams throughout Trivandrum and Kerala.",
+    image: "/images/team/DSC06084%20(1).JPG",
     tag: "OPERATIONS"
   },
   {
-    name: "K. R. Menon",
-    role: "Senior Water Quality Specialist",
-    experience: "8+ Years Experience",
-    bio: "Leads our central laboratory testing unit in Poojappura, analyzing source water parameters for iron, TDS, hardness, and microbial safety.",
-    image: "/images/new_home/water cleaning.png",
-    tag: "QUALITY LAB"
+    name: "Technical Planning & Design Unit",
+    role: "Water Quality & CAD Design Specialists",
+    experience: "8+ Years Engineering Design",
+    bio: "Analyzes source water parameters for iron, TDS, hardness, and microbial safety, engineering tailored purification systems for homes and industries.",
+    image: "/images/team/Laptop.jpeg",
+    tag: "QUALITY & DESIGN"
+  }
+];
+
+const teamGallery = [
+  {
+    title: "Field Engineering & Team Collaboration",
+    category: "Site Operations",
+    image: "/images/team/DSC06080.JPG",
+    caption: "Samudhra Water Solutions Engineering Team on location"
+  },
+  {
+    title: "Technical Review & System Calibration",
+    category: "Technical Planning",
+    image: "/images/team/DSC06084%20(1).JPG",
+    caption: "Technical specialists evaluating site water quality metrics"
+  },
+  {
+    title: "Digital Design & Water Chemistry Analysis",
+    category: "Engineering Design",
+    image: "/images/team/Laptop.jpeg",
+    caption: "CAD design and water parameter analysis for custom plants"
+  },
+  {
+    title: "MSME Day Award 2026 Honor",
+    category: "State Recognition",
+    image: "/images/founder6.jpeg",
+    caption: "Managing Director Rajesh Kumar V K receiving the MSME Day Award 2026"
+  },
+  {
+    title: "Industry Summit & Forum Leadership",
+    category: "Business Forum",
+    image: "/images/founder%202.png",
+    caption: "Rajesh participating in Kerala Industrial Summits"
+  },
+  {
+    title: "Water Tech Keynote Presentation",
+    category: "Public Recognition",
+    image: "/images/founder%204.png",
+    caption: "Leadership presentation on Kerala water treatment standards"
   }
 ];
 ---
 
 <Layout 
-  title="Our Expert Team | Samudhra Water Solutions"
-  description="Meet the certified engineers, water treatment specialists, and service technicians behind Samudhra Water Solutions across Kerala."
+  title="Our Expert Team & Leadership | Samudhra Water Solutions"
+  description="Meet the certified engineers, water treatment specialists, and leadership team behind Samudhra Water Solutions across Kerala."
   canonicalUrl={Astro.url.href}
 >
   <Navbar />
@@ -51,23 +90,30 @@ const teamMembers = [
   <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-16 sm:pb-20 border-b border-slate-200/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
       <span class="text-[10px] sm:text-xs font-mono font-extrabold uppercase tracking-[0.35em] text-[#07bee8] block mb-3">
-        EXPERT WATER SPECIALISTS
+        EXPERT WATER SPECIALISTS &amp; LEADERSHIP
       </span>
       <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#024095] uppercase leading-tight max-w-4xl mx-auto">
         Meet The Team Behind Samudhra Water Solutions
       </h1>
       <p class="text-sm sm:text-lg text-slate-600 font-light mt-6 max-w-2xl mx-auto leading-relaxed">
-        Our team of certified water treatment engineers, lab specialists, and field technicians bring over 15+ years of experience delivering pure, safe water across Kerala.
+        Our dedicated team of certified water process engineers, lab specialists, and field technicians bring over 15+ years of experience (Est. 2009) delivering pure, safe water solutions across Kerala.
       </p>
     </div>
   </section>
 
-  <!-- TEAM GRID SECTION -->
+  <!-- TEAM MEMBER CARDS -->
   <section class="py-16 sm:py-24 bg-[#FAF9F6] border-b border-slate-200/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-left mb-12">
+        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Core Leadership &amp; Operations</span>
+        <h2 class="text-3xl font-black text-[#024095] uppercase tracking-tight">
+          Engineering &amp; Service <span class="text-[#07bee8]">Specialists</span>
+        </h2>
+      </div>
+
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {teamMembers.map((member) => (
-          <div class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
+          <div class="bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between cursor-pointer" onclick={`openLightbox('${member.image}', '${member.name} - ${member.role}')`}>
             <div>
               <div class="relative overflow-hidden aspect-[4/5] bg-slate-100">
                 <span class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-[#024095] text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
@@ -90,10 +136,10 @@ const teamMembers = [
               </div>
             </div>
             <div class="p-5 pt-0">
-              <a href="/contact" class="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider text-[#024095] hover:text-[#07bee8] transition-colors">
-                <span>Book Consultation</span>
+              <span class="inline-flex items-center gap-1.5 text-[11px] font-black uppercase tracking-wider text-[#024095] group-hover:text-[#07bee8] transition-colors">
+                <span>View Details</span>
                 <span>&rarr;</span>
-              </a>
+              </span>
             </div>
           </div>
         ))}
@@ -101,41 +147,167 @@ const teamMembers = [
     </div>
   </section>
 
-  <!-- TEAM CULTURE & VALUES -->
-  <section class="py-16 sm:py-24 bg-white border-b border-slate-200/60">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        <div class="lg:col-span-6 space-y-6">
-          <span class="text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-[0.3em] block">OUR COMMITMENT</span>
-          <h2 class="text-2xl sm:text-4xl font-black text-[#024095] uppercase leading-tight">
-            Scientific Accuracy &amp; Doorstep Service
+  <!-- MSME AWARD & FOUNDER RECOGNITION FEATURE -->
+  <section class="bg-slate-900 text-white py-16 sm:py-24 border-t border-slate-800 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#07bee8]/10 rounded-full blur-3xl pointer-events-none -mr-40 -mt-40"></div>
+    <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#024095]/20 rounded-full blur-3xl pointer-events-none -ml-40 -mb-40"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-mono text-[#07bee8] font-extrabold uppercase tracking-[0.25em] block mb-2">Leadership Recognition</span>
+          <h2 class="text-3xl sm:text-4xl font-black text-white uppercase tracking-tight">
+            MSME Day Award <span class="text-[#07bee8]">2026 Program</span>
           </h2>
-          <p class="text-xs sm:text-sm text-slate-600 font-light leading-relaxed">
-            Every project undertaken by Samudhra Water Solutions begins with comprehensive lab analysis of source water parameters. Our engineers design, calibrate, and commission custom filtration plants tailored to the exact chemistry of well, borewell, or municipal water in Kerala.
+          <p class="text-slate-400 text-xs sm:text-sm mt-3 font-light max-w-2xl leading-relaxed">
+            Conferred by the Kerala State Small Industries Association (KSSIA) celebrating industrial innovation, quality standards, and water treatment engineering excellence.
           </p>
-          <div class="space-y-3 pt-2">
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-[#07bee8]"></span>
-              <span class="text-xs font-bold text-slate-800">ISO 9001:2015 Certified Engineering Standards</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-[#024095]"></span>
-              <span class="text-xs font-bold text-slate-800">Doorstep Maintenance &amp; Emergency Technical Support</span>
-            </div>
-            <div class="flex items-center gap-3">
-              <span class="w-2 h-2 rounded-full bg-[#07bee8]"></span>
-              <span class="text-xs font-bold text-slate-800">Authorized Spares for Kent, Aquaguard &amp; Multibrand Systems</span>
+        </div>
+        <div class="shrink-0">
+          <span class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#07bee8]/10 border border-[#07bee8]/30 text-[#07bee8] text-xs font-bold uppercase tracking-wider">
+            State Industry Honor
+          </span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-800/60 border border-slate-700/80 rounded-3xl p-6 sm:p-8 backdrop-blur-sm shadow-2xl">
+        <div class="lg:col-span-6 group cursor-pointer" onclick="openLightbox('/images/founder6.jpeg', 'Mr. Rajesh Kumar V K - MSME Day Award 2026 by KSSIA')">
+          <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl bg-[#021434]">
+            <img 
+              src="/images/founder6.jpeg" 
+              alt="Mr. Rajesh Kumar V K receiving MSME Day Award 2026" 
+              class="w-full h-auto max-h-[500px] object-contain mx-auto group-hover:scale-105 transition-transform duration-700 ease-out" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
+              <span class="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-md rounded-full text-white text-xs font-bold uppercase tracking-wider border border-white/30">
+                Click to Enlarge
+              </span>
             </div>
           </div>
         </div>
-        <div class="lg:col-span-6">
-          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-xl p-2 bg-white">
-            <img src="/images/about/samudhra-team.jpg" alt="Samudhra Water Team" class="w-full h-auto rounded-xl hover:scale-105 transition-transform duration-700 ease-out" />
+
+        <div class="lg:col-span-6 flex flex-col gap-6 text-slate-200">
+          <div class="space-y-3">
+            <span class="text-[10px] font-mono text-[#07bee8] uppercase tracking-[0.3em] font-extrabold">Official Citation</span>
+            <h3 class="text-xl sm:text-2xl font-bold text-white leading-snug">
+              "Honouring Visionary Leadership &amp; Engineering Innovation"
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-300 font-light leading-relaxed">
+              Mr. Rajesh Kumar V K, Founder &amp; Managing Director of Samudhra Water Solutions, was honored with the <strong class="text-white font-semibold">MSME Day Award 2026</strong> for delivering tailored water purification plants across Kerala.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-t border-slate-700/80 pt-6">
+            <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-700/60">
+              <p class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider mb-1">Presented By</p>
+              <p class="text-xs font-bold text-white">Shri V. D. Satheesan</p>
+              <p class="text-[10px] text-slate-400">Hon'ble Chief Minister of Kerala</p>
+            </div>
+            <div class="bg-slate-900/70 p-4 rounded-xl border border-slate-700/60">
+              <p class="text-[10px] font-mono text-[#07bee8] font-bold uppercase tracking-wider mb-1">Distinguished Guests</p>
+              <p class="text-xs font-bold text-white">Shri P. K. Kunhalikutty</p>
+              <p class="text-[10px] text-slate-400">Minister for Industries, Govt. of Kerala</p>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-[#024095]/40 to-[#07bee8]/20 p-4 rounded-xl border border-[#07bee8]/30">
+            <p class="text-xs text-white/90 italic leading-relaxed">
+              "Our team's continuous effort ensures every home, school, and industry receives scientifically engineered water treatment."
+            </p>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ON-SITE TEAM & EVENT GALLERY -->
+  <section class="py-16 sm:py-24 bg-white border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-left mb-12">
+        <span class="text-xs font-mono text-[#07bee8] font-black uppercase tracking-[0.25em] block mb-2">Team Engagement &amp; Operations</span>
+        <h2 class="text-3xl font-black text-[#024095] uppercase tracking-tight">
+          Field Operations <span class="text-[#07bee8]"> &amp; Milestones</span>
+        </h2>
+        <p class="text-slate-500 text-xs sm:text-sm mt-3 font-light max-w-2xl leading-relaxed">
+          Explore on-site technical evaluations, engineering design sessions, and leadership forums featuring our team members across Kerala.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {teamGallery.map((item) => (
+          <div class="rounded-2xl overflow-hidden border border-slate-200/80 shadow-md hover:shadow-xl transition-all duration-300 group cursor-pointer bg-slate-50 flex flex-col" onclick={`openLightbox('${item.image}', '${item.title} - ${item.caption}')`}>
+            <div class="aspect-[4/3] overflow-hidden bg-slate-100 relative">
+              <img 
+                src={item.image} 
+                alt={item.title} 
+                class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out" 
+              />
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="w-10 h-10 rounded-full bg-white/90 text-[#024095] flex items-center justify-center shadow-lg">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                </span>
+              </div>
+            </div>
+            <div class="p-5 bg-white border-t border-slate-100 flex-1 flex flex-col justify-between">
+              <div>
+                <span class="text-[9px] font-mono text-[#07bee8] font-black uppercase tracking-wider block mb-1">{item.category}</span>
+                <h3 class="text-sm font-black text-[#024095] uppercase tracking-tight">{item.title}</h3>
+                <p class="text-xs text-slate-500 font-light mt-1">{item.caption}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 transition-opacity duration-300">
+    <button 
+      id="lightbox-close" 
+      class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 rounded-full p-3 transition-all z-10"
+      aria-label="Close modal"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <div class="max-w-4xl max-h-[90vh] flex flex-col items-center justify-center">
+      <img id="lightbox-img" src="" alt="" class="max-h-[80vh] max-w-full object-contain rounded-xl shadow-2xl" />
+      <p id="lightbox-caption" class="text-white/90 text-xs sm:text-sm font-semibold mt-4 text-center tracking-wide bg-slate-900/80 px-6 py-2 rounded-full border border-white/10"></p>
+    </div>
+  </div>
+
+  <script is:inline>
+    function openLightbox(src, caption) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      const cap = document.getElementById('lightbox-caption');
+      if (modal && img && cap) {
+        img.src = src;
+        cap.textContent = caption;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('lightbox-modal');
+      const closeBtn = document.getElementById('lightbox-close');
+      if (closeBtn && modal) {
+        closeBtn.addEventListener('click', () => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = '';
+        });
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    });
+  </script>
 
   <!-- CTA FOOTER -->
   <section class="py-16 sm:py-20 bg-[#024095] text-white">
@@ -157,3 +329,4 @@ const teamMembers = [
 
   <Footer />
 </Layout>
+
