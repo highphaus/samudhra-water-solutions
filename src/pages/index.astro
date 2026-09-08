@@ -751,7 +751,12 @@ const homeFaqSchema = {
           <div class="lg:hidden relative group my-4">
             <div class="absolute -inset-1 bg-gradient-to-r from-[#07bee8] to-[#024095] rounded-2xl blur-xs opacity-25"></div>
             <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white p-2.5">
-              <img src="/images/office%20image/Samudhra%20Office.png" alt="Samudhra Water Solutions Showroom and Office" class="w-full h-auto rounded-xl" />
+              <img 
+                src="/images/office%20image/Samudhra%20Office.png" 
+                alt="Samudhra Water Solutions Showroom and Office" 
+                class="w-full h-[220px] xs:h-[260px] sm:h-[300px] object-cover object-[center_70%] rounded-xl" 
+                style="object-position: center 70%;"
+              />
             </div>
           </div>
 
@@ -797,7 +802,12 @@ const homeFaqSchema = {
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-[#07bee8] to-[#024095] rounded-2xl blur-xs opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
             <div class="relative w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white p-2.5">
-              <img src="/images/office%20image/Samudhra%20Office.png" alt="Samudhra Water Solutions Showroom and Office" class="w-full h-auto rounded-xl group-hover:scale-[102%] transition-transform duration-500" />
+              <img 
+                src="/images/office%20image/Samudhra%20Office.png" 
+                alt="Samudhra Water Solutions Showroom and Office" 
+                class="w-full h-[280px] sm:h-[340px] lg:h-[380px] object-cover object-[center_70%] rounded-xl group-hover:scale-[102%] transition-transform duration-500" 
+                style="object-position: center 70%;"
+              />
             </div>
           </div>
           <div class="grid grid-cols-2 gap-4">
@@ -1002,36 +1012,69 @@ const homeFaqSchema = {
   </section>
 
   <!-- TRANSFORMING WATER -->
-  <section class="py-12 sm:py-16 bg-[#024095] text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6">
-      <h2 class="text-[clamp(0.75rem,3.8vw,1.5rem)] max-sm:whitespace-nowrap sm:text-2xl font-bold text-center mb-8 uppercase tracking-wide">
-        TRANSFORMING WATER. IMPROVING LIVES.
-      </h2>
+  <section class="py-16 sm:py-20 bg-gradient-to-b from-[#023377] to-[#024095] text-white relative overflow-hidden">
+    <!-- Subtle background accent glow -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-[#07bee8]/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <!-- Carousel wrapper -->
-      <div class="relative animate-fadeIn">
-        <!-- Scroll container -->
-        <div id="transforming-carousel" class="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-smooth cursor-default md:cursor-default lg:cursor-default select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <span class="text-[10px] font-mono text-[#07bee8] font-black uppercase tracking-[0.3em] block mb-2">Proven Results</span>
+        <h2 class="text-xl sm:text-3xl lg:text-4xl font-black text-center uppercase tracking-tight text-white leading-tight">
+          TRANSFORMING WATER. IMPROVING LIVES.
+        </h2>
+        <p class="text-xs sm:text-sm text-blue-100 font-light mt-2 max-w-lg mx-auto">
+          Real source water before and after custom treatment across residential and commercial sites in Kerala.
+        </p>
+      </div>
+
+      <!-- Carousel / Grid wrapper -->
+      <div class="relative">
+        <div id="transforming-carousel" class="flex lg:grid lg:grid-cols-4 gap-6 overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0 max-lg:snap-x max-lg:snap-mandatory max-lg:scroll-smooth cursor-default select-none" style="scrollbar-width:none; -ms-overflow-style:none;">
           {treatments.map(t => (
-            <div class="snap-start flex-shrink-0 w-[70vw] max-w-[280px] sm:w-72 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white/5 rounded-xl border border-white/10 p-3">
-              <div class="grid grid-cols-2 gap-2 mb-3">
-                <div class="relative">
-                  <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[7px] font-bold uppercase">BEFORE</div>
-                  <img src={t.before} class="w-full h-20 sm:h-24 object-cover rounded shadow" alt="Before" />
+            <div class="snap-start flex-shrink-0 w-[80vw] max-w-[310px] sm:w-80 lg:w-full lg:max-w-none lg:flex-shrink-0 bg-white text-slate-900 rounded-2xl p-4 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group">
+              <div class="grid grid-cols-2 gap-3 mb-4">
+                <!-- BEFORE IMAGE -->
+                <div class="relative rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80 cursor-pointer shadow-sm group/img" onclick={`openLightbox('${t.before}', '${t.name} — Before Treatment')`}>
+                  <span class="absolute top-2 left-2 z-10 px-2 py-0.5 bg-rose-600 text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
+                    BEFORE
+                  </span>
+                  <img 
+                    src={t.before} 
+                    alt={`${t.name} Before Treatment`} 
+                    class="w-full h-36 sm:h-44 object-cover object-center group-hover/img:scale-105 transition-transform duration-500" 
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <div class="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                  </div>
                 </div>
-                <div class="relative">
-                  <div class="absolute bottom-1 left-0 right-0 text-center text-white/80 text-[7px] font-bold uppercase">AFTER</div>
-                  <img src={t.after} class="w-full h-20 sm:h-24 object-cover rounded shadow" alt="After" />
+                <!-- AFTER IMAGE -->
+                <div class="relative rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80 cursor-pointer shadow-sm group/img" onclick={`openLightbox('${t.after}', '${t.name} — After Treatment')`}>
+                  <span class="absolute top-2 left-2 z-10 px-2 py-0.5 bg-emerald-600 text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
+                    AFTER
+                  </span>
+                  <img 
+                    src={t.after} 
+                    alt={`${t.name} After Treatment`} 
+                    class="w-full h-36 sm:h-44 object-cover object-center group-hover/img:scale-105 transition-transform duration-500" 
+                    loading="eager"
+                    decoding="async"
+                  />
+                  <div class="absolute inset-0 bg-black/20 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                    <svg class="w-5 h-5 text-white drop-shadow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/></svg>
+                  </div>
                 </div>
               </div>
-              <p class="text-center text-xs sm:text-sm font-bold">{t.name}</p>
-              <p class="text-center text-[9px] text-[#07bee8] font-bold uppercase tracking-wider mt-0.5">BEFORE / AFTER</p>
+              <p class="text-center text-sm sm:text-base font-black text-[#024095] tracking-tight">{t.name}</p>
+              <p class="text-center text-[10px] text-[#07bee8] font-extrabold uppercase tracking-widest mt-1">Verified Site Result</p>
             </div>
           ))}
         </div>
       </div>
     </div>
   </section>
+
   <!-- CLIENT REVIEWS & GOOGLE RATINGS -->
   <section class="py-16 sm:py-24 bg-[#FAF9F6] border-b border-slate-200/60 relative overflow-hidden">
     <!-- Decorative background glow -->
@@ -1055,7 +1098,7 @@ const homeFaqSchema = {
           </svg>
           <span class="text-[10px] sm:text-xs font-black uppercase tracking-wider text-[#024095]">See Verified Reviews on Google</span>
         </a>
-        <h2 class="text-[clamp(0.85rem,4.5vw,3rem)] font-black text-[#024095] tracking-tight uppercase leading-none max-sm:whitespace-nowrap">
+        <h2 class="text-[clamp(0.85rem,4.5vw,3rem)] font-black text-[#024095] tracking-tight uppercase leading-none whitespace-nowrap">
           Customer Feedback &amp; Reviews
         </h2>
         <p class="text-xs sm:text-sm lg:text-base text-slate-600 font-medium leading-relaxed max-w-xl mx-auto mt-4">
