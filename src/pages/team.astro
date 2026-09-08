@@ -9,19 +9,22 @@ const teamPhotos = [
     title: "Field Engineering & Team Assessment",
     subtitle: "On-Site Water Treatment Installation",
     image: "/images/team/DSC06080.JPG",
-    description: "Our core engineering team reviewing plant parameters during site installation in Trivandrum."
+    description: "Our core engineering team reviewing plant parameters during site installation in Trivandrum.",
+    tag: "FIELD ENGINEERING"
   },
   {
     title: "Technical Field Operations & Quality Testing",
     subtitle: "System Calibration & Maintenance",
     image: "/images/team/DSC06084%20(1).JPG",
-    description: "Field technical squad conducting water quality checks and system flow diagnostics."
+    description: "Field technical squad conducting water quality checks and system flow diagnostics.",
+    tag: "SITE OPERATIONS"
   },
   {
     title: "Water Chemistry & Digital System Architecture",
     subtitle: "Custom Plant CAD & Test Analysis",
     image: "/images/team/Laptop.jpeg",
-    description: "Technical design team configuring custom filtration plant specifications tailored to Kerala water source metrics."
+    description: "Technical design team configuring custom filtration plant specifications tailored to Kerala water source metrics.",
+    tag: "DESIGN & LAB"
   }
 ];
 ---
@@ -140,6 +143,9 @@ const teamPhotos = [
           >
             <div>
               <div class="aspect-[16/10] overflow-hidden bg-slate-200 relative">
+                <span class="absolute top-3 left-3 z-10 px-2.5 py-1 bg-[#024095] text-white text-[9px] font-black uppercase tracking-wider rounded-md shadow-md">
+                  {photo.tag}
+                </span>
                 <img 
                   src={photo.image} 
                   alt={photo.title} 
@@ -166,6 +172,26 @@ const teamPhotos = [
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGINEERING VALUES & IMPACT STATS BAR -->
+  <section class="py-12 bg-[#FAF9F6] border-b border-slate-200/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+          <p class="text-3xl sm:text-4xl font-black text-[#024095] mb-1">5,000+</p>
+          <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Custom Water Plants Installed</p>
+        </div>
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+          <p class="text-3xl sm:text-4xl font-black text-[#07bee8] mb-1">15+ Years</p>
+          <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Kerala Field Experience (Est. 2009)</p>
+        </div>
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+          <p class="text-3xl sm:text-4xl font-black text-[#024095] mb-1">100%</p>
+          <p class="text-xs font-bold text-slate-700 uppercase tracking-wider">Source Water Tested &amp; Calibrated</p>
+        </div>
       </div>
     </div>
   </section>
