@@ -72,7 +72,7 @@ export const services = [
     ],
     relatedServices: ["ro-plant", "water-softener", "iron-removal-plant"],
     metaTitle: "UF Plant Installation & Maintenance in Kerala | Samudhra Water Solutions",
-    metaDescription: "Professional UF (Ultrafiltration) plant installation and maintenance services in Kerala. Remove bacteria, turbidity & contaminants. 16+ years experience. Free water testing.",
+    metaDescription: "Professional UF (Ultrafiltration) plant installation and maintenance services in Kerala. Remove bacteria, turbidity & contaminants. 15+ years experience (Est. 2009). Free water testing.",
     keywords: "UF plant Kerala, ultrafiltration plant installation, UF plant maintenance, water treatment Kerala, Samudhra water solutions"
   },
   {
@@ -144,7 +144,7 @@ export const services = [
     ],
     relatedServices: ["effluent-treatment-plant", "uf-plant", "swimming-pool-filtration"],
     metaTitle: "Sewage Treatment Plant (STP) Installation in Kerala | Samudhra Water Solutions",
-    metaDescription: "Expert STP installation and maintenance in Kerala. KSPCB compliant sewage treatment plants for apartments, hotels, hospitals. 16+ years experience. Free site assessment.",
+    metaDescription: "Expert STP installation and maintenance in Kerala. KSPCB compliant sewage treatment plants for apartments, hotels, hospitals. 15+ years experience (Est. 2009). Free site assessment.",
     keywords: "STP installation Kerala, sewage treatment plant, KSPCB compliance, wastewater treatment, Samudhra water solutions"
   },
   {
@@ -432,7 +432,7 @@ export const services = [
     ],
     relatedServices: ["water-softener", "ro-plant", "uf-plant"],
     metaTitle: "Iron Removal Plant Installation in Kerala | IRP | Samudhra Water Solutions",
-    metaDescription: "Professional iron removal plant installation in Kerala. Remove iron stains, metallic taste & odor from borewell water. Free water testing. 16+ years experience.",
+    metaDescription: "Professional iron removal plant installation in Kerala. Remove iron stains, metallic taste & odor from borewell water. Free water testing. 15+ years experience (Est. 2009).",
     keywords: "iron removal plant Kerala, IRP installation, iron water treatment, borewell water iron removal, Samudhra water solutions"
   },
   {
@@ -504,7 +504,7 @@ export const services = [
     ],
     relatedServices: ["uf-plant", "water-softener", "iron-removal-plant"],
     metaTitle: "RO Plant Installation in Kerala | 250 LPH to 1,00,000 LPH | Samudhra Water Solutions",
-    metaDescription: "Commercial & industrial RO plant installation in Kerala. From 250 LPH to 1,00,000 LPH. TDS removal, bacteria elimination. Free water testing. 16+ years experience.",
+    metaDescription: "Commercial & industrial RO plant installation in Kerala. From 250 LPH to 1,00,000 LPH. TDS removal, bacteria elimination. Free water testing. 15+ years experience (Est. 2009).",
     keywords: "RO plant Kerala, reverse osmosis plant installation, commercial RO, industrial RO plant, water purification Kerala"
   },
   {
@@ -1111,14 +1111,14 @@ export const services = [
 
 // Shared company trust stats
 export const companyStats = [
-  { number: "16+", label: "Years Experience", icon: "trophy" },
+  { number: "15+", label: "Years Experience (Est. 2009)", icon: "trophy" },
   { number: "1000+", label: "Successful Installations", icon: "check-circle" },
   { number: "50+", label: "Experienced Engineers", icon: "users" },
   { number: "24/7", label: "Customer Assistance", icon: "headset" }
 ];
 
 export const whySamudhra = [
-  { title: "16+ Years Experience", description: "Trusted water treatment expertise across Kerala.", icon: "trophy" },
+  { title: "15+ Years Experience (Est. 2009)", description: "Trusted water treatment expertise across Kerala since 2009.", icon: "trophy" },
   { title: "1000+ Installations", description: "Successfully completed across Kerala and beyond.", icon: "check-circle" },
   { title: "Expert Engineers", description: "Certified professionals with deep domain knowledge.", icon: "users" },
   { title: "Custom Solutions", description: "Every system designed specifically for your water.", icon: "settings" },
