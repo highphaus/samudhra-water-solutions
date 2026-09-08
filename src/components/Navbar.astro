@@ -21,7 +21,7 @@ const navigationLinks = [
 
 <nav id="navbar" aria-label="Main navigation" data-theme={theme}
      class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-2 border-b border-black/0">
-  <div class="max-w-[96vw] xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-3 sm:gap-4">
+  <div class="max-w-[98vw] xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-4 sm:gap-6">
 
     <!-- Brand Logo -->
     <a href="/" class="flex items-center min-h-[48px] shrink-0" aria-label="Samudhra Water Solutions – Home">
@@ -29,11 +29,11 @@ const navigationLinks = [
     </a>
 
     <!-- Desktop Nav Links (Center) -->
-    <div class="hidden lg:flex items-center gap-3 xl:gap-4.5 text-[10px] font-extrabold uppercase tracking-[0.20em]" role="menubar">
+    <div class="hidden lg:flex items-center gap-4 xl:gap-6 text-[10px] font-extrabold uppercase tracking-[0.18em]" role="menubar">
       {navigationLinks.map((link) => (
         <a href={link.path}
            role="menuitem"
-           class="nav-link text-black hover:text-[#024095] transition-colors duration-300 relative group py-2 min-h-[48px] flex items-center whitespace-nowrap">
+           class="nav-link text-black hover:text-[#024095] transition-colors duration-300 relative group py-2 px-1 min-h-[48px] flex items-center whitespace-nowrap">
           {link.label}
           <span class="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#07bee8] transition-all duration-300 group-hover:w-full"></span>
         </a>
