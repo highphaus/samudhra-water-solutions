@@ -1,0 +1,330 @@
+---
+// src/pages/policy.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const lastUpdated = "September 2026";
+---
+
+<Layout 
+  title="Company Policies & Workplace Ethics | Samudhra Water Solutions"
+  description="Explore the corporate governance, workplace safety, occupational health, ISO 9001:2015 quality standards, and environmental policies of Samudhra Water Solutions Kerala."
+  canonicalUrl={Astro.url.href}
+>
+  <Navbar />
+
+  <!-- HERO HEADER -->
+  <section class="bg-[#FAF9F6] text-slate-900 pt-28 sm:pt-36 pb-12 sm:pb-16 border-b border-slate-200/60 relative overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#07bee8]/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+      <div class="flex items-center gap-3 mb-4 sm:mb-5">
+        <span class="h-[1px] w-10 sm:w-12 bg-[#024095]"></span>
+        <span class="text-[9px] sm:text-[10px] font-extrabold uppercase tracking-[0.35em] text-[#07bee8]">
+          CORPORATE GOVERNANCE &amp; WORKPLACE STANDARDS
+        </span>
+      </div>
+      
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#024095] uppercase leading-tight">
+        Company Policies &amp; <br class="hidden sm:inline" />
+        <span class="text-[#07bee8]">Workplace Ethics</span>
+      </h1>
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 pt-6 border-t border-slate-200/80">
+        <p class="text-xs sm:text-sm text-slate-600 font-light max-w-2xl leading-relaxed">
+          At Samudhra Water Solutions (Est. 2009), we are committed to uncompromising engineering quality, workplace safety, employee welfare, and sustainable water stewardship across Kerala.
+        </p>
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="px-3 py-1.5 bg-[#024095] text-white text-[10px] font-extrabold uppercase tracking-wider rounded-md shadow-sm">
+            ISO 9001:2015
+          </span>
+          <span class="px-3 py-1.5 bg-[#07bee8]/15 border border-[#07bee8]/40 text-[#024095] text-[10px] font-extrabold uppercase tracking-wider rounded-md">
+            Updated: {lastUpdated}
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAVIGATION PILLS (STICKY / HORIZONTAL SCROLL) -->
+  <div class="bg-white border-b border-slate-200 sticky top-16 sm:top-20 z-20 shadow-xs">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="flex items-center gap-2 sm:gap-3 py-3 overflow-x-auto no-scrollbar" style="scrollbar-width: none;">
+        <a href="#workplace" class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider bg-[#024095] text-white hover:bg-[#07bee8] transition-colors whitespace-nowrap">
+          1. Workplace &amp; Safety
+        </a>
+        <a href="#quality" class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-[#024095] hover:bg-[#024095] hover:text-white transition-colors whitespace-nowrap">
+          2. Quality Standards
+        </a>
+        <a href="#environment" class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-[#024095] hover:bg-[#024095] hover:text-white transition-colors whitespace-nowrap">
+          3. Environmental
+        </a>
+        <a href="#service-warranty" class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-[#024095] hover:bg-[#024095] hover:text-white transition-colors whitespace-nowrap">
+          4. Service &amp; Warranty
+        </a>
+        <a href="#privacy" class="px-4 py-2 rounded-full text-xs font-black uppercase tracking-wider bg-slate-100 text-[#024095] hover:bg-[#024095] hover:text-white transition-colors whitespace-nowrap">
+          5. Privacy &amp; Data
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN POLICIES CONTAINER -->
+  <main class="bg-[#FAF9F6] text-slate-900 py-12 sm:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-12 sm:space-y-16">
+
+      <!-- SECTION 1: WORKPLACE & EMPLOYEE WELFARE -->
+      <section id="workplace" class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm scroll-mt-36">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#024095] text-white flex items-center justify-center font-black text-sm">
+            01
+          </div>
+          <div>
+            <span class="text-[9px] sm:text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-widest block">Core Foundation</span>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-[#024095] uppercase tracking-tight">
+              Workplace Culture, Safety &amp; Employee Welfare
+            </h2>
+          </div>
+        </div>
+
+        <div class="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+          <p>
+            At Samudhra Water Solutions, our team — comprising our certified process engineers, technical leads, on-field technicians, and female crew in office operations — is our greatest strength. We enforce strict workplace standards to maintain a safe, respectful, and empowering working environment across all office facilities and external installation sites in Kerala.
+          </p>
+
+          <!-- 4 Core Pillars Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 pt-2">
+            
+            <!-- Pillar 1 -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-2">
+              <div class="flex items-center gap-2 text-[#024095]">
+                <svg class="w-5 h-5 text-[#07bee8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                <h3 class="font-black text-xs sm:text-sm uppercase tracking-wide">Equal Opportunity &amp; Zero Discrimination</h3>
+              </div>
+              <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                We guarantee fair recruitment, promotion, and professional development regardless of gender, religion, caste, or age. Our female crew and operational managers enjoy equal leadership representation across company divisions.
+              </p>
+            </div>
+
+            <!-- Pillar 2 -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-2">
+              <div class="flex items-center gap-2 text-[#024095]">
+                <svg class="w-5 h-5 text-[#07bee8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                <h3 class="font-black text-xs sm:text-sm uppercase tracking-wide">Zero Tolerance Anti-Harassment (POSH)</h3>
+              </div>
+              <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                We maintain an absolute zero-tolerance policy against any form of verbal, physical, or psychological harassment. Formal internal grievance committees ensure immediate and confidential resolution of concerns.
+              </p>
+            </div>
+
+            <!-- Pillar 3 -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-2">
+              <div class="flex items-center gap-2 text-[#024095]">
+                <svg class="w-5 h-5 text-[#07bee8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+                <h3 class="font-black text-xs sm:text-sm uppercase tracking-wide">Occupational Health &amp; Safety (EHS)</h3>
+              </div>
+              <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                Mandatory PPE protocols (helmets, eye shields, anti-slip boots) are strictly enforced for on-site technicians handling high-pressure commercial RO pumps, STP piping, and industrial media loading.
+              </p>
+            </div>
+
+            <!-- Pillar 4 -->
+            <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/70 space-y-2">
+              <div class="flex items-center gap-2 text-[#024095]">
+                <svg class="w-5 h-5 text-[#07bee8]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+                <h3 class="font-black text-xs sm:text-sm uppercase tracking-wide">Continuous Training &amp; Upskilling</h3>
+              </div>
+              <p class="text-xs text-slate-600 font-normal leading-relaxed">
+                All engineers and field technicians undergo periodic training in water chemistry diagnostics, multibrand purifier circuitry, CAD pipeline schematics, and safety compliance.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Specific Field Safety Callout -->
+          <div class="p-4 sm:p-5 rounded-2xl bg-[#024095]/5 border border-[#024095]/15 mt-4">
+            <h4 class="text-xs font-black text-[#024095] uppercase tracking-wider mb-1">Confined Space &amp; Overhead Tank Cleaning Safety</h4>
+            <p class="text-xs text-slate-600 font-light leading-relaxed">
+              When sanitizing domestic overhead tanks and underground sumps, a mandatory two-person safety buddy system, continuous ventilation, and safety harnesses are deployed to prevent occupational hazards.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: QUALITY POLICY & ISO 9001:2015 -->
+      <section id="quality" class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm scroll-mt-36">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#024095] text-white flex items-center justify-center font-black text-sm">
+            02
+          </div>
+          <div>
+            <span class="text-[9px] sm:text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-widest block">Engineering Rigor</span>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-[#024095] uppercase tracking-tight">
+              ISO 9001:2015 Quality &amp; Water Testing Policy
+            </h2>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+          <p>
+            Samudhra operates under an accredited <strong>ISO 9001:2015 Quality Management System</strong>. We eliminate "one-size-fits-all" installations by calibrating every treatment system against empirical water chemistry data.
+          </p>
+
+          <ul class="space-y-3 pt-2">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] mt-2 shrink-0"></span>
+              <span><strong>Mandatory Water Testing:</strong> Every custom plant recommendation is preceded by lab analysis of TDS, Total Hardness, Iron (Fe2+/Fe3+), pH balance, and microbiological indicators.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] mt-2 shrink-0"></span>
+              <span><strong>Certified Food-Grade Materials:</strong> All pressure vessels, internal filter media, and reverse osmosis membranes comply with international NSF/ANSI food-grade standards.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] mt-2 shrink-0"></span>
+              <span><strong>Multi-Point Pre-Commissioning Inspection:</strong> Plants undergo hydrostatic pressure leak testing and TDS filtration verification before client handover.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECTION 3: ENVIRONMENTAL SUSTAINABILITY -->
+      <section id="environment" class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm scroll-mt-36">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#024095] text-white flex items-center justify-center font-black text-sm">
+            03
+          </div>
+          <div>
+            <span class="text-[9px] sm:text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-widest block">Ecological Responsibility</span>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-[#024095] uppercase tracking-tight">
+              Environmental Sustainability &amp; Waste Management
+            </h2>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+          <p>
+            Recognizing Kerala’s vital water table and ecological sensitivity, Samudhra adheres to sustainable waste management and conservation protocols:
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <h4 class="font-black text-xs text-[#024095] uppercase mb-1">Reject Water Recovery</h4>
+              <p class="text-[11px] sm:text-xs text-slate-600 font-light">
+                Engineering high-recovery RO plants and guiding residential/commercial clients on reusing reject water for gardening and flushing.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <h4 class="font-black text-xs text-[#024095] uppercase mb-1">Spent Media Disposal</h4>
+              <p class="text-[11px] sm:text-xs text-slate-600 font-light">
+                Safe and lawful disposal of exhausted manganese dioxide, activated carbon, and ion-exchange resin beads without soil contamination.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <h4 class="font-black text-xs text-[#024095] uppercase mb-1">E-Waste Compliance</h4>
+              <p class="text-[11px] sm:text-xs text-slate-600 font-light">
+                Recycling decommissioned booster pumps, solenoid valves, and UV ballasts through certified electronic waste recyclers.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: SERVICE DELIVERY, WARRANTY & AMC -->
+      <section id="service-warranty" class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm scroll-mt-36">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#024095] text-white flex items-center justify-center font-black text-sm">
+            04
+          </div>
+          <div>
+            <span class="text-[9px] sm:text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-widest block">Customer Assurance</span>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-[#024095] uppercase tracking-tight">
+              Service Delivery, Warranty &amp; Maintenance Policy
+            </h2>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+          <p>
+            Our relationship with customers extends throughout the operational lifespan of the water purification system:
+          </p>
+
+          <ul class="space-y-3 pt-2">
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] mt-2 shrink-0"></span>
+              <span><strong>Prompt Doorstep Servicing:</strong> Dedicated doorstep repair response across Thiruvananthapuram for multibrand purifiers (Kent, Aquaguard, Pureit, Aqua C3).</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] mt-2 shrink-0"></span>
+              <span><strong>Genuine Replacement Spares:</strong> We exclusively use OEM/genuine certified replacement sediment cartridges, carbon blocks, and RO membranes with transparent pricing.</span>
+            </li>
+            <li class="flex items-start gap-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#07bee8] mt-2 shrink-0"></span>
+              <span><strong>Comprehensive Annual Maintenance Contracts (AMC):</strong> Includes scheduled seasonal filter replacements, membrane chemical sanitization, and 24/7 priority emergency breakdown support.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SECTION 5: PRIVACY & DATA PROTECTION -->
+      <section id="privacy" class="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm scroll-mt-36">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-[#024095] text-white flex items-center justify-center font-black text-sm">
+            05
+          </div>
+          <div>
+            <span class="text-[9px] sm:text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-widest block">Information Governance</span>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-black text-[#024095] uppercase tracking-tight">
+              Customer Data Protection &amp; Privacy Policy
+            </h2>
+          </div>
+        </div>
+
+        <div class="space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+          <p>
+            Samudhra Water Solutions respects the privacy of every client, partner, and website visitor:
+          </p>
+
+          <div class="space-y-3 pt-1">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <p class="font-bold text-xs text-[#024095] uppercase mb-1">Confidentiality of Water Quality Reports &amp; Site Blueprints</p>
+              <p class="text-[11px] sm:text-xs text-slate-600 font-light">
+                Water sample test results, plumbing blueprints, and domestic/commercial installation addresses are stored strictly for service records and are never sold or shared with third-party telemarketers.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/70">
+              <p class="font-bold text-xs text-[#024095] uppercase mb-1">Secure Digital Communications</p>
+              <p class="text-[11px] sm:text-xs text-slate-600 font-light">
+                Inquiries submitted through our website or direct WhatsApp helpdesk are processed solely to facilitate water testing appointments, quotation generation, and AMC scheduling.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DIRECT GOVERNANCE & GRIEVANCE REDRESSAL DESK -->
+      <div class="bg-gradient-to-br from-[#024095] via-[#023579] to-[#012456] text-white p-6 sm:p-10 rounded-3xl shadow-xl border border-[#07bee8]/30 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="space-y-2 text-center md:text-left">
+          <span class="text-[10px] font-mono text-[#07bee8] font-extrabold uppercase tracking-widest">Ethics &amp; Grievance Redressal</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase tracking-tight">Have a Policy or Compliance Query?</h3>
+          <p class="text-xs sm:text-sm text-blue-100 font-light max-w-xl">
+            For ethics feedback, workplace compliance, or institutional tender certifications, reach out directly to our management desk.
+          </p>
+        </div>
+        <div class="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0">
+          <a href="tel:+917012206891" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#07bee8] hover:bg-white text-[#024095] font-black text-xs uppercase tracking-wider rounded-xl transition-all shadow-md active:scale-95 whitespace-nowrap">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            Founder Desk: +91 70122 06891
+          </a>
+          <a href="mailto:mail@samudhra.co.in" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 border border-white/60 hover:bg-white hover:text-[#024095] text-white font-black text-xs uppercase tracking-wider rounded-xl transition-all active:scale-95 whitespace-nowrap">
+            mail@samudhra.co.in
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
