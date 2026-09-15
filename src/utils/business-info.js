@@ -36,6 +36,7 @@ export const businessInfo = {
   ],
   socials: {
     instagram: "https://www.instagram.com/samudhra_water_solutions?igsh=c2dobW5sNXI1ZDc=",
+    linkedin: "https://www.linkedin.com/company/samudhra-water-solutions-linkedin",
     facebook: "https://www.facebook.com/samudhra.co.in",
     youtube: "https://youtube.com/@samudhrawatersolutions?si=HGWyepM9F6-N5EkB",
     maps: "https://maps.app.goo.gl/f9PezLmRUYLq52998"
