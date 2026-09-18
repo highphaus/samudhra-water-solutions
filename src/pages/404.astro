@@ -1,0 +1,104 @@
+---
+// src/pages/404.astro
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { businessInfo } from '../utils/business-info.js';
+
+const popularServices = [
+  { title: "Iron Removal Plants", path: "/services/iron-removal-plant", desc: "Eliminate yellow water, rust stains, and metallic smell from borewell water." },
+  { title: "Water Softeners", path: "/services/water-softener", desc: "Protect plumbing and bathroom tiles from hard water limescale." },
+  { title: "Commercial RO Plants", path: "/services/ro-plant", desc: "Custom RO systems from 250 LPH to 100,000 LPH for commercial sites." },
+  { title: "Sewage Treatment (STP)", path: "/services/sewage-treatment-plant", desc: "KSPCB-compliant wastewater treatment for apartments and commercial spaces." },
+  { title: "Effluent Treatment (ETP)", path: "/services/effluent-treatment-plant", desc: "Industrial wastewater recycling and Zero Liquid Discharge systems." },
+  { title: "Water Quality Testing", path: "/program", desc: "Comprehensive physical and chemical laboratory analysis of well water." }
+];
+---
+
+<Layout 
+  title="404: Page Not Found | Samudhra Water Solutions"
+  description="The requested page could not be found or has been permanently moved. Explore Samudhra Water Solutions services for residential, commercial, and industrial water treatment in Kerala."
+  noindex={true}
+>
+  <Navbar />
+
+  <main class="min-h-screen bg-gradient-to-b from-[#e0f7fc] via-[#FAF9F6] to-white pt-28 sm:pt-36 pb-20 flex flex-col justify-center">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 bg-[#024095]/10 border border-[#024095]/20 rounded-full mb-6">
+        <span class="w-2 h-2 rounded-full bg-[#024095] animate-ping"></span>
+        <span class="text-xs font-black uppercase tracking-widest text-[#024095]">Error 404 • Page Not Found</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl font-black text-[#024095] tracking-tight uppercase mb-4">
+        Water Flow Diverted
+      </h1>
+      
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed mb-8">
+        The link you followed may be outdated, replaced, or permanently removed from our water treatment platform. Let us guide you back to pure water.
+      </p>
+
+      <!-- Primary Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+        <a href="/" class="px-8 py-3.5 bg-[#024095] hover:bg-[#07bee8] text-white font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md">
+          Back to Homepage
+        </a>
+        <a href="/service" class="px-8 py-3.5 bg-white hover:bg-slate-50 text-[#024095] border border-slate-200 font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-sm">
+          Browse All Services
+        </a>
+        <a href={`https://wa.me/${businessInfo.primaryPhoneClean}?text=Hi%2C+I+was+browsing+your+website+and+encountered+a+broken+link.+Can+you+help+me+with+water+treatment+solutions%3F`}
+           target="_blank"
+           rel="noopener noreferrer"
+           class="px-8 py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-extrabold text-xs uppercase tracking-widest rounded-xl transition-all shadow-md">
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- Popular Solutions Directory -->
+      <div class="text-left bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+        <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+          <div>
+            <h2 class="text-lg font-black text-[#024095] uppercase tracking-wide">Popular Water Treatment Solutions</h2>
+            <p class="text-xs text-slate-500">Trusted engineering in Trivandrum & across Kerala</p>
+          </div>
+          <span class="text-xs font-bold text-[#07bee8] hidden sm:block">Explore Direct Links →</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {popularServices.map((svc) => (
+            <a href={svc.path} class="group p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-[#eff6ff] hover:border-[#07bee8]/40 transition-all flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-sm text-[#024095] group-hover:text-[#07bee8] transition-colors mb-1">
+                  {svc.title}
+                </h3>
+                <p class="text-xs text-slate-500 font-light leading-relaxed">
+                  {svc.desc}
+                </p>
+              </div>
+              <span class="text-[11px] font-bold text-[#024095] mt-3 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                Learn more →
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Direct Assistance Box -->
+      <div class="mt-12 text-center text-xs text-slate-500">
+        Need immediate technical assistance? Call our direct engineering desk at{' '}
+        <a href={`tel:${businessInfo.primaryPhoneClean}`} class="font-bold text-[#024095] hover:underline">
+          {businessInfo.primaryPhone}
+        </a>{' '}
+        or email{' '}
+        <a href={`mailto:${businessInfo.email}`} class="font-bold text-[#024095] hover:underline">
+          {businessInfo.email}
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

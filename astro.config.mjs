@@ -7,5 +7,9 @@ export default defineConfig({
   site: 'https://www.samudhrawatersolutions.in',
   output: 'static',
   adapter: vercel(),
-  integrations: [sitemap()],
-});
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/404')
+    })
+  ],
+});
